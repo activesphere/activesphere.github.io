@@ -1,4 +1,8 @@
 Activesphere::Application.routes.draw do
+  ['about_us', 'works', 'how_we_work', 'contact'].each do |page|
+    match page => "home##{page}"
+  end
+  root :to => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

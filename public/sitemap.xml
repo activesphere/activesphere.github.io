@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.google.com/schemas/sitemap/0.84
+	http://www.google.com/schemas/sitemap/0.84/sitemap.xsd">
+	<url>
+		<loc>http://www.activesphere.com/</loc>
+		<lastmod>2010-07-09T08:52:28+00:00</lastmod>
+		<priority>1.00</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://www.activesphere.com/how_we_work/</loc>
+		<lastmod>2010-07-09T08:52:28+00:00</lastmod>
+		<priority>1.00</priority>
+		<changefreq>weekly</changefreq>
+	</url>	
+  <url>
+    <loc>http://www.activesphere.com/works/</loc>
+    <lastmod>2010-07-09T08:52:28+00:00</lastmod>
+    <priority>1.00</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://www.activesphere.com/about_us/</loc>
+    <lastmod>2010-07-09T08:52:28+00:00</lastmod>
+    <priority>1.00</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+	<url>
+		<loc>http://www.activesphere.com/contact/</loc>
+		<lastmod>2010-07-09T08:52:28+00:00</lastmod>
+		<priority>1.00</priority>
+		<changefreq>weekly</changefreq>
+	</url>
+</urlset>
