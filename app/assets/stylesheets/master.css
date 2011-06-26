@@ -1,0 +1,277 @@
+/*GLOBAL*/
+html body {
+	background-color:#1F1F1F;
+	color: #F2F2F2;
+}
+
+a{
+	color:#ADE951;
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+	color: #ADE951;
+}
+
+li {
+	list-style-type: none;
+}
+
+h1 h2 h3 {
+	font-family:"Baskerville,Palatino,Book Antiqua,serif";	
+	line-height: 1.1em;	
+}
+
+h2 {
+	font-size: 24px;
+	color: #F2F2F2;	
+}
+
+h3 {
+	font-size: 22px;
+	color:#ADE951;
+	font-weight: normal;
+}
+
+h4 {
+	font-size: 18px;
+	color:#ADE951;
+	font-weight: normal;
+}
+
+p {
+	line-height: 1.7em;
+}
+
+strong { 
+	font-weight: normal;	
+	color:#ADE951;
+}
+
+fieldset {
+	border-width: 0px;
+	margin:0px;
+	padding:0px;
+}
+
+input,textarea {
+	background-color:#CAC2C0; 	
+	opacity: 0.8;	
+}
+
+input:hover,input:focus,textarea:hover,textarea:focus{
+	opacity: 1.0;
+}
+
+.header {
+	padding-bottom: 50px;
+	border-bottom: dotted 1px #494a4a;
+}
+
+.header .logo {
+	margin-top: 50px;	
+	height:80px;
+}
+
+.header .navigation a {
+	padding: 80px 0px 10px 0px;
+	color: #F2F2F2;;
+	font-size:14px;
+	display: block;	
+	text-align: center;
+}
+
+.header .navigation a.selected,.header .navigation a:hover{
+	background-color:#131313;
+}
+
+.header .navigation a.selected {
+	color: #ADE951;
+	border-bottom: solid 1px #ADE951;	
+}
+
+.content {
+	padding: 50px 0px 30px 0px;
+	border-bottom: dotted 1px #494a4a;
+}
+
+.content p {
+	font-size:16px;
+	font-weight:lighter;
+}
+
+.footer {
+	padding: 50px 0px 20px 0px;
+	font-size:12px;
+}
+
+.footer h2 {
+	padding-left: 33px;
+}
+
+/* GLOBAL*/
+
+/*INDEX*/
+.work-example {
+  margin-left: 10px;
+	height: 280px;
+}
+
+.work-example-title {
+	font-style:italic;
+	font-size: 11px;
+	color: #727272;
+}
+
+.application-development{
+	background:#1F1F1F url("/assets/application_development.png") no-repeat scroll left top;
+}
+
+.mobile-application-development{
+	background:#1F1F1F url("/assets/mobile_development.png") no-repeat scroll left top;
+}
+
+.consulting{
+	background:#1F1F1F url("/assets/consulting.png") no-repeat scroll left top;
+}
+
+.training{
+	background:#1F1F1F url("/assets/training.png") no-repeat scroll left top;
+}
+
+.services p{
+	font-size: 16px;
+	padding-top: 14px;
+}
+
+/*CONTACT*/
+
+.contact-us .button { 
+	background-color:#ADE951; 
+	font-weight: bold;
+	border-width: 0px;
+	width: 100px;
+	height: 30px;
+}
+
+div.hick{
+	padding-top: 70px;
+	background:#1F1F1F url("/assets/hick.png") no-repeat scroll left top;	
+}
+
+iframe.hick {
+	padding:12px 0px 0px 14px;
+}
+/*CONTACT*/
+
+/*How We Work*/
+
+.work-process-diagram {
+	background:#1F1F1F url("/assets/process.png") no-repeat scroll left top;	
+	height:650px;	
+}
+
+.work-process-steps p{
+	font-size: 13px;
+}
+
+.technologies-we-like li {
+	font-size: 18px;
+	color:#ADE951;
+	line-height: 1.7em;	
+}
+
+/*How We Work*/
+
+/*Works*/
+
+.featured-work p {
+  font-size: 13px;
+}
+
+/*Works*/
+
+/*Work*/
+.work img {
+}
+
+.work h3, .work h2 {
+	text-align: center;
+}
+
+.work-item {
+  margin-bottom: 70px;
+}
+
+.work-item-text {
+  text-align: center;
+}
+
+.work-item-summary {
+  width: 800px;
+  margin: auto;
+  text-align: center;
+  background-color: #131313;
+}
+
+.work-shot {
+  width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.work-video {
+  width: 800px;
+  margin: auto;
+}
+
+.profiles {
+  margin: auto;
+}
+
+.profiles h2 {
+  text-align: center;
+}
+.profile {
+  height: 250px;
+  padding: 20px;
+  margin: 5px 0px;
+  background-color: #131313;
+}
+.profile p {
+  font-size: 110%;
+}
+
+.profile h3 {
+  text-align: center;
+}
+
+.quote {
+  font-style: italic;
+  text-align: center;
+}
+
+.quote strong {
+    color: #ADE951;
+}
+/*Work*/
+
+/*careers*/
+.job_description {
+  padding: 10px 20px;
+}
+
+.blank_profile {
+  background:#1F1F1F;
+  min-height: 100px;
+}
+
+.job_description ul li {
+  font-size: 1em;
+  line-height: 1.7em;
+  list-style-type: disc;
+}
+
+.job p {
+  font-size: 14px;
+}
