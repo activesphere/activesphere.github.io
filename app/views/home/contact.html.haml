@@ -16,11 +16,8 @@
       %h2 Thanks for stopping by.
       %p
         If you want to talk to us, just fill the form on your left, drop us a mail at
-        :javascript
-          document.write('<'+'a hre'+'f="mailto:mail@activesphere.com">');
-          document.write('mail@activesphere.com.</'+'a>');
-                          = succeed "or" do
-          %br/
+        %a{:href => "mailto:mail@activesphere.com"}mail@activesphere.com.
+        %br/
         just call us at
         %strong +91 9845808532
 

@@ -8,6 +8,7 @@
     %meta{:content => "index, follow", :name => "robots"}/
     %link{:href => "/assets/blueprint/screen.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    = csrf_meta_tag
     %title
       ActiveSphere - Development, Consulting &amp; Training
   %body
@@ -16,7 +17,7 @@
         .span-11
           %a{:href => "/"}
             %img.logo{:src => "/assets/logo.png"}/
-        .span-12.navigation.last
+        .span-13.navigation.last
           .span-2
             %a#home{:href => "/"} HOME
           .span-3
@@ -25,8 +26,10 @@
             %a#works{:href => "/works"} WORKS
           .span-2
             %a#about-us{:href => "/about_us"} ABOUT
-          .span-3.last
+          .span-2
             %a#contact{:href => "/contact"} CONTACT
+          .span-2.last
+            %a#blog{:href => "http://blog.activesphere.com"} BLOG
       .span-24.contents
 
         = yield
@@ -53,7 +56,7 @@
           %h2
             \&nbsp;
           %p
-            %a{:href => "http://www.engineyard.com/partners/associate"}
+            %a{:href => "http://www.engineyard.com/partners/developers"}
               %img{:alt => "Engine Yard", :src => "http://assets.engineyard.com/images/ey_partner_associate.png"}/
 
     = yield(:javascript)
