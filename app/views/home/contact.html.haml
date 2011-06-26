@@ -21,3 +21,7 @@
           %br/
         just call us at
         %strong +91 9845808532
+
+- content_for(:javascript) do
+  :javascript
+    document.getElementById('contact').setAttribute("class", "selected");

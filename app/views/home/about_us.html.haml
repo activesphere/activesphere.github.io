@@ -27,3 +27,7 @@
         = succeed "," do
           %a{:href => "http://www.paulgraham.com/relres.html"} relentlessly resourceful
         we'd like to hear from you.
+
+- content_for(:javascript) do
+  :javascript
+    document.getElementById('about-us').setAttribute("class", "selected");

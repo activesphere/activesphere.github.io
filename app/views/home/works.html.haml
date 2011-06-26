@@ -69,3 +69,7 @@
         %a{:href => "/yourhires/"} tour.
     .span-16
       %img{:src => "/assets/featured_work_yh.png"}/
+
+- content_for(:javascript) do
+  :javascript
+    document.getElementById('works').setAttribute("class", "selected");

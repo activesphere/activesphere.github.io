@@ -86,3 +86,7 @@
       %li
         %a{:href => "http://git-scm.com/", :target => "_blank"} Git
     %br/
+
+- content_for(:javascript) do
+  :javascript
+    document.getElementById('how-we-work').setAttribute("class", "selected");

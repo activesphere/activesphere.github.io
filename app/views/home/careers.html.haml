@@ -23,3 +23,7 @@
     Do get in
     %a{:href => "mailto:jobs@activesphere.com"} touch
     with us, even if you don't fall in this category, but would still like to explore working with us.
+
+- content_for(:javascript) do
+  :javascript
+    document.getElementById('careers').setAttribute("class", "selected");

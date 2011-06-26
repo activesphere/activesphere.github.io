@@ -56,3 +56,8 @@
         We have compiled lessons from our experiences in a series of workshops. All workshops are highly interactive, with hands on sessions. Currently, we are conducting two workshops:   Test Driven Development + Advanced OOP + Design Patterns and Advanced Ruby On Rails.
         %a{:href => "/contact/"} Contact us
         for more details.
+
+- content_for(:javascript) do
+  :javascript
+    document.getElementById('home').setAttribute("class", "selected");
+  
