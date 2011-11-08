@@ -1,0 +1,102 @@
+
+<!doctype html>  <!-- Oh this HTML5 Doctype is so beautiful  -->
+<html>  
+<head>  
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,width=device-width" /> <!-- We are responsive :)  -->
+<title>A C T I V E  S P H E R E : We build software that blows your brains</title>
+
+<!-- All CSS  -->
+<link href='http://fonts.googleapis.com/css?family=Oswald|Droid+Sans|La+Belle+Aurore' rel='stylesheet' type='text/css'> <!-- Google WebFonts   -->
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+
+<!-- All JS  -->
+<script src="js/jquery-1.6.2.min.js"></script>
+
+<!-- Hover Effect  -->
+<script type="text/javascript">
+	$(function() {
+		
+		$(".hover1").css("opacity","1.0"); // Default set opacity to 1.0
+ 
+		// On Mouse over
+		$(".hover1").hover( 
+							function () {
+ 
+										// SET OPACITY TO 15%
+										$("span.hover2").stop().animate({opacity: 0.15}, 1200);
+										},
+ 
+										// ON MOUSE OUT
+							function () {
+								 
+										// SET OPACITY BACK TO 100%
+										$("span.hover2").stop().animate({opacity: 1.0}, 1200);
+										}
+						 );
+				}
+	 );
+
+  </script>
+</head>
+<body>
+
+
+ <div class="page homepage2"> 
+	
+		<div class="nav">
+			<span class="navlinks"><a href="home.html" >home</a></span> /
+			<span class="navlinks"><a href="about.html" >about</a></span> / 
+			<span class="navlinks"><a href="#" >work</a></span> / 
+		</div> <!-- End Nav   -->
+		
+        <div id="kickbuttmessage" > <!-- Class hover2 fades in-out words not part of hidden message   -->
+			<h1 style="font-size:90px;text-align:left;padding-top:52px;" > <!--  First line / Inline CSS --> 
+				<a href="about.html" class="hover1 hover2">Our</a>
+				<span class="hover2"> Truth be told.</span>
+			</h1>
+			
+			<h1 style="font-size:90px;text-align:left;"> <!--  Second line  -->
+				<span class="hover2">We believe in making </span>
+			</h1>
+			
+			<h1 style="font-size:90px;text-align:left;"> <!-- Third line  -->
+				<a href="#" class="apps hover1 hover2">apps</a>
+				<span class="hover2">that</span>
+				<a href="#" class="testimonials hover1 hover2">kick butt.</a>
+			</h1>
+			
+			<p id="subhead" style="padding-bottom: 93px;"></p> <!-- Cushion the bottom of message with some white space  -->
+        </div> <!-- End kickbutt message   -->
+		
+        <div class="cols cols2"> <!--  Going with 2 columns hence class cols2  -->
+            <div class="col" style="width:440px;">
+                <h2>There is strong reason</h2>
+               <p>This is just some filler copy. I got nothing to say that this example hasn't already said. This is just some filler copy. This is just some filler copy and that is all really.This is just some filler copy. This is just some filler copy and that is all really.</p>
+            </div>
+            <div class="col" id="tech">
+                <h2 style="margin-left:-129px;">We work with</h2>
+                 <span id="rubybg"><a href="http://ruby.org" id="ruby"  ></a></span>
+				 <span id="couchdbbg"><a href="http://#" id="couchdb"  ></a></span>
+				 <span id="redisbg"><a href="http://#" id="redis"  ></a></span>
+				 <span id="mongodbbg"><a href="http://#" id="mongodb"  ></a></span>
+				 <span id="cassandrabg"><a href="http://#" id="cassandra"  ></a></span>
+				 <span id="nodejsbg"><a href="http://#" id="nodejs"  ></a></span>
+				 <span id="railsbg"><a href="http://#" id="rails"  ></a></span>
+						
+            </div>
+            
+        </div> <!-- End text div   -->
+		
+		
+	<div id="footer">
+		<div id="logo" >
+			<div id="logocover">
+			</div>
+		</div>
+		<div id="company">&copy; 2011 ACTIVESPHERE</div>
+	</div>	<!-- End footer   -->	
+ 
+ </div> <!-- End page  -->
+</body>
+</html>

@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
+gem 'rails', '3.1.0'
 
 # Asset template engines
-gem 'sass-rails', "~> 3.1.0.rc"
+gem 'sass-rails', "~> 3.1.0"
 gem 'coffee-script'
 gem 'uglifier'
 gem 'haml'
@@ -30,6 +30,5 @@ end
 
 group :production do
   gem 'therubyracer-heroku', '0.8.1.pre3'
-  gem 'pg'
 end
 

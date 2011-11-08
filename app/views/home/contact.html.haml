@@ -1,26 +1,34 @@
-.span-24.contents
-  .span-24.content
-    .span-12.contact-us
-      :javascript
-        var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");document.write(unescape("%3Cscript src='" + host + "wufoo.com/scripts/embed/form.js' type='text/javascript'%3E%3C/script%3E"));              
-      :javascript
-        var z7x4z5 = new WufooForm();
-        z7x4z5.initialize({
-          'userName':'activesphere', 
-          'formHash':'z7x4z5', 
-          'autoResize':true,
-          'height':'389'
-        });
-        z7x4z5.display();
-    .span-8.push-4.last.contact-info
-      %h2 Thanks for stopping by.
-      %p
-        If you want to talk to us, just fill the form on your left, drop us a mail at
-        %a{:href => "mailto:mail@activesphere.com"}mail@activesphere.com.
-        %br/
-        just call us at
-        %strong +91 80 28495559
-
-- content_for(:javascript) do
+#kickbuttmessage{style: "padding-left:0px"}
+  %h1{style:"font-size:70px"} We'd love to hear from you
+  
   :javascript
-    document.getElementById('contact').setAttribute("class", "selected");
+    var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");document.write(unescape("%3Cscript src='" + host + "wufoo.com/scripts/embed/form.js' type='text/javascript'%3E%3C/script%3E"));              
+  :javascript
+    var z7x3k1 = new WufooForm();
+    z7x3k1.initialize({
+      'userName':'nikhilactivesphere', 
+      'formHash':'z7x3k1', 
+      'autoResize':true,
+      'height':'389'
+    });
+    z7x3k1.display();
+
+
+.cols.cols3
+  .col
+    %h2 Drop in at
+    %div{style: "text-align:center"} #693/2, 9th A Main, 
+    %div{style: "text-align:center"} Indiranagar 1st Stage,
+    %div{style: "text-align:center"} Bangalore 560038.
+  .col
+    %h2 Feel free to call us
+    %div{style: "text-align:center"} +91 80 28495559
+    
+  .col
+    %h2 Email us at
+    %div{style: "text-align:center"}  
+    %div{style: "text-align:center"} 
+      %a{:href => "mailto:mail@activesphere.com",style: 'text-decoration: underline'}mail@activesphere.com.
+      
+      
+        

@@ -4,68 +4,40 @@
     %meta{:content => "L_hGWN3oT-fBOYKgOIM2HQ9k4bYwgawmHNJcnVzTy9Y", :name => "google-site-verification"}/
     %meta{:content => "Ruby Rails Web Development Bangalore India", :name => "title"}/
     %meta{:content => "Ruby on Rails developers. Contact ActiveSphere for custom ruby on rails development in Bangalore, India", :name => "description"}/
-    %meta{:content => "Ruby Rails Web Development RoR RubyOnRails Ruby on Rails Bangalore India", :name => "keywords"}/
+    %meta{:content => "Ruby Rails Web Development RoR RubyOnRails Ruby on Rails Nodejs Bangalore India", :name => "keywords"}/
     %meta{:content => "index, follow", :name => "robots"}/
+    %meta{name: 'viewport', content: "initial-scale=1.0,width=device-width"}
+    %link{href: 'http://fonts.googleapis.com/css?family=Oswald|Droid+Sans|La+Belle+Aurore', rel:'stylesheet', type: 'text/css' }
     %link{:href => "/assets/blueprint/screen.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/assets/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
     = csrf_meta_tag
+    = javascript_include_tag :application
     %title
-      ActiveSphere - Development, Consulting &amp; Training
+      A C T I V E  S P H E R E : - About Smart People
   %body
-    .container
-      .span-24.header
-        .span-11
-          %a{:href => "/"}
-            %img.logo{:src => "/assets/logo.png"}/
-        .span-13.navigation.last
-          .span-2
-            %a#home{:href => "/"} HOME
-          .span-3
-            %a#how-we-work{:href => "/how_we_work"} HOW WE WORK
-          .span-2
-            %a#works{:href => "/works"} WORKS
-          .span-2
-            %a#about-us{:href => "/about_us"} ABOUT
-          .span-2
-            %a#contact{:href => "/contact"} CONTACT
-          .span-2.last
-            %a#blog{:href => "http://blog.activesphere.com"} BLOG
-      .span-24.contents
-
-        = yield
-
-      .span-24.footer
-        .span-6
-          %h2
-            About
-          %p
-            ActiveSphere is based in the heart of Bangalore. When not working, we like messing around with all things fun and creative. Know more about us
-            %a{:href => "/about_us/"} here.
-        .span-6
-          %h2
-            Hello
-          %p
-            Need to talk to us about a project ? To learn more about how we can help you &amp; your organization,
-            %a{:href => "/contact/"} get in touch today.
-        .span-6.last
-          %h2
-            Info
-          %p
-            Copyright &copy; 2008-2011 ActiveSphere. All rights reserved, unless stated otherwise.
-        .span-5.prepend-1
-          %h2
-            \&nbsp;
-          %p
-            %a{:href => "http://www.engineyard.com/partners/developers"}
-              %img{:alt => "Engine Yard", :src => "http://assets.engineyard.com/images/ey_partner_associate.png"}/
-
-    = yield(:javascript)
-
-    :javascript
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    :javascript
-      try {
-        var pageTracker = _gat._getTracker("UA-10221263-5");
-        pageTracker._trackPageview();
-      } catch(err) {}
+    .page.homepage2
+      .nav
+        %span.navlinks
+          %a{href: root_path} home /
+        %span.navlinks
+          %a{href: about_us_path} about /
+        %span.navlinks
+          %a{href: contact_path} letstalk /
+        %span.navlinks
+          %a{href: careers_path} careers /
+        %span.navlinks
+          %a{href: 'http://blog.activesphere.com/'} blog /
+          
+          
+      = yield
+      
+      #footer
+        #logo
+          #logocover
+        #company &copy; 2011 ACTIVESPHERE
+      
+      
+    
+          
+          
+          
