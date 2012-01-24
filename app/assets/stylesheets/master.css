@@ -295,7 +295,6 @@ div.cols div.col:first-child {
     }
     
     div.nav {
-        
         margin-top:-15px;
         padding:7px;
     }
@@ -329,7 +328,7 @@ div.cols div.col:first-child {
     }
     
     .nav span.navlinks a { 
-    font-size:.77em;
+    font-size:1em;
     font-family:droid sans;
     }
     
