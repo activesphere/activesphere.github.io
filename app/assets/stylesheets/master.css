@@ -152,8 +152,8 @@ div.page {
 
 div.cols3 {
     overflow:hidden;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 	border-top: 1px solid rgba(0, 0, 0, 0.15)
 }
 
@@ -553,6 +553,68 @@ span#nodejsbg{
     opacity:0;
 }
 
+span#shufflrbg{
+    background-image:url("/assets/shufflr-color.png");
+    margin-right:30px;
+    height:50px;
+    width:138px;
+    float:left;
+	
+}
+
+#shufflr{
+    background-image:url("/assets/shufflr.png");
+    height:50px;
+    width:138px;
+    margin-right:4px;
+    float:left;
+    opacity:1.0;
+    -webkit-transition:all 0.4s ease-in-out;  
+    -moz-transition:all 0.4s ease-in-out; 
+    -o-transition:all 0.4s ease-in-out;  
+    transition:all 0.4s ease-in-out;
+   
+	
+}
+
+#shufflr:hover {
+	margin-right:4px;
+	height:50px;
+    opacity:0;
+}
+
+span#impactbg{
+    background-image:url("/assets/impactdialing-color.png");
+    margin-right:30px;
+    height:40px;
+    width:200px;
+    float:left;
+	
+}
+
+#impact{
+    background-image:url("/assets/impactdialing.png");
+    height:40px;
+    width:200px;
+    margin-right:4px;
+    float:left;
+    opacity:1.0;
+    -webkit-transition:all 0.4s ease-in-out;  
+    -moz-transition:all 0.4s ease-in-out; 
+    -o-transition:all 0.4s ease-in-out;  
+    transition:all 0.4s ease-in-out;
+   
+	
+}
+
+#impact:hover {
+	margin-right:4px;
+	height:40px;
+    opacity:0;
+}
+
+
+
 
 span#railsbg {
     background-image:url("/assets/rails-color.png");
@@ -562,6 +624,8 @@ span#railsbg {
     float:left;
 
 }
+
+
 
 
 #rails{
