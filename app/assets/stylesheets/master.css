@@ -612,6 +612,65 @@ span#impactbg{
 	height:40px;
     opacity:0;
 }
+span#brandscopebg{
+    background-image:url("/assets/brandscope-color.png");
+    margin-right:30px;
+    height:60px;
+    width:150px;
+    float:left;
+	
+}
+
+#brandscope{
+    background-image:url("/assets/brandscope.png");
+    height:60px;
+    width:150px;
+    margin-right:4px;
+    float:left;
+    opacity:1.0;
+    -webkit-transition:all 0.4s ease-in-out;  
+    -moz-transition:all 0.4s ease-in-out; 
+    -o-transition:all 0.4s ease-in-out;  
+    transition:all 0.4s ease-in-out;
+   
+	
+}
+
+#brandscope:hover {
+	margin-right:4px;
+	height:40px;
+    opacity:0;
+}
+
+span#mphoriabg{
+    background-image:url("/assets/mphoria-color.png");
+    margin-right:30px;
+    height:40px;
+    width:150px;
+    float:left;
+	
+}
+
+#mphoria{
+    background-image:url("/assets/mphoria.png");
+    height:40px;
+    width:150px;
+    margin-right:4px;
+    float:left;
+    opacity:1.0;
+    -webkit-transition:all 0.4s ease-in-out;  
+    -moz-transition:all 0.4s ease-in-out; 
+    -o-transition:all 0.4s ease-in-out;  
+    transition:all 0.4s ease-in-out;
+   
+	
+}
+
+#mphoria:hover {
+	margin-right:4px;
+	height:40px;
+    opacity:0;
+}
 
 
 
