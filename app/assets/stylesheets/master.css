@@ -563,7 +563,7 @@ span#shufflrbg{
 }
 
 #shufflr{
-    background-image:url("/assets/shufflr.png");
+    background-image:url("/assets/shufflr-color.png");
     height:50px;
     width:138px;
     margin-right:4px;
@@ -593,7 +593,7 @@ span#impactbg{
 }
 
 #impact{
-    background-image:url("/assets/impactdialing.png");
+    background-image:url("/assets/impactdialing-color.png");
     height:40px;
     width:200px;
     margin-right:4px;
@@ -622,7 +622,7 @@ span#brandscopebg{
 }
 
 #brandscope{
-    background-image:url("/assets/brandscope.png");
+    background-image:url("/assets/brandscope-color.png");
     height:60px;
     width:150px;
     margin-right:4px;
@@ -652,7 +652,7 @@ span#mphoriabg{
 }
 
 #mphoria{
-    background-image:url("/assets/mphoria.png");
+    background-image:url("/assets/mphoria-color.png");
     height:40px;
     width:150px;
     margin-right:4px;
