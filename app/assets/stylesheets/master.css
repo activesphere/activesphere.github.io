@@ -10,14 +10,13 @@ body {
 }
 h1 {
  font-family: Oswald,sans-serif;
-    font-size: 90px;
+    font-size: 80px;
     font-weight: bold;
     line-height: 100%;
     margin: 0 0 0.1em;
     padding: 0;
     text-align: center;
     text-shadow: 2px 3px 1px #777777;
-    text-transform: uppercase;
 }
 h2 {
     margin-bottom:0.3em;
