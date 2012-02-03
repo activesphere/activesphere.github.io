@@ -18,7 +18,7 @@ h1 {
     text-align: center;
     text-shadow: 2px 3px 1px #777777;
 }
-h2 {
+h2{
     margin-bottom:0.3em;
     padding:0;
     font-family:La Belle Aurore, Arial,sans-serif;
@@ -894,4 +894,11 @@ span#railsbg {
     
 a:hover {
   color:#0095c3;
+}
+.contact{
+  width: 500px;
+  margin-left:260px;
+}
+#header h2{
+  text-align: center;
 }
