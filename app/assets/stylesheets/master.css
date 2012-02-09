@@ -736,18 +736,22 @@ span#railsbg {
 
     .photoframeleft 
         {
-        margin: 0px 50px 100px 0px !important;
-        width: 260px !important;
-        height: 250px !important;
+        width: 320px !important;
+        min-height: 150px !important;
+        padding: 17px 17px 0 20px !important;
+        position:relative !important;
         }
     .photoframeleft img{
       border-radius: 10px;
       box-shadow: 10px 10px 5px #888888;
     }
         
+        
     /* Frame Right */
         
     .photoframeright:after {
+        border: 1px solid #CCCCCC;
+        bottom: 0;
         height: 98%;
         padding: 0 0 1px;
         position: absolute;
