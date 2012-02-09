@@ -717,8 +717,6 @@ span#railsbg {
     /* Frame Left */
     
     .photoframeleft:after {
-        border: 1px solid #CCCCCC;
-        bottom: 0;
         height: 98%;
         padding: 0 0 1px;
         position: absolute;
@@ -727,9 +725,6 @@ span#railsbg {
         z-index: 1;
     }
     .photoframeleft:before {
-        border: 1px solid #CCCCCC;
-        bottom: 0;
-        box-shadow: 3px 3px 7px #CCCCCC;
         content: "";
         height: 100%;
         padding: 0 0 5px;
@@ -741,23 +736,18 @@ span#railsbg {
 
     .photoframeleft 
         {
-        margin: 35px 50px 100px 0px !important;
-        width: 320px !important;
-        min-height: 150px !important;
-        padding: 17px 17px 0 20px !important;
-        position:relative !important;
-        background: -webkit-gradient(linear, 100% 100%, 50% 10%, from(#fff), to(#f3f3f3), color-stop(.1,#fff)) !important;
-        border: 1px solid #ccc !important;
-        -webkit-box-shadow: 1px 1px 4px rgba(0,0,0, 0.1) !important;
-        -webkit-border-bottom-right-radius: 60px 5px !important;
+        margin: 0px 50px 100px 0px !important;
+        width: 260px !important;
+        height: 250px !important;
         }
-        
+    .photoframeleft img{
+      border-radius: 10px;
+      box-shadow: 10px 10px 5px #888888;
+    }
         
     /* Frame Right */
         
     .photoframeright:after {
-        border: 1px solid #CCCCCC;
-        bottom: 0;
         height: 98%;
         padding: 0 0 1px;
         position: absolute;
