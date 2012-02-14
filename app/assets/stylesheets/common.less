@@ -1,9 +1,69 @@
+@import "bootstrap.less";
+
 .aright { float:right;}
 .aleft { float:left; }
 
 .sublime-txt { color: #BFBFBF; }
 
+.site_frame {
+    width: 960px;
+    padding: 20px;
+    background-color: white;
+}
+
+@bg: #EBEBEB;
+@nav-link-color: #60757B; // #90A2A7;
+@nav-link-color-hover: #333;
+
+body {
+    background-color: @bg;
+}
+
+.nav {
+    text-shadow: 0 1px 1px #E2E7E8;
+    font-family: verdana;
+    font-size: 0.9em;
+    margin: 0 auto;
+    float: none;
+    .site_frame;
+
+    background-color: @bg;
+
+    .navlinks {
+        padding-right: 10px;
+        a {
+            text-transform: uppercase;
+            color: @nav-link-color;
+            &:hover {
+                color: @nav-link-color-hover;
+            }
+        }
+    }
+
+    .contact_details {
+        float: right;
+        font-size: .8em;
+        .phone {
+            padding-right: 10px;
+        }
+        span {
+            color: @nav-link-color-hover;
+            .value, a {
+                color: @nav-link-color;
+            }
+        }
+    }
+}
+
+.page.homepage2 {
+    border: 0;
+    .box-shadow(0 0 10px rgba(0, 0, 0, 0.15));
+    .border-radius(5px);
+    .site_frame;
+}
+
 .ctoa {
+    padding: 0px;
     padding-top: 40px;
     font-family: Georgia;
     text-shadow: 2px 1px 3px #BFBFBF;
@@ -37,7 +97,3 @@
     clear:both;
 }
 
-#kickbuttmessage {
-    margin: 0px;
-    padding: 0px;
-}

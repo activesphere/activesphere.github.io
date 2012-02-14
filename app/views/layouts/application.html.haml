@@ -16,26 +16,36 @@
     %title
       ActiveSphere: - We care about your apps
   %body
+    .nav
+      %span.navlinks
+        %a{href: root_path} home
+      %span.navlinks
+        %a{href: about_us_path} about
+      %span.navlinks
+        %a{href: contact_path} letstalk
+      %span.navlinks
+        %a{href: careers_path} careers
+      %span.navlinks
+        %a{href: 'http://blog.activesphere.com/'} blog
+
+      %span.contact_details
+        %span.phone
+          phone:
+          %span.value
+            8095221530
+        %span.email
+          email:
+          %span.value
+            %a{href: "mailto:contact@activesphere.com"} contac@activesphere.com
+        
+        
     .page.homepage2
-      .nav
-        %span.navlinks
-          %a{href: root_path} home /
-        %span.navlinks
-          %a{href: about_us_path} about /
-        %span.navlinks
-          %a{href: contact_path} letstalk /
-        %span.navlinks
-          %a{href: careers_path} careers /
-        %span.navlinks
-          %a{href: 'http://blog.activesphere.com/'} blog 
-          
-          
       = yield
       
-      #footer
-        #logo
-          #logocover
-        #company &copy; 2012 ACTIVESPHERE
+    #footer
+      #logo
+        #logocover
+      #company &copy; 2012 ACTIVESPHERE
       
       
     
