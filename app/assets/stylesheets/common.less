@@ -64,7 +64,8 @@ body {
 
 .ctoa {
     padding: 0px;
-    padding-top: 40px;
+    margin: @baseline*2 0;
+    
     font-family: Georgia;
     text-shadow: 2px 1px 3px #BFBFBF;
     .aleft div {
@@ -97,3 +98,36 @@ body {
     clear:both;
 }
 
+.bio {
+    .aboutpage {
+        font-size: 1.3em;
+    }
+    margin: 20px auto;
+}
+
+div.cols2.bio div.col {
+    padding: 0;
+}
+
+.us {
+    .border-radius(3px);
+    .box-shadow(0 0 10px rgba(0, 0, 0, 0.15));
+    padding: 15px;
+    margin: 20px;
+    img {
+        height: 100px;
+        width: 100px;
+        float: left;
+    }
+    h2 {
+        padding: 5px 10px 5px 20px;
+        float: left;
+        div { padding-bottom: 10px; }
+    }
+    .clearfix;
+}
+
+.about-us-text {
+    margin: 20px;
+    line-height: 1.5em;
+}

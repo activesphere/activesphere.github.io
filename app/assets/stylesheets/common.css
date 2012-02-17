@@ -281,7 +281,7 @@ body {
 }
 .ctoa {
   padding: 0px;
-  padding-top: 40px;
+  margin: 40px 0;
   font-family: Georgia;
   text-shadow: 2px 1px 3px #BFBFBF;
 }
@@ -309,4 +309,46 @@ body {
 }
 .clear {
   clear: both;
+}
+.bio {
+  margin: 20px auto;
+}
+.bio .aboutpage {
+  font-size: 1.3em;
+}
+div.cols2.bio div.col {
+  padding: 0;
+}
+.us {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  margin: 20px;
+  zoom: 1;
+}
+.us img {
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+.us h2 {
+  padding: 5px 10px 5px 20px;
+  float: left;
+}
+.us h2 div {
+  padding-bottom: 10px;
+}
+.us:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+.about-us-text {
+  margin: 20px;
+  line-height: 1.5em;
 }
