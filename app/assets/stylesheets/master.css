@@ -9,14 +9,14 @@ body {
     
 }
 h1 {
- font-family: Oswald,sans-serif;
+    font-family: Georgia, Arial, sans-serif;
     font-size: 80px;
     font-weight: bold;
     line-height: 100%;
     margin: 0 0 0.1em;
     padding: 0;
     text-align: center;
-    text-shadow: 2px 3px 1px #777777;
+    text-shadow: 2px 1px 1px #777777;
 }
 h2{
     margin-bottom:0.3em;
@@ -808,7 +808,7 @@ span#railsbg {
     
     h2.aboutpage {
     font-weight:normal;
-    font-family:droid sans;
+    font-family: Georgia, Arial, sans-serif;
     text-align:left;
     }
 

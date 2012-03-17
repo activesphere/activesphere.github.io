@@ -128,19 +128,23 @@
 #reset .global-reset body {
   line-height: 1;
 }
-#reset .global-reset ol, #reset .global-reset ul {
+#reset .global-reset ol,
+#reset .global-reset ul {
   list-style: none;
 }
 #reset .global-reset table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-#reset .global-reset caption, #reset .global-reset th, #reset .global-reset td {
+#reset .global-reset caption,
+#reset .global-reset th,
+#reset .global-reset td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
-#reset .global-reset q, #reset .global-reset blockquote {
+#reset .global-reset q,
+#reset .global-reset blockquote {
   quotes: none;
 }
 #reset .global-reset q:before,
@@ -197,7 +201,8 @@
 #reset .reset-quotation {
   quotes: none;
 }
-#reset .reset-quotation:before, #reset .reset-quotation:after {
+#reset .reset-quotation:before,
+#reset .reset-quotation:after {
   content: "";
   content: none;
 }
@@ -265,7 +270,8 @@ body {
 .nav .contact_details span {
   color: #333333;
 }
-.nav .contact_details span .value, .nav .contact_details span a {
+.nav .contact_details span .value,
+.nav .contact_details span a {
   color: #60757b;
 }
 .page.homepage2 {
@@ -319,6 +325,15 @@ body {
 div.cols2.bio div.col {
   padding: 0;
 }
+.box {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  margin: 20px;
+}
 .us {
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -351,4 +366,34 @@ div.cols2.bio div.col {
 .about-us-text {
   margin: 20px;
   line-height: 1.5em;
+}
+.project > div {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  margin: 20px;
+  width: 70%;
+  padding-bottom: 25px;
+}
+.project > div:hover {
+  background-color: #d2d2d2;
+}
+.project h2 {
+  font-family: Georgia, Arial, sans-serif;
+  text-align: left;
+}
+.project h2 a {
+  font-size: 17px;
+  margin-left: 30px;
+  text-decoration: underline;
+}
+.project .description {
+  margin-left: 40px;
+}
+.project h3 {
+  font-family: Georgia, Arial, sans-serif;
+  text-align: left;
 }
