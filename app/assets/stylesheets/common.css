@@ -368,22 +368,23 @@ div.cols2.bio div.col {
 .box {
   -moz-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   padding: 15px;
   margin: 20px;
 }
 .us {
   -moz-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   padding: 15px;
   margin: 20px;
   width: 70%;
   zoom: 1;
+  background-color: #e3e3e3;
 }
 .us img {
   height: 100px;
@@ -415,9 +416,6 @@ div.cols2.bio div.col {
   clear: both;
   content: ".";
 }
-.us:hover {
-  background-color: #d2d2d2;
-}
 .about-us-text {
   margin: 20px;
   line-height: 1.5em;
@@ -425,16 +423,14 @@ div.cols2.bio div.col {
 .project > div {
   -moz-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   padding: 15px;
   margin: 20px;
   width: 70%;
   padding-bottom: 25px;
-}
-.project > div:hover {
-  background-color: #d2d2d2;
+  background-color: #e3e3e3;
 }
 .project h2 {
   font-family: Georgia, Arial, sans-serif;
