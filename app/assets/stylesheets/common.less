@@ -1,5 +1,9 @@
 @import "bootstrap.less";
 
+@bg: #EBEBEB;
+@nav-link-color: #60757B; // #90A2A7;
+@nav-link-color-hover: #333;
+
 .aright { float:right;}
 .aleft { float:left; }
 
@@ -11,13 +15,55 @@
     background-color: white;
 }
 
-@bg: #EBEBEB;
-@nav-link-color: #60757B; // #90A2A7;
-@nav-link-color-hover: #333;
+.normal-fonts {
+    font-family: Georgia, Arial, sans-serif;
+    font-weight:normal; 
+}
+.fancy-fonts {
+    font-family:La Belle Aurore, Arial,sans-serif; 
+    font-weight:normal; 
+}    
 
 body {
+    .normal-fonts;
     background-color: @bg;
 }
+
+p {
+    .normal-fonts;
+    line-height: 1.5em;
+}
+
+h1 { 
+    .normal-fonts;
+    font-size: 50px; 
+    font-weight: bold; 
+    margin: 20px;
+    text-align: center;
+    text-shadow: 2px 1px 1px #777777;
+    
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+h2 { 
+    margin-bottom:0.3em; 
+    .fancy-fonts;
+    font-size:25px; 
+    line-height:100%; 
+    text-align:center; 
+    letter-spacing:1px; 
+    margin: 15px;
+} 
+
+h3 { 
+    margin-bottom:0.2em; 
+    .fancy-fonts;
+    font-size:20px; 
+    line-height:100%; 
+    letter-spacing:1px; 
+} 
+
 
 .nav {
     text-shadow: 0 1px 1px #E2E7E8;
@@ -68,6 +114,9 @@ body {
     
     font-family: Georgia;
     text-shadow: 2px 1px 3px #BFBFBF;
+    line-height: 100%;
+    font-size: 75px;
+    
     .aleft div {
         font-size: 53px;
         padding-top: 106px;
@@ -98,13 +147,6 @@ body {
     clear:both;
 }
 
-.bio {
-    .aboutpage {
-        font-size: 1.3em;
-    }
-    margin: 20px auto;
-}
-
 div.cols2.bio div.col {
     padding: 0;
 }
@@ -118,17 +160,34 @@ div.cols2.bio div.col {
 
 .us {
     .box;
+    width: 70%;
     img {
         height: 100px;
         width: 100px;
         float: left;
     }
-    h2 {
-        padding: 5px 10px 5px 20px;
+    > div {
         float: left;
-        div { padding-bottom: 10px; }
+        width: 540px;
+        padding: 5px 10px 5px 20px;
+        .info {
+            span {
+                font-size: 20px;
+            }
+            a {
+                margin-left: 15px;
+            }
+            margin-bottom: 10px;
+        }
+        .rant {
+            line-height: 1.5em;
+            color: #777;
+        }
     }
     .clearfix;
+    &:hover {
+        background-color: darken(@bg, 10%);
+    }
 }
 
 .about-us-text {
@@ -165,5 +224,11 @@ div.cols2.bio div.col {
     h3 {
         font-family: Georgia, Arial, sans-serif;
         text-align: left;
+    }
+}
+
+.clients {
+    > div {
+        margin-left: 100px;
     }
 }
