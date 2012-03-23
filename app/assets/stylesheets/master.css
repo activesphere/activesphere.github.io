@@ -555,19 +555,19 @@ span#nodejsbg{
     opacity:0;
 }
 
-span#shufflrbg{
-    background-image:url("/assets/shufflr-color.png");
+div#altheabg{
+    background-image:url("/assets/althea-systems.png");
     margin-right:30px;
-    height:50px;
-    width:138px;
+    height:31px;
+    width:100px;
     float:left;
 	
 }
 
-#shufflr{
-    background-image:url("/assets/shufflr-color.png");
-    height:50px;
-    width:138px;
+#althea{
+    background-image:url("/assets/althea-systems.png");
+    height:31px;
+    width:100px;
     margin-right:4px;
     float:left;
     opacity:1.0;
@@ -579,13 +579,13 @@ span#shufflrbg{
 	
 }
 
-#shufflr:hover {
+#althea:hover {
 	margin-right:4px;
 	height:50px;
     opacity:0;
 }
 
-span#impactbg{
+div#impactbg{
     background-image:url("/assets/impactdialing-color.png");
     margin-right:30px;
     height:40px;
@@ -614,7 +614,7 @@ span#impactbg{
 	height:40px;
     opacity:0;
 }
-span#brandscopebg{
+div#brandscopebg{
     background-image:url("/assets/brandscope-color.png");
     margin-right:30px;
     height:60px;
@@ -644,7 +644,7 @@ span#brandscopebg{
     opacity:0;
 }
 
-span#mphoriabg{
+div#mphoriabg{
     background-image:url("/assets/mphoria-color.png");
     margin-right:30px;
     height:40px;
