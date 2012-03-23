@@ -561,7 +561,7 @@ div#altheabg{
     height:31px;
     width:100px;
     float:left;
-	
+/*  border: 5px solid red;*/
 }
 
 #althea{
@@ -591,7 +591,7 @@ div#impactbg{
     height:40px;
     width:200px;
     float:left;
-	
+/*  border: 5px solid red;*/
 }
 
 #impact{
@@ -620,7 +620,7 @@ div#brandscopebg{
     height:60px;
     width:150px;
     float:left;
-	
+/*  border: 5px solid red;*/
 }
 
 #brandscope{
@@ -650,7 +650,7 @@ div#mphoriabg{
     height:40px;
     width:150px;
     float:left;
-	
+/*  border: 5px solid red;*/
 }
 
 #mphoria{
