@@ -391,6 +391,14 @@ div.cols2.bio div.col {
   width: 100px;
   float: left;
 }
+
+img.icons {
+  height: 15px;
+  width: 15px;
+  float: right;
+  padding-right: 2em;
+}
+
 .us > div {
   float: left;
   width: 540px;
