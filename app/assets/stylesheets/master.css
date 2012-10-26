@@ -301,42 +301,6 @@ div.cols div.col:first-child {
     .fright{float:right !important;}    
 }
 
-/* Header */
-.header {
-  width: initial;
-  height: 70px;
-  padding: 0 20px 0 20px;
-  vertical-align: middle;
-  background-color: #222222;
-}
-  .header .contact_details {
-    color: #9e9e9e;
-    float: right;
-    height: 70px;
-    line-height: 70px;
-    margin-right: 120px;
-  }
-
-    .header .contact_details .phone, .header .contact_details .email {
-      padding-left: 40px;
-    }
-
-  .header .logo {
-    height: 70px;
-    font-size: 24px;
-    line-height: 70px;
-    margin-left: 120px;
-    padding-left: 60px;
-    background: url(/assets/logo-small.png) left center no-repeat;
-    text-transform: uppercase;
-  }
-    .header .logo .first_half {
-      color: #9e9e9e;
-    }
-
-    .header .logo .second_half {
-      color: #349ef6;
-    }
 
 /* Navigation */
     
