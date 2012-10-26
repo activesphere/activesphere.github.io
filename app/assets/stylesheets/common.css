@@ -42,7 +42,7 @@ h3{margin-bottom:0.2em;font-family:La Belle Aurore,Arial,sans-serif;font-weight:
 .clear{clear:both;}
 div.cols2.bio div.col{padding:0;}
 .box{-moz-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.15);-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.15);box-shadow:0 0 5px rgba(0, 0, 0, 0.15);padding:15px;margin:20px;}
-.us{-moz-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.15);-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.15);box-shadow:0 0 5px rgba(0, 0, 0, 0.15);padding:15px;margin:20px;width:70%;zoom:1;background-color:#e3e3e3;}.us img{height:100px;width:100px;float:left;}
+.us{-moz-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.15);-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.15);box-shadow:0 0 5px rgba(0, 0, 0, 0.15);padding:15px;margin:20px;width:70%;zoom:1;background-color:#e3e3e3;}.us img{height:100px;width:100px;float:left;}.us img.icons{padding:4px;width:15px;height:15px;}
 .us>div{float:left;width:540px;padding:5px 10px 5px 20px;}.us>div .info{margin-bottom:10px;}.us>div .info span{font-size:20px;}
 .us>div .info a{margin-left:15px;}
 .us>div .rant{line-height:1.5em;color:#777;}
