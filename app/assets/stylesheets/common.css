@@ -38,6 +38,7 @@ h3{margin-bottom:0.2em;font-family:La Belle Aurore,Arial,sans-serif;font-weight:
 .header{background-color:#222;padding:0;}.header .content{width:960px;padding:20px;background-color:white;padding:0 20px;background-color:#222;margin:0 auto;}.header .content .logo{margin-left:0px;font-size:24px;line-height:70px;padding-left:60px;background:url(/assets/logo-small.png) left center no-repeat;text-transform:uppercase;}.header .content .logo .first_half{color:#9e9e9e;}
 .header .content .logo .second_half{color:#349ef6;}
 .header .content .contact_details{margin-right:0px;float:right;padding:20px;color:gray;}.header .content .contact_details a{color:lightGrey;}
+#tech{padding-left:98px;}
 .ctoa{padding:0px;margin:10px auto;width:795px;font-family:Georgia;text-shadow:2px 1px 3px #BFBFBF;line-height:100%;font-size:54px;}.ctoa .aleft div{font-size:53px;padding-top:75px;}
 .ctoa .rbrace{font-size:178px;font-family:sans-serif;line-height:1;color:rgba(0, 0, 0, 0.2);text-shadow:0 1px 0 rgba(255, 255, 255, 0.6);height:245px;padding-left:35px;float:left;}
 .ctoa .aright div{padding:5px;}
