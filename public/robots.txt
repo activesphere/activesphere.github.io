@@ -1,4 +1,0 @@
-User-agent: *
-
-Sitemap: http://www.activesphere.com/sitemap.xml
-
