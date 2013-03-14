@@ -1,8 +1,0 @@
---- 
-layout: post
-title: Sharding Options with CouchDb
-published: true
----
-<p>Even though CouchDb provides Seemless Replication, one thing we missed with Couch is the ability to shard.</p>
-<p>We are not worried about one machine going down, because replication takes care of that. We have couple of problems with this sort of archtecture. We need to have all the application data on all the machines. This has problems of it's own, In our experience we have seen much slower write performance as the number of documents increase.</p>
-<p>Over a period of time we would be building a lot of data that we probaby can't host on a single CouchDb instance. Also We have noticed the slowdown of CouchDb for writes as the number of documents increase,</p>

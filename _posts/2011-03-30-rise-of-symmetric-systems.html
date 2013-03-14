@@ -2,6 +2,11 @@
 layout: post
 title: Rise of Symmetric Systems
 published: true
+categories: 
+- architecture
+- cloud
+- distributed
+- nosql
 ---
 <p>For a long time we have been building software in a very standard fashion, put a web server in the front, a big application server and a standard backing database. This is the standard layered architecture. Most application stacks Rails or .Net for example assume a single database server, a few application servers, some web servers and a load balancer.</p>
 <p>But as 'webscale' and 'elastic scaling', 'commodity hardware' have become buzzwords, there has been a quiet change in the way systems are being designed. Some people are calling it 'Symmetric Systems'.</p>
@@ -9,7 +14,7 @@ published: true
 <p><span style="font-size: xx-small;"><a href="http://www.flickr.com/photos/southerncomfort/95517023/" title="Symmetry by Southern_Comfort, on Flickr"><img src="http://farm1.static.flickr.com/21/95517023_c7ce43d0a4.jpg" height="500" alt="Symmetry" width="375" /></a></span></p>
 <p><span style="font-size: xx-small;"><span style="font-size: xx-small;">photo credit: </span></span><span style="font-size: x-small;"><a href="http://www.flickr.com/photos/southerncomfort/95517023/" target="_blank">southerncomfort</a></span></p>
 <p>One of the systems I am currently working on, is symmetric. It has a very simple model as you can see from the figure below, each request is passed by the ELB to Nginx on any machine and passed all the way to Rails that interacts with CouchDB. The data is synchronized by CouchDB instances via replication.</p>
-<p>[[posterous-content:ockHbgxdnloEeDkItpEw]]</p>
+<p><img src="/images/OnemachineArchitecture1.png" alt="Rise of Symmetric Systems" /></p>
 <p>This has been&nbsp; a thought shift for me, where in my previous life, I've been scaling systems by breaking it down into smaller components, that can be hosted individually. For example, in the ticketing system that I had worked on before, the booking service was hosted on one machine, the customer service was on another machine and the ticketing service on another. That way the load could be distributed across the application. Really? What about the network call overhead across the services? What about complexity of network of interactions? Remember <a href="http://en.wikipedia.org/wiki/Metcalfe%27s_law">Metcalfe's law</a>. There are ways to deal with those things but that leads to inevitable increase of complexity.</p>
 <p><strong><span style="font-size: medium;">Benefits</span></strong></p>
 <p><span style="font-size: medium;">Elastic scaling:</span></p>

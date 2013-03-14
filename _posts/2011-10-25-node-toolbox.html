@@ -1,0 +1,30 @@
+--- 
+layout: post
+title: Node toolbox
+published: true
+categories: 
+- node-toolbox
+- node.js
+- nodetoolbox
+- toolbox
+- toolbox.no.de
+---
+<p><img src="/images/packages_for_categories.png" alt="Node toolbox" /></p>
+<div><span>While searching for a node client for CouchDb, we came across quite a few node.js packages. 6 to be precise, to figure out the best fit for our project, we had to do a fair bit of Googleing and look at </span><a href="http://github.com/">Github</a> to see which ones are active and better fit for the project.</div>
+<p />
+<div>A lot of projects are defunct, have very little documentation or just experimental. It would be good to go to one place to find the right module and a general feeling of how good the module is.&nbsp;Turns out there is one, the <a href="http://about:blank">Node Modules Wiki page</a>. It shows simple wiki page &nbsp;that lists modules by categories.</div>
+<p />
+<div>Coming from the Ruby world which has a similar vibrant community and tons of gems, we felt there needed to be a version of the awesome <a href="http://www.ruby-toolbox.com/">Ruby Toolbox</a>&nbsp;</div>
+<p>So over a weekend we build a simple version of it and called it <span style="font-size: large;"><a href="http://toolbox.no.de/">Node toolbox</a></span>.</p>
+<div><span>We pulled all the information from the Node Modules page &nbsp;and &nbsp;built the category mapping of each NPM Module. Whereas </span><a href="http://registry.npmjs.org/">NPM Registry</a> has almost 4500 packages, the <a>Node Modules Wiki</a> just lists &nbsp;about 1000 of them.</div>
+<div><br /><a href="http://registry.npmjs.org/">NPM Registry</a> does contain tags filled in by the package developers, but again only a few of the packages had this information.<p /> There were more than 500 tags, from these we created about 100 categories, but merging them into one category, adding new ones or completely eliminating things we thought did not make sense. Along the way we removed duplicate tags like test/tests/Testing and so on.</div>
+<p />
+<p><img src="/images/ranked_packages.png" alt="Node toolbox" /></p>
+<p><span style="font-family: Times; font-size: medium;"> </span></p>
+<div><span>After putting the modules into their categories, we looked up github for the repository information, stuff like Watchers and Forks. Which in our opinion is a good indicator of the Project itself. And are currently using that to build our module ranking .</span></div>
+<p><img src="/images/node-toolbox.png" alt="Node toolbox" /></p>
+<div>There are a lot of things missing now, The categorization and the categories themselves is arbitrary. We&rsquo;d like owners of modules to categorize them correctly.</div>
+<p />
+<div>The choice of ranking the modules on github watchers/forks is also arbitrary. We could if it were available somewhere, leverage npm module downloads. User Feedback, repository information such as Open Issues Last commit time, Availability of tests, build status and so on.</div>
+<p />
+<div>As usual, feedback is appreciated and can be tweeted towards <a href="https://twitter.com/#!/nodetoolbox">@nodetoolbox</a>.</div>
