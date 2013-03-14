@@ -35,11 +35,12 @@ We chose Joyent's No.de which remained our final deployment platform. We briefly
 
 It is currently hosted [here](http://activenode.no.de/).
 
-We used [Redis](http://redis.io/) for our storage, and later it turned out that it was a good choice, simpler storage format was a win. We used the [Redis's monitor](http://redis.io/commands/monitor" target="_blank) feature to build the [live map](http://activenode.no.de/hosts/activenode.no.de/live_map). We'd pick the new request's Remote host and translate it to the city of origin which was plotted on the map. This gave us an awesome integration with [socket.io](http://socket.io/). I am still at a loss of how we would have implemented it in any other database( couchdb's changes would also work)
+We used [Redis](http://redis.io/) for our storage, and later it turned out that it was a good choice, simpler storage format was a win. We used the [Redis's monitor](http://redis.io/commands/monitor") feature to build the [live map](http://activenode.no.de/hosts/activenode.no.de/live_map). We'd pick the new request's Remote host and translate it to the city of origin which was plotted on the map. This gave us an awesome integration with [socket.io](http://socket.io/). I am still at a loss of how we would have implemented it in any other database( couchdb's changes would also work)
 
 We also used the awesome [CoffeeScript](http://coffeescript.org/) to write the code, both of us were not CoffeeScript experts, but it was never a cause of any weird issue.
 
-We published a npm module [activenode-monitor](http://search.npmjs.org/#/activenode-monitor" target="_blank) (npm modules are equivalent of ruby gems) for usage in the express applications. But since it needed to talk to a central Redis on the no.de machine, which was not accessible from outside the machine(no.de has weird ssh setup) we could not get it to work. It took us a lot of time to realize that we could just use the free Redis plan of [redistogo](http://www.redistogo.com). And it just worked wonderfully well once we integrated it.
+We published a npm module
+[activenode-monitor](http://search.npmjs.org/#/activenode-monitor") (npm modules are equivalent of ruby gems) for usage in the express applications. But since it needed to talk to a central Redis on the no.de machine, which was not accessible from outside the machine(no.de has weird ssh setup) we could not get it to work. It took us a lot of time to realize that we could just use the free Redis plan of [redistogo](http://www.redistogo.com). And it just worked wonderfully well once we integrated it.
 
 We store a lot of interesting client/server information into redis(though we did not get the time to implement views for all of it) and we are filling up the 512K of memory available on the free plan in about a day. So I need to flush out all the data almost every day.
 
