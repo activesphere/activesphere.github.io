@@ -1,0 +1,63 @@
+---
+layout: default
+title: the ActiveSphere blog
+---
+%h1 Things we built.
+
+%div.our-hacks
+  %div.project.toolbox
+    %div
+      %h2
+        ToolBox
+        %a{:href => "http://toolbox.no.de/"} toolbox.no.de
+      %div.description
+        The best way to find modules you need in the 
+        %a{:href => "http://nodejs.org/"} Node.js 
+        Ecosystem. We built it to scratch our own itch with the myriad 
+        %a{:href => "http://nodejs.org/"} Node.js
+        modules in different state of development and abandonment, but the community seemed to have liked it and we have open sourced the code on
+        %a{:href => "https://github.com/activesphere/nodetoolbox"}  Github.
+        %br
+        It provides the users the ability to categorize, search and look for the most interesting and recommended modules in the rapidly growing node.js ecosystem
+
+  %div.project.fakedynamo
+    %div
+      %h2
+        FakeDynamo
+        %a{:href => "https://github.com/ananthakumaran/fake_dynamo"} github.com/ananthakumaran/fake_dynamo
+      %div.description
+        An In-memory dynamodb emulator for
+        %a{:href => "http://aws.amazon.com/dynamodb/"} Amazon DynamoDB.
+        We build it to help us develop applications on  dynamodb in development and test environments without incurring the costs and the latencies. This also allows us to host the non production versions of the application outside of EC2.
+
+  %div.project.devsync
+    %div
+      %h2
+        devsync
+        %a{:href => "https://github.com/ciju/devsync"} github.com/ciju/devsync
+      %div.description
+        A chrome devtools (WebInspector) hack, which allows your css/javascript edits from WebInspector to be saved directly to the localhost files. It was a winner at 
+        %a{:href => "http://developer.yahoo.com/blogs/ydn/posts/2011/08/open-hack-india-they-hacked-we-won-them-over/"} Yahoo! Hacknight.
+
+  %div.project.redis-proxy
+    %div
+      %h2
+        Redis Proxy
+        %a{:href => "https://github.com/sreeix/redis-proxy"} github.com/sreeix/redis-proxy
+      %div.description
+        It is the HAProxy of 
+        %a{:href => "http://redis.io/"} Redis servers.
+        Redis-proxy proxies the Redis master-slave(s) farm, and automagically manage the the failures of slaves and master, with zero downtime. Redis Replication dance as it is usually know, is avoided with such a setup.
+        %br
+        It also lets you scale your redis subsystem by splitting reads to slaves and writes (going to master). It is a big win for scaling and Availability of redis servers
+
+  %div.project.couchup
+    %div
+      %h2
+        Couchup
+        %a{:href => "https://github.com/sreeix/couchup"} github.com/sreeix/couchup
+
+      %div.description
+        Couchup is an interactive Coucbdb console. It allows command line access to 
+        %a{:href => "http://couchdb.apache.org/"} CouchDB databases.
+        It has a lot of nifty features that Couchdb Futon does not provide. Useful for Programmers wanting to run quick queries and test data.

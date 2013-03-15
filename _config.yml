@@ -1,0 +1,10 @@
+auto: true
+permalink: /blog/:year/:month/:day/:title
+pygments: true
+server: true
+production: false
+category_dir: /blog/category
+exclude:
+- README.md
+- Rakefile
+- .gitignore

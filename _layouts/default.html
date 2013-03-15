@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='L_hGWN3oT-fBOYKgOIM2HQ9k4bYwgawmHNJcnVzTy9Y' name='google-site-verification'>
+    <meta content='Ruby Rails Web Development Bangalore India' name='title'>
+    <meta content='Ruby on Rails developers. Contact ActiveSphere for custom ruby on rails development in Bangalore, India' name='description'>
+    <meta content='Ruby Rails Web Development RoR RubyOnRails Ruby on Rails Nodejs Bangalore India offshore application development scaling appdev ' name='keywords'>
+    <meta content='index, follow' name='robots'>
+    <meta content='initial-scale=1.0,width=device-width' name='viewport'>
+    <meta name='google' value='notranslate'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald|Droid+Sans|La+Belle+Aurore|Gabriela|Cutive+Mono' rel='stylesheet' type='text/css'>
+    <link href='/assets/master.css' media='screen' rel='stylesheet' type='text/css'>
+    <link href='/assets/common.css' media='screen' rel='stylesheet' type='text/css'>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+    {% if site.production %}
+    {% include olark_chat.html %}
+    {% endif %}
+    <title>
+      ActiveSphere: - We care about your apps
+    </title>
+  </head>
+  <body>
+    <div class='header'>
+      <div class='content'>
+        <span class='contact_details'>
+          <span class='phone'>
+            Phone:
+            <span class='value'>
+              <a href='tel:+91 9663681428'>
+                +91 9663681428
+              </a>
+            </span>
+          </span>
+          <span class='email'>
+            Email:
+            <span class='value'>
+              <a href='mailto:contact@activesphere.com'>
+                contact@activesphere.com
+              </a>
+            </span>
+          </span>
+        </span>
+        <div class='logo'>
+          <a href='/'>
+            <span class='first_half'>Active</span>
+            <span class='second_half'>Sphere</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class='nav'>
+      <span>
+        <a href='/'>home</a>
+      </span>
+      <span>
+        <a href='/hacks.html'>hacks</a>
+      </span>
+      <span>
+        <a href='/contact.html'>contact</a>
+      </span>
+      <span>
+        <a href='/about.html'>about</a>
+      </span>
+      <span>
+        <a href='/careers.html'>careers</a>
+      </span>
+      <span>
+        <a href='/posts.html'>blog</a>
+      </span>
+    </div>
+    <div class='page homepage2'>
+      {{content}}
+    </div>
+    <div class='footer'>
+      <div class='company'>&copy; 2012 ACTIVESPHERE</div>
+    </div>
+    {% if site.production %}
+    <script>
+       var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-10221263-10']);
+       _gaq.push(['_trackPageview']);
+      
+       (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+    </script>
+    {% endif %}
+  </body>
+</html>

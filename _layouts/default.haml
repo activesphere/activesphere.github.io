@@ -1,0 +1,82 @@
+!!! Strict
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "L_hGWN3oT-fBOYKgOIM2HQ9k4bYwgawmHNJcnVzTy9Y", :name => "google-site-verification"}/
+    %meta{:content => "Ruby Rails Web Development Bangalore India", :name => "title"}/
+    %meta{:content => "Ruby on Rails developers. Contact ActiveSphere for custom ruby on rails development in Bangalore, India", :name => "description"}/
+    %meta{:content => "Ruby Rails Web Development RoR RubyOnRails Ruby on Rails Nodejs Bangalore India offshore application development scaling appdev ", :name => "keywords"}/
+    %meta{:content => "index, follow", :name => "robots"}/
+    %meta{:name => 'viewport', :content => "initial-scale=1.0,width=device-width"}
+
+    %meta{:name => "google", :value => "notranslate"}
+    
+    %link{:href => 'http://fonts.googleapis.com/css?family=Oswald|Droid+Sans|La+Belle+Aurore|Gabriela|Cutive+Mono', :rel => 'stylesheet', :type => 'text/css' }
+    %link{:href => "/assets/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/common.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    
+    %script{:type => "text/javascript",
+            :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+      
+    -# = csrf_meta_tag
+    -# = javascript_include_tag :application
+    -# = render :partial => "home/olark_chat"
+    
+    {% if site.production %}
+    {% include olark_chat.html %}
+    {% endif %}
+
+    %title
+      ActiveSphere: - We care about your apps
+  %body
+    .header
+      .content
+        %span.contact_details
+          %span.phone
+            Phone:
+            %span.value
+              %a{:href => "tel:+91 9663681428"}
+                +91 9663681428
+          %span.email
+            Email:
+            %span.value
+              %a{:href => "mailto:contact@activesphere.com"}
+                contact@activesphere.com
+        .logo
+          %a{:href => '/'}
+            %span.first_half Active
+            %span.second_half Sphere
+
+    .nav
+      %span
+        %a{:href => '/'} home
+      %span
+        %a{:href => '/hacks.html'} hacks
+      %span
+        %a{:href => '/contact.html'} contact
+      %span
+        %a{:href => '/about.html'} about
+      %span
+        %a{:href => '/careers.html'} careers
+      %span
+        %a{:href => '/posts.html'} blog
+        
+    .page.homepage2
+      {{content}}
+      
+    .footer
+      .company &copy; 2012 ACTIVESPHERE
+    -# = yield(:javascript)
+
+    {% if site.production %}     
+    :javascript
+       var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-10221263-10']);
+       _gaq.push(['_trackPageview']);
+
+       (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+    {% endif %}     

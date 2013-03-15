@@ -1,0 +1,13 @@
+---
+layout: default
+title: the ActiveSphere blog
+---
+%h2 archive
+%ul.archive
+  {% for post in site.posts %}
+  %li
+    %abbr.on {{ post.date | date_to_string }}
+    %a{:href => "{{ post.url }}"} {{ post.title }} →
+    %abbr.by by {{ post.author }}
+  {% endfor %}
+
