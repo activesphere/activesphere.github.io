@@ -286,7 +286,6 @@ h3 {
 }
 .nav {
   text-shadow: 0 1px 1px #E2E7E8;
-  font-family: 'Cutive Mono';
   font-size: 0.9em;
   margin: 0 auto;
   float: none;
@@ -300,10 +299,6 @@ h3 {
 }
 .nav span a {
   text-transform: uppercase;
-  color: #60757b;
-}
-.nav span a:hover {
-  color: #333333;
 }
 .nav .contact_details {
   float: right;
@@ -313,10 +308,9 @@ h3 {
   padding-right: 10px;
 }
 .nav .contact_details span {
-  color: #333333;
+  color: gray;
 }
-.nav .contact_details span .value,
-.nav .contact_details span a {
+.nav .contact_details a {
   color: #60757b;
 }
 .page.homepage2 {
@@ -356,16 +350,15 @@ h3 {
 }
 .header .content .contact_details {
   margin-right: 0px;
-  font-family: 'Cutive Mono';
   float: right;
   padding: 20px;
-  color: #8e8e8e;
+  color: Gray;
 }
 .header .content .contact_details .email {
   padding-left: 15px;
 }
 .header .content .contact_details a {
-  color: #0095c3;
+  color: lightGrey;
 }
 .footer {
   border-top: 1px solid #c7c7c7;
