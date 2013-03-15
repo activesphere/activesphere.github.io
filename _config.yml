@@ -2,7 +2,7 @@ auto: true
 permalink: /blog/:year/:month/:day/:title
 pygments: true
 server: true
-production: false
+production: true
 category_dir: /blog/category
 exclude:
 - README.md
