@@ -11,7 +11,7 @@ title: the ActiveSphere blog
     %abbr.by by {{ post.author }}
 
     {% if post.excerpt %}
-    %summary
+    %div{ :class => "summary" }
       {{ post.excerpt | markdownify }}
       %a{:href => "{{ post.url }}", :class => "more"} more &raquo;
     {% endif %}

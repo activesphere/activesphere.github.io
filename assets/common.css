@@ -623,15 +623,15 @@ a[rev="footnote"] {
 .footnotes {
   font-size: 0.8em;
 }
-summary {
+.summary {
   padding: 20px;
   width: 700px;
   font-size: 1.2em;
   background-color: #f2f2f2;
 }
-summary p {
+.summary p {
   margin-bottom: 0;
 }
-summary .more {
+.summary .more {
   float: right;
 }
