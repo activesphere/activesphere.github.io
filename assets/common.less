@@ -332,6 +332,7 @@ h2.frontpage {
       width: 600px;
       margin: 0 0 20px 0;
       border-bottom: 1px dotted #c6c6c6;
+      padding-bottom: 10px;
    }
    .post-content {
       width: 600px;
@@ -386,7 +387,7 @@ h2.frontpage {
    }
    
    li {
-      padding: 5px 0 15px 0;
+      margin: 5px 0 15px 0;
    }
 
    a {
@@ -401,5 +402,33 @@ h2.frontpage {
    a {
       padding: 5px;
       background-color: #e2e2e2;
+   }
+}
+
+a[rel="footnote"], a[rev="footnote"] {
+   vertical-align: super;
+   text-decoration: none;
+}
+a[rev="footnote"] {
+   display:block;
+   text-align:right;
+   margin-top:-3em;
+   border-bottom: 0px;
+}
+.footnotes {
+   font-size:0.8em;
+}
+
+summary {
+   padding: 20px;
+   width: 700px;
+   font-size: 1.2em;
+   background-color: #f2f2f2;
+   p {
+      margin-bottom: 0;
+   }
+
+   .more {
+      float: right;
    }
 }

@@ -9,5 +9,11 @@ title: the ActiveSphere blog
     %abbr.on {{ post.date | date_to_string }}
     %a{:href => "{{ post.url }}"} {{ post.title }} →
     %abbr.by by {{ post.author }}
+
+    {% if post.excerpt %}
+    %summary
+      {{ post.excerpt | markdownify }}
+      %a{:href => "{{ post.url }}", :class => "more"} more &raquo;
+    {% endif %}
   {% endfor %}
 
