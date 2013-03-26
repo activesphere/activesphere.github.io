@@ -119,7 +119,11 @@ only way to know the end of connection, is if the TCP connection is
 closed. In other words, we won't be able use the same TCP connection to tunnel
 multiple TCP connections.
 
-[^1]: There are other options also, like [tunnlr](https://tunnlr.com/), [nodejs localtunnel](http://shtylman.com/localtunnel/) etc.
+[^1]: There are other options also, like
+[tunnlr](https://tunnlr.com/), [nodejs
+localtunnel](http://shtylman.com/localtunnel/),
+[pagekite](http://pagekite.net), [forwardhq](https://forwardhq.com/)
+etc. 
 
 [^2]: I hear its coming in a few weeks.
 
