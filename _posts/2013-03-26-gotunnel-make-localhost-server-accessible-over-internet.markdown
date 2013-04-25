@@ -1,19 +1,20 @@
 --- 
 layout: post
 title: "Gotunnel: make localhost server accessible over internet"
+description: Gotunnel allows you to share server running on localhost, over the net. Supports http, https and websocket.
 published: true
 author: ciju
 categories: [Golang, localtunnel, tech]
 ---
 
-{% excerpt %} [Gotunnel](github.com/ciju/gotunnel) allows you to share
+{% excerpt %} [Gotunnel](http://github.com/ciju/gotunnel) allows you to share
 server running on localhost, over the
 net. [localtunnel](http://progrium.com/localtunnel/) [^1] allows you
 to do the same, but at the time of this writing, didn't support
 WebSocket[^2]. And well, we wanted to do a project in
 [Golang](http://golang.org). This blog post tries to explain the
 implementation/design decisions behind Gotunnel architecture. 
-{% endexcerpt %} Check the [Github repo](github.com/ciju/gotunnel) for
+{% endexcerpt %} Check the [Github repo](http://github.com/ciju/gotunnel) for
 installation and usage instructions.
 
 ## The problem ##
@@ -27,12 +28,13 @@ comes in. It makes the local server accessible over an IP (and port),
 on the internet.
 
 Core idea of the solution is that a client from localhost could keep a
-connection with a server on the internet. This connection could be
-used by server to forward requests. Gotunnel utilizes this by running
-a client on localhost. This Gotunnel Client connects to the Gotunnel
-Server accessible on the net. It also connects to the App
-server. Gotunnel Clients role is to receive requests from Gotunnel
-Server, and forward them to App Server.
+connection with a server on the internet. 
+
+This connection could be used by server to forward requests. Gotunnel
+utilizes this by running a client on localhost. This Gotunnel Client
+connects to the Gotunnel Server accessible on the net. It also
+connects to the App server. Gotunnel Clients role is to receive
+requests from Gotunnel Server, and forward them to App Server.
 
 Lets start with a (slightly incomplete) picture of the whole
 architecture. (Except for small changes, picture is copied from
@@ -125,7 +127,7 @@ localtunnel](http://shtylman.com/localtunnel/),
 [pagekite](http://pagekite.net), [forwardhq](https://forwardhq.com/)
 etc. 
 
-[^2]: I hear its coming in a few weeks.
+[^2]: Now it does.
 
 [^3]: WebSocket starts as a HTTP connection. So, the process of getting HOST is same for both.
 

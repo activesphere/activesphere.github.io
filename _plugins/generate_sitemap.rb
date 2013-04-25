@@ -16,6 +16,8 @@
 
 require 'pathname'
 
+require 'pry'
+
 module Jekyll
 
 
@@ -80,39 +82,42 @@ module Jekyll
       result = ''
 
       # First, try to find any stand-alone pages.
-      site.pages.each { |page|
+      # site.pages.each { |page|
 
-        path = page.subfolder + '/' + page.name
+      #   path = page.subfolder + '/' + page.name
 
-        # Skip files that don't exist yet (e.g. paginator pages)
-        next unless FileTest.exist?(File.join(site.source, path))
+      #   # Skip files that don't exist yet (e.g. paginator pages)
+      #   next unless FileTest.exist?(File.join(site.source, path))
 
-        mod_date = File.mtime(site.source + path)
+      #   mod_date = File.mtime(site.source + path)
 
-        # Use the user-specified permalink if one is given.
-        if page.permalink
-          path = page.permalink
-        else
-          # Be smart about the output filename.
-          path.gsub!(/.md$/, '.html')
-          path.gsub!(/.haml$/, '.html')
-        end
+      #   # Use the user-specified permalink if one is given.
+      #   if page.permalink
+      #     path = page.permalink
+      #   else
+      #     # Be smart about the output filename.
+      #     path.gsub!(/.md$/, '.html')
+      #     path.gsub!(/.haml$/, '.html')
+      #   end
 
-        # Ignore SASS, SCSS, and CSS files
-        next if path =~ /.(sass|scss|css)$/
+      #   # Ignore SASS, SCSS, and CSS files
+      #   next if path =~ /.(sass|scss|css)$/
 
-        # Remove the trailing 'index.html' if there is one, and just output the folder name.
-        path = path[0..-11] if path =~ /\/index.html$/
+      #   # Remove the trailing 'index.html' if there is one, and just output the folder name.
+      #   path = path[0..-11] if path =~ /\/index.html$/
 
-        result += entry(path, mod_date, get_attrs(page), site) unless path =~ /error/
-      }
+      #   result += entry(path, mod_date, get_attrs(page), site) unless path =~ /error/
+      # }
 
       # Next, find all the posts.
       posts = site.site_payload['site']['posts']
       for post in posts do
+        # binding.pry
+        next if not post.url.include? "blog"
         url     = post.url
         url     = '/' + url unless url =~ /^\//
         url     = url[0..-11] if url=~/\/index.html$/
+        url     = "http://" + site.config["host"] + url
         result += entry(url, post.date, get_attrs(post), site)
       end
 

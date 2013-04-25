@@ -1,8 +1,10 @@
 auto: true
+host: blog.activesphere.com
 permalink: /blog/:year/:month/:day/:title
 pygments: true
 server: true
 production: true
+title: ActiveSphere - India based Ruby Rails JavaScript consulting
 category_dir: /blog/category
 exclude:
 - README.md
