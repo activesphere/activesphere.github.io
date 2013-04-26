@@ -13,7 +13,7 @@ end
 
 desc 'Clean temporary files and run the server'
 task :compile => :clean do
-  system "jekyll"
+  system "jekyll --no-server"
 end
 
 desc 'generate the jekyll site and then copy to staging area'
@@ -28,7 +28,7 @@ task :deploy, [:commit_message] => :generate do |t, args|
     puts "Committing and pushing with commit message: #{args.commit_message}"
     system "cd _site && git add . && git commit -m \"#{args.commit_message}\" && git push"
     system "git add _site"
-    system "git co -m \"updating submodule reference to master\""
+    system "git commit -m \"updating submodule reference to master\""
   else
     puts "Missing commit_message"
   end
