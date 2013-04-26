@@ -28,7 +28,7 @@ Everybody filled in the sheet, printed it and turned it in anonymously. (We are 
 
 We eventually chose to average the recommended salaries for each person to arrive at the final salary.
 
-Had we kept it non-anonymous, we could have ignored everybody's numbers and kept what each person gave himself the salary, because as you might notice, we have subversively asked everybody what they wanted (since in giving others the salary you are eventually deciding yours too). We also could have used a version that gave higher weight to self salary recommendation but still use peers' feedback. We are not sure if either one was better than the other. We'll keep experimenting.
+Had we kept it non-anonymous, we could have ignored everybody's numbers and kept what each person gave himself the salary, because as you might notice, we have subversively asked everybody what they wanted (since in giving others the salary you are eventually deciding yours too). We also could have used a version that gave higher weight to self salary recommendation but still use peers' feedback. We are not sure if either one was better than the other. We'll keep experimenting as there are different sub experiments to run from here
 
 ### What have we learnt
 
