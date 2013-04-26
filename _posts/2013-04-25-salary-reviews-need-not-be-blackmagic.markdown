@@ -9,6 +9,7 @@ categories: [startu, nontech, random]
 
 {% excerpt %} When we started Activesphere we were very sure that we wanted to have a an open salary system, ie. everybody knows everybody's salaries. We have stuck to it, and it seems to have worked well for us for the last 3 years.
 But come April of every year, we need to give hikes to people and it becomes really hard to figure out how to give hikes and who should get more and who should get less.
+{% endexcerpt %}
 
 
 ### The problem with Salary Hikes
