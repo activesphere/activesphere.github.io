@@ -1,4 +1,5 @@
 auto: true
+destination: ./_site2
 host: blog.activesphere.com
 permalink: /blog/:year/:month/:day/:title
 pygments: true
