@@ -35,7 +35,6 @@ Had we kept it non-anonymous, we could have ignored everybody's numbers and kept
 
 <img src="/images/per-employee.png" alt="Variations"/>
 
-Salary proposed by Employees
 
 ### What have we learnt?
 
