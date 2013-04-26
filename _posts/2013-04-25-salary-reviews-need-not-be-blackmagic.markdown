@@ -4,7 +4,7 @@ title: "Salary Reviews need not be black magic"
 description: Where we talk about experiments we have done with Salary Reviews
 published: true
 author: Sreekanth
-categories: [startu, nontech, random]
+categories: [startup, nontech, random]
 ---
 
 {% excerpt %} When we started Activesphere we were very sure that we wanted to have a an open salary system, ie. everybody knows everybody's salaries. We have stuck to it, and it seems to have worked well for us for the last 3 years.
@@ -21,10 +21,11 @@ Lots of companies spend an enormous amount of time giving and collecting (meanin
 
 ### An Experiment
 
-<img src="/images/salary_buckets.png" alt="Salary buckets"/>
 This year we tried something else, instead of some key people deciding the salaries for others, we asked each person to _recommend_ how much others in the company should get.
 
 We created a spreadsheet like in the picture(obviously the data is not real) and encouraged people to fill it for everybody. We decided the size of the Pot out of which the salary hikes would come, based on last years profits.
+
+<img src="/images/salary-buckets.png" alt="Salary buckets"/>
 
 Everybody filled in the sheet, printed it and turned it in anonymously. (We are not sure if it was a good idea to keep it anonymous) People put their sheets in time without me having to remind them. This is strange because things are never so easy
 
@@ -32,9 +33,11 @@ We eventually chose to average the recommended salaries for each person to arriv
 
 Had we kept it non-anonymous, we could have ignored everybody's numbers and kept what each person gave himself the salary, because as you might notice, we have subversively asked everybody what they wanted (since in giving others the salary you are eventually deciding yours too). We also could have used a version that gave higher weight to self salary recommendation but still use peers' feedback. We are not sure if either one was better than the other. We'll keep experimenting as there are different sub experiments to run from here
 
-<img src="/images/chart_1.png" alt="Variations"/>
+<img src="/images/per-employee.png" alt="Variations"/>
 
-### What have we learnt
+Salary proposed by Employees
+
+### What have we learnt?
 
 
 * There were great variations in percentage hikes. from between 33% to 10%. This proves that collectively we do not prefer all getting same hike percentages.
