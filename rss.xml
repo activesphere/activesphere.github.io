@@ -5,9 +5,9 @@ layout: none
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
   <channel>
-    <title>activesphere.com // ActiveSphere</title>
-    <link>http://activesphere.com/</link>
-    <atom:link href="http://activesphere.com/rss.xml" rel="self" type="application/rss+xml" />
+    <title>ActiveSphere</title>
+    <link>http://blog.activesphere.com/</link>
+    <atom:link href="http://blog.activesphere.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Ruby Rails Web Development Bangalore India</description>
     <language>en-us</language>
     <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
