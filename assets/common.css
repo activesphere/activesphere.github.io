@@ -547,6 +547,9 @@ h2.frontpage {
   width: 600px;
   float: left;
 }
+.post .post-content img {
+  max-width: 600px;
+}
 .post .categories {
   padding: 0 20px 20px 40px;
   float: left;
