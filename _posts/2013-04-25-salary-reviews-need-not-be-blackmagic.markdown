@@ -12,14 +12,11 @@ But come April of every year, we need to give hikes to people and it becomes rea
 {% endexcerpt %}
 
 
-### The problem with Salary Hikes
+## The problem with Salary Hikes
 
-When we started Activesphere we were very sure that we wanted to have a an open salary system, ie. everybody knows everybody's salaries. We have stuck to it, and it seems to have worked well for us for the last 3 years.
-But come April of every year, we need to give hikes to people and it becomes really hard to figure out how to give hikes and who should get more and who should get less.
+Lots of companies spend an enormous amount of time giving and collecting (meaningless?) feedback from employees just for the sake of giving hikes. We disliked that approach and last year tried asking people what their individual salary should be? Most people (including me) were uncomfortable with that question, we eventually resorted to a straight 15% hike for all.
 
-Lots of companies spend an enormous amount of time giving and collecting (meaningless?) feedback from employees just for the sake of giving hikes. We disliked that approach and last year tried asking people what their salary should be? Most people (including me) were uncomfortable with that question, we eventually resorted to a straight 15% hike for all.
-
-### An Experiment
+## An Experiment
 
 This year we tried something else, instead of some key people deciding the salaries for others, we asked each person to _recommend_ how much others in the company should get.
 
@@ -36,7 +33,7 @@ Had we kept it non-anonymous, we could have ignored everybody's numbers and kept
 <img src="/images/per-employee.png" alt="Variations"/>
 
 
-### What have we learnt?
+## What have we learnt?
 
 
 * There were great variations in percentage hikes. from between 33% to 10%. This proves that collectively we do not prefer all getting same hike percentages.
