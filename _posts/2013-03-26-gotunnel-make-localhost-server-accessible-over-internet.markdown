@@ -7,14 +7,7 @@ author: ciju
 categories: [Golang, localtunnel, tech]
 ---
 
-{% excerpt %} [Gotunnel](http://github.com/ciju/gotunnel) allows you to share
-server running on localhost, over the
-net. [localtunnel](http://progrium.com/localtunnel/) [^1] allows you
-to do the same, but at the time of this writing, didn't support
-WebSocket[^2]. And well, we wanted to do a project in
-[Golang](http://golang.org). This blog post tries to explain the
-implementation/design decisions behind Gotunnel architecture. 
-{% endexcerpt %} Check the [Github repo](http://github.com/ciju/gotunnel) for
+Check the [Github repo](http://github.com/ciju/gotunnel) for
 installation and usage instructions.
 
 ## The problem ##
