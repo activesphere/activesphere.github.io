@@ -23,7 +23,6 @@ may be even `log.red("args")`. Well, that is how I started on
 become a little more than that.
 {% endexcerpt %}
 
-
 JavaScript code by me is usually wrapped in an
 [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/).
 This helps with managing logging also. For example, note that we
@@ -64,5 +63,8 @@ if you look at the code below, you will know how `App.log` came about.
 
 One of the big downsides with this library, is the
 [line number mess](http://stackoverflow.com/questions/1340872/how-to-get-javascript-caller-function-line-number-how-to-get-javascript-caller).
+
+Note: cross-posting from
+[ciju's blog](http://ciju.in/blog/2013/09/logging-with-colors-in-javascript-console.html) 
 
 [^1]: In the days before, I used to do `console.log("********", "actual arguments");` or something like that.
