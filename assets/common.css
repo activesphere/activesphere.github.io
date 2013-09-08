@@ -637,3 +637,20 @@ a[rev="footnote"] {
 .summary .more {
   float: right;
 }
+/* gist styling  */
+.post .gist {
+  font-size: .8em;
+}
+.post .gist .gist-file {
+  border: 1px #ebe9e7 solid;
+}
+.post .gist .gist-file .gist-meta {
+  background-color: #f8f5f0;
+}
+.post .gist .gist-file .gist-data {
+  background-color: #ECE9D0;
+  border-bottom: 1px #ebe9e7 solid;
+}
+.post .gist .gist-file .gist-data .line-numbers {
+  display: none;
+}
