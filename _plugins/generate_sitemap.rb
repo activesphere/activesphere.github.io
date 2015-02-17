@@ -16,8 +16,6 @@
 
 require 'pathname'
 
-require 'pry'
-
 module Jekyll
 
 

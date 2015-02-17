@@ -13,7 +13,7 @@ end
 
 desc 'Clean temporary files and run the server'
 task :compile => :clean do
-  system "jekyll --no-server"
+  system "jekyll build"
 end
 
 desc 'generate the jekyll site and then copy to staging area'
@@ -26,7 +26,7 @@ desc 'commit and push to github'
 task :deploy, [:commit_message] => :generate do |t, args|
   if args.commit_message
     puts "Committing and pushing with commit message: #{args.commit_message}"
-    system "cd _site && git add . && git commit -m \"#{args.commit_message}\" && git push"
+    system "cd _site && git add . && git commit -m \"#{args.commit_message}\" && git push origin master"
     system "git add _site"
     system "git commit -m \"updating submodule reference to master\""
   else
@@ -41,12 +41,12 @@ desc 'create new post or bit. args: type (post, bit), title, future (# of days)'
 task :new do
   require 'rubygems'
   require 'chronic'
-  
+
   type = ENV["type"] || "post"
   title = ENV["title"] || "New Title"
   future = ENV["future"] || 0
   slug = ENV["slug"].gsub(' ','-').downcase || title.gsub(' ','-').downcase
- 
+
   # if type == "bit"
   #   TARGET_DIR = "_bits"
   # elsif future.to_i < 3
@@ -54,7 +54,7 @@ task :new do
   # else
   #   TARGET_DIR = "_drafts"
   # end
- 
+
   if future.to_i.zero?
     filename = "#{Time.new.strftime('%Y-%m-%d')}-#{slug}.markdown"
   else
@@ -63,12 +63,12 @@ task :new do
   end
   path = File.join(TARGET_DIR, filename)
   post = <<-HTML
---- 
+---
 layout: TYPE
 title: "TITLE"
 date: DATE
 ---
- 
+
 HTML
   post.gsub!('TITLE', title).gsub!('DATE', Time.new.to_s).gsub!('TYPE', type)
   File.open(path, 'w') do |file|
