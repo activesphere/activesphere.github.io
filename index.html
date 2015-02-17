@@ -1,16 +1,15 @@
 ---
 layout: default
-title: the ActiveSphere blog
+title: ActiveSphere blog
 ---
-
-<h2>archive</h2>
+<h1>archive</h1>
 <ul class='archive'>
   {% for post in site.posts %}
   <li>
     <abbr class='on'>{{ post.date | date_to_string }}</abbr>
     <a href='{{ post.url }}'>{{ post.title }} →</a>
     <abbr class='by'>by {{ post.author }}</abbr>
-    {% if post.excerpt %}
+    {% if post.next == nil %}
     <div class='summary'>
       {{ post.excerpt | markdownify }}
       <a class='more' href='{{ post.url }}'>more &raquo;</a>

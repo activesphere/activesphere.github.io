@@ -1,0 +1,160 @@
+@textGray: #8e8e8e;
+
+.text {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.4em;
+    font-weight: normal;
+    word-wrap: break-word;
+    font-family: Georgia, Times, "Times New Roman";
+}
+.header-fonts {
+   font-family: Georgia, Arial, sans-serif;
+   font-weight: normal;
+}
+
+
+
+.post {
+    padding: 0 40px;
+    // font-size: 1.2em;
+    color: #413F3F;
+    h2 {
+        margin: 0;
+        padding: 8px;
+    }
+    h3 {
+        margin: 0;
+        text-align: center;
+    }
+    .meta {
+        width: 600px;
+        margin: 0 0 20px 0;
+        border-bottom: 1px dotted #c6c6c6;
+        padding-bottom: 10px;
+    }
+    .post-content {
+        width: 600px;
+        float: left;
+        img {
+            max-width: 600px;
+        }
+    }
+    .categories {
+        padding: 0 20px 20px 40px;
+        float: left;
+        ul {
+            list-style-type: none;
+        }
+    }
+    p {
+        .text;
+    }
+
+    a {
+        color: #444;
+        border-bottom: 1px dashed #C5C4C4;
+    }
+}
+
+.pad {
+    padding: 15px;
+}
+
+.pad-width-extra {
+    margin: 15px;
+    padding: 0 30px;
+}
+
+.contact-info {
+    h2 {
+        .pad-width-extra;
+        text-align: left;
+    }
+}
+
+.archive {
+    list-style-type: none;
+    .header-fonts;
+    .on {
+        color: @textGray;
+        font-size: 0.8em;
+    }
+    .on:after{
+        content: ':';
+    }
+    .by {
+        color: @textGray;
+        font-size: 0.8em;
+    }
+
+    li {
+        margin: 5px 0 15px 0;
+        clear: both;
+    }
+
+    a {
+        color: #444;
+        border-bottom: 1px dashed #C5C4C4;
+    }
+}
+
+
+.page-nav {
+    padding: 20px;
+    a {
+        padding: 5px;
+        background-color: #e2e2e2;
+    }
+}
+
+a[rel="footnote"], a[rev="footnote"] {
+    vertical-align: super;
+    text-decoration: none;
+}
+a[rev="footnote"] {
+    display:block;
+    text-align:right;
+    margin-top:-3em;
+    border-bottom: 0px;
+}
+.footnotes {
+    font-size:0.8em;
+}
+
+.summary {
+    max-width: 700px;
+    font-size: 1.1em;
+    background-color: #f2f2f2;
+    p {
+        margin: 0;
+    }
+
+    .more {
+        float: right;
+    }
+
+    blockquote {
+        padding: 10px;
+        margin: 0;
+    }
+}
+
+
+/* gist styling  */
+.post .gist {
+    font-size: .8em;
+    .gist-file {
+        border: 1px #ebe9e7 solid;
+        .gist-meta {
+            background-color: #f8f5f0;
+        }
+        .gist-data {
+            background-color: #ECE9D0;
+            border-bottom: 1px #ebe9e7 solid;
+            .line-numbers {
+                display: none;
+            }
+        }
+    }
+}

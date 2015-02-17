@@ -2,17 +2,15 @@
 <html lang='en'>
   <head>
     {% include head.html %}
-    {% if site.production %}
-    {% include olark_chat.html %}
-    {% endif %}
   </head>
   <body>
+    <div class="body-wrapper">
     {% include header.html %}
-    {% include main-nav.html %}
-    <div class='page homepage2'>
+    <div class='page'>
       {{content}}
     </div>
     {% include footer.html %}
     {% include analytics.html %}
+    </div>
   </body>
 </html>

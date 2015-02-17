@@ -1,7 +1,7 @@
 destination: ./_site2
 host: blog.activesphere.com
 permalink: /blog/:year/:month/:day/:title
-pygments: true
+highlighter: pygments
 markdown: kramdown
 production: true
 title: ActiveSphere - India based Ruby Rails JavaScript consulting
