@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: Goodbye Rails, Hello Node.js
 published: true
 author: Sreekanth
-categories: 
+categories:
 - architecture
 - evented
 - javascript
@@ -17,6 +17,7 @@ A few months ago, I decided to play with
 and now I am hooked onto it. I use Ruby on Rails for most of my
 work. Though I am not a big fan of Rails, it is better than most
 things around and it's in Ruby which I really like.
+
 
 Off-late most projects that I have been working on, have much less
 ruby and a lot more of JavaScript. My typical application consists of
@@ -76,4 +77,3 @@ to no.de and Duostack.
 And Rails definitely does not have a rap theme song as cool as
 this. [http://soundcloud.com/marak/marak-the-node-js-rap](http://soundcloud.com/marak/marak-the-node-js-rap). (Listen
 with headphones, please)
-

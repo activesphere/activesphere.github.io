@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: Node toolbox
 published: true
 author:  Nilakanta
-categories: 
+categories:
 - node-toolbox
 - node.js
 - nodetoolbox
@@ -11,13 +11,9 @@ categories:
 - toolbox.no.de
 ---
 
-<img src="/images/node-toolbox.png" alt="Node toolbox"
-style="float:left; padding-right: 10px"/>
-
 While searching for a node client for CouchDb, we came across quite a few node.js packages. 6 to be precise, to figure out the best fit for our project, we had to do a fair bit of Googleing and look at [Github](http://github.com/) to see which ones are active and better fit for the project.
 
 A lot of projects are defunct, have very little documentation or just experimental. It would be good to go to one place to find the right module and a general feeling of how good the module is.Turns out there is one, the Node Modules Wiki page. It shows simple wiki page that lists modules by categories.
-
 
 Coming from the Ruby world which has a similar vibrant community and
 tons of gems, we felt there needed to be a version of the
@@ -25,6 +21,7 @@ awesome [Ruby Toolbox](http://www.ruby-toolbox.com/)
 
 So over a weekend we build a simple version of it and called it [Node
 toolbox](http://nodetoolbox.com)
+
 
 We pulled all the information from the Node Modules page and built the
 category mapping of each NPM Module. Whereas [NPM

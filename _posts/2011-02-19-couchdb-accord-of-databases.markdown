@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: "CouchDb: The Honda Accord of databases"
 published: true
 author: Sreekanth
-categories: 
+categories:
 - couchdb
 - databases
 - mapreduce
@@ -12,6 +12,7 @@ categories:
 We have been using with CouchDB at Activesphere, for some of our customer projects.
 
 We looked at a few options before we eventually plunged into Couchdb 'Relax'. I'm trying to list out in hindsight why CouchDb has worked out a good choice for us.
+
 
 **Powerful Replication**
 
@@ -78,5 +79,3 @@ run analytics off a replicated analytics database.
 
 There are of course some cons of using Couchdb some of it are easily
 addressed. I plan to write more in the next few posts.
-
-

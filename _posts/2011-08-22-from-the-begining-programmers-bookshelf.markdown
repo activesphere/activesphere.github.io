@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: From the begining programmer's bookshelf
 published: true
@@ -7,6 +7,7 @@ categories: []
 
 ---
 We were looking for some book recommendations for some of the new people we hired recently. And here is an opinionated list of books and some of my thoughts around it.
+
 
 These are some of my favorite books that I wish i had read, when I started programming. But I did start with enviable [The C++ Programming Language](http://www.amazon.com/Programming-Language-3rd-Bjarne-Stroustrup/dp/0201889544/), which though my personal favourite, I would not recommend to any newbie.
 
@@ -48,4 +49,3 @@ Patterns](http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriente
 >The book that should be on the side of every programmer. Learnt so may techniques from this book.
 
 Let me know if you have books that might be better?
-

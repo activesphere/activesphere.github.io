@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: NodeKnockout and Activenode.no.de
 published: true
 author: Sreekanth
-categories: 
+categories:
 - activenode
 - coffeescript
 - javascript
@@ -13,6 +13,7 @@ categories:
 - redis
 ---
 Last weekend we participated in the community driven 48 hour programming contest called [Node Knockout.](http://nodeknockout.com/) The idea is to go from an idea to production in exactly 48 hours using the wonderful [Node.js](http://nodejs.org/). Noders from all over the world compete for the prizes that are awarded based on Innovation, Design, Utility and Completeness
+
 
 We'd signed up long time ago, but we had no idea what we would be building till the morning 5.30AM( 0:00 GMT). Initially I was thinking of building&nbsp; slick visualization over the [Bitcoin](http://www.bitcoin.org) transactions, but because of the limited scope and technical complexity, iI was wary about it. Eventually we decided to build a node.js equivalent the Rails' awesome [New Relic's RPM](http://newrelic.com/). It also looked like something that could be build progressively, and be done quickly.
 
@@ -51,4 +52,3 @@ I can excuse myself for the completeness, because of a conincidence of [devops c
 All in all it was good fun and a wonderful learning experience. We are looking forward to NodeKnockout 2012.
 
 If you have reached the end of this. Please show us some love by voting for the app [here](http://nodeknockout.com/teams/activenode).
-

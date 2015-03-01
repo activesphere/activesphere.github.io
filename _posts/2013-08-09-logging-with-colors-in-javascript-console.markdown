@@ -13,12 +13,12 @@ published: true
 > [colorlog.js](https://gist.github.com/ciju/5926584) Helps with
 > managing the information overload in JavaScript Console logs.
 
+
 Trouble with finding that one log, in a overload of logs in JavaScript
 Console[^1]? How about `log.green("args")`, or `log.yellow("args")` or
 may be even `log.red("args")`. Well, that is how I started on
 [colorlog.js](https://gist.github.com/ciju/5926584). But now it has
 become a little more than that.
-
 
 JavaScript code by me is usually wrapped in an
 [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/).

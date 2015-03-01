@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: Introducing Couchup. An interactive Couchdb Console
 published: true
 author: Sreekanth
-categories: 
+categories:
 - console
 - couchdb
 - couchup
@@ -16,6 +16,7 @@ using a single request. Couch 0.90 and above provided the ability to
 post to couch the array of keys to return the matching documents. But
 he was having trouble getting curl to work correctly. I had to dig
 through the code to give him the actual curl request.
+
 
 One thing that I could never figure about the CouchDB tools ecosystem,
 was the total lack of a simple console to interact with
@@ -75,4 +76,3 @@ toolbox.
 And yeah, any feedback on what could be done better would be
 great. Feel free to send me an email
 [sreeix@gmail.com](mailto:sreeix@gmail.com).
-

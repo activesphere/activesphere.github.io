@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "Gotunnel: make localhost server accessible over internet"
 description: Gotunnel allows you to share server running on localhost, over the net. Supports http, https and websocket.
@@ -7,12 +7,7 @@ author: ciju
 categories: [Golang, localtunnel, tech]
 ---
 
-Check the [Github repo](http://github.com/ciju/gotunnel) for
-installation and usage instructions.
-
-## The problem ##
-
-On the internet, to access a server, you need its IP address and
+To access a server on the internet, you need its IP address and
 port. Your local machine might be running behind a
 [NAT](http://en.wikipedia.org/wiki/Network_address_translation). So, a
 server running on your local machine, might not be addressable from
@@ -20,8 +15,12 @@ internet (ex: no publically visible IP). This is where localtunnel
 comes in. It makes the local server accessible over an IP (and port),
 on the internet.
 
+
+Check the [Github repo](http://github.com/ciju/gotunnel) for
+installation and usage instructions.
+
 Core idea of the solution is that a client from localhost could keep a
-connection with a server on the internet. 
+connection with a server on the internet.
 
 This connection could be used by server to forward requests. Gotunnel
 utilizes this by running a client on localhost. This Gotunnel Client
@@ -43,7 +42,7 @@ architecture. (Except for small changes, picture is copied from
                 |  ||
          Control|  ||Proxy
       Connection|  ||Connections
-                |  || 
+                |  ||
          +------|  ||-----------------------------------+
          |   +--+--++----------+         +------------+ |
          |   | Gotunnel Client +-------->| App Server | |
@@ -51,7 +50,7 @@ architecture. (Except for small changes, picture is copied from
          |                                              |
          |                  localhost                   |
          +----------------------------------------------+
-         
+
 What we want is for the App Server to be accessible from (lets say) a
 browser. Since it can't be accessed from outside the localhost, we
 have a client in localhost, which is connected with the Gotunnel
@@ -118,9 +117,8 @@ multiple TCP connections.
 [tunnlr](https://tunnlr.com/), [nodejs
 localtunnel](http://shtylman.com/localtunnel/),
 [pagekite](http://pagekite.net), [forwardhq](https://forwardhq.com/)
-etc. 
+etc.
 
 [^2]: Now it does.
 
 [^3]: WebSocket starts as a HTTP connection. So, the process of getting HOST is same for both.
-

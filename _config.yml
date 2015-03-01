@@ -1,5 +1,6 @@
 destination: ./_site2
-host: blog.activesphere.com
+# host: blog.activesphere.com
+excerpt_separator: "\n\n\n"
 permalink: /blog/:year/:month/:day/:title
 highlighter: pygments
 markdown: kramdown

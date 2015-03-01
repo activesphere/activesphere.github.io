@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: Things we don't like about Couchdb
 published: true
 author: Sreekanth
-categories: 
+categories:
 - couchdb
 - databases
 - nosql
@@ -13,6 +13,7 @@ We love Couchdb, it is a workhorse, and we use it on a lot of
 projects. Obviously it does not fit everywhere. There are some places
 where it just does not cut it. I am trying to document a few issues
 we've been having with couchdb.
+
 
 **Building Views**
 
@@ -56,17 +57,17 @@ limitations. for example if your view emits
 
     ['abcnews', 'christiane'], ['cnn', 'christiane'], ['cnn', 'fionnuala']
 
-then 
+then
 
-    startkey: ['cnn'], endkey : ['cnn', {}] 
-would match 
- 
+    startkey: ['cnn'], endkey : ['cnn', {}]
+would match
+
     ['cnn', 'christiane'], ['cnn', 'fionnuala']
 
 But you will have to write a new view if you want to search by the
 newscaster. i.e. you can't do
 
-    startkey: [{}, 'christiane'], endkey : [{}, 'fionnuala'] 
+    startkey: [{}, 'christiane'], endkey : [{}, 'fionnuala']
 or
 
     startkey: [{}, 'christiane'], endkey : [{}, 'christiane']
@@ -91,4 +92,3 @@ There are some other issues that do not climb high on my radar.
 - *Paging.* It is slightly complicated in Couch and has caused a [lot of confusion](http://stackoverflow.com/questions/312163/pagination-in-couchdb), but once you [get the idea](http://guide.couchdb.org/draft/recipes.html#pagination), it's pretty simple to implement. We struggled with it initially, but the pattern fell into place quickly
 
 - *Performance.* The current release of Couch(1.1.1) seems to be much [better on performance](http://twitpic.com/5apy2t) than the older versions. But then we would never choose Couchdb for it's performance alone. There are other alternatives out there.
-

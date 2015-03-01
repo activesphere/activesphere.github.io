@@ -1,13 +1,13 @@
---- 
+---
 layout: post
 title: Restful design, Open formats and an Outlook Add-In
 published: true
 author:  Suresh Harikrishnan
-categories: 
-- outlook 
-- projects 
-- rest 
---- 
+categories:
+- outlook
+- projects
+- rest
+---
 
 We mostly work with startups, and most prefer using dynamic languages
 like Ruby and Python. Occasionally though, we have worked on .NET/Java
@@ -18,6 +18,7 @@ because it had lots of bugs, and its performance was bad. We analyzed
 the problems with the existing design and moved towards a more
 [RESTful](http://en.wikipedia.org/wiki/REST) design. Using a RESTful
 design helped us in several ways:
+
 
 **1. Crisp protocol between server and client**.
 
@@ -93,4 +94,3 @@ Another challenge was the limitations of the Outlook APIs (there is no
 easy way to get notified of deletions), the fact that we had different
 synchronization strategies for Contacts, Appointments and Emails
 didn't help the cause either.
-

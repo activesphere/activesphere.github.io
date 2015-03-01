@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: Scaling and Large numbers
 published: true
 author: Sreekanth
-categories: 
+categories:
 - couchdb
 - intuition
 - mysql
@@ -14,6 +14,7 @@ Let's take a pop Quiz.
 An alter table on a MySQL database, takes 10 seconds to execute on a table of 30,000 rows.
 
 How much time will it take on a  table that has 80 million rows?
+
 
 Try and take an educated guess of what the real time would have been?
 
@@ -33,7 +34,7 @@ This is one of the reasons why I've seen a lot of apps that work very well with 
 
 This graph shows that [Couchdb](http://couchdb.apache.org/)
 performance seems to get worse especially at the 1 million mark, and
-even increase steadily afterwards. 
+even increase steadily afterwards.
 
 ![couchdb (1.1) write performance over 5 million docs on my laptop](/images/couchdb-perf.jpg)
 
@@ -46,4 +47,3 @@ In Summary, Discard your intuitive thinking when dealing with large  numbers. Cr
 **Answer**
 
 > It took 1 day and 16 hours for our alter table to complete. Almost 5 times the estimated time
-

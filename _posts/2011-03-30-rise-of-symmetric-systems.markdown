@@ -1,9 +1,9 @@
---- 
+---
 layout: post
 title: Rise of Symmetric Systems
 published: true
 author: Sreekanth
-categories: 
+categories:
 - architecture
 - cloud
 - distributed
@@ -16,6 +16,7 @@ standard backing database. This is the standard layered
 architecture. Most application stacks Rails or .Net for example assume
 a single database server, a few application servers, some web servers
 and a load balancer.
+
 
 But as 'webscale' and 'elastic scaling', 'commodity hardware' have
 become buzzwords, there has been a quiet change in the way systems are
@@ -41,7 +42,7 @@ One of the systems I am currently working on, is symmetric. It has a
 very simple model as you can see from the figure below, each request
 is passed by the ELB to Nginx on any machine and passed all the way to
 Rails that interacts with CouchDB. The data is synchronized by CouchDB
-instances via replication.  
+instances via replication.
 
 <img
 src="/images/OnemachineArchitecture1.png" alt="Rise of Symmetric
@@ -162,14 +163,14 @@ a central database, it can be distributed over a cluster.
 
 **The hard stuff**
 
-*All things can't be Distributed* 
+*All things can't be Distributed*
 
 We have a Resque process that runs expiry of certain type records in
 couchdb every day. We have not found a simple way of distributing this
 on each machine, without duplication and conflicts. Such things are on
 a random instance picked up from a central redis queue.
 
-*Deployments are slightly hard* 
+*Deployments are slightly hard*
 
 We use Capistrano, the default model is to deploy remotely to a set of
 machines labelled web, app and database, what we really wanted was to
@@ -193,4 +194,3 @@ the earlier architectural decisions. We have been very aggressive with
 our choice of software to run on our machines. Apache is out because
 it takes a lot of memory, Nginx is our choice of Web server because of
 it's efficiency. Any other way we'd be putting out Bloatware.
-
