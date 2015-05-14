@@ -6,32 +6,34 @@
   <body>
     <div class="body-wrapper">
     {% include header.html %}
-    <div class='page'>
+    <div class='page container'>
       <div class="post">
-        <div class="meta">
-          <h2>
-            <a href="{{ page.url }}"> {{ page.title }} </a>
-          </h2>
-          {% if page.author %}
-          <h3>
-            <i>by {{ page.author }}</i>
-          </h3>
-          {% endif %}
+        <div class="row">
+          <div class="meta col-md-10">
+            <h2>
+              <a href="{{ page.url }}"> {{ page.title }} </a>
+            </h2>
+            {% if page.author %}
+            <h3>
+              <i>by {{ page.author }}</i>
+            </h3>
+            {% endif %}
+          </div>
+          <div class="col-md-2"></div>
         </div>
 
-        <div>
-          <div class="post-content">
+        <div class="row">
+          <div class="post-content col-md-10">
             {{content}}
           </div>
 
-          <section class="categories">
+          <section class="categories col-md-2">
             {% if page.categories.size > 0 %}
             <h3>Categories</h3>
             {{ page.categories | category_list_links }}
             {% endif %}
           </section>
         </div>
-        <div class="clear"></div>
       </div>
 
       <section class="page-nav">
