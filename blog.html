@@ -2,18 +2,20 @@
 layout: default
 title: ActiveSphere blog
 ---
-<div class="blog-index">
-  {% for post in site.posts %}
-  <div class="row">
-    <div class="col-md-12">
-      <h2>
-        <a class="title" href="{{ post.url }}">{{ post.title }}</a>
-      </h2>
-      <div class="summary">
-        {{ post.excerpt | markdownify }}
-        <abbr class="meta">by {{ post.author }} - {{ post.date | date_to_string }}</abbr>
+<div class='page container-fluid'>
+  <div class="blog-index">
+    {% for post in site.posts %}
+    <div class="row">
+      <div class="col-md-12">
+        <h2>
+          <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+        </h2>
+        <div class="summary">
+          {{ post.excerpt | markdownify }}
+          <abbr class="meta">by {{ post.author }} - {{ post.date | date_to_string }}</abbr>
+        </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
