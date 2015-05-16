@@ -1,4 +1,32 @@
 /* global $ */
+(function () {
+    var footerPosTimeout;
+    function positionFooter() {
+        if (footerPosTimeout) {
+            clearTimeout(footerPosTimeout);
+        }
+        footerPosTimeout = setTimeout(function () {
+            var winH = $(window).height();
+            var footer = $('footer');
+            footer.css({
+                position: 'inherit'
+            });
+            var footerH = footer.height();
+            var footerTop = footer.offset().top;
+            if (winH > footerTop + footerH - 2) {
+                footer.css({
+                    'position': 'absolute',
+                    top: winH - footerH,
+                    width: '100%'
+                });
+            }
+        }, 200);
+    }
+
+    positionFooter();
+    $(window).resize(positionFooter);
+})();
+
 $(function () {
     function reorder(grp) {
         var cnt = grp.length;
