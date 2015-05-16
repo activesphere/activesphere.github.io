@@ -66,10 +66,15 @@ a {
 
 .subheading {
     background-color: $subheading-bg;
-    padding: 50px;
+    &.home {
+        padding: 50px;
+        h1 {
+            font-size: 4em;
+        }
+    }
+
     h1 {
         text-align: center;
-        font-size: 4em;
     }
 }
 
