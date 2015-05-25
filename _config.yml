@@ -1,13 +1,15 @@
-destination: ./_site2
-# host: blog.activesphere.com
+host: www.activesphere.com
 excerpt_separator: "\n\n\n"
 permalink: /blog/:year/:month/:day/:title
 highlighter: pygments
 markdown: kramdown
 production: true
-title: ActiveSphere - India based Ruby Rails JavaScript consulting
+title: ActiveSphere - Bangalore based Ruby Rails JavaScript consulting
 category_dir: /blog/category
 exclude:
 - README.md
 - Rakefile
 - .gitignore
+
+gems:
+- jekyll-sitemap
