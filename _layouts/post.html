@@ -9,7 +9,7 @@
     <div class='page container'>
       <div class="post">
         <div class="row">
-          <div class="meta col-md-10">
+          <div class="meta col-md-12">
             <h2>
               <a href="{{ page.url }}"> {{ page.title }} </a>
             </h2>
@@ -23,16 +23,9 @@
         </div>
 
         <div class="row">
-          <div class="post-content col-md-10">
+          <div class="post-content col-md-12">
             {{content}}
           </div>
-
-          <section class="categories col-md-2">
-            {% if page.categories.size > 0 %}
-            <h3>Categories</h3>
-            {{ page.categories | category_list_links }}
-            {% endif %}
-          </section>
         </div>
       </div>
 
