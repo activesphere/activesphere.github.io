@@ -90,7 +90,7 @@ a {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),0 1px 5px rgba(0, 0, 0, 0.075);
     border-bottom: 1px solid $subheading-border;
     &.home {
-        padding: 50px;
+        padding: 30px;
         h1 {
             font-size: 4em;
         }
@@ -354,12 +354,18 @@ footer {
     }
 }
 
-h2.frontpage {
+.frontpage {
     font-family: Georgia, Arial, sans-serif;
     font-size: 18px;
     line-height: 1.5em;
     text-align: center;
     padding: 20px;
+}
+
+.front-main-copy {
+    @extend .frontpage;
+    font-weight: bold;
+    line-height: 2em;
 }
 
 .technologies {
