@@ -4,7 +4,7 @@
 // @import "bootstrap.less";
 @import "blog.scss";
 
-$content-width: 680px;
+$content-width: 765px;
 $header-font-color: #4B4F55;
 $bg: #fafafa;
 
@@ -30,6 +30,12 @@ $color-3: #DCEEF0;
 $color-4: #588894;
 $color-5: #5AC6F0;
 
+/* $lc-1: */
+/* $lc-2: #1B363B; */
+/* $lc-3: #22717A; */
+/* $lc-4: #F0FFFF; */
+/* $lc-5: */
+
 $c1: $color-1;
 $c2: $color-2;
 $c3: $color-3;
@@ -42,12 +48,21 @@ $c5: $color-5;
 /* $nav-link-color-hover: #333; */
 /* $nav-link-active-color: #349ef6; */
 
-$header-bg: $c4;
+/* $header-bg: $c4; */
+/* $bg: white; */
+/* $subheading-bg: $c3; */
+/* $nav-link-color: $c3; */
+/* $nav-link-color-hover: $c2; */
+/* $nav-link-active-color: $c2; */
+
+$header-bg: #EBF7F8;
 $bg: white;
-$subheading-bg: $c3;
-$nav-link-color: $c3;
-$nav-link-color-hover: $c2;
-$nav-link-active-color: $c2;
+$subheading-bg: #F5FEFE;
+$subheading-border: #E0DEDE;
+$nav-link-color: #22717A;
+$nav-link-color-hover: #1B363B;
+$nav-link-bg-hover: #F5FEFE;
+$nav-link-active-color: #B3B3B3;
 
 html {
     overflow-y: scroll;
@@ -66,6 +81,8 @@ a {
 
 .subheading {
     background-color: $subheading-bg;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),0 1px 5px rgba(0, 0, 0, 0.075);
+    border-bottom: 1px solid $subheading-border;
     &.home {
         padding: 50px;
         h1 {
@@ -151,17 +168,19 @@ h3 {
     .navbar-brand {
         font-weight: bold;
         font-size: 24px;
-        color: $c3;
     }
 
     a {
         text-transform: capitalize;
         color: $nav-link-color;
         font-size: 15px;
+        border-bottom: none;
+        background-color: $header-bg;
         &.active {
             color: $nav-link-active-color;
         }
         &:hover {
+            background-color: $nav-link-bg-hover;
             color: $nav-link-color-hover;
         }
     }
