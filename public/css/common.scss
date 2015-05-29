@@ -158,7 +158,7 @@ h3 {
 }
 
 .header .navbar .container {
-    max-width: 680px;
+    max-width: $content-width;
 }
 .header .navbar-default .navbar-toggle {
     border-radius: 2px;
