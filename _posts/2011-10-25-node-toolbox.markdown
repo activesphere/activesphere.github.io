@@ -37,7 +37,7 @@ make sense. Along the way we removed duplicate tags like
 test/tests/Testing and so on.
 
 
-<img src="/images/packages_for_categories.png" alt="Node toolbox"
+<img src="/public/images/blog/packages_for_categories.png" alt="Node toolbox"
      width="600px" />
 
 After putting the modules into their categories, we looked up github
@@ -45,7 +45,7 @@ for the repository information, stuff like Watchers and Forks. Which
 in our opinion is a good indicator of the Project itself. And are
 currently using that to build our module ranking.
 
-<img src="/images/ranked_packages.png" alt="Node toolbox" />
+<img src="/public/images/blog/ranked_packages.png" alt="Node toolbox" />
 
 There are a lot of things missing now, The categorization and the categories themselves is arbitrary. We'd like owners of modules to categorize them correctly.
 

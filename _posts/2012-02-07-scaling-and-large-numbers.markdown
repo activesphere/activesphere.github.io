@@ -36,7 +36,7 @@ This graph shows that [Couchdb](http://couchdb.apache.org/)
 performance seems to get worse especially at the 1 million mark, and
 even increase steadily afterwards.
 
-![couchdb (1.1) write performance over 5 million docs on my laptop](/images/couchdb-perf.jpg)
+![couchdb (1.1) write performance over 5 million docs on my laptop](/public/images/blog/couchdb-perf.jpg)
 
 A project that ignored to do this basic benchmarking failed pretty badly to get beyond a few million documents in the database.
 

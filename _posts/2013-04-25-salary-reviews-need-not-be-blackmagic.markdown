@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "Salary Reviews need not be black magic"
 description: Where we talk about experiments we have done with Salary Reviews
@@ -23,7 +23,7 @@ This year we tried something else, instead of some key people deciding the salar
 
 We created a spreadsheet like in the picture (obviously the data is not real) and encouraged people to fill it for everybody. We decided the size of the Pot out of which the salary hikes would come, based on last years profits.
 
-<img src="/images/salary-buckets.png" alt="Salary buckets"/>
+<img src="/public/images/blog/salary-buckets.png" alt="Salary buckets"/>
 
 
 Everybody filled in the sheet, printed it and turned it in anonymously. (We are not sure if it was a good idea to keep it anonymous) People put their sheets in time without me having to remind them. This was strange because things are never done so quickly
@@ -32,7 +32,7 @@ We eventually chose to average the everybody's recommended salaries for each per
 
 Had we kept it non-anonymous, we could have ignored everybody's numbers and kept what each person gave himself the salary, because as you might notice, we have subversively asked everybody what they wanted (since in giving others the salary you are eventually deciding yours too). We also could have used a version that gave higher weight to self salary recommendation but still use peers' feedback. We are not sure if either one was better than the other. We'll keep experimenting as there are different sub experiments to run from here
 
-<img src="/images/per-employee.png" alt="Variations"/>
+<img src="/public/images/blog/per-employee.png" alt="Variations"/>
 
 
 ## What have we learnt?
@@ -43,5 +43,3 @@ Had we kept it non-anonymous, we could have ignored everybody's numbers and kept
 * We spend far less time debating and discussing salary hikes for everybody.
 
 In our opinion this has been the effective way of doing salary reviews. It is intimidating, because it democratizes the process of salary reviews, and it's dead simple. We are fans of both.
-
-

@@ -40,7 +40,7 @@ happens.
 {% endhighlight %}
 And with `App.afunc()`, that gives (in Chrome).
 
-<img src="/images/consolelog.png"/>
+<img src="/public/images/blog/consolelog.png"/>
 
 Well, that doesn't explain how `App.log` came about, but wait. Note
 how we can conveniently add a prefix for all the logs called from this

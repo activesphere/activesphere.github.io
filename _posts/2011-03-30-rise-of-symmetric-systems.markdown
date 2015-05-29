@@ -45,7 +45,7 @@ Rails that interacts with CouchDB. The data is synchronized by CouchDB
 instances via replication.
 
 <img
-src="/images/OnemachineArchitecture1.png" alt="Rise of Symmetric
+src="/public/images/blog/OnemachineArchitecture1.png" alt="Rise of Symmetric
 Systems" width="580px" />
 
 This has been a thought shift for me, where in my previous life, I've
