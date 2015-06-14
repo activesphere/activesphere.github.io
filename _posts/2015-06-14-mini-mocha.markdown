@@ -10,8 +10,6 @@ published: true
 
 ---
 
-## mini-mocha
-
 **TL;DR**
 A minimal synchronous mocha like DSL, in less than 100 lines of
 JavaScript. Code at [github.com/ciju/mini-mocha](http://github.com/ciju/mini-mocha)
