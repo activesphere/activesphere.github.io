@@ -229,44 +229,6 @@ footer {
     padding-left: 98px;
 }
 
-.ctoa {
-    padding: 0px;
-    margin: 0 auto;
-    /* width: 795px; */
-    font-family: Georgia;
-    text-shadow: 2px 1px 3px #BFBFBF;
-    line-height: 100%;
-    font-size: 49px;
-
-    .aleft div {
-        font-size: 47px;
-        padding-top: 63px;
-        padding-left: 20px;
-    }
-    .rbrace {
-        font-size: 178px;
-        font-family: sans-serif;
-        line-height: 1;
-        color: rgba(0, 0, 0, 0.2);
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
-        padding-left: 35px;
-        float: left;
-    }
-    .aright {
-        float: left;
-        padding-left: 16px;
-        margin-top: -5px;
-        div {
-            padding: 0 6px 20px 0;
-        }
-        .and {
-            text-align: right;
-            padding-right: 40px;
-            @extend .sublime-txt;
-        }
-    }
-}
-
 .box {
     border-radius: 3px;
     padding: 15px;
@@ -399,4 +361,31 @@ footer {
     &.altoserv-padding {
         padding-top: 20px;
     }
+}
+
+
+/* https://stackoverflow.com/questions/5306640/setting-bullet-colors-in-ul-li-lists-via-css-without-using-images-or-span-tags */
+.post ul, ul.legible_text {
+    list-style: none;
+    padding:0;
+    margin:0;
+
+    li {
+        padding-left: 1em;
+        text-indent: -.7em;
+        font-size: 18px;
+    }
+
+    li:before {
+        content: "\2022";
+        font-size: 1.5em;
+        color: $nav-link-active-color;
+        padding-right: .25em;
+        position: relative;
+        top: 3px;
+    }
+}
+
+ul.plain-list {
+    list-style: none;
 }
