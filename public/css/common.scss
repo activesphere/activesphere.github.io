@@ -288,6 +288,10 @@ footer {
     }
 }
 
+.careers {
+    margin-top: 30px;
+}
+
 .project {
     > div {
         @extend .box;
@@ -341,8 +345,8 @@ footer {
 .hidden,
 .j_verbose {
     display: none;
+    margin-top: 10px;
 }
-
 
 .post p > code {
     font-size: .7em;
