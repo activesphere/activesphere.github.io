@@ -5,7 +5,9 @@
 @import "blog.scss";
 
 $content-width: 765px;
+$footer-height: 40px;
 $header-font-color: #4B4F55;
+$header-border-color: #dadada;
 $bg: #fafafa;
 
 $active-color: #349ef6;
@@ -210,7 +212,7 @@ h3 {
 .header {
     padding: 0;
     background-color: $header-bg;
-    border-bottom: 1px solid #dadada;
+    border-bottom: 1px solid $header-border-color;
     position: fixed;
     width: 100%;
     z-index: 9999;
@@ -222,7 +224,6 @@ h3 {
 
 footer {
     background-color: $header-bg;
-    height: 20px;
 }
 
 #tech {
@@ -325,7 +326,7 @@ footer {
     font-size: 18px;
     line-height: 1.5em;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0 0;
 }
 
 .front-main-copy {
@@ -392,4 +393,39 @@ footer {
 
 ul.plain-list {
     list-style: none;
+}
+
+.footer-contact-list {
+    text-align: center;
+    padding: 10px;
+    a {
+        display: block;
+        background-color: initial;
+        border-bottom: none;
+        margin: 0 5px;
+        padding: 5px;
+    }
+}
+
+.header .contact-menu {
+    padding: 15px;
+}
+.header .contact-menu .contact-details {
+    .detail {
+        display: none;
+    }
+    a {
+        padding: 0 5px;
+        opacity: .5;
+        &:hover {
+            opacity: 1;
+            background-color: inherit;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-contact-list a {
+        display: inline;
+    }
 }
