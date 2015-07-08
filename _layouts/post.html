@@ -10,13 +10,13 @@
       <div class="post">
         <div class="row">
           <div class="meta col-md-12">
-            <h2>
-              <a href="{{ page.url }}"> {{ page.title }} </a>
-            </h2>
-            {% if page.author %}
             <h3>
-              <i>by {{ page.author }}</i>
+              <a href="{{ page.url }}"> {{ page.title }} </a>
             </h3>
+            {% if page.author %}
+            <h5 class="author">
+              by {{ page.author }}
+            </h5>
             {% endif %}
           </div>
           <div class="col-md-2"></div>

@@ -1,25 +1,19 @@
 $textGray: #8e8e8e;
 
-.text {
-    /* text-align: justify; */
-    /* font-size: 18px; */
-    /* line-height: 1.4em; */
-    /* font-weight: normal; */
-    /* word-wrap: break-word; */
-    /* font-family: Georgia, Times, "Times New Roman"; */
-}
 .header-fonts {
    /* font-family: Georgia, Arial, sans-serif; */
    /* font-weight: normal; */
 }
 
 
-
 .post {
+    margin-top: 20px;
     .meta {
         margin: 0 0 20px 0;
-        border-bottom: 1px dotted #c6c6c6;
-        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        .author {
+            color: $grey;
+        }
     }
     .categories {
         padding: 0 20px 20px 40px;
@@ -27,6 +21,17 @@ $textGray: #8e8e8e;
         ul {
             list-style-type: none;
         }
+    }
+}
+
+.post-content {
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    p {
+        color: #666;
     }
 }
 
@@ -51,7 +56,6 @@ $textGray: #8e8e8e;
     padding: 20px;
     a {
         padding: 5px;
-        background-color: #e2e2e2;
     }
 }
 
