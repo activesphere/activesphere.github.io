@@ -7,6 +7,7 @@ status: publish
 author: ciju
 type: post
 published: true
+comments: true
 
 ---
 
