@@ -23,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
+p {
+    line-height: 1.5em;
+}
+
 h2 {
     font-size: 26px;
 
@@ -91,8 +95,9 @@ h2 {
 }
 
 h5.front-main-copy {
-    font-size: 16px;
+    font-size: 17px;
     text-align: left;
+    max-width: 675px;
 }
 
 .page .frontpage {
@@ -190,6 +195,7 @@ html {
 }
 
 .blog-index .row {
+    margin-top: 15px;
     .meta {
         color: $grey;
         font-size: 0.8em;
@@ -198,7 +204,6 @@ html {
 
     a.title {
         font-size: 18px;
-        color: $black;
         font-weight: 700;
 
         &:hover {
