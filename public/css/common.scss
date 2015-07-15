@@ -148,8 +148,11 @@ html {
 .link-group {
     margin-left: 10px;
     display: inline;
+    a:hover {
+        text-decoration: none;
+    }
     i {
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 
