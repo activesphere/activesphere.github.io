@@ -19,9 +19,9 @@ approach of deriving it.
 
 This approach mostly follows <a
 href="http://www.dreamsongs.com/NewFiles/WhyOfY.pdf">WhyOfY</a> by
-Richard P Gabriel <sup>[1](#references)</sup>. This post hopefully
-explains in a more approachable form, for someone familiar with
-JavaScript.
+Richard P Gabriel <sup>[1](#references)</sup>. We will derive it in
+JavaScript, in steps. Each step is complete. Click on the 'Edit in
+JSFiddle' to explore the steps.
 
 ## Premise & setup
 
