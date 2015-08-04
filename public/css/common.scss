@@ -43,6 +43,7 @@ pre {
     background: #fff;
     position: relative;
     border-bottom: 1px solid #c8c8c8;
+    border-top: 1px solid transparent;
     box-shadow: 0 0 5px rgba(0,0,0,.15);
     border-radius: 0;
     margin-bottom: 0;
@@ -70,8 +71,10 @@ pre {
     background: none;
 }
 
-.navbar-main .navbar-collapse li > a.active, .navbar-main .navbar-collapse li > a:hover {
-    border-top: 4px solid transparent;
+@media(max-width:767px){
+    .navbar-main .navbar-collapse li > a.active, .navbar-main .navbar-collapse li > a:hover {
+        border-top: 4px solid transparent;
+    }
 }
 
 .navbar-brand.name {
