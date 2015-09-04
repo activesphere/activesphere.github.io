@@ -8,7 +8,7 @@ end
 
 desc 'Run the jekyll dev server'
 task :server do
-  system "jekyll --server --auto"
+  system 'bundle exec jekyll server --watch --trace --port 7777'
 end
 
 desc 'Clean temporary files and run the server'
