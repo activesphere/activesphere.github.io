@@ -109,9 +109,13 @@ h5.front-main-copy {
 }
 
 .page .frontpage {
-    text-align: left;
+    text-align: center;
     color: $grey;
-    padding: 40px 0;
+    padding: 40px 50px 20px 50px;
+
+    p {
+        line-height: 1.8em;
+    }
 }
 
 hr {
