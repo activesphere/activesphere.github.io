@@ -104,9 +104,12 @@ h5.front-main-copy {
 }
 
 .page .frontpage {
-    text-align: center;
+    text-align: justify;
     color: $grey;
     padding: 40px 50px 20px 50px;
+    p {
+        margin-bottom: 18px;
+    }
 }
 
 hr {
