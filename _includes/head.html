@@ -7,14 +7,13 @@
 <meta content='index, follow' name='robots'>
 <meta name='google' content='notranslate'>
 
+{% feed_meta %}
+
 {% if page.description %}
 <meta name="description" content="{{ page.description }}">
 {% else %}
 <meta content='NodeJS AngularJS D3 Ruby Rails application developers.' name='description'>
 {% endif %}
-
-
-<link href='/rss.xml' rel='alternate' title='ActiveSphere Blog' type='application/rss+xml'>
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>

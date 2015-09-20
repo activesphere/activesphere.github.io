@@ -4,7 +4,6 @@ permalink: /blog/:year/:month/:day/:title
 highlighter: pygments
 markdown: kramdown
 production: true
-safe: true
 title: ActiveSphere - Bangalore based Ruby Rails JavaScript consulting
 category_dir: /blog/category
 exclude:
@@ -14,3 +13,4 @@ exclude:
 
 gems:
 - jekyll-sitemap
+- jekyll-feed
