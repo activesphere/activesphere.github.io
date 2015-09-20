@@ -8,23 +8,17 @@ $grey: rgb(119, 119, 119);
 $green: rgb(93, 207, 202);
 $darkGreen: rgb(80, 187, 182);
 
-$font-primary: 'PT Sans', sans-serif;
-$font-secondary: 'PT Serif', serif;
+$font-header: 'PT Sans', sans-serif;
+$font-primary: 300 16px/1.6em helvetica, arial, sans-serif;
+$font-secondary: 300 16px/1.6em helvetica, arial, sans-serif;
 
 body {
-    font-family: $font-primary;
+    font: $font-primary;
     color: $black;
-    font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $font-primary;
-    line-height: initial;
-    font-weight: 400;
-}
-
-p {
-    line-height: 1.5em;
+    font: $font-primary;
 }
 
 h2 {
@@ -98,8 +92,9 @@ pre {
 }
 
 .front-main-copy {
-    font-family: $font-secondary;
-    font-weight: 400;
+    font: $font-secondary;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 h5.front-main-copy {
@@ -112,10 +107,6 @@ h5.front-main-copy {
     text-align: center;
     color: $grey;
     padding: 40px 50px 20px 50px;
-
-    p {
-        line-height: 1.8em;
-    }
 }
 
 hr {
@@ -146,6 +137,10 @@ html {
 
 .header .navbar .container {
     max-width: $content-width;
+}
+
+.header .navbar-brand {
+    font-family: $font-header;
 }
 
 .page {
