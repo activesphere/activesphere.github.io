@@ -14,7 +14,7 @@ comments: false
 math: true
 ---
 
-In this post, we try to visualize backpropogation while attempting to derive it by repeatedly applying chain rule. The derivation has been simplified a bit by not using sigmoid or tanh activation functions.
+In this post, we try to visualize backpropogation while attempting to derive it by repeatedly applying chain rule. The derivation has been simplified a bit by not using sigmoid activation functions.
 
 
 Let's consider this simple 2 neuron network.
@@ -122,6 +122,4 @@ $$ \begin{align}
 	\Delta w_{ji}^l & = x_i\sum_k\delta_k \Pi_h w_{kj}^{h} \label{e} \tag{5}
 \end{align}$$
 
-
 To summarize, $$ \ref{b} $$ represents BP over the output layer & $$ \ref{e} $$ represents BP over h hidden layers
-
