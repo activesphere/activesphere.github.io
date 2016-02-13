@@ -1,7 +1,7 @@
 # host: www.activesphere.com
 excerpt_separator: "\n\n\n"
 permalink: /blog/:year/:month/:day/:title
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 production: true
 title: ActiveSphere - Bangalore based Ruby Rails JavaScript consulting
