@@ -2,7 +2,79 @@
 title: Thinks we built
 layout: default
 permalink: /hacks.html
+
+hacks:
+ - title: FakeDynamo
+   link: https://github.com/ananthakumaran/fake_dynamo
+   description: >
+      An In-memory dynamodb emulator for
+      <a href="http://aws.amazon.com/dynamodb/">Amazon DynamoDB</a>.
+      We build it to help us develop applications on dynamodb in
+      development and test environments without incurring the costs
+      and th e latencies. This also allows us to host the non
+      production versions of the application outside of EC2. It is a
+      Ruby Application.
+ - title: devsync
+   link: https://github.com/ciju/devsync
+   description: >
+      A chrome devtools (WebInspector) hack, which allows your
+      css/javascript edits from WebInspector to be saved directly to
+      the localhost files. It was a winner at
+      <a href="https://web.archive.org/web/20121029070152/http://developer.yahoo.com/blogs/ydn/posts/2011/08/open-hack-india-they-hacked-we-won-them-over/"> Yahoo! Hacknight</a>.
+      It is a node.js application
+ - title: gotunnel
+   link: https://github.com/ciju/gutunnel
+   description: >
+      <p>
+          Gotunnel allows you to share server running on localhost,
+          over the net. localtunnel allows you to do the same, but at
+          the time of this writing, didn’t support WebSocket. And
+          well, we wanted to do a project in Golang.
+      </p>
+      <p>
+          Read <a href="http://blog.activesphere.com/blog/2013/03/26/gotunnel-make-localhost-server-accessible-over-internet/">blog
+          post</a> about the implementation.
+      </p>
+ - title: Mini-Mocha
+   link: https://github.com/ciju/mini-mocha
+   description: >
+      <p>
+          Mini-Mocha is a small experiment at understanding DSL
+          of <a href="http://mochajs.org/">mochajs.org</a>. About 100
+          lines of code is enough, to implement the synchronous DSL that
+          mocha supports. Supporting asynchronous DSL isn't much
+          tougher. If you do hack it, please look at
+          our <a href="/careers.html">careers</a> page.
+      </p>
+      <p>
+          Read <a href="http://www.activesphere.com/blog/2015/06/14/mini-mocha/">
+          blog post</a> about the implementation.
+      </p>
+ - title: Devmirror
+   link: https://github.com/ciju/devmirror
+   description: >
+      <p>
+          Devmirror is an experiment at remote debugging. May be, an
+          experiment gone wild. The idea, is to render a remote users
+          browser screen, to a developer. With devtools open at
+          developers end, which is connected to the users browser session.
+      </p>
+
+      <p>
+          In other words, developer see users interaction. And can
+          change the page live, for the user. Its like local
+          development, but actual browser session is probably happening
+          on the other side of the world.
+      </p>
+
+      <p>
+          Watch
+          a <a href="https://hasgeek.tv/bangalorejs/6/563-devsync-demo-by-ciju-cherian">talk</a>
+          about it.
+      </p>
+
 ---
+
 
 <div class="subheading container-fluid">
   <h1>Things we built</h1>
@@ -10,97 +82,16 @@ permalink: /hacks.html
 
 <div class='page container-fluid'>
   <div>
-    <div class="col-md-12 project fakedynamo">
-      <div>
-        <h2>
-          FakeDynamo
-          <a href="https://github.com/ananthakumaran/fake_dynamo"><i class="fa fa-github"></i></a>
-        </h2>
-        <p class="description">
-          An In-memory dynamodb emulator for
-          <a href="http://aws.amazon.com/dynamodb/">Amazon DynamoDB</a>.
-          We build it to help us develop applications on  dynamodb in development and test environments without incurring the costs and the latencies. This also allows us to host the non production versions of the application outside of EC2. It is a Ruby Application.
-        </p>
+    {% for proj in page.hacks %}
+      <div class="col-md-12 project">
+          <h2>
+              {{proj.title}}
+              <a href="{{proj.link}}"><i class="fa fa-github"></i></a>
+          </h2>
+          <p class="description">
+              {{proj.description}}
+          </p>
       </div>
-    </div>
-    <div class="col-md-12 project devsync">
-      <div>
-        <h2>
-          devsync
-          <a href="https://github.com/ciju/devsync"><i class="fa fa-github"></i></a>
-        </h2>
-        <p class="description">
-          A chrome devtools (WebInspector) hack, which allows your css/javascript edits from WebInspector to be saved directly to the localhost files. It was a winner at
-          <a href="https://web.archive.org/web/20121029070152/http://developer.yahoo.com/blogs/ydn/posts/2011/08/open-hack-india-they-hacked-we-won-them-over/"> Yahoo! Hacknight</a>.
-          It is a node.js application
-        </p>
-      </div>
-    </div>
-    <div class="col-md-12 project gotunnel">
-      <div>
-        <h2>
-          GoTunnel
-          <a href="https://github.com/ciju/gotunnel"><i class="fa fa-github"></i></a>
-        </h2>
-        <p class="description">
-          Gotunnel allows you to share server running on localhost,
-          over the net. localtunnel allows you to do the same, but at
-          the time of this writing, didn’t support WebSocket. And
-          well, we wanted to do a project in Golang.
-        </p>
-        <p class="description">
-          Read <a href="http://blog.activesphere.com/blog/2013/03/26/gotunnel-make-localhost-server-accessible-over-internet/">blog
-          post</a> about the implementation.
-        </p>
-      </div>
-    </div>
-    <div class="col-md-12 project mini-mocha">
-      <div>
-        <h2>
-          Mini-Mocha
-          <a href="https://github.com/ciju/mini-mocha"><i class="fa fa-github"></i></a>
-        </h2>
-        <p class="description">
-          Mini-Mocha is a small experiment at understanding DSL
-          of <a href="http://mochajs.org/">mochajs.org</a>. About 100
-          lines of code is enough, to implement the synchronous DSL that
-          mocha supports. Supporting asynchronous DSL isn't much
-          tougher. If you do hack it, please look at
-          our <a href="/careers.html">careers</a> page.
-        </p>
-        <p class="description">
-          Read <a href="http://www.activesphere.com/blog/2015/06/14/mini-mocha/">
-            blog post</a> about the implementation.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-md-12 project devmirror">
-      <div>
-        <h2>
-          Devmirror
-          <a href="https://github.com/ciju/devmirror"><i class="fa fa-github"></i></a>
-        </h2>
-        <p class="description">
-          Devmirror is an experiment at remote debugging. May be, an
-          experiment gone wild. The idea, is to render a remote users
-          browser screen, to a developer. With devtools open at
-          developers end, which is connected to the users browser session.
-        </p>
-
-        <p class="description">
-          In other words, developer see users interaction. And can
-          change the page live, for the user. Its like local
-          development, but actual browser session is probably happening
-          on the other side of the world.
-        </p>
-
-        <p class="description">
-          Watch
-          a <a href="https://hasgeek.tv/bangalorejs/6/563-devsync-demo-by-ciju-cherian">talk</a>
-          about it.
-        </p>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
