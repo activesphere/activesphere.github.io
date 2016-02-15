@@ -2,146 +2,94 @@
 title: ActiveSphere Team
 layout: default
 permalink: /people.html
+
+people:
+- name: Ciju Cherian
+  pic: /public/images/people/ciju.jpg
+  github: http://github.com/ciju
+  twitter: https://twitter.com/ciju
+  blurb: >
+   Did his masters at IIT Kanpur. Got a taste for startups at
+   SlideShare. Since then he has been involved with a few
+   startups, and has been attending various technical/startup
+   events. He has won two Yahoo! India Hackday events.
+   He is interested in education and analytics.
+
+- name: AnanthaKumaran
+  pic: /public/images/people/anantha.jpg
+  github: https://github.com/ananthakumaran
+  twitter: https://twitter.com/ananthakumaran
+  blurb: >
+    After working with few startups he joined us. Within a month
+    he contributed with his DynamoDB emulator. He is an
+    active Lisper and Emacs user. He contributed to Emacs community
+    with few development tools. He lives only with his books,
+    kindle and computers.
+
+- name: Dinesh Gowtham Prathap
+  pic: /public/images/people/dinesh.jpg
+  github: https://github.com/dgp
+  twitter: https://twitter.com/dineshgprathap
+  blurb: >
+    He joined us as a campus recruit from IIIT Bangalore. Since then
+    has worked on Android and iOS. Now works on Rails apps. His latest
+    craving has become the gym, which he tries to frequent all 5 days
+    of the week. Makes a point to catch the latest Tamil movies and is
+    working on a movie database app as a hobby. Doesn't mind spending
+    some time to teach a noob or two. Is seen with his headset on,
+    grooving to his favourite jam at times.
+
+- name: Sreenuvas K
+  pic: /public/images/people/seenu.jpg
+  blurb: >
+    He's always up and ready to help any of us, be it a squeaky chair or a WiFi problem. Sreenu will fix it up
+    in a jiffy. While we're hacking away, he reminders us to fuel up and orders some grub. He's an avid YouTube watcher and is sometimes seen giggling away at some comedy scene he just watched. He makes sure to catch the latest Telugu flick and is a hardcore Cricket fan!
+
+- name: Rahul Jayaraman
+  pic: /public/images/people/rahul.jpg
+  github: https://github.com/rahuljayaraman
+  twitter: http://twitter.com/rahuljayaraman
+  blurb: >
+    He led a team of developers building mobility applications
+    for Banks and NBFCs at Forbes Technosys. Loves writing Ruby code &
+    never misses an opportunity to learn and play around with
+    other languages and platforms. He enjoys playing a board
+    game called Go (also known as Igo, Weichi or Baduk) at which
+    he represented India at the 4th Korean Prime Minister's Cup. Has been
+    known to occasionally do cyling brevets. Enjoys running & swimming as well.
+
+- name: Sandeep S
+  pic: /public/images/people/sandeep.jpg
+  github: http://github.com/sandeepskak
+  twitter: http://twitter.com/_sandeeps
+  blurb: >
+    He joined us fresh out of college, hoping to learn a lot more here, than from the typical MNC. Has worked on Node JS, Backbone, and Rails. Has broken client API's a few times and fixed them of course! Spends time watching TV shows and catching the latest movie. Like Bruce Banner says, "He's always angry", this guy says "He's always hungry". Enjoys camping at home, weekend getaways and Biryani!
+
 ---
 
+
 <div class='page container-fluid'>
-  <div class="j_bio bio">
-    <div class="us row">
-      <div class="col-md-2">
-        <img class="img-circle" alt="ciju cherian" src="/public/images/people/ciju.jpg"/>
-      </div>
-      <div class="col-md-10">
-        <div class="info">
-          <span class="name">Ciju Cherian</span>
-          <div class="link-group">
-            <a href="http://github.com/ciju">
-              <i class="fa fa-github"></i>
-            </a>
-            <a href="http://twitter.com/#!/ciju">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </div>
+    <div class="j_bio bio">
+        {% for p in page.people %}
+        <div class="us row">
+            <div class="col-md-2">
+                <img class="img-circle" alt="{{p.name}}" src="{{p.pic}}"/>
+            </div>
+            <div class="col-md-10">
+                <div class="info">
+                    <span class="name">{{p.name}}</span>
+                    <div class="link-group">
+                        <a href="{{p.github}}">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <a href="{{p.twittter}}">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <p class="rant"> {{p.blurb}} </p>
+            </div>
         </div>
-        <p class="rant">
-          Did his masters at IIT Kanpur. Got a taste for startups at
-          SlideShare. Since then he has been involved with a few
-          startups, and has been attending various technical/startup
-          events. He has won two Yahoo! India Hackday events.
-          He is interested in education and analytics.
-        </p>
-      </div>
+        {% endfor %}
     </div>
-    <div class="us row">
-      <div class="col-md-2">
-        <img class="img-circle" alt="AnanthaKumaran" src="/public/images/people/anantha.jpg"/>
-      </div>
-      <div class="col-md-10">
-        <div class="info">
-          <span class="name">AnanthaKumaran</span>
-          <div class="link-group">
-            <a href="https://github.com/ananthakumaran">
-              <i class="fa fa-github"></i>
-            </a>
-            <a href="https://twitter.com/#!/ananthakumaran">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </div>
-        </div>
-        <p class="rant">
-          After working with few startups he joined us. Within a month
-          he contributed with his DynamoDB emulator. He is an
-          active Lisper and Emacs user. He contributed to Emacs community
-          with few development tools. He lives only with his books,
-          kindle and computers.
-        </p>
-      </div>
-    </div>
-    <div class="us row">
-      <div class="col-md-2">
-        <img class="img-circle" alt="Dinesh Gowtham Prathap" src="/public/images/people/dinesh.jpg"/>
-      </div>
-      <div class="col-md-10">
-        <div class="info">
-          <span class="name">Dinesh Gowtham Prathap</span>
-          <div class="link-group">
-            <a href="https://github.com/dgp">
-              <i class="fa fa-github"></i>
-            </a>
-            <a href="https://twitter.com/#!/dineshgprathap">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </div>
-        </div>
-        <p class="rant">
-          He joined us as a campus recruit from IIIT Bangalore. Since then has worked on Android and iOS. Now works on Rails apps. His latest craving has become the gym, which he tries to frequent all 5 days of the week. Makes a point to catch the latest Tamil movies and is working on a movie database app as a hobby. Doesn't mind spending
-          some time to teach a noob or two. Is seen with his headset on, grooving to his favourite jam at times.
-        </p>
-      </div>
-    </div>
-    <div class="us row">
-      <div class="col-md-2">
-        <img class="img-circle" alt="Sreenuvas K" src="/public/images/people/seenu.jpg"/>
-      </div>
-      <div class="col-md-10">
-        <div class="info">
-          <span class="name">Sreenuvas K</span>
-        </div>
-        <p class="rant">
-          He's always up and ready to help any of us, be it a squeaky chair or a WiFi problem. Sreenu will fix it up
-          in a jiffy. While we're hacking away, he reminders us to fuel up and orders some grub. He's an avid YouTube watcher and is sometimes seen giggling away at some comedy scene he just watched. He makes sure to catch the latest Telugu flick and is a hardcore Cricket fan!
-        </p>
-      </div>
-    </div>
-    <div class="us row">
-      <div class="col-md-2">
-        <img class="img-circle" alt="Rahul Jayaraman" src="/public/images/people/rahul.jpg"/>
-      </div>
-      <div class="col-md-10">
-        <div class="info">
-          <span class="name">Rahul Jayaraman</span>
-          <div class="link-group">
-            <a href="https://github.com/rahuljayaraman">
-              <i class="fa fa-github"></i>
-            </a>
-            <a href="http://twitter.com/#!/rahuljayaraman">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="http://www.linkedin.com/in/rahuljayaraman">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-        <p class="rant">
-          He led a team of developers building mobility applications
-          for Banks and NBFCs at Forbes Technosys. Loves writing Ruby code &
-          never misses an opportunity to learn and play around with
-          other languages and platforms. He enjoys playing a board
-          game called Go (also known as Igo, Weichi or Baduk) at which
-          he represented India at the 4th Korean Prime Minister's Cup. Has been
-          known to occasionally do cyling brevets. Enjoys running & swimming as well.
-        </p>
-      </div>
-    </div>
-    <div class="us row">
-      <div class="col-md-2">
-        <img class="img-circle" alt="sandeep" src="/public/images/people/sandeep.jpg"/>
-      </div>
-      <div class="col-md-10">
-        <div class="info">
-          <span class="name">Sandeep S</span>
-          <div class="link-group">
-            <a href="http://github.com/sandeepskak">
-              <i class="fa fa-github"></i>
-            </a>
-            <a href="http://twitter.com/#!/_sandeeps">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </div>
-        </div>
-        <p class="rant">
-          He joined us fresh out of college, hoping to learn a lot more here, than from the typical MNC. Has worked on Node JS, Backbone, and Rails. Has broken client API's a few times and fixed them of course! Spends time watching TV shows and catching the latest movie. Like Bruce Banner says, "He's always angry", this guy says "He's always hungry". Enjoys camping at home, weekend getaways and Biryani!
-        </p>
-      </div>
-    </div>
-  </div>
 </div>
