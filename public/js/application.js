@@ -43,11 +43,11 @@ $(function () {
 
     // Shuffle profile
     var usWithRant = $('.j_bio').children().filter(function () {
-        return $(this).find('.rant').length;
+      return $(this).hasClass('above');
     });
 
     var rest = $('.j_bio').children().filter(function () {
-        return $(this).find('.rant').length === 0;
+      return !$(this).hasClass('above');
     });
 
     if (usWithRant.length) {

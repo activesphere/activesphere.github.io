@@ -5,6 +5,7 @@ permalink: /people.html
 
 people:
 - name: Ciju Cherian
+  above: true
   pic: /public/images/people/ciju.jpg
   github: http://github.com/ciju
   twitter: https://twitter.com/ciju
@@ -17,6 +18,7 @@ people:
 
 - name: AnanthaKumaran
   pic: /public/images/people/anantha.jpg
+  above: true
   github: https://github.com/ananthakumaran
   twitter: https://twitter.com/ananthakumaran
   blurb: >
@@ -46,6 +48,7 @@ people:
     in a jiffy. While we're hacking away, he reminders us to fuel up and orders some grub. He's an avid YouTube watcher and is sometimes seen giggling away at some comedy scene he just watched. He makes sure to catch the latest Telugu flick and is a hardcore Cricket fan!
 
 - name: Rahul Jayaraman
+  above: true
   pic: /public/images/people/rahul.jpg
   github: https://github.com/rahuljayaraman
   twitter: http://twitter.com/rahuljayaraman
@@ -71,7 +74,7 @@ people:
 <div class='page container-fluid'>
     <div class="j_bio bio">
         {% for p in page.people %}
-        <div class="us row">
+        <div class="us row {% if p.above %} above {% endif %}">
             <div class="col-md-2">
                 <img class="img-circle" alt="{{p.name}}" src="{{p.pic}}"/>
             </div>
