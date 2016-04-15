@@ -16,11 +16,10 @@ people:
    events. He has won two Yahoo! India Hackday events.
    He is interested in education and analytics.
 
-- name: AnanthaKumaran
+- name: Anantha Kumaran
   pic: /public/images/people/anantha.jpg
   above: true
   github: https://github.com/ananthakumaran
-  twitter: https://twitter.com/ananthakumaran
   blurb: >
     After working with few startups he joined us. Within a month
     he contributed with his DynamoDB emulator. He is an
@@ -85,9 +84,11 @@ people:
                         <a href="{{p.github}}">
                             <i class="fa fa-github"></i>
                         </a>
-                        <a href="{{p.twittter}}">
+                        {% if p.twitter %}
+                        <a href="{{p.twitter}}">
                             <i class="fa fa-twitter"></i>
                         </a>
+                        {% endif %}
                     </div>
                 </div>
                 <p class="rant"> {{p.blurb}} </p>
