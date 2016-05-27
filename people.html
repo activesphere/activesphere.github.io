@@ -5,6 +5,7 @@ permalink: /people.html
 
 people:
 - name: Ciju Cherian
+  id: ciju
   above: true
   pic: /public/images/people/ciju.jpg
   github: http://github.com/ciju
@@ -17,6 +18,7 @@ people:
    He is interested in education and analytics.
 
 - name: Anantha Kumaran
+  id: anantha
   pic: /public/images/people/anantha.jpg
   above: true
   github: https://github.com/ananthakumaran
@@ -28,6 +30,7 @@ people:
     kindle and computers.
 
 - name: Dinesh Gowtham Prathap
+  id: dinesh
   pic: /public/images/people/dinesh.jpg
   github: https://github.com/dgp
   twitter: https://twitter.com/dineshgprathap
@@ -41,12 +44,14 @@ people:
     grooving to his favourite jam at times.
 
 - name: Sreenuvas K
+  id: sreenu
   pic: /public/images/people/seenu.jpg
   blurb: >
     He's always up and ready to help any of us, be it a squeaky chair or a WiFi problem. Sreenu will fix it up
     in a jiffy. While we're hacking away, he reminders us to fuel up and orders some grub. He's an avid YouTube watcher and is sometimes seen giggling away at some comedy scene he just watched. He makes sure to catch the latest Telugu flick and is a hardcore Cricket fan!
 
 - name: Rahul Jayaraman
+  id: rahul
   above: true
   pic: /public/images/people/rahul.jpg
   github: https://github.com/rahuljayaraman
@@ -61,6 +66,7 @@ people:
     known to occasionally do cyling brevets. Enjoys running & swimming as well.
 
 - name: Sandeep S
+  id: sandeep
   pic: /public/images/people/sandeep.jpg
   github: http://github.com/sandeepskak
   twitter: http://twitter.com/_sandeeps
@@ -73,7 +79,7 @@ people:
 <div class='page container-fluid'>
     <div class="j_bio bio">
         {% for p in page.people %}
-        <div class="us row {% if p.above %} above {% endif %}">
+        <div id="{{p.id}}" class="us row {% if p.above %} above {% endif %}">
             <div class="col-md-2">
                 <img class="img-circle" alt="{{p.name}}" src="{{p.pic}}"/>
             </div>
