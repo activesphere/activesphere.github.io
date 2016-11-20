@@ -5,9 +5,10 @@ $nav-bar-height: 50px;
 $darkBlack: rgb(51, 51, 51);
 $black: rgb(85, 85, 85);
 $grey: rgb(119, 119, 119);
-$green: rgb(93, 207, 202);
-$darkGreen: rgb(80, 187, 182);
+$green: #2bca7f;
+$darkGreen: #218a59;
 
+$font-main-copy: 400 16px/1.6em georgia;
 $font-header: 'PT Sans', sans-serif;
 $font-primary: 400 16px/1.6em helvetica, arial, sans-serif;
 $font-secondary: 400 16px/1.6em helvetica, arial, sans-serif;
@@ -79,18 +80,14 @@ pre {
 
 .subheading {
     border-bottom: 1px solid #eee;
-    padding: 25px 0 40px 0;
+    padding: 60px 0 50px 0;
     text-align: center;
-    background: $darkGreen url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1NicgaGVpZ2h0PScxMDAnPgogIDxyZWN0IHdpZHRoPSc1NicgaGVpZ2h0PScxMDAnIGZpbGw9JyM1MGJiYjYnLz4KICA8cGF0aCBkPSdNMjggNjZMMCA1MEwwIDE2TDI4IDBMNTYgMTZMNTYgNTBMMjggNjZMMjggMTAwJyBmaWxsPSdub25lJyBzdHJva2U9JyM1ZGNmY2EnIHN0cm9rZS13aWR0aD0nMS41Jy8+CiAgPHBhdGggZD0nTTI4IDBMMjggMzRMMCA1MEwwIDg0TDI4IDEwMEw1NiA4NEw1NiA1MEwyOCAzNCcgZmlsbD0nbm9uZScgc3Ryb2tlPScjNWRjZmNhJyBzdHJva2Utd2lkdGg9JzEnIHN0cm9rZS1vcGFjaXR5PSIwLjgiLz4KPC9zdmc+Cg==");
+//    background: $darkGreen url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1NicgaGVpZ2h0PScxMDAnPgogIDxyZWN0ICB3aWR0aD0nNTYnIGhlaWdodD0nMTAwJyBmaWxsPScjMjE4YTU5Jy8+CiAgPHBhdGggZD0nTTI4IDY2TDAgNTBMMCAxNkwyOCAwTDU2IDE2TDU2IDUwTDI4IDY2TDI4IDEwMCcgZmlsbD0nbm9uZScgc3Ryb2tlPScjMmJjYTdmJyBzdHJva2Utd2lkdGg9JzEuNScvPgogIDxwYXRoIGQ9J00yOCAwTDI4IDM0TDAgNTBMMCA4NEwyOCAxMDBMNTYgODRMNTYgNTBMMjggMzQnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzJiY2E3Zicgc3Ryb2tlLXdpZHRoPScxJyBzdHJva2Utb3BhY2l0eT0iMC44Ii8+Cjwvc3ZnPgo=");
+    background-image: url("/public/images/background.svg"),  linear-gradient(to bottom, #9bd8b4, #2dd68f);
     transition: background-position 2s;
-    background-position: 50px 50px;
-    &:hover {
-        background-position: 0px 0px;
-    }
-
     min-height: 200px;
     color: #f5f5f5;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
 
     h1 {
         font-weight: 700;
@@ -99,19 +96,16 @@ pre {
 }
 
 .front-main-copy {
-    font: $font-secondary;
-    font-size: 18px;
+    font: $font-main-copy;
+    font-size: 1.5em;
     font-weight: 500;
-}
-
-h4.front-main-copy {
-    margin-top: -15px;
 }
 
 h5.front-main-copy {
     font-size: 17px;
     text-align: left;
     max-width: 675px;
+    text-shadow: none;
 }
 
 .page .frontpage {
