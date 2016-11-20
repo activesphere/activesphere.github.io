@@ -83,7 +83,7 @@ pre {
     padding: 60px 0 50px 0;
     text-align: center;
 //    background: $darkGreen url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1NicgaGVpZ2h0PScxMDAnPgogIDxyZWN0ICB3aWR0aD0nNTYnIGhlaWdodD0nMTAwJyBmaWxsPScjMjE4YTU5Jy8+CiAgPHBhdGggZD0nTTI4IDY2TDAgNTBMMCAxNkwyOCAwTDU2IDE2TDU2IDUwTDI4IDY2TDI4IDEwMCcgZmlsbD0nbm9uZScgc3Ryb2tlPScjMmJjYTdmJyBzdHJva2Utd2lkdGg9JzEuNScvPgogIDxwYXRoIGQ9J00yOCAwTDI4IDM0TDAgNTBMMCA4NEwyOCAxMDBMNTYgODRMNTYgNTBMMjggMzQnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzJiY2E3Zicgc3Ryb2tlLXdpZHRoPScxJyBzdHJva2Utb3BhY2l0eT0iMC44Ii8+Cjwvc3ZnPgo=");
-    background-image: url("/public/images/background.svg"),  linear-gradient(to bottom, #77fbad, #70c19f);
+    background-image: url("/public/images/background.svg"),  linear-gradient(to bottom, #9bd8b4, #2dd68f);
     transition: background-position 2s;
     min-height: 200px;
     color: #f5f5f5;
@@ -99,10 +99,6 @@ pre {
     font: $font-main-copy;
     font-size: 1.5em;
     font-weight: 500;
-}
-
-h4.front-main-copy {
-    text-shadow: none;
 }
 
 h5.front-main-copy {
