@@ -8,6 +8,7 @@ $grey: rgb(119, 119, 119);
 $green: #2bca7f;
 $darkGreen: #218a59;
 
+$font-main-copy: 400 16px/1.6em georgia;
 $font-header: 'PT Sans', sans-serif;
 $font-primary: 400 16px/1.6em helvetica, arial, sans-serif;
 $font-secondary: 400 16px/1.6em helvetica, arial, sans-serif;
@@ -95,13 +96,12 @@ pre {
 }
 
 .front-main-copy {
-    font: $font-secondary;
-    font-size: 18px;
+    font: $font-main-copy;
+    font-size: 1.5em;
     font-weight: 500;
 }
 
 h4.front-main-copy {
-    margin-top: -15px;
     text-shadow: none;
 }
 
