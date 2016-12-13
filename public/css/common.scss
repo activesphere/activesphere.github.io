@@ -243,6 +243,11 @@ html {
     .description {
         color: $grey;
     }
+    .meta {
+        .tags {
+            color: $darkGreen;
+        }
+    }
 }
 
 .clear {

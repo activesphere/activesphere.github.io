@@ -1,0 +1,50 @@
+---
+title: Some of our customer projects
+layout: default
+permalink: /portfolio.html
+
+projects:
+ - title: Energy manager for utilities
+   link: https://www.enernoc.com/
+   customer: EnerNOC
+   stack: AngularJS, d3.js, webpack, node.js
+   description: >
+      <p>
+        This tool was built to help monitoring energy consumption across multiple properties & locations, (eg: a chain of restaurants). As the video demonstrates, it allows slicing & dicing the multiple types data across multiple dimensions.
+      </p>
+      <p>
+        <iframe src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview" width="640" height="480"></iframe>
+      </p>
+ - title: Optimize an e-commerce product listing page
+   link: http://www.abof.com/men/clothing/jeans
+   customer: all about fashion
+   stack: React, webpack
+   description: > 
+      <p>
+        We made abof.com faster than Jabong, Koovs, Flipkart, Amazon
+      </p>
+      <p>
+        <iframe width="640" height="480" src="https://www.youtube.com/embed/kwaVtMW0soo"></iframe>
+      </p>
+---
+
+<div class='page container-fluid'>
+  <div>
+    {% for proj in page.projects %}
+      <div class="col-md-12 project">
+          <h2>
+              {{proj.title}}
+          </h2>
+          <p class="meta">
+              <b>Customer:</b> <span><a href="{{proj.link}}">{{proj.customer}}</a></span>
+          </p>
+          <p class="meta">
+              <b>Tech stack:</b> <span class="tags">{{proj.stack}}</span>
+          </p>
+          <p class="meta">
+              <b>Description:</b> {{proj.description}}
+          </p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
