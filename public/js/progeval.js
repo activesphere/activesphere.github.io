@@ -8,8 +8,8 @@ var commentMap = {
     'python': '#',
     'ruby': '#',
     'javascript': '//',
-    'cpp': '//',
-    'java': '//'
+    'cpp': '//',            // Not configured yet
+    'java': '//'            // Not configured yet
 };
 
 var uploadCode = function(code) {
@@ -45,6 +45,6 @@ $('#ps-submit-btn').on('click', function() {
 });
 
 $('#lang-mode').change(function() {
-    var lang = $(this).val();
+    lang = $(this).val();
     setLanguage(lang);
 });
