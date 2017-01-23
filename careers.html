@@ -133,31 +133,28 @@ permalink: /careers.html
         <p class="legible_text">
             Design a Least Frequently Used Cache where in the every get(x) will increment the
             access count for x. The element with the least value of count will be
-            expelled/invalidated. Invalidation is done when the cache reaches
+            evicted/invalidated. Invalidation is done when the cache reaches
             it's limit value.<br/>
             Requirements for get and set of the Cache:<br/>
             put(x, val) -&gt; O(1)<br/>
             get(x) -&gt; O(1)<br/>
-            Set the limit of the LFU Cache to 10<br/>
+            Set the limit of the LFU Cache to 10.<br/>
 
+            <br/>
             <h4><b>Examples</b></h4>
             <h5><i>Please note that the Input/Output below is continuous i.e. run in same shell.</i></h5>
-
             <p>Input: PUT 1 one</p>
             <p>Output: INSERTED 1</p>
-
             <p>Input: PUT 10 hello</p>
             <p>Output: INSERTED 10</p>
-            
             <p>Input: GET 10</p>
             <p>Output: hello</p>
-
             <p>Input: GET 9999</p>
             <p>Output: KEY NOT FOUND</p>
-
             <p>INPUT: PUT 10 hi</p>
             <p>OUTPUT: KEY ALREADY EXISTS</p>
-        </p><br/><hr/>
+        </p>
+        <hr/>
         <p class="legible_text">
 
           <form class="form">
