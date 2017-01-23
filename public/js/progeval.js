@@ -14,7 +14,7 @@ var commentMap = {
 
 var uploadCode = function(code) {
     $.ajax({
-        url: 'http://a815a828.ngrok.io/evaluate',
+        url: 'http://localhost:5000/evaluate',
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ code: code, lang: lang, problem_id: 'LFU_CACHE' }),
