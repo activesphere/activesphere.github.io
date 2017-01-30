@@ -18,7 +18,7 @@ var uploadCode = function(code) {
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ code: code, lang: lang, problem_id: 'LFU_CACHE' }),
-        timeout: 300000
+        timeout: 600000
     }).done(function(res) {
         alert(res.result);
     }).fail(function(err) {
