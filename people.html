@@ -88,9 +88,11 @@ people:
                 <div class="info">
                     <span class="name">{{p.name}}</span>
                     <div class="link-group">
+                        {% if p.github %}
                         <a href="{{p.github}}">
-                            <i class="fa fa-github"></i>
+                          <i class="fa fa-github"></i>
                         </a>
+                        {% endif %}
                         {% if p.twitter %}
                         <a href="{{p.twitter}}">
                             <i class="fa fa-twitter"></i>
