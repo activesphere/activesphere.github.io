@@ -98,6 +98,21 @@ pre {
     }
 }
 
+.project-subheading {
+    border-top: 1px solid #eee;
+    padding: 25px 0 20px 0;
+    text-align: center;
+    min-height: 150px;
+    a {
+        font-size: 17px;
+    }
+    h1 {
+        font-weight: 700;
+        font-size: 44px;
+        margin: 9px 0;
+    }
+}
+
 .front-main-copy {
     font: $font-main-copy;
     font-size: 1.5em;
@@ -249,6 +264,11 @@ html {
 
     iframe {
         border: none;
+    }
+
+    a.client {
+        float: left;
+        margin: 10px;
     }
 }
 

@@ -7,8 +7,6 @@ video: true
 projects:
 
  - title: Energy manager for utilities
-   link: https://www.enernoc.com/
-   customer: EnerNOC
    stacks:
      - name: AngularJS
        link: https://angularjs.org/
@@ -20,6 +18,9 @@ projects:
        link: https://nodejs.org/en/
    description: >
       <p>
+        <a class="client" href="http://www.enernoc.com" target="_blank">
+          <img src="/public/images/clients/enernoc.png"/>
+        </a>
         Put yourself in the shoes of a energy manager, who is looking
         over energy consumption of a university. Where is the energy
         consumed? Whats the change in consumption, in comparison to
@@ -46,8 +47,6 @@ projects:
       </p>
 
  - title: Optimize an e-commerce product listing page
-   link: http://www.abof.com/men/clothing/jeans
-   customer: all about fashion
    stacks:
      - name: React
        link: https://facebook.github.io/react/
@@ -55,7 +54,9 @@ projects:
        link: https://webpack.github.io/
    description: >
       <p>
-
+        <a class="client" href="http://www.abof.com/men/clothing/jeans" target="_blank">
+          <img src="/public/images/clients/abg-abof.png" />
+        </a>
         We work with our clients to understand their business and
         concerns. ABOF, wanted a head start in their front-end dev
         stack. We worked on a few important pages of the incoming
@@ -97,26 +98,23 @@ projects:
         <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
       </p>
 ---
-
+{% for proj in page.projects %}
+<div class="project-subheading container-fluid">
+  <h1>{{proj.title}}</h1>
+  <h5>
+    {% for stack in proj.stacks %}
+    <a href="{{stack.link}}">{{stack.name}}</a>&nbsp;
+    {% endfor %}
+  </h5>
+</div>
 <div class='page container-fluid'>
   <div>
-    {% for proj in page.projects %}
       <div class="col-md-12 project">
-          <h2>
-              {{proj.title}}
-          </h2>
-          <p class="meta">
-              <b>Customer:</b> <span><a href="{{proj.link}}">{{proj.customer}}</a></span>
-              <br/>
-              <b>Tech stack:</b>
-              {% for stack in proj.stacks %}
-              <a href="{{stack.link}}">{{stack.name}}</a>&nbsp;
-              {% endfor %}
-          </p>
           <div class="description">
               {{proj.description}}
           </div>
       </div>
-    {% endfor %}
   </div>
 </div>
+{% endfor %}
+
