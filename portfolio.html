@@ -2,6 +2,7 @@
 title: Some of our customer projects
 layout: default
 permalink: /portfolio.html
+video: true
 
 projects:
 
@@ -33,11 +34,7 @@ projects:
         dimensions.
       </p>
       <p>
-        <iframe
-          src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview"
-          width="640"
-          height="480"
-          ></iframe>
+        <iframe src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=720" allowfullscreen></iframe>
       </p>
 
  - title: Optimize an e-commerce product listing page
@@ -85,11 +82,7 @@ projects:
         e-commerce sites, when we delivered ABOF's listing page.
       </p>
       <p>
-        <iframe
-          width="640"
-          height="480"
-          src="https://www.youtube.com/embed/kwaVtMW0soo"
-          ></iframe>
+        <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
       </p>
 ---
 
@@ -106,9 +99,9 @@ projects:
           <p class="meta">
               <b>Tech stack:</b> <span class="tags">{{proj.stack}}</span>
           </p>
-          <p class="meta">
-              <b>Description:</b> {{proj.description}}
-          </p>
+          <div class="description">
+              {{proj.description}}
+          </div>
       </div>
     {% endfor %}
   </div>

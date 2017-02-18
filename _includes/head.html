@@ -33,6 +33,14 @@
 {% endif %}
 
 
+{% if page.video %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".page").fitVids({ customSelector: "iframe[src^='https://drive.google.com'], iframe[src^='https://www.youtube.com']"});
+    });
+  </script>
+{% endif %}
 
 <!-- <title>ActiveSphere: technology services for startups, big and small.</title> -->
 <title>{{ page.title }} :: {{ site.title }}</title>
