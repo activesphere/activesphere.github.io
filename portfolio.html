@@ -9,7 +9,15 @@ projects:
  - title: Energy manager for utilities
    link: https://www.enernoc.com/
    customer: EnerNOC
-   stack: AngularJS, d3.js, webpack, node.js
+   stacks:
+     - name: AngularJS
+       link: https://angularjs.org/
+     - name: d3.js
+       link: http://d3js.org/
+     - name: webpack
+       link: https://webpack.github.io/
+     - name: node.js
+       link: https://nodejs.org/en/
    description: >
       <p>
         Put yourself in the shoes of a energy manager, who is looking
@@ -34,13 +42,17 @@ projects:
         dimensions.
       </p>
       <p>
-        <iframe src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=720" allowfullscreen></iframe>
+        <iframe src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=hd720" allowfullscreen></iframe>
       </p>
 
  - title: Optimize an e-commerce product listing page
    link: http://www.abof.com/men/clothing/jeans
    customer: all about fashion
-   stack: React, webpack
+   stacks:
+     - name: React
+       link: https://facebook.github.io/react/
+     - name: webpack
+       link: https://webpack.github.io/
    description: >
       <p>
 
@@ -95,9 +107,11 @@ projects:
           </h2>
           <p class="meta">
               <b>Customer:</b> <span><a href="{{proj.link}}">{{proj.customer}}</a></span>
-          </p>
-          <p class="meta">
-              <b>Tech stack:</b> <span class="tags">{{proj.stack}}</span>
+              <br/>
+              <b>Tech stack:</b>
+              {% for stack in proj.stacks %}
+              <a href="{{stack.link}}">{{stack.name}}</a>&nbsp;
+              {% endfor %}
           </p>
           <div class="description">
               {{proj.description}}

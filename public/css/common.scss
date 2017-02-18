@@ -7,6 +7,9 @@ $black: rgb(85, 85, 85);
 $grey: rgb(119, 119, 119);
 $green: #2bca7f;
 $darkGreen: #218a59;
+$blue: #16C9BD;
+$yellow: #EBD16A;
+$red: #E25132;
 
 $font-main-copy: 400 16px/1.6em georgia;
 $font-header: 'PT Sans', sans-serif;
@@ -127,7 +130,7 @@ a {
 }
 
 a:hover {
-    color: $green;
+    color: $red;
     text-decoration: underline;
 }
 
@@ -226,7 +229,7 @@ html {
         font-weight: 700;
 
         &:hover {
-            color: $green;
+            color: $red;
         }
     }
 
@@ -242,6 +245,10 @@ html {
     }
     .description {
         color: $grey;
+    }
+
+    iframe {
+        border: none;
     }
 }
 
@@ -282,7 +289,7 @@ footer {
     }
 
     a:hover {
-        color: $green;
+        color: $red;
         text-decoration: none;
     }
 
