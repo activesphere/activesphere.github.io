@@ -1,0 +1,115 @@
+---
+title: Some of our customer projects
+layout: default
+permalink: /portfolio.html
+
+projects:
+
+ - title: Energy manager for utilities
+   link: https://www.enernoc.com/
+   customer: EnerNOC
+   stack: AngularJS, d3.js, webpack, node.js
+   description: >
+      <p>
+        Put yourself in the shoes of a energy manager, who is looking
+        over energy consumption of a university. Where is the energy
+        consumed? Whats the change in consumption, in comparison to
+        last month, or last year? Where are the emissions happening?
+        This tool was built to help monitoring energy consumption
+        across multiple properties & locations (eg: universities,
+        chain of restaurants etc.)
+      </p>
+
+      <p>
+        We helped PulseEnergy (now acquired by EnerNOC), to build this
+        tool. We worked remotely with the a team of Engineers at
+        PulseEnergy, for over 2 years. Most of the product was written
+        by us.
+      </p>
+
+      <p>
+        The video below, show some features of the app, allowing
+        slicing & dicing of multiple types of data, across multiple
+        dimensions.
+      </p>
+      <p>
+        <iframe
+          src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview"
+          width="640"
+          height="480"
+          ></iframe>
+      </p>
+
+ - title: Optimize an e-commerce product listing page
+   link: http://www.abof.com/men/clothing/jeans
+   customer: all about fashion
+   stack: React, webpack
+   description: >
+      <p>
+
+        We work with our clients to understand their business and
+        concerns. ABOF, wanted a head start in their front-end dev
+        stack. We worked on a few important pages of the incoming
+        traffic, and replicated the same functionality that the
+        existing IBM WebSphere based front-end offered, over the span
+        of 3 months.
+
+      </p>
+
+      <p>
+
+        And when we shipped it, it was among the fast loading sites.
+
+      </p>
+
+      <p>
+        Our aim, was to give ABOF a head start with the technology, so
+        their internal team could pick up and continue the work. We
+        worked with their engineers, tech team and product team, to
+        figure out what was needed, which parts could be compromised
+        for shipping the product faster, and how to achieve the
+        desired speeds with existing infrastructure.
+
+      </p>
+
+      <p>
+        With the success of the first implementation (The business saw
+        a considerable increase in the conversion rate), ABOF asked us
+        again, to redo their checkout process. Which, again, we
+        delivered in 2 months, within time.
+
+      </p>
+
+      <p>
+        Below is the loading times of the listing page of various
+        e-commerce sites, when we delivered ABOF's listing page.
+      </p>
+      <p>
+        <iframe
+          width="640"
+          height="480"
+          src="https://www.youtube.com/embed/kwaVtMW0soo"
+          ></iframe>
+      </p>
+---
+
+<div class='page container-fluid'>
+  <div>
+    {% for proj in page.projects %}
+      <div class="col-md-12 project">
+          <h2>
+              {{proj.title}}
+          </h2>
+          <p class="meta">
+              <b>Customer:</b> <span><a href="{{proj.link}}">{{proj.customer}}</a></span>
+          </p>
+          <p class="meta">
+              <b>Tech stack:</b> <span class="tags">{{proj.stack}}</span>
+          </p>
+          <p class="meta">
+              <b>Description:</b> {{proj.description}}
+          </p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
