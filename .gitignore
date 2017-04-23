@@ -7,3 +7,4 @@ tmp/
 */.DS_Store
 _site/
 _site2/
+node_modules/
