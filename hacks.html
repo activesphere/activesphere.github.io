@@ -45,6 +45,16 @@ hacks:
    description: >
       μ is a JavaScript library for encoding/decoding state (JavaScript object) in URL. Define a spec for the state, based on which the encoding is done. Manage the state with versioning.
 
+ - title: Tide
+   link: https://github.com/ananthakumaran/tide
+   description: >
+      TypeScript Interactive Development Environment for Emacs - written in the early days of typescript when the emacs support for it was spotty. Since then, it has grown into a mature package and featured in the front page of <a href="https://www.typescriptlang.org/">www.typescriptlang.org</a>.
+
+ - title: Memcachex
+   link: https://github.com/ananthakumaran/memcachex
+   description: >
+      A <a href="https://memcached.org/">memcached</a> client written in pure elixir which aims to provide good performance and solid error recovery from network connection failures.
+
  - title: pdf slide splitter
    link: https://github.com/ciju/split-pdf-slides
    description: >
@@ -108,9 +118,9 @@ hacks:
               {{proj.title}}
               <a href="{{proj.link}}"><i class="fa fa-github"></i></a>
           </h2>
-          <p class="description">
+          <div class="description">
               {{proj.description}}
-          </p>
+          </div>
       </div>
     {% endfor %}
   </div>
