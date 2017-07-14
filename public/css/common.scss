@@ -139,7 +139,6 @@ a {
 }
 
 a:hover {
-    color: $red;
     text-decoration: underline;
 }
 
@@ -236,10 +235,6 @@ html {
     a.title {
         font-size: 18px;
         font-weight: 700;
-
-        &:hover {
-            color: $red;
-        }
     }
 
     .summary {
