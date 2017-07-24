@@ -122,11 +122,11 @@ pre {
     background: linear-gradient(to left, $mainDarker, $mainLight);
     display: block;
     z-index: -1;
-    transform: rotate(-4deg) translateX(-25px) scale(1.2);
+    transform: rotate(-2deg) translateX(-25px) scale(1.2);
 }
 
 .subheading::after {
-    transform: rotate(3deg) translateX(-50px) scale(1.4);
+    transform: rotate(2deg) translateX(-50px) scale(1.4);
 }
 
 
