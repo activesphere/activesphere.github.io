@@ -19,8 +19,8 @@ $constrast: #fb5b01;
 
 $font-main-copy:  400 16px/1.6em 'Lato', sans-serif;
 $font-header: 400 16px/1.6em 'Lato', sans-serif;
-$font-primary: 400 16px/1.6em helvetica, arial, sans-serif;
-$font-secondary: 400 16px/1.6em helvetica, arial, sans-serif;
+$font-primary: 300 16px/1.6em helvetica, arial, sans-serif;
+$font-secondary: 300 16px/1.6em helvetica, arial, sans-serif;
 
 $blueWhite1: #B3E5FC;
 $blueWhite2: #E1F5FE;
@@ -162,7 +162,9 @@ h5.front-main-copy {
 
 .page .frontpage {
     text-align: justify;
-    font-size: 17px;
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
     color: $grey;
     padding: 10px 0;
     line-height: 1.6em;
