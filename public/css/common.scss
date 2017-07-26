@@ -321,7 +321,8 @@ html {
 }
 
 .client-list img {
-    width: 180px;
+    width: 100%;
+    max-width: 170px;
 }
 
 ul.plain-list {
