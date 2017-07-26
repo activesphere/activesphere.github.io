@@ -22,6 +22,9 @@ $font-header: 400 16px/1.6em 'Lato', sans-serif;
 $font-primary: 400 16px/1.6em helvetica, arial, sans-serif;
 $font-secondary: 400 16px/1.6em helvetica, arial, sans-serif;
 
+$blueWhite1: #B3E5FC;
+$blueWhite2: #E1F5FE;
+
 body {
     font: $font-primary;
     color: $black;
@@ -323,35 +326,6 @@ ul.plain-list {
     list-style: none;
 }
 
-footer {
-    margin-top: 20px;
-    background: darken($mainDarker, 40%);
-    color: darken($mainDarker, 10%);
-}
-.footer-contact-list {
-    text-align: center;
-    padding: 20px 10px;
-    margin: 0 auto;
-    a {
-        display: inline-block;
-        font-family: $font-secondary;
-        font-size: 1em;
-        padding: 0 5px;
-        color: darken($mainDarker, 10%);
-    }
-
-    a:hover {
-        color: $mainDarker;
-        text-decoration: none;
-    }
-
-    .copyright {
-        font-family: $font-secondary;
-        font-size: 11px;
-        padding: 0 0 10px 0;
-        clear: both;
-    }
-}
 
 .footer-contact-detail {
     padding-left: 5px;
@@ -381,4 +355,52 @@ footer {
     img {
         height: 4rem;
     }
+}
+
+footer a {
+    // color: #81D4FA;
+    color: $blueWhite1;
+}
+footer:hover a {
+    color: $blueWhite2;
+    tansition: color 0.5s ease;
+}
+footer a:hover {
+    color: $blueWhite2;
+    text-decoration: none;
+    tansition: color 0.5s ease;
+}
+
+.footer-background {
+    position: relative;
+}
+
+.footer-background::before,
+.footer-background::after {
+    content: " ";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: $mainLight;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, $mainDarker, $mainLight);
+    background: linear-gradient(to right, $mainDarker, $mainLight);
+    // background: $mainDarker;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to left, $mainLight, $mainDarker);
+    // background: linear-gradient(to left, $mainLight, $mainDarker);
+    display: block;
+    z-index: -1;
+    transform: rotate(2deg) translateX(-25px) scale(1.4);
+}
+
+.footer-background::after {
+    transform: rotate(-2deg) translateX(-50px) scale(1.2);
+}
+
+.copyright {
+    text-align: center;
+    color: $blueWhite1;
+    padding: 15px;
 }
