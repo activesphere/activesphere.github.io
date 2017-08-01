@@ -4,62 +4,47 @@
     {% include head.html %}
   </head>
   <body>
-    <div class="body-wrapper">
     {% include header.html %}
-    <div class='page container'>
-      <div class="post">
-        <div class="row">
-          <div class="meta col-md-12">
-            <h3>
-              <a href="{{ page.url }}"> {{ page.title }} </a>
-            </h3>
-            {% if page.author %}
-            <h5 class="author">
-              by {{ page.author }}
-            </h5>
-            {% endif %}
-          </div>
-          <div class="col-md-2"></div>
+    <div class="mw7 center pa4">
+      <div>
+        <a class="link f4 dim" href="{{ page.url }}"> {{ page.title }} </a>
+        {% if page.author %}
+        <div class="gray i">
+          by {{ page.author }}
         </div>
+        {% endif %}
 
-        <div class="row">
-          <div class="post-content col-md-12">
-            {{content}}
-          </div>
+        <div class="avenir f5 lh-copy">
+        {{content}}
         </div>
       </div>
 
-      <section class="page-nav">
+      <section>
         {% if page.next %}
-        <a href="{{ page.next.url }}">&lArr;  {{ page.next.title }} </a>
+        <a class="link dim as-blue" href="{{ page.next.url }}">&lArr;  {{ page.next.title }} </a>
         {% endif %}
         &nbsp; | &nbsp;
         {% if page.previous %}
-        <a href="{{page.previous.url}}">{{page.previous.title}} &rArr;</a>
+        <a class="link dim as-blue" href="{{page.previous.url}}">{{page.previous.title}} &rArr;</a>
         {% endif %}
       </section>
 
       {% if page.comments %}
-      <div class="row">
-        <div class="col-md-12">
-          <div id="disqus_thread"></div>
-          <script type="text/javascript">
-          var disqus_shortname = 'activesphere';
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'activesphere';
 
-          (function() {
-           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-           })();
-          </script>
-        </div>
-      </div>
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
       {% endif %}
 
     </div>
 
-    <footer></footer>
+    {% include footer.html %}
     {% include analytics.html %}
-    </div>
   </body>
 </html>
