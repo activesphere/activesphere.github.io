@@ -1,34 +1,3 @@
-/* global $ */
-(function() {
-  var footerPosTimeout;
-  function positionFooter() {
-    if (footerPosTimeout) {
-      clearTimeout(footerPosTimeout);
-    }
-
-    footerPosTimeout = setTimeout(
-      function() {
-        var winH = window.innerHeight;
-        var footer = document.querySelector('footer');
-
-        footer.style.position = 'inherit';
-
-        var footerH = footer.offsetHeight;
-        var top = footer.getBoundingClientRect().top + document.body.scrollTop;
-        if (winH > top + footerH - 2) {
-          footer.style.position = 'absolute';
-          footer.style.top = winH - footerH + 'px';
-          footer.style.width = '100%';
-        }
-      },
-      500
-    );
-  }
-
-  positionFooter();
-  window.addEventListener('resize', positionFooter);
-})();
-
 (function() {
   function setActiveClass(klass) {
     // Active Path
