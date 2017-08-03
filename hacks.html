@@ -110,10 +110,10 @@ hacks:
 
 ---
 
-<div class="mw7 center pa3 avenir">
+<div class="mw7 center pv3 avenir">
     {% for proj in page.hacks %}
     {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-    <div class="pv3 ph5 {% if thecycle == "even" %}bg-light-gray{% endif %}">
+    <div class="pa3 ph5-ns {% if thecycle == "even" %}bg-light-gray{% endif %}">
     <h2 class="f3 mv2">
       {{proj.title}}
       <a class="link dim dib as-blue w1 mh1" href="{{proj.link}}">
