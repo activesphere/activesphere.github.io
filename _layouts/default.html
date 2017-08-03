@@ -3,13 +3,14 @@
   <head>
     {% include head.html %}
   </head>
-  <body>
-    <div class="body-wrapper">
-    {% include header.html %}
+  <body class="flex flex-column" style="min-height: 100vh;">
+    <div>
+      {% include header.html %}
       {{content}}
+    </div>
+    <div style="flex: 1;"></div>
     {% include footer.html %}
     {% include analytics.html %}
     <script src='/public/js/application.js'></script>
-    </div>
   </body>
 </html>

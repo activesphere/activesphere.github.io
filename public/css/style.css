@@ -1,0 +1,98 @@
+body {
+    font: normal 16px/1.6em 'Lato', helvetica, arial, sans-serif;
+    color: #4c4c4c;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5 {
+    font: normal 16px/1.6em 'Lato', helvetica, arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #4185db;
+}
+
+iframe {
+    border: none;
+}
+
+.as-blue {
+    color: #4185db;
+}
+
+.as-bt4 {
+    border-top-style: solid;
+    border-top-width: 4px;
+}
+
+.light-gradient {
+    background: #e7f0fb;
+    background: linear-gradient(180deg, #ecf3fb 0%, #e7f0fb 100%);
+}
+
+.light-blue-gradient {
+    background: #3466ae;
+    background: linear-gradient(180deg, #5092f1 0%, #82aef5 100%);
+}
+
+.material-icons {
+    font-size: initial !important;
+}
+
+.as-img-gray-filter {
+    -webkit-filter: opacity(.5) grayscale(0.5);
+    filter: opacity(0.5) grayscale(0.5);
+}
+
+.as-clients:hover .as-img-gray-filter {
+    -webkit-filter: opacity(1) grayscale(0);
+    filter: opacity(1) grayscale(0);
+    transition: filter .5s;
+}
+
+.as-github svg,
+.as-twitter svg {
+    fill: #4185db;
+}
+
+.as-github:hover svg,
+.as-twitter:hover svg {
+    fill: #a5bbe9;
+}
+
+pre {
+    border-radius: 0;
+}
+
+a[rel="footnote"], a[rev="footnote"] {
+    vertical-align: super;
+    text-decoration: none;
+}
+a[rev="footnote"] {
+    display:block;
+    text-align:right;
+    margin-top:-3em;
+    border-bottom: 0px;
+}
+.footnotes {
+    font-size:0.8em;
+}
+
+/* gist styling  */
+.gist .highlight {
+    background-color: #f5f5f5 !important;
+}
+.gist .gist-file {
+    border: none !important;
+}
+.gist .gist-data {
+    background-color: #f5f5f5 !important;
+}
+.gist .gist-data .blob-num {
+    display: none;
+}

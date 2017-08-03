@@ -2,20 +2,16 @@
 layout: default
 title: ActiveSphere blog
 ---
-<div class='page container-fluid'>
-  <div class="blog-index">
+<div class="mw7 center pa3">
+  <div>
     {% for post in site.posts %}
-    <div class="row">
-      <div class="col-md-12">
-        <h2>
-          <a class="title" href="{{ post.url }}">{{ post.title }}</a>
-        </h2>
-        <div class="summary">
-          {{ post.excerpt | markdownify }}
-          <abbr class="meta">by {{ post.author }} - {{ post.date | date_to_string }}</abbr>
+      <div class="avenir lh-copy black-70 pa4 {% unless forloop.first %}bt b--light-gray{% endunless %}">
+        <a class="link as-blue dim f4" href="{{ post.url }}">{{ post.title }}</a>
+        <div>
+          <div class="f5">{{ post.excerpt | markdownify }}</div>
+          <abbr class="gray f5">by {{ post.author }} - {{ post.date | date_to_string }}</abbr>
         </div>
       </div>
-    </div>
     {% endfor %}
   </div>
 </div>

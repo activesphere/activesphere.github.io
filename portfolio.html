@@ -6,6 +6,33 @@ video: true
 
 projects:
 
+ - title: Notification system
+   stacks:
+     - name: Elixir
+       link: http://elixir-lang.org
+     - name: Redis
+       link: https://redis.io
+     - name: Exq
+       link: https://github.com/akira/exq
+   client: >
+     <a href="https://midtrans.com" target="_blank">
+       <img class="pv3" src="/public/images/clients/midtrans.svg" style="width: 273px" />
+     </a>
+   description: >
+     <p>
+        Midtrans sends out hundreds of thousands of notifications per
+        day. We helped them migrate their notification system to
+        Elixir stack to improve the performance and decrease the
+        resource consumption. The average latency of a particular set
+        of notifications has decreased from <b>2.9s</b> to
+        <b>198ms</b>. The memory consumption went down from
+        <b>5.3GB</b> to <b>300MB</b> per node, which brought down the
+        hardware cost to 1/3. This is probably a good example of how
+        choosing a technology that fits the problem domain could
+        improve the system considerably. More details can be found in
+        the <a href="https://engineering.midtrans.com/optimizing-the-notification-system/"
+        target="_blank">blog post</a> by Midtrans.
+     </p>
  - title: Energy manager for utilities
    stacks:
      - name: AngularJS
@@ -16,11 +43,16 @@ projects:
        link: https://webpack.github.io/
      - name: node.js
        link: https://nodejs.org/en/
+   client: >
+      <a href="http://www.enernoc.com" target="_blank">
+        <img src="/public/images/clients/enernoc.png"/>
+      </a>
+   demo: >
+      <iframe  src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=hd720" allowfullscreen></iframe>
+
+
    description: >
       <p>
-        <a class="client" href="http://www.enernoc.com" target="_blank">
-          <img src="/public/images/clients/enernoc.png"/>
-        </a>
         Put yourself in the shoes of a energy manager, who is looking
         over energy consumption of a university. Where is the energy
         consumed? Whats the change in consumption, in comparison to
@@ -42,9 +74,6 @@ projects:
         slicing & dicing of multiple types of data, across multiple
         dimensions.
       </p>
-      <p>
-        <iframe src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=hd720" allowfullscreen></iframe>
-      </p>
 
  - title: Optimize an e-commerce product listing page
    stacks:
@@ -52,11 +81,15 @@ projects:
        link: https://facebook.github.io/react/
      - name: webpack
        link: https://webpack.github.io/
+   client: >
+      <a href="http://www.abof.com/men/clothing/jeans" target="_blank">
+        <img class="h3 pb3" src="/public/images/clients/abof.svg" />
+      </a>
+   demo: >
+      <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
+
    description: >
       <p>
-        <a class="client" href="http://www.abof.com/men/clothing/jeans" target="_blank">
-          <img src="/public/images/clients/abg-abof.png" />
-        </a>
         We work with our clients to understand their business and
         concerns. ABOF, wanted a head start in their front-end dev
         stack. We worked on a few important pages of the incoming
@@ -94,54 +127,26 @@ projects:
         Below is the loading times of the listing page of various
         e-commerce sites, when we delivered ABOF's listing page.
       </p>
-      <p>
-        <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
-      </p>
- - title: Notification system
-   stacks:
-     - name: Elixir
-       link: http://elixir-lang.org
-     - name: Redis
-       link: https://redis.io
-     - name: Exq
-       link: https://github.com/akira/exq
-   description: >
-     <p>
-        <a class="client" href="https://midtrans.com" target="_blank">
-          <img src="/public/images/clients/midtrans.svg" style="width: 273px" />
-        </a>
-        Midtrans sends out hundreds of thousands of notifications per
-        day. We helped them migrate their notification system to
-        Elixir stack to improve the performance and decrease the
-        resource consumption. The average latency of a particular set
-        of notifications has decreased from <b>2.9s</b> to
-        <b>198ms</b>. The memory consumption went down from
-        <b>5.3GB</b> to <b>300MB</b> per node, which brought down the
-        hardware cost to 1/3. This is probably a good example of how
-        choosing a technology that fits the problem domain could
-        improve the system considerably. More details can be found in
-        the <a href="https://engineering.midtrans.com/optimizing-the-notification-system/"
-        target="_blank">blog post</a> by Midtrans.
-     </p>
 
 ---
+<div class="pb3 ph3 mw7 center">
 {% for proj in page.projects %}
-<div class="project-subheading container-fluid">
-  <h1>{{proj.title}}</h1>
-  <h5>
-    {% for stack in proj.stacks %}
-    <a href="{{stack.link}}">{{stack.name}}</a>&nbsp;
-    {% endfor %}
-  </h5>
-</div>
-<div class='page container-fluid'>
-  <div>
-      <div class="col-md-12 project">
-          <div class="description">
-              {{proj.description}}
-          </div>
-      </div>
-  </div>
-</div>
+     <div class="cf ph3 pt4 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
+       <div class="fl-ns w-100 w-30-ns">
+         <div class="pr3">{{proj.client}}</div>
+         <div>
+           <span class="light-silver">Tech: </span>
+           {% for stack in proj.stacks %}
+           <a class="link as-blue dim" href="{{stack.link}}">{{stack.name}}</a>
+           {% unless forloop.last == true %} <span class="light-silver">-</span> {% endunless %}
+           {% endfor %}
+         </div>
+       </div>
+       <div class="avenir measure f5 fl-ns w-100 w-70-ns lh-copy">
+         <h1 class="f3 ma0">{{proj.title}}</h1>
+         {{proj.description}}
+         {{proj.demo}}
+       </div>
+     </div>
 {% endfor %}
-
+</div>

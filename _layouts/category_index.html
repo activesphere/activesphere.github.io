@@ -6,7 +6,7 @@ layout: default
 <ul class="posts archive">
   {% for post in site.categories[page.category] %}
   <li>
-    <abbr class="on"> {{ post.date || date_to_string }} </abbr>
+    <abbr class="on"> {{ post.date | date_to_string }} </abbr>
     <a href="{{ post.url }}"> {{ post.title }} →</a>
     <abbr class="by">{{ post.author }} </abbr>
   </li>
