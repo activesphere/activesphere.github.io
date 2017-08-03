@@ -36,8 +36,8 @@ iframe {
 }
 
 .light-blue-gradient {
-    background: #3466ae;
-    background: linear-gradient(180deg, #5092f1 0%, #82aef5 100%);
+    background: ##457fca;
+    background: linear-gradient(180deg, #457fca 0%, #5691c8 100%);
 }
 
 .material-icons {
