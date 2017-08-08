@@ -96,3 +96,7 @@ a[rev="footnote"] {
 .gist .gist-data .blob-num {
     display: none;
 }
+
+.highlighter-rouge pre.highlight {
+    overflow-x: scroll;
+}
