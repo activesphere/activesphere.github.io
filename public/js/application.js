@@ -64,3 +64,19 @@ false &&
       s.parentNode.insertBefore(ga, s);
     })();
   });
+
+(function() {
+  // Header and Content
+  function setContentMargin() {
+    var $header = $('#header'), $content = $('#content');
+    var contentPlacement = $header.position().top + $header.height();
+    $content.css('margin-top', contentPlacement);
+  }
+  $(document).ready(function() {
+    setContentMargin();
+  });
+  $(window).resize(function() {
+    setContentMargin();
+  });
+})();
+
