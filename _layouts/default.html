@@ -6,7 +6,9 @@
   <body class="flex flex-column" style="min-height: 100vh;">
     <div>
       {% include header.html %}
-      {{content}}
+      <div class="content-container" id="content">
+        {{content}}
+      </div>
     </div>
     <div style="flex: 1;"></div>
     {% include footer.html %}
