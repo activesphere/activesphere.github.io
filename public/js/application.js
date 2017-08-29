@@ -82,24 +82,28 @@ false &&
   // Scroll listener
   if(window.location.pathname === '/people.html') {
     const $content = $('#content > div > div > div');
-    let $targetEle = $content[0];
-    let windowScrollTimeout = null;
+    let $targetEle = $($content[0]);
+    _setImageFromEle($targetEle);
 
-    function _setImageOnScroll() {
+    function _setImageFromEle($ele) {
+      const img = $ele.find('img')[0];
+      window.particlesModule.setTextureImage(img);
+    }
+
+    function _onScrollAction() {
       const $visible = $content.filter(function(index) {
         return $content[index].getBoundingClientRect().top > 0;
       });
       if($visible.length > 0) {
         $targetEle = $($visible[0]);
       }
-      console.log($targetEle);
-      const img = $targetEle.find('img')[0];
-      window.particlesModule.setTextureImage(img);
+      _setImageFromEle($targetEle);
     }
-
+    
+    let windowScrollTimeout = null;
     $(window).scroll(function() {
       clearTimeout(windowScrollTimeout);
-      windowScrollTimeout = setTimeout(_setImageOnScroll, 500);
+      windowScrollTimeout = setTimeout(_onScrollAction, 500);
     });
   }
 })();
