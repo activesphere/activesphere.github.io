@@ -78,5 +78,29 @@ false &&
   $(window).resize(function() {
     setContentMargin();
   });
+
+  // Scroll listener
+  if(window.location.pathname === '/people.html') {
+    const $content = $('#content > div > div > div');
+    let $targetEle = $content[0];
+    let windowScrollTimeout = null;
+
+    function _setImageOnScroll() {
+      const $visible = $content.filter(function(index) {
+        return $content[index].getBoundingClientRect().top > 0;
+      });
+      if($visible.length > 0) {
+        $targetEle = $($visible[0]);
+      }
+      console.log($targetEle);
+      const img = $targetEle.find('img')[0];
+      window.particlesModule.setTextureImage(img);
+    }
+
+    $(window).scroll(function() {
+      clearTimeout(windowScrollTimeout);
+      windowScrollTimeout = setTimeout(_setImageOnScroll, 500);
+    });
+  }
 })();
 
