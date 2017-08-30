@@ -38295,7 +38295,7 @@ class Particles {
         y = (wh - h) * 0.5;
       }
 
-      this._context.drawImage(this._texture, -x, y, -w, h);
+      this._context.drawImage(this._texture, x, y, w, h);
       this._textureInput.needsUpdate = true;
     }
 
@@ -38315,8 +38315,6 @@ class Particles {
 
       this._canvas.width = this._width;
       this._canvas.height = this._height;
-
-      this._context.scale(-1, 1);
 
       this._doubleFBO.resize(this._width, this._height);
 
@@ -38583,7 +38581,6 @@ module.exports = function parse(params){
 "{ \n" +
 "    vec2 uv = position.xy; \n" +
 "    vec4 tex = texture2D(uTexturePosition, uv); \n" +
-"     \n" +
 "    gl_PointSize = uPointSize; \n" +
 "    gl_Position = vec4(tex.xy * 2.0 - 1.0, 0.0, 1.0); \n" +
 "} \n" +
