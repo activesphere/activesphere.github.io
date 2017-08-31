@@ -82,38 +82,36 @@ false &&
 
   // Scroll listener
   const initWindowScrollListener = () => {
-    if(window.location.pathname === '/people.html') {
-      const imagePaths = [
-        'logo.png', 'ciju.jpg', 'anantha.jpg', 
-        'dinesh.jpg', 'naman.jpg', 'rohit.jpg', 
-        'seenu.jpg', 'rahul.jpg'
-      ].map((v, i) => {
-        return '/public/images/people/' + v;
-      });
-      
-      const fuzz = 0.65;
-      const totalScrollHeight = 
-        $(document).height() - $(window).height() * fuzz; 
-      const scrollSection = totalScrollHeight / imagePaths.length;
-      console.log('Scroll Section', scrollSection);
-      _onScrollAction();
+    const imagePaths = [
+      'logo.png', 'ciju.jpg', 'anantha.jpg', 
+      'dinesh.jpg', 'naman.jpg', 'rohit.jpg', 
+      'seenu.jpg', 'rahul.jpg'
+    ].map((v, i) => {
+      return '/public/images/people/' + v;
+    });
+    
+    const fuzz = 0.65;
+    const totalScrollHeight = 
+      $(document).height() - $(window).height() * fuzz; 
+    const scrollSection = totalScrollHeight / imagePaths.length;
+    console.log('Scroll Section', scrollSection);
+    _onScrollAction();
 
-      function _getImageFromPath(imgPath) {
-        console.log('Current Image Path', imgPath);
-        return $(`<img src="${imgPath}" />`)[0];
-      }
-
-      function _onScrollAction() {
-        const currentSectionIndex = Math.ceil(window.scrollY / scrollSection);
-        const img = _getImageFromPath(imagePaths[currentSectionIndex]);
-        window.particlesModule.setTextureImage(img);
-      }
-      
-      let windowScrollTimeout = null;
-      $(window).scroll(function() {
-        clearTimeout(windowScrollTimeout);
-        windowScrollTimeout = setTimeout(_onScrollAction, 50);
-      });
+    function _getImageFromPath(imgPath) {
+      console.log('Current Image Path', imgPath);
+      return $(`<img src="${imgPath}" />`)[0];
     }
+
+    function _onScrollAction() {
+      const currentSectionIndex = Math.ceil(window.scrollY / scrollSection);
+      const img = _getImageFromPath(imagePaths[currentSectionIndex]);
+      window.particlesModule.setTextureImage(img);
+    }
+    
+    let windowScrollTimeout = null;
+    $(window).scroll(function() {
+      clearTimeout(windowScrollTimeout);
+      windowScrollTimeout = setTimeout(_onScrollAction, 50);
+    });
   }
 })();
