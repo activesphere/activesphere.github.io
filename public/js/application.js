@@ -68,43 +68,52 @@ false &&
 (function() {
   // Header and Content
   function setContentMargin() {
-    var $header = $('#header'), $content = $('#content');
-    var contentPlacement = $header.position().top + $header.height();
+    const $header = $('#header'), $content = $('#content');
+    const contentPlacement = $header.height();
     $content.css('margin-top', contentPlacement);
   }
   $(document).ready(function() {
     setContentMargin();
+    initWindowScrollListener();
   });
   $(window).resize(function() {
     setContentMargin();
   });
 
   // Scroll listener
-  if(window.location.pathname === '/people.html') {
-    const $content = $('#content > div > div > div');
-    let $targetEle = $($content[0]);
-    _setImageFromEle($targetEle);
-
-    function _setImageFromEle($ele) {
-      const img = $ele.find('img')[0];
-      window.particlesModule.setTextureImage(img);
-    }
-
-    function _onScrollAction() {
-      const $visible = $content.filter(function(index) {
-        return $content[index].getBoundingClientRect().top > 0;
+  const initWindowScrollListener = () => {
+    if(window.location.pathname === '/people.html') {
+      const imagePaths = [
+        'logo.png', 'ciju.jpg', 'anantha.jpg', 
+        'dinesh.jpg', 'naman.jpg', 'rohit.jpg', 
+        'seenu.jpg', 'rahul.jpg'
+      ].map((v, i) => {
+        return '/public/images/people/' + v;
       });
-      if($visible.length > 0) {
-        $targetEle = $($visible[0]);
+      
+      const fuzz = 0.65;
+      const totalScrollHeight = 
+        $(document).height() - $(window).height() * fuzz; 
+      const scrollSection = totalScrollHeight / imagePaths.length;
+      console.log('Scroll Section', scrollSection);
+      _onScrollAction();
+
+      function _getImageFromPath(imgPath) {
+        console.log('Current Image Path', imgPath);
+        return $(`<img src="${imgPath}" />`)[0];
       }
-      _setImageFromEle($targetEle);
+
+      function _onScrollAction() {
+        const currentSectionIndex = Math.ceil(window.scrollY / scrollSection);
+        const img = _getImageFromPath(imagePaths[currentSectionIndex]);
+        window.particlesModule.setTextureImage(img);
+      }
+      
+      let windowScrollTimeout = null;
+      $(window).scroll(function() {
+        clearTimeout(windowScrollTimeout);
+        windowScrollTimeout = setTimeout(_onScrollAction, 50);
+      });
     }
-    
-    let windowScrollTimeout = null;
-    $(window).scroll(function() {
-      clearTimeout(windowScrollTimeout);
-      windowScrollTimeout = setTimeout(_onScrollAction, 500);
-    });
   }
 })();
-
