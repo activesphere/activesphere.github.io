@@ -94,7 +94,6 @@ false &&
     const totalScrollHeight = 
       $(document).height() - $(window).height() * fuzz; 
     const scrollSection = totalScrollHeight / imagePaths.length;
-    console.log('Scroll Section', scrollSection);
     _onScrollAction();
 
     function _getImageFromPath(imgPath) {
@@ -103,7 +102,8 @@ false &&
     }
 
     function _onScrollAction() {
-      const currentSectionIndex = Math.ceil(window.scrollY / scrollSection);
+      const currentSectionIndex = 
+        Math.ceil(window.scrollY / scrollSection) % imagePaths.length;
       const img = _getImageFromPath(imagePaths[currentSectionIndex]);
       window.particlesModule.setTextureImage(img);
     }
