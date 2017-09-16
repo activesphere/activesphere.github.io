@@ -55,11 +55,13 @@ iframe {
     transition: filter .5s;
 }
 
+.as-linkedin svg,
 .as-github svg,
 .as-twitter svg {
     fill: #4185db;
 }
 
+.as-linkedin:hover svg,
 .as-github:hover svg,
 .as-twitter:hover svg {
     fill: #a5bbe9;
