@@ -6,8 +6,11 @@ permalink: /hacks.html
 hacks:
  - title: httpolice-devtool
    link: https://github.com/activesphere/httpolice-devtool
+   stacks:
+     - name: Linter
+     - name: Chrome
    description: >
-      <p>
+      <p class="mt0">
         A lint-tool for the HTTP, integrated with Chrome devtools.
       </p>
       <p>
@@ -19,17 +22,25 @@ hacks:
 
  - title: FakeDynamo
    link: https://github.com/ananthakumaran/fake_dynamo
+   stacks:
+     - name: DynamoDB
+     - name: Ruby
    description: >
+      <p class="mt0">
       An In-memory dynamodb emulator for
       <a href="http://aws.amazon.com/dynamodb/">Amazon DynamoDB</a>
       written in ruby. We built it to help us develop applications on
       dynamodb in development and test environments without incurring
       the costs and the latencies. This also allows us to host the non
       production versions of the application outside of EC2.
+      </p>
  - title: gotunnel
    link: https://github.com/ciju/gotunnel
+   stacks:
+     - name: HTTP tunnel
+     - name: Go
    description: >
-      <p>
+      <p class="mt0">
           Gotunnel allows you to share server running on localhost,
           over the net. localtunnel allows you to do the same, but at
           the time of this writing, didn’t support WebSocket. And
@@ -42,28 +53,50 @@ hacks:
 
  - title: µ
    link: https://github.com/ananthakumaran/u
+   stacks:
+     - name: Encoder
+     - name: JavaScript
    description: >
+      <p class="mt0">
       μ is a JavaScript library for encoding/decoding state (JavaScript object) in URL. Define a spec for the state, based on which the encoding is done. Manage the state with versioning.
+      </p>
 
  - title: Tide
    link: https://github.com/ananthakumaran/tide
+   stacks:
+     - name: Emacs
+     - name: TypeScript
    description: >
+      <p class="mt0">
       TypeScript Interactive Development Environment for Emacs - written in the early days of typescript when emacs support for it was spotty. Since then, it has grown into a mature package and featured in the front page of <a href="https://www.typescriptlang.org/">www.typescriptlang.org</a>.
+      </p>
 
  - title: memcachex
    link: https://github.com/ananthakumaran/memcachex
+   stacks:
+     - name: Memcached
+     - name: Elixir
    description: >
+      <p class="mt0">
       A <a href="https://memcached.org/">memcached</a> client written in pure elixir which aims to provide good performance and solid error recovery from network connection failures.
+      </p>
 
  - title: pdf slide splitter
    link: https://github.com/ciju/split-pdf-slides
+   stacks:
+     - name: webpack
+     - name: JavaScript
    description: >
+      <p class="mt0">
       A web app to split pdf's with multiple slides per page, to single slide per page. An exploration in webpack, pdf, Google App Engine and more.
+      </p>
 
  - title: Mini-Mocha
    link: https://github.com/ciju/mini-mocha
+   stacks:
+     - name: JavaScript
    description: >
-      <p>
+      <p class="mt0">
           Mini-Mocha is a small experiment at understanding DSL
           of <a href="http://mochajs.org/">mochajs.org</a>. About 100
           lines of code is enough, to implement the synchronous DSL that
@@ -78,8 +111,11 @@ hacks:
 
  - title: Devmirror
    link: https://github.com/ciju/devmirror
+   stacks:
+     - name: Debugger
+     - name: JavaScript
    description: >
-      <p>
+      <p class="mt0">
           Devmirror is an experiment at remote debugging. May be, an
           experiment gone wild. The idea is to render a remote user's
           browser screen, to a developer. With devtools open at
@@ -101,28 +137,38 @@ hacks:
 
  - title: devsync
    link: https://github.com/ciju/devsync
+   stacks:
+     - name: Editor
+     - name: JavaScript
    description: >
+      <p class="mt0">
       A chrome devtools (WebInspector) hack, which allows your
       css/javascript edits from WebInspector to be saved directly to
       the localhost files. It was a winner at
       <a href="https://web.archive.org/web/20121029070152/http://developer.yahoo.com/blogs/ydn/posts/2011/08/open-hack-india-they-hacked-we-won-them-over/"> Yahoo! Hacknight</a>.
-      It is a node.js application
-
+      </p>
 ---
 
-<div class="mw7 center pv3 avenir">
-    {% for proj in page.hacks %}
-    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-    <div class="pa3 ph5-ns {% if thecycle == "even" %}bg-light-gray{% endif %}">
-    <h2 class="f3 mv2">
-      {{proj.title}}
-      <a class="link dim dib as-blue w1 mh1" href="{{proj.link}}">
-        <svg aria-labelledby="title" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      </a>
-    </h2>
-    <div class="measure-wide">
+<div class="pb3 ph3 mw7 center">
+  {% for proj in page.hacks %}
+  <div class="cf ph3 pt4 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
+    <div class="fl-ns w-100 w-30-ns">
+      <div class="pr3">
+        <a href="{{proj.link}}">
+          <h1 class="f3 ma0">{{proj.title}}</h1>          
+        </a>
+      </div>
+      <div>
+        <span class="light-silver">Tech: </span>
+        {% for stack in proj.stacks %}
+        <span class="link as-blue dim">{{stack.name}}</span>
+        {% unless forloop.last == true %} <span class="light-silver">-</span> {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="avenir measure f5 fl-ns w-100 w-70-ns lh-copy">
       {{proj.description}}
     </div>
-    </div>
-    {% endfor %}
+  </div>
+  {% endfor %}
 </div>
