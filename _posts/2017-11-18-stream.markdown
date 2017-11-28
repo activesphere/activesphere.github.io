@@ -7,7 +7,7 @@ author: ananthakumaran
 published: false
 ---
 
-For many problems in programming, the most straightforward solution is to transform a list (Ex, map/filter/reduce etc over it). Once in a while, there will be problems which could be solved with list and transformations, except that the list is big and consumes lot of memory. Let's say you want to export records in database as a csv report, it might not be possible to load the entire set of records in memory before the transformations can be applied on it. [Stream](https://hexdocs.pm/elixir/Stream.html) abstraction in Elixir is designed to address these kind of problems.
+For many problems in programming, the most straightforward solution is to transform a list (Ex, map/filter/reduce etc over it). Once in a while, there will be problems which could be solved with list and transformations, except that the list is big and consumes lot of memory. Let's say you want to export records in database as a csv report, it might not be possible to load the entire set of records in memory before the transformations can be applied to it. [Stream](https://hexdocs.pm/elixir/Stream.html) abstraction in Elixir is designed to address these kinds of problems.
 
 
 
@@ -43,11 +43,11 @@ The function [cycle](https://hexdocs.pm/elixir/Stream.html#cycle/1) creates an i
 
 Though most of the functions that deal with streams look exactly like the list counterpart, there are some subtle semantical differences.
 
-1. Stream is lazy in nature. When you apply a transformation to a stream, instead of the result of transformation, you get a new stream. The stream has to be explicitly forced by either using [Stream.run](https://hexdocs.pm/elixir/Stream.html#run/1) or using any other function in [Enum](https://hexdocs.pm/elixir/Enum.html) module.
+1. Stream is lazy in nature. When you apply a transformation to a stream, instead of the result of the transformation, you get a new stream. The stream has to be explicitly forced by either using [Stream.run](https://hexdocs.pm/elixir/Stream.html#run/1) or using any other function in [Enum](https://hexdocs.pm/elixir/Enum.html) module.
 
-2. Stream abstraction is lot more restrictive in nature. Stream only allows linear transformations. When you force a stream, all the streams associated to it are also forced. 
+2. Stream abstraction is lot more restrictive in nature. Stream only allows linear transformations. When you force a stream, all the streams associated with it are also forced. 
 
-When you force a stream (ex [run](https://hexdocs.pm/elixir/Stream.html#run/1)), the bottom most stream will pull elements from the above stream, which in turn will pull from the stream above it and apply the transformation on it. Effectively each element travels from the top to bottom without being buffered anywhere. 
+When you force a stream (ex [run](https://hexdocs.pm/elixir/Stream.html#run/1)), the bottommost stream will pull elements from the above stream, which in turn will pull from the stream above it and apply the transformation on it. Effectively each element travels from the top to bottom without being buffered anywhere. 
 
 For example, the following transformation is easy to perform using stream abstraction
 
@@ -96,7 +96,7 @@ There seem to be two options for allowing pull from both end operations.
 1. Introduce a buffer in stream two, which would break our constant memory overhead promise. _Ex, if ndjson side pulled 2 elements, but csv side pulled only 1, `filter records` would have to keep the 1 extra element buffered for when csv side asks for more element._
 2. Split the stream into two pipelines, which means, the first two streams (fetch and filter) would be applied twice. _Ex, for both sides, db records would be fetched separately._
 
-Is there any other way to implement this without introducing buffer? Fortunately for us this is a well studied problem[^1][^2]. Libraries like [conduit](https://hackage.haskell.org/package/conduit) and [repa-flow](https://hackage.haskell.org/package/repa-flow) provide abstraction to handle those scenario elegantly. But the models are not without shortcoming.
+Is there any other way to implement this without introducing buffer? Fortunately for us, this is a well-studied problem[^1][^2]. Libraries like [conduit](https://hackage.haskell.org/package/conduit) and [repa-flow](https://hackage.haskell.org/package/repa-flow) provide abstraction to handle those scenario elegantly. But the models are not without shortcoming.
 
 ## Source and Sink
 
@@ -120,7 +120,7 @@ An implementation is called push based if A controls the main loop. A will push 
 
 Pull based stream is called source <span class="source"></span> and push based stream is called sink <span class="sink"></span>. Is one type of implementation strictly better than another? No, each has its own pros and cons.
 
-Source <span class="source"></span> is good for cases where two streams needs to be merged into a single stream. But forking a source into two source is not possible (without having buffers, which defeats the purpose).
+Source <span class="source"></span> is good for cases where two streams needs to be merged into a single stream. But forking a source into two sources is not possible (without having buffers, which defeats the purpose).
 
 Sink <span class="sink"></span> is good for stream that needs to be split into multiple streams. It's not possible to merge multiple sinks into a single sink.
 
@@ -154,7 +154,7 @@ The difference between the two types will become apparent when you think about t
  </div>
 </div>
 
-The table below show all the possible combinations of source, sink and transformation and which can be implemented without introducing buffers.
+The table below shows all the possible combinations of source, sink and transformation and which can be implemented without introducing buffers.
 
 <div class="table">
 merge(<span class="source"></span>,<span class="source"></span>)::<span class="source"></span>  <span class="strike">fork(<span class="source"></span>)::(<span class="source"></span>,<span class="source"></span>)</span>   map(<span class="source"></span>)::<span class="source"></span><br/>
@@ -178,9 +178,9 @@ There can be only one main loop in any series of connected streams. If all the s
 
 ## Elixir Source and Sink Streams
 
-Does Elixir support source and sink abstraction? The documentation doesn't explicity talk about push/pull or source/sink. So I could only make educated guess.
+Does Elixir support source and sink abstraction? The documentation doesn't explicitly talk about push/pull or source/sink. So I could only make educated guess.
 
-A stream should implement atleast one of [Enumerable](https://hexdocs.pm/elixir/Enumerable.html) and [Collectable](https://hexdocs.pm/elixir/Collectable.html). Enumerable protocol enables pull type implementation via [suspend](http://elixir-lang.github.io/blog/2013/12/11/elixir-s-new-continuable-enumerators/) operator. Collectable protocol only allows the push type implementation.
+A stream should implement at least one of [Enumerable](https://hexdocs.pm/elixir/Enumerable.html) and [Collectable](https://hexdocs.pm/elixir/Collectable.html). Enumerable protocol enables pull type implementation via [suspend](http://elixir-lang.github.io/blog/2013/12/11/elixir-s-new-continuable-enumerators/) operator. Collectable protocol only allows the push type implementation.
 
 Effectively
 
@@ -219,7 +219,7 @@ Stream.cycle([[name: "Johh", age: "42", id: "4774", plan: "premium"]])
 |> Stream.run
 ```
 
-Here we use the [Stream.into](https://hexdocs.pm/elixir/Stream.html#into/2) to fork twice there by writing the same content to two different streams.
+Here we use the [Stream.into](https://hexdocs.pm/elixir/Stream.html#into/2) to fork twice thereby writing the same content to two different streams.
 
 
 Let's go back to our main problem. We wanted to create both csv and json file. We should be able to manipulate the sink after it's forked. But this where Elixir support lacks. The [Stream](https://hexdocs.pm/elixir/Stream.html) module only provides functions to transform source type streams. As [Collectable](https://hexdocs.pm/elixir/Collectable.html) is a protocol, we could implement the transform functions ourself.
@@ -283,7 +283,7 @@ end))
 |> Stream.run
 ```
 
-One of the quirks with transforming sink is that, all the transformations have to be applied in reverse order starting with the last sink.
+One of the quirks with transforming sink is that all the transformations have to be applied in reverse order starting with the last sink.
 
 [^1]: Lippmeierα, Ben, Fil Mackayβ, and Amos Robinsonγ. "Polarized Data Parallel Data Flow."
 
