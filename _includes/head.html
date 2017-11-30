@@ -15,6 +15,10 @@
 <meta content="ReactJS Elixir D3 NodeJS AngularJS Ruby Rails web application developers." name='description'>
 {% endif %}
 
+{% if page.canonical %}
+<link rel="canonical" href="{{page.canonical}}">
+{% endif %}
+
 <link rel="stylesheet" href="//unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
 <link href='//fonts.googleapis.com/css?family=Lato:300,400'
       rel='stylesheet' type='text/css'>

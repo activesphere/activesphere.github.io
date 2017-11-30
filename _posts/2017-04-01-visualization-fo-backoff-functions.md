@@ -4,6 +4,7 @@ title: Visualization of backoff functions
 viz: true
 author: ananthakumaran
 published: true
+canonical: http://ananthakumaran.in/2017/03/26/visualization-of-backoff-functions.html
 ---
 
 Failures are inevitable in any system. How it should be handled varies
