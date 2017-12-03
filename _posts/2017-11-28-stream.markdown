@@ -31,7 +31,7 @@ Let's look at an example to understand the api and semantics. I will skip detail
 </div>
 
 ```elixir
-Stream.cycle([[name: "Johh", age: "42", id: "4774", plan: "premium"]])
+Stream.cycle([[name: "John", age: "42", id: "4774", plan: "premium"]])
 |> Stream.take(1000_000)
 |> Stream.map(fn record ->
   [Enum.join(Keyword.values(record), ","), "\n"]
@@ -210,7 +210,7 @@ Effectively
 </div>
 
 ```elixir
-Stream.cycle([[name: "Johh", age: "42", id: "4774", plan: "premium"]])
+Stream.cycle([[name: "John", age: "42", id: "4774", plan: "premium"]])
 |> Stream.take(1000_000)
 |> Stream.map(fn record ->
   [Enum.join(Keyword.values(record), ","), "\n"]
@@ -273,7 +273,7 @@ end
 </div>
 
 ```elixir
-Stream.cycle([[name: "Johh", age: "42", id: "4774", plan: "premium"]])
+Stream.cycle([[name: "John", age: "42", id: "4774", plan: "premium"]])
 |> Stream.take(1000_000)
 |> Stream.into(Sink.map(File.stream!("records.csv"), fn record ->
   [Enum.join(Keyword.values(record), ","), "\n"]
