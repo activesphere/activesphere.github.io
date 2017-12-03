@@ -12,7 +12,7 @@ For many problems in programming, the most straightforward solution is to transf
 
 
 
-Steams allow for processing of elements, without any buffering. A transformation is a function which takes an element and returns zero or more elements. The stream abstraction helps us to apply a sequence of such transformations on a stream with a constant memory overhead.
+Streams allow for processing of elements, without any buffering. A transformation is a function which takes an element and returns zero or more elements. The stream abstraction helps us to apply a sequence of such transformations on a stream with a constant memory overhead.
 
 Let's look at an example to understand the api and semantics. I will skip details like escaping csv entries and focus on stream.
 
