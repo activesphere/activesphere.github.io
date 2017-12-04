@@ -4,7 +4,7 @@ permalink: /blog/:year/:month/:day/:title
 highlighter: rouge
 markdown: kramdown
 production: true
-title: ActiveSphere - Bangalore based Ruby Rails JavaScript consulting
+title: ActiveSphere - Bangalore based software consulting
 category_dir: /blog/category
 exclude:
 - README.md
