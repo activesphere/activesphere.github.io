@@ -164,13 +164,13 @@ hacks:
     <div class="fl-ns w-100 w-30-ns">
       <div class="pr3">
         <a href="{{proj.link}}">
-          <h1 class="f3 ma0">{{proj.title}}</h1>          
+          <h1 class="f3 ma0">{{proj.title}}</h1>
         </a>
       </div>
       <div>
         <span class="light-silver">Tech: </span>
         {% for stack in proj.stacks %}
-        <span class="link as-blue dim">{{stack.name}}</span>
+        <span class="as-gray b">{{stack.name}}</span>
         {% unless forloop.last == true %} <span class="light-silver">-</span> {% endunless %}
         {% endfor %}
       </div>
