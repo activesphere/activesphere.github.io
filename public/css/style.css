@@ -25,6 +25,10 @@ iframe {
     color: #4185db;
 }
 
+.as-gray {
+  color: gray;
+}
+
 .as-bt4 {
     border-top-style: solid;
     border-top-width: 4px;

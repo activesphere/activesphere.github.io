@@ -4,6 +4,15 @@ layout: default
 permalink: /hacks.html
 
 hacks:
+ - title: xml_stream
+   link: https://github.com/activesphere/xml_stream
+   stacks:
+     - name: Stream
+     - name: Elixir
+   description: >
+      <p class="mt0">
+        An Elixir library for building XML documents in a streaming fashion. We built this library for a reporting system that could generate Excel Spreadsheets with millions of rows while maintaining a constant memory overhead.
+      </p>
  - title: httpolice-devtool
    link: https://github.com/activesphere/httpolice-devtool
    stacks:
@@ -18,6 +27,16 @@ hacks:
         browser to a server running <a href="https://github.com/vfaronov/httpolice">httpolice</a>, where they are analysed, and
         a detailed report is sent back to the browser
         where it's displayed.
+      </p>
+
+ - title: µ
+   link: https://github.com/ananthakumaran/u
+   stacks:
+     - name: Encoder
+     - name: JavaScript
+   description: >
+      <p class="mt0">
+      μ is a JavaScript library for encoding/decoding state (JavaScript object) in URL. Define a spec for the state, based on which the encoding is done. Manage the state with versioning.
       </p>
 
  - title: FakeDynamo
@@ -49,16 +68,6 @@ hacks:
       <p>
           Read <a href="http://blog.activesphere.com/blog/2013/03/26/gotunnel-make-localhost-server-accessible-over-internet/">blog
           post</a> about the implementation.
-      </p>
-
- - title: µ
-   link: https://github.com/ananthakumaran/u
-   stacks:
-     - name: Encoder
-     - name: JavaScript
-   description: >
-      <p class="mt0">
-      μ is a JavaScript library for encoding/decoding state (JavaScript object) in URL. Define a spec for the state, based on which the encoding is done. Manage the state with versioning.
       </p>
 
  - title: Tide
@@ -147,15 +156,6 @@ hacks:
       the localhost files. It was a winner at
       <a href="https://web.archive.org/web/20121029070152/http://developer.yahoo.com/blogs/ydn/posts/2011/08/open-hack-india-they-hacked-we-won-them-over/"> Yahoo! Hacknight</a>.
       </p>
- - title: xml_stream
-   link: https://github.com/activesphere/xml_stream
-   stacks:
-     - name: Stream
-     - name: Elixir
-   description: >
-      <p class="mt0">
-        An Elixir library for building XML documents in a streaming fashion. We built this library for a reporting system that could generate Excel Spreadsheets with millions of rows while maintaining a constant memory overhead.
-      </p>
 ---
 
 <div class="pb3 ph3 mw7 center">
@@ -164,13 +164,13 @@ hacks:
     <div class="fl-ns w-100 w-30-ns">
       <div class="pr3">
         <a href="{{proj.link}}">
-          <h1 class="f3 ma0">{{proj.title}}</h1>          
+          <h1 class="f3 ma0">{{proj.title}}</h1>
         </a>
       </div>
       <div>
         <span class="light-silver">Tech: </span>
         {% for stack in proj.stacks %}
-        <span class="link as-blue dim">{{stack.name}}</span>
+        <span class="as-gray i">{{stack.name}}</span>
         {% unless forloop.last == true %} <span class="light-silver">-</span> {% endunless %}
         {% endfor %}
       </div>
