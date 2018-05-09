@@ -1,3 +1,13 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
     font: normal 16px/1.6em 'Lato', helvetica, arial, sans-serif;
     color: #4c4c4c;
