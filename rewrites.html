@@ -44,7 +44,9 @@ projects:
         <img class="h3 pb3" src="/public/images/clients/abof.svg" />
       </a>
    demo: >
-      <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
+      <div class="aspect-ratio aspect-ratio--16x9">
+        <iframe class="aspect-ratio--object" src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
+      </div>
 
    description: >
       <p>
@@ -88,58 +90,34 @@ projects:
 
 <div class="center pa2 pa4-ns light-blue-gradient">
   <h2 class="white f2 center mw6 tc">
-      Rewriting software to improve performance & scalability
+      Making rewrites success
   </h2>
 </div>
 <article class="mw7 center measure-wide avenir f4 lh-copy pa3 pt4">
   <section>
-      <p>Rewrites should probably <a
-          href="https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i">be</a>
-      <a href="http://www.startersquad.com/blog/the-great-rewrite">avoided</a>
-      if possible as they can be risky. They've often been known to harm business instead of helping.</p>
+    <p class="b">
+      Is your business growth hindered by your software – shadowed by performance, scale issues, unmanageable codebase? Your software might need a rewrite.
+    </p>
 
-      <p>That being said, it might be worth considering in some cases if it brings enough value to the
-      business.</p>
+    <p>
+      Rewrites have to consider the value it brings to business and <a href="https://codeahoy.com/2016/04/21/when-to-rewrite-from-scratch-autopsy-of-a-failed-software/">the risks involved</a>. We have experience in delivering rewrites in time, while minimising risks.
+    </p>
 
-      <p>While going for a rewrite, one might have to consider many things like</p>
-
-      <ul>
-          <li>Getting a clear idea of goals & expectations</li>
-          <li>Understanding how the old system works,
-              including issues/bottlenecks</li>
-          <li>Thinking about how changes improve design & impact maintainability</li>
-          <li>How to get the rewrite out to production quickly & safely</li>
-      </ul>
-
-      <p>We have some experience rewriting and deploying such software safely.
-      In our experience, it usually involves</p>
-      <ul>
-          <li>Understanding and accommodating for risks, early in the project.</li>
-          <li>Breaking down the rewrite into smaller chunks, prioritizing components which help improve the system most while keeping risk at a minimum</li>
-          <li>Choosing the right technologies and tools (learn them if
-              required). In the past we've picked up Elixir, React, Go,
-              Kubernetes, Kafka, Webpack and more to solve specific problems</li>
-      </ul>
+    <h3 class="f3">Our approach to rewrites</h3>
+    <ul>
+      <li>Define goals, expectations and priorities of the project.</li>
+      <li>Understand, accommode and communicate risks & uncertainties, early in the project.</li>
+      <li>Break down the rewrite into smaller chunks, prioritizing components which help improve the system most while keeping risk at a minimum.</li>
+      <li>Choose the right technologies and tools. In the past we've picked up Elixir, React, Go, Kubernetes, Kafka, Webpack and more to solve specific problems.</li>
+    </ul>
   </section>
   <section>
-      <p>Here are some customers we've done rewrites for</p>
+      <h3 class="f3">Few of our rewrite projects</h3>
       {% for proj in page.projects %}
-      <div class="cf ph3 pt3 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
-          <div class="fl-ns w-100 w-30-ns">
-              <div class="pr3">{{proj.client}}</div>
-              <div>
-                  <span class="light-silver">Tech: </span>
-                  {% for stack in proj.stacks %}
-                  <a class="link as-blue dim" href="{{stack.link}}">{{stack.name}}</a>
-                  {% unless forloop.last == true %} <span class="light-silver">-</span> {% endunless %}
-                  {% endfor %}
-              </div>
-          </div>
-          <div class="avenir measure f5 fl-ns w-100 w-70-ns lh-copy">
-              <h1 class="f3 ma0">{{proj.title}}</h1>
-              {{proj.description}}
+      <div class="pt3 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
+            <div class="pr3">{{proj.client}}</div>
+            {{proj.description}}
               {{proj.demo}}
-          </div>
       </div>
       {% endfor %}
   </section>
