@@ -5,11 +5,11 @@ permalink: /rewrites.html
 
 projects:
 
- - title: Notification system
+ - title: midtrans
    contact_form: https://goo.gl/forms/sjY1C6h9FV8nWCVq2
    client: >
      <a href="https://midtrans.com" target="_blank">
-       <img class="pv4" src="/public/images/clients/midtrans.svg" style="width: 273px" />
+       <img class="pt4 pb1" src="/public/images/clients/midtrans.svg" style="width: 273px" />
      </a>
    description: >
      <p>
@@ -17,11 +17,11 @@ projects:
         messages per day which brought down the hardware cost to a 1/3.
      </p>
 
- - title: Optimize an e-commerce product listing page
+ - title: abof
    contact_form: https://goo.gl/forms/6NO2dHLGhiRvgNYr1
    client: >
       <a href="http://www.abof.com/men/clothing/jeans" target="_blank"> <img
-          class="h3 pb3 mt4" src="/public/images/clients/abof.svg" />
+          class="h3 pb2 mt4" src="/public/images/clients/abof.svg" />
       </a>
    description: >
      <p>
@@ -29,11 +29,11 @@ projects:
       </p>
 
 
- - title: HR Software
+ - title: Sleekr
    contact_form: https://goo.gl/forms/Lz9JhBrAQzk6Fio33
    client: >
      <a href="https://sleekr.co/" target="_blank">
-       <img class="pv3" src="/public/images/clients/sleekr.svg" style="width: 200px;"/>
+       <img class="pt3" src="/public/images/clients/sleekr.svg" style="width: 200px;"/>
      </a>
    description: >
      <p>
@@ -68,15 +68,16 @@ projects:
 
   </section>
   <section>
-      <h3 class="f3">Few of our rewrite projects</h3>
+      <h3 class="f3 mb1">Case studies</h3>
       {% for proj in page.projects %}
       <div class="cf ph3 pt2 pb0 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
           <div class="fl-ns w-100 w-30-ns">
-              <div class="pr3">{{proj.client}}</div>
+              <div class="pr3 tc">{{proj.client}}</div>
+              <a class="w-100 f6 link dim br1 ba ph3 pv2 mb2 dib blue tc" href="{{proj.contact_form}}">Know more</a>
+              <p class="mt0 f7 i tc">Please share email to know more</p>
           </div>
-          <div class="avenir measure f4 fl-ns w-100 w-70-ns lh-copy pl3">
+          <div class="avenir measure f4 fl-ns w-100 w-70-ns lh-copy pl4">
               {{proj.description}}
-              <p class="mt0 f5 i">To know more, please <a href="{{proj.contact_form}}">share your email</a> with us</p>
           </div>
       </div>
       {% endfor %}
