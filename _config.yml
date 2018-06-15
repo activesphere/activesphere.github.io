@@ -11,6 +11,6 @@ exclude:
 - Rakefile
 - .gitignore
 
-gems:
+plugins:
 - jekyll-sitemap
 - jekyll-feed
