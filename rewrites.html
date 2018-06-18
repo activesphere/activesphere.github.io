@@ -43,7 +43,7 @@ projects:
   </h2>
 </div>
 <article class="mw7 center measure-wide avenir f4 lh-copy pa3 pt4">
-  <section>
+  <section class="mb4 mb5-ns">
     <p>
       The success of a rewrite comes down to understanding the problem domain
       and business priorities along with complexity and risk involved in
@@ -60,16 +60,11 @@ projects:
       <li>Break down the rewrite into smaller chunks, prioritizing components which help improve the system most while keeping risk at a minimum.</li>
       <li>Choose the right technologies and tools. In the past we've picked up Elixir, React, Go, Kubernetes, Kafka, Webpack and more to solve specific problems.</li>
     </ul>
-
-    <p>
-    If you think we're a good fit for working on your rewrite, or would like to
-    have a conversation with us, please share your details with us by following
-    the link below.
-    </p>
-    <a class="mt3 w-100 f4 b link dim br1 ph3 pv2 mb2 dib white bg-blue tc"
-        href="https://goo.gl/forms/qMtDQ9O3cnXHFvMv2">Contact us</a>
   </section>
-  <section class="flex flex-column items-center">
+  <section class="z-2 bg-white" style="position: sticky; top: -1px">
+    {% include email_form.html %}
+  </section>
+  <section class="mt3 mt4-ns flex flex-column items-center">
       <h3 class="f3 nb3 ph3 bg-white relative z-1">Case studies</h3>
       {% for proj in page.projects %}
       <div class="cf pv5 pb0 flex flex-column flex-row-ns items-center-ns bt b--light-gray">
