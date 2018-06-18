@@ -151,7 +151,7 @@ projects:
 ---
 <div class="pb3 ph3 mw7 center">
 {% for proj in page.projects %}
-     <div class="cf ph3 pt4 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
+     <div class="cf ph3 pt4 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}" id="{{proj.title | slugify }}">
        <div class="fl-ns w-100 w-30-ns">
          <div class="pr3">{{proj.client}}</div>
          <div>

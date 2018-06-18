@@ -6,41 +6,35 @@ permalink: /rewrites.html
 projects:
 
  - title: midtrans
-   contact_form: https://goo.gl/forms/sjY1C6h9FV8nWCVq2
+   portfolio_url: /portfolio#notification-system
    client: >
-     <a href="https://midtrans.com" target="_blank">
-       <img class="pt4 pb1" src="/public/images/clients/midtrans.svg" style="width: 273px" />
+     <a class="ph4-ns w5-ns tc" href="https://midtrans.com" target="_blank">
+       <img class="dib h2 h3-ns" src="/public/images/clients/midtrans.svg" />
      </a>
    description: >
-     <p>
         We rewrote their notification system serving a few hundered thousand
         messages per day which brought down the hardware cost to a 1/3.
-     </p>
 
  - title: abof
-   contact_form: https://goo.gl/forms/6NO2dHLGhiRvgNYr1
+   portfolio_url: /portfolio#optimize-an-e-commerce-product-listing-page
    client: >
-      <a href="http://www.abof.com/men/clothing/jeans" target="_blank"> <img
-          class="h3 pb2 mt4" src="/public/images/clients/abof.svg" />
+      <a class="ph4-ns w5-ns tc" href="http://www.abof.com/" target="_blank">
+        <img class="dib h2 h3-ns" src="/public/images/clients/abof.svg" />
       </a>
    description: >
-     <p>
       We made 3G page load speed on a few ecommerce product listing pages
       comparable to Jabong, Koovs, Flipkart & Amazon.
-      </p>
 
 
  - title: Sleekr
-   contact_form: https://goo.gl/forms/Lz9JhBrAQzk6Fio33
+   portfolio_url: /portfolio#hr-software
    client: >
-     <a href="https://sleekr.co/" target="_blank">
-       <img class="pt3" src="/public/images/clients/sleekr.svg" style="width: 200px;"/>
+     <a class="ph4-ns w5-ns tc" href="https://sleekr.co/" target="_blank">
+       <img class="dib h2 h3-ns" src="/public/images/clients/sleekr.svg" style="width: 200px;"/>
      </a>
    description: >
-     <p>
      We helped detangle an over-architected micro-services setup and provided
      technical guidance.
-     </p>
 ---
 
 <div class="center pa2 pa4-ns light-blue-gradient">
@@ -49,7 +43,7 @@ projects:
   </h2>
 </div>
 <article class="mw7 center measure-wide avenir f4 lh-copy pa3 pt4">
-  <section>
+  <section class="mb4 mb5-ns">
     <p>
       The success of a rewrite comes down to understanding the problem domain
       and business priorities along with complexity and risk involved in
@@ -66,26 +60,19 @@ projects:
       <li>Break down the rewrite into smaller chunks, prioritizing components which help improve the system most while keeping risk at a minimum.</li>
       <li>Choose the right technologies and tools. In the past we've picked up Elixir, React, Go, Kubernetes, Kafka, Webpack and more to solve specific problems.</li>
     </ul>
-
-    <p>
-    If you think we're a good fit for working on your rewrite, or would like to
-    have a conversation with us, please share your details with us by following
-    the link below.
-    </p>
-    <a class="mt3 w-100 f4 b link dim br1 ph3 pv2 mb2 dib white bg-blue tc"
-        href="https://goo.gl/forms/qMtDQ9O3cnXHFvMv2">Contact us</a>
   </section>
-  <section>
-      <h3 class="f3 mb1">Case studies</h3>
+  <section class="z-2 bg-white" style="position: sticky; top: -1px">
+    {% include email_form.html %}
+  </section>
+  <section class="mt3 mt4-ns flex flex-column items-center">
+      <h3 class="f3 nb3 ph3 bg-white relative z-1">Case studies</h3>
       {% for proj in page.projects %}
-      <div class="cf ph3 pt2 pb0 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
-          <div class="fl-ns w-100 w-30-ns">
-              <div class="pr3 tc">{{proj.client}}</div>
-              <a class="w-100 f6 link dim br1 ba ph3 pv2 mb2 dib blue tc" href="{{proj.contact_form}}">Know more</a>
-              <p class="mt0 f7 i tc">Requires email</p>
-          </div>
-          <div class="avenir measure f4 fl-ns w-100 w-70-ns lh-copy pl4">
-              {{proj.description}}
+      <div class="cf pv5 pb0 flex flex-column flex-row-ns items-center-ns bt b--light-gray">
+          {{proj.client}}
+          <div class="avenir measure f4 fl-ns w-100 w-70-ns lh-copy">
+              <p class="ma0">
+                {{proj.description}} <a class="link" href="{{proj.portfolio_url}}">Read more</a>
+              </p>
           </div>
       </div>
       {% endfor %}
