@@ -116,3 +116,9 @@ a[rev="footnote"] {
 .highlighter-rouge pre.highlight {
     overflow-x: scroll;
 }
+
+/* New Tachyons */
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+}
