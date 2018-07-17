@@ -3,14 +3,10 @@ layout: post
 title: "Introducing exq-scheduler, a distributed scheduler for Sidekiq"
 published: true
 excerpt: "One of our customers wanted to setup a time based [job scheduling](https://en.wikipedia.org/wiki/Job_scheduler) system, similar to [cron](https://en.wikipedia.org/wiki/Cron), to reliably schedule critical tasks. They were already using [sidekiq](https://github.com/mperham/sidekiq), to run some tasks in the background.
-
 To improve fault tolerance, we tried running [sidekiq-schedular](https://github.com/moove-it/sidekiq-scheduler) (a popular scheduling library) in a distributed setup. But we found synchronization issues that could lead to jobs being scheduled multiple times under some scenarios.
-
 In our effort to fix these issues, we built [exq-scheduler](https://github.com/activesphere/exq-scheduler)."
 author: rahul
 ---
-
-### Motivation
 
 One of our customers wanted to setup a time based [job scheduling](https://en.wikipedia.org/wiki/Job_scheduler) system, similar to [cron](https://en.wikipedia.org/wiki/Cron), to reliably schedule critical tasks. They were already using [sidekiq](https://github.com/mperham/sidekiq), to run some tasks in the background.
 
@@ -20,7 +16,7 @@ In our effort to fix these issues, we built [exq-scheduler](https://github.com/a
 
 We had to understand some finer aspects of distributed systems, to get a better understanding of how processes synchronize using shared memory. We plan to write about some of these understandings in subsequent notes.
 
-### About Sidekiq and Exq
+# About Sidekiq and Exq
 
 [Sidekiq](https://github.com/mperham/sidekiq) is a job processing library. It has two components, a `client` and `worker`. It uses a redis LIST as storage. A job instruction is a json object complying with a schema. A sidekiq `client` creates a job instruction in the specified schema & pushes it to a queue (redis LIST). A sidekiq `worker` listening to the queue receives this instruction and performs a related task.
 
@@ -40,7 +36,7 @@ config :exq_scheduler, :schedules,
   }
 ```
 
-### Features
+# Features
 
 Here are some of [exq-scheduler's](https://github.com/activesphere/exq-scheduler) salient features. We might expand on implementation details in future posts.
 
@@ -67,17 +63,8 @@ config :exq_scheduler,
 
 - Deploy with existing Exq workers without major changes in deployment setup.
 
-### Stability
+# Stability
 
 [exq-scheduler](https://github.com/activesphere/exq-scheduler) is currently being used in production with one of our customers. The library is backed by [tests](https://github.com/activesphere/exq-scheduler/tree/master/test) which introduces various faults and verifies that invariants are always maintained.
-
-
-### About ActiveSphere
-
-We help businesses build and scale complex web-apps, visualizations and high-throughput messaging systems.
-
-Check out some of our other [open source projects](https://www.activesphere.com/hacks.html) or our [work portfolio](https://www.activesphere.com/portfolio.html) if it interests you.
-
-[Get in touch](mailto:contact@activesphere.com)
 
 [^first]: Issues were caused by lack of determinism when building a unique key for scheduled tasks and not handling edge cases, which account for failure of scheduler, after acquiring a lock.  https://github.com/moove-it/sidekiq-scheduler/issues/156, https://github.com/moove-it/sidekiq-scheduler/issues/181
