@@ -40,14 +40,14 @@ config :exq_scheduler, :schedules,
 
 Here are some of [exq-scheduler's](https://github.com/activesphere/exq-scheduler) salient features. We might expand on implementation details in future posts.
 
-- Run multiple schedulers while avoiding duplicate job instructions.\
-	We do this by building a key deterministically using execution time and pushing to the queue in a transaction.
+- Run multiple schedulers while avoiding duplicate job instructions.<br>
+We do this by building a key deterministically using execution time and pushing to the queue in a transaction.
 
-- [Redis sentinel](https://redis.io/topics/sentinel) support.\
-	This allows improving availability of shared redis instance.
+- [Redis sentinel](https://redis.io/topics/sentinel) support.<br>
+This allows improving availability of shared redis instance.
 
-- Schedule missed jobs.\
-	If scheduler experiences down time for some reason (node restarted etc.), jobs missed in the last 1 hour are scheduled by default. The interval can be configured.
+- Schedule missed jobs.<br>
+If scheduler experiences down time for some reason (node restarted etc.), jobs missed in the last 1 hour are scheduled by default. The interval can be configured.
 
 - Define schedules for a timezone.
 ```
@@ -57,9 +57,9 @@ config :exq_scheduler,
   time_zone: "Asia/Kolkata"
 ```
 
-- API consistent with sidekiq and sidekiq-scheduler.\
- This enables any compatible job runner to pick up instructions.
- Also allows use of [sidekiq](https://github.com/mperham/sidekiq/wiki/Monitoring#web-ui) and [sidekiq-scheduler](https://github.com/moove-it/sidekiq-scheduler#sidekiq-web-integration)'s web UI.
+- API consistent with sidekiq and sidekiq-scheduler.<br>
+This enables any compatible job runner to pick up instructions.
+Also allows use of [sidekiq](https://github.com/mperham/sidekiq/wiki/Monitoring#web-ui) and [sidekiq-scheduler](https://github.com/moove-it/sidekiq-scheduler#sidekiq-web-integration)'s web UI.
 
 - Deploy with existing Exq workers without major changes in deployment setup.
 
