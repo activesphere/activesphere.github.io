@@ -114,7 +114,7 @@ a[rev="footnote"] {
 }
 
 .highlighter-rouge pre.highlight {
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 /* New Tachyons */
