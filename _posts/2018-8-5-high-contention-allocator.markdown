@@ -12,6 +12,8 @@ key-value store. The whole database can be considered as a giant
 sorted map where keys and values are bytes. FoundationDB client
 libraries provide two means for handling namespaces.
 
+
+
 **Subspace** - Raw bytes like `users:friends` or `users:profile` is
 prefixed to keys before they get stored and stripped from the keys
 when they are retrieved.

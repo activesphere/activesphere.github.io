@@ -15,6 +15,8 @@ property, the [range read](https://apple.github.io/foundationdb/developer-guide.
 operation is efficient as most of the time the client would be able to
 fetch the data from a single server.
 
+
+
 As the keys are just bytes, the application must serialize the keys
 and more importantly if we need to use range operation, then the
 serialization should preserve the order of the keys. Fortunately, all
