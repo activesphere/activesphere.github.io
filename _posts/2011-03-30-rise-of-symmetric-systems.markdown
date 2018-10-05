@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Rise of Symmetric Systems
 published: true
 author: Sreekanth

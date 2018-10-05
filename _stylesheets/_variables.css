@@ -1,3 +1,15 @@
+/*
+
+Ratio: 1.414
+Base Font Size: 19px
+Measure:
+  Minimum: 437px, 23em @ 19px
+  Maximum: 684px, 36em @ 19px
+Base spacing unit: 16px
+
+https://www.modularscale.com/?19,16&px&1.414
+*/
+
 @custom-media --min-column (min-width: 27.3125em); /* 23em @ 19px */
 @custom-media --max-column (min-width: 42.75em); /* 36em @ 19px */
 
@@ -7,12 +19,73 @@
 
   --font-weight-bold: 700;
 
-  --font-size-s: 0.707213579em;
+  --font-size-xs: 0.707em;
+  --font-size-s: 0.842em;
   --font-size-m: 1em;
   --font-size-l: 1.191em;
   --font-size-xl: 1.414em;
-  --font-size-xxl: 1.684em;
-  --font-size-xxxl: 1.999em;
+  --font-size-2xl: 1.684em;
+  --font-size-3xl: 1.999em;
+  --font-size-4xl: 2.381em;
 
   --line-height-tight: 1.1em;
+
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 32px;
+  --space-xl: 64px;
+  --space-2xl: 128px;
+
+  --max-width-content-column: 36rem;
+
+    --color-white: #ffffff;
+    --color-gray-00: #f8f9fa;
+    --color-gray-10: #f1f3f5;
+    --color-gray-20: #e9ecef;
+    --color-gray-30: #dee2e6;
+    --color-gray-40: #ced4da;
+    --color-gray-50: #adb5bd;
+    --color-gray-60: #868e96;
+    --color-gray-70: #495057;
+    --color-gray-80: #343a40;
+    --color-gray-90: #212529;
+    --color-black: #000000;
+
+    --color-red: #EC4D3F;
+    --color-blue: #5399DE;
+    --color-green: #59BC4C;
+    --color-yellow: #F0CF2A;
+
+    --color-red-dark: #B83127;
+    --color-blue-dark: #3071B2;
+    --color-green-dark: #4B8C41;
+    --color-yellow-dark: #B69C17;
+
+    --color-red-light: #F5B1AC;
+    --color-blue-light: #A8C7E6;
+    --color-green-light: #A0D298;
+    --color-yellow-light: #F9E376;
+
+    --color-red-washed: #FCE7E5;
+    --color-blue-washed: #DBE7F2;
+    --color-green-washed: #D1EDCD;
+    --color-yellow-washed: #FBF4D3;
+
+    --color-text: var(--color-gray-100);
+    --color-text-light: var(--color-gray-70);
+
+    --color-link: var(--color-blue);
+    --color-link-hover: var(--color-blue-dark);
+
+    --border-radius: 3px;
+
+    --delay-very-fast: .1s;
+    --delay-fast: .2s;
+    --delay-medium: .3s;
+    --delay-slow: .4s;
+    --delay-very-slow: .5s;
+
+    --easing: ease-out;
 }

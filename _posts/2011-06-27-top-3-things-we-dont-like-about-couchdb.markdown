@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Things we don't like about Couchdb
 published: true
 author: Sreekanth

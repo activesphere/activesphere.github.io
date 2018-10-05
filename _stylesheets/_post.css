@@ -1,0 +1,25 @@
+.post {
+  & p + p {
+    margin-top: 0;
+
+    text-indent: var(--space-l);
+  }
+}
+
+.post__title-link {
+  color: var(--color-text);
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    color: var(--color-text);
+  }
+}
+
+.post__meta {
+  margin-top: var(--space-xs);
+  color: var(--color-text-light);
+  font-size: var(--font-size-s);
+}

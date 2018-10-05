@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Node.js Patterns Presentation
 published: true
 author: Sreekanth

@@ -1,6 +1,5 @@
 ---
 container: order-layout
-layout: post
 title: Sort order preserving serialization
 author: ananthakumaran
 published: true
@@ -30,7 +29,7 @@ I will represent bytes using their hex format for the rest of the blog
 post. Each data type is tagged with an identifier which uniquely
 identifies the type.
 
-### NUll
+### Null
 
 Null is encoded with the tag <tag>00</tag>
 
@@ -47,20 +46,20 @@ with <byte>00</byte>.
 
 <div>
 <div class='left'><byte>AB</byte><byte>00</byte><byte>DD</byte> </div><tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><byte>DD</byte><term>00</term><br>
-<div class='left'><byte>AB</byte><byte>01</byte><byte>DD</byte> </div><tag>01</tag><byte>AB</byte><byte>01</byte><byte>DD</byte><term>00</term><br><br>
+<div class='left'><byte>AB</byte><byte>01</byte><byte>DD</byte> </div><tag>01</tag><byte>AB</byte><byte>01</byte><byte>DD</byte><term>00</term><br>
 
 <div class='left'><byte>AB</byte><byte>00</byte><byte>BC</byte></div><tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><byte>BC</byte><term>00</term><br>
-<div class='left'><byte>AB</byte><byte>00</byte><byte>DD</byte></div><tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><byte>DD</byte><term>00</term><br><br>
+<div class='left'><byte>AB</byte><byte>00</byte><byte>DD</byte></div><tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><byte>DD</byte><term>00</term><br>
 
 
 <div class='left'><byte>AB</byte><byte>00</byte><byte>DD</byte></div><tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><byte>DD</byte><term>00</term><br>
-<div class='left'><byte>AB</byte><byte>01</byte></div><tag>01</tag><byte>AB</byte><byte>01</byte><term>00</term><br><br>
+<div class='left'><byte>AB</byte><byte>01</byte></div><tag>01</tag><byte>AB</byte><byte>01</byte><term>00</term><br>
 
 <div class='left'><byte>AB</byte><byte>00</byte></div><tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><term>00</term><br>
-<div class='left'><byte>AB</byte><byte>01</byte><byte>DD</byte></div><tag>01</tag><byte>AB</byte><byte>01</byte><byte>DD</byte><term>00</term><br><br>
+<div class='left'><byte>AB</byte><byte>01</byte><byte>DD</byte></div><tag>01</tag><byte>AB</byte><byte>01</byte><byte>DD</byte><term>00</term><br>
 
 <div class='left'><byte>AB</byte></div><tag>01</tag><byte>AB</byte><term>00</term><br>
-<div class='left'><byte>AB</byte><byte>00</byte> </div><tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><term>00</term><br><br>
+<div class='left'><byte>AB</byte><byte>00</byte> </div><tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><term>00</term><br>
 </div>
 
 Because the terminator <term>00</term> has the lowest byte value and if
@@ -129,7 +128,7 @@ between types like Float and Integer won't work.
 
 <div>
 <div class='left-number'><code>(</code><byte>AB</byte><code>, 42)</code></div> <tag>01</tag><byte>AB</byte><term>00</term><tag>15</tag><byte>2A</byte><br>
-<div class='left-number'><code>(</code><byte>AB</byte><byte>00</byte><code>, 42)</code></div> <tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><term>00</term><tag>15</tag><byte>2A</byte><br><br>
+<div class='left-number'><code>(</code><byte>AB</byte><byte>00</byte><code>, 42)</code></div> <tag>01</tag><byte>AB</byte><byte>00</byte><escape>FF</escape><term>00</term><tag>15</tag><byte>2A</byte><br>
 </div>
 
 This example illustrates why <escape>FF</escape> is chosen as the
@@ -153,7 +152,7 @@ as <tag>00</tag><escape>FF</escape>.
 
 <div>
 <div class='left-number'><code>[1, [2, 3]]</code></div> <tag>05</tag><tag>15</tag><byte>01</byte><tag>05</tag><tag>15</tag><byte>02</byte><tag>15</tag><byte>03</byte><term>00</term><term>00</term><br>
-<div class='left-number'><code>[1, 2, [3]]</code></div> <tag>05</tag><tag>15</tag><byte>01</byte><tag>15</tag><byte>02</byte><tag>05</tag><tag>15</tag><byte>03</byte><term>00</term><term>00</term><br><br>
+<div class='left-number'><code>[1, 2, [3]]</code></div> <tag>05</tag><tag>15</tag><byte>01</byte><tag>15</tag><byte>02</byte><tag>05</tag><tag>15</tag><byte>03</byte><term>00</term><term>00</term><br>
 </div>
 
 There are other data types like unicode string, arbitrary precision

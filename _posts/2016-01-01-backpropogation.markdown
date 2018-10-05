@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Backpropagation: A needlessly explicit intuition for the derivation"
 tags:
 - backpropogation
@@ -21,7 +20,7 @@ Let's consider this simple 2 neuron network.
 
 ![](/public/images/blog/bp1.svg)
 
-Here, 
+Here,
 
 - \\( x_1 \\) is the input neuron
 - \\( w_1 \\) is the weight applied to it
@@ -77,7 +76,7 @@ Let's go back to our 2 layer network where we derived $$ \ref{a} $$ and try to g
 
 ![](/public/images/blog/bp3.svg)
 
-The error $$ E $$ is the total error across $$ y_1 $$ & $$ y_2 $$. 
+The error $$ E $$ is the total error across $$ y_1 $$ & $$ y_2 $$.
 
 $$ \begin{align}
 	\Delta w_1 = \frac{\delta E}{\delta w_1} & = \frac{\delta}{\delta w_1} \frac{1}{2}[(t_1 - y_1)^2 + (t_2 - y_2)^2]  \\

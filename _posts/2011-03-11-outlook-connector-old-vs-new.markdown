@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Restful design, Open formats and an Outlook Add-In
 published: true
 author:  Suresh Harikrishnan

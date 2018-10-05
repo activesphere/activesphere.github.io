@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Activesphere: Long time coming"
 published: true
 author: Sreekanth

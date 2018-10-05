@@ -1,4 +1,25 @@
-.highlight  { background: #ffffff; }
+.highlighter-rouge {
+  background-color: var(--color-gray-00);
+  overflow-y: auto;
+  max-width: 100%;
+  padding: var(--space-m);
+  border-radius: var(--border-radius);
+
+  @media (--max-column) {
+    margin-left: calc(-1 * var(--space-m));
+    margin-right: calc(-1 * var(--space-m));
+  }
+}
+
+code.highlighter-rouge {
+  padding: 0 var(--space-xs);
+
+  @media (--max-column) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */

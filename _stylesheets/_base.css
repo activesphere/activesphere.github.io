@@ -3,6 +3,7 @@
   font-family: "Source Serif Pro", serif;
   line-height: 1.315789474; /* 19px / 25px - 28px */
   font-feature-settings: "onum";
+  color: var(--color-gray-90);
 
   @media (--min-column) {
     line-height: calc(1.315789474em + ((0.157894737 / 15.4375) * (100vw - 23em)));
@@ -23,4 +24,49 @@
 
 body {
   margin-top: 0;
+}
+
+code, tag, byte, term, escape {
+  color: var(--color-text-light);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-s);
+  font-feature-settings: "tnum";
+}
+
+pre code {
+  background-color: transparent;
+}
+
+a {
+  color: var(--color-link);
+  transition: color var(--delay-fast) var(--easing);
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-link-hover);
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--font-weight-bold);
+}
+
+h1,
+h2 {
+  line-height: var(--line-height-tight);
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+}
+
+h2 {
+  font-size: var(--font-size-l);
+}
+
+h3 {
+  font-size: var(--font-size-m);
 }

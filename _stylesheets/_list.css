@@ -1,0 +1,29 @@
+.list {
+  padding-left: 0;
+
+  list-style-position: inside;
+}
+
+.list--inline {
+  list-style: none;
+
+  & > li {
+    display: inline;
+  }
+
+  & > li + li {
+    margin-left: var(--space-m);
+  }
+}
+
+
+.list--middot-seperated {
+  & > li + li {
+    margin-left: var(--space-s);
+  }
+
+  & > li + li::before {
+    content: '·';
+    margin-right: var(--space-s);
+  }
+}

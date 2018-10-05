@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Node toolbox
 published: true
 author:  Nilakanta

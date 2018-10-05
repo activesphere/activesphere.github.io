@@ -1,6 +1,5 @@
 ---
 container: hca-layout
-layout: post
 title: High contention allocator
 author: ananthakumaran
 published: true

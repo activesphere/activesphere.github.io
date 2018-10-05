@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "CouchDb: The Honda Accord of databases"
 published: true
 author: Sreekanth

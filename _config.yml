@@ -22,3 +22,22 @@ plugins:
 keep_files:
   - public/main.js
   - public/main.css
+
+
+categories:
+  posts:
+    layout_modifier: article
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      content_container: post

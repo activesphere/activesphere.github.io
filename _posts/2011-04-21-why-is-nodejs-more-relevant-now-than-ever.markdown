@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Goodbye Rails, Hello Node.js
 published: true
 author: Sreekanth

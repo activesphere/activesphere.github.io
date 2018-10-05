@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Scaling and Large numbers
 published: true
 author: Sreekanth
