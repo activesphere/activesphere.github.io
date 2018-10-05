@@ -2,23 +2,22 @@
 layout: default
 title: Blog
 ---
-<div class="mw7 center pa3">
-    {% for post in site.posts %}
-      <div class="avenir lh-copy black-70 pa4 {% unless forloop.first %}bt b--light-gray{% endunless %}">
-        <a class="link as-blue dim f4" href="{{ post.url }}">{{ post.title }}</a>
-        <div>
-          <div class="f5">{{ post.excerpt | markdownify }}</div>
-          <abbr class="gray f5">by {{ post.author }} - {{ post.date | date_to_string }}</abbr>
-        </div>
-      </div>
-      {% if post.url == "/blog/2018/07/17/introducing-exq-scheduler" %}
-      <div class="avenir lh-copy black-70 pa4 {% unless forloop.first %}bt b--light-gray{% endunless %}">
-        <a class="link as-blue dim f4" href="/compound-interest/">On compound interest</a>
-        <div>
-          <div class="f5"><p>How interest rates and time period of investment, effects return.</p></div>
-          <abbr class="gray f5">by ciju</abbr>
-        </div>
-      </div>
-      {% endif %}
-    {% endfor %}
-</div>
+
+<ul class="index">
+{% for post in site.posts %}
+  <li class="index__item post-summary">
+    <h3 class="post-summary__title"><a class="post-summary__link" href="{{ post.url }}">{{ post.title }}</a></h3>
+    <div class="post-summary__excerpt">{{ post.excerpt | markdownify | strip_html | truncatewords: 26 }}</div>
+    <ul class="list list--inline list--middot-seperated post-summary__meta"><li>By {{ post.author }}</li><li>{{ post.date | date: "%-d %b %Y"}}</li></ul>
+  </li>
+  {% if post.url == "/blog/2018/07/17/introducing-exq-scheduler" %}
+  <div class="avenir lh-copy black-70 pa4 {% unless forloop.first %}bt b--light-gray{% endunless %}">
+    <a class="link as-blue dim f4" href="/compound-interest/">On compound interest</a>
+    <div>
+      <div class="f5"><p>How interest rates and time period of investment, effects return.</p></div>
+      <abbr class="gray f5">by ciju</abbr>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+</ul>
