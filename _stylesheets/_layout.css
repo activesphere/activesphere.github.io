@@ -1,6 +1,6 @@
 .layout {
   display: grid;
-  max-width: 100%;
+  max-width: var(--max-width-canvas);
   margin: 0 auto;
   justify-content: center;
   grid-template-columns: minmax(var(--space-m), 1fr) minmax(auto, var(--max-width-content-column)) minmax(var(--space-m), 3.998fr);
