@@ -3,20 +3,6 @@ layout: default
 title: Blog
 ---
 <div class="mw7 center pa3">
-  <div>
-    <h2 class="f4">Articles</h2>
-      <div class="avenir lh-copy black-70 pa4">
-
-        <a class="link as-blue dim f4" href="/compound-interest/">On
-        compound interest</a>
-        <div>
-          <div class="f5"><p>How interest rates and time period of investment, effects return.</p></div>
-          <abbr class="gray f5">by ciju</abbr>
-        </div>
-      </div>
-  </div>
-  <div>
-    <h2 class="f4">Blogs</h2>
     {% for post in site.posts %}
       <div class="avenir lh-copy black-70 pa4 {% unless forloop.first %}bt b--light-gray{% endunless %}">
         <a class="link as-blue dim f4" href="{{ post.url }}">{{ post.title }}</a>
@@ -25,6 +11,14 @@ title: Blog
           <abbr class="gray f5">by {{ post.author }} - {{ post.date | date_to_string }}</abbr>
         </div>
       </div>
+      {% if post.url == "/blog/2018/07/17/introducing-exq-scheduler" %}
+      <div class="avenir lh-copy black-70 pa4 {% unless forloop.first %}bt b--light-gray{% endunless %}">
+        <a class="link as-blue dim f4" href="/compound-interest/">On compound interest</a>
+        <div>
+          <div class="f5"><p>How interest rates and time period of investment, effects return.</p></div>
+          <abbr class="gray f5">by ciju</abbr>
+        </div>
+      </div>
+      {% endif %}
     {% endfor %}
-  </div>
 </div>
