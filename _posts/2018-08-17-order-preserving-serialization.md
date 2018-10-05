@@ -31,7 +31,7 @@ identifies the type.
 
 ### Null
 
-Null is encoded with the tag <tag>00</tag>
+Null is encoded with the tag <tag>00</tag>.
 
 ### Byte String
 
