@@ -1,5 +1,6 @@
 .highlighter-rouge {
   background-color: var(--color-gray-00);
+  text-shadow: var(--text-shadow-light);
   overflow-y: auto;
   max-width: 100%;
   padding: var(--space-m);

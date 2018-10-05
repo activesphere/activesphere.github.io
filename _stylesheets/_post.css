@@ -13,7 +13,7 @@
 
   & .footnotes {
     font-size: var(--font-size-s);
-    line-height: var(--line-height-small);
+    line-height: var(--line-height-s);
     padding-top: var(--space-m);
     border-top: var(--border);
   }
