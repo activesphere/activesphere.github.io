@@ -21,7 +21,9 @@ module.exports = {
             ident: 'postcss',
             plugins: () => [
               postcssImport(),
-              postcssPresetEnv(/* pluginOptions */)
+              postcssPresetEnv({
+                stage: 0
+              })
             ]
           } }
         ]

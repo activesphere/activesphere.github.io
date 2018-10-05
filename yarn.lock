@@ -4152,11 +4152,6 @@ supports-color@^5.3.0, supports-color@^5.4.0, supports-color@^5.5.0:
   dependencies:
     has-flag "^3.0.0"
 
-tachyons-custom@^4.9.5:
-  version "4.9.5"
-  resolved "https://registry.yarnpkg.com/tachyons-custom/-/tachyons-custom-4.9.5.tgz#59b3378ea154850bc199fa970bbc928b68ad1363"
-  integrity sha512-SfMpDhYyQQejVQ3rxPbpT9blmgNfZpaKcII95a3VSmWiES6pCyszYzmrj/xv5C3ybRWN/WV/uzCJD4zDPNt4iA==
-
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.0.tgz#0d076a172e3d9ba088fd2272b2668fb8d194b78c"
