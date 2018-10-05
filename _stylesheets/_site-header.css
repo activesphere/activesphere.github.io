@@ -4,9 +4,10 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: var(--space-m);
+  padding: var(--space-m) var(--space-m) var(--space-xl);
 
   @media (--max-column) {
+    padding-bottom: var(--space-2xl);
     padding-left: var(--space-l);
     padding-right: var(--space-l);
   }
@@ -18,12 +19,26 @@
   align-items: center;
   margin-right: var(--space-l);
   padding: var(--space-m) 0;
-  color: var(--color-red);
+  color: var(--color-text-dark);
+  text-decoration: none;
 
   &:hover,
   &:active,
   &:focus {
-    color: var(--color-red-dark);
+    color: var(--color-red);
+  }
+}
+
+.site-header__logo-title {
+  margin-left: var(--space-s);
+  margin-top: 0;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-l);
+
+  display: none;
+
+  @media(min-width: 30em) {
+    display: inline;
   }
 }
 

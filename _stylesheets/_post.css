@@ -20,12 +20,7 @@
 }
 
 .post__header {
-  padding-top: var(--space-xl);
   padding-bottom: var(--space-m);
-
-  @media (--max-column) {
-    padding-top: var(--space-2xl);
-  }
 
   &::after {
     content: "";

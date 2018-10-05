@@ -2,8 +2,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: calc(var(--space-m) * 2.5);
-  height: calc(var(--space-m) * 2.5);
+  width: calc(var(--space-m) * 2);
+  height: calc(var(--space-m) * 2);
 
   & svg {
     fill: currentColor;

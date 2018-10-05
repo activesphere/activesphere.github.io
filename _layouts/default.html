@@ -5,9 +5,7 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="site-header__logo" href="/" title="Home">
-        {% include logo.html %}
-      </a>
+      <a class="site-header__logo" href="/" title="Home">{% include logo.html %} <span class="site-header__logo-title">activesphere</span></a>
 
       {% assign nav_links = "/portfolio.html, /people.html, /blog.html" | split: ", " %}
       {% assign nav_link_titles = "Portfolio, People, Blog" | split: ", " %}
