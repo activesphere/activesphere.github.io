@@ -3,7 +3,7 @@
   max-width: var(--max-width-canvas);
   margin: 0 auto;
   justify-content: center;
-  grid-template-columns: minmax(var(--space-m), 1fr) minmax(auto, var(--max-width-content-column)) minmax(var(--space-m), 3.998fr);
+  grid-template-columns: minmax(var(--space-m), 1fr) minmax(auto, var(--max-width-content-column)) minmax(var(--space-m), 2.827fr);
 
   & * {
     grid-column: 2;
