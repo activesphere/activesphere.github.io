@@ -3,13 +3,14 @@
   border: var(--border);
   border-left-width: 0;
   border-right-width: 0;
+  margin-top: var(--space-l);
 }
 
 .pagination__link {
   position: relative;
   margin-top: 0;
   display: block;
-  padding: calc(var(--space-m) * 1.5) var(--space-s) var(--space-s);
+  padding: calc(var(--space-m) * 1.5) var(--space-m) var(--space-m);
   width: 50%;
   text-decoration: none;
   font-weight: var(--font-weight-bold);
@@ -28,8 +29,8 @@
     line-height: var(--line-height-solid);
     position: absolute;
     top: var(--space-s);
-    left: var(--space-s);
-    right: var(--space-s);
+    left: var(--space-m);
+    right: var(--space-m);
     color: var(--color-text-light);
   }
 }
