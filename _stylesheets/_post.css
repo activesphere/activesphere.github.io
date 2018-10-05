@@ -4,11 +4,28 @@
 
     text-indent: var(--space-l);
   }
+
+  & p img {
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
+    margin-left: calc(-1 * var(--space-l));
+  }
+
+  & .footnotes {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-small);
+    padding-top: var(--space-m);
+    border-top: var(--border);
+  }
 }
 
 .post__header {
   padding-top: var(--space-xl);
   padding-bottom: var(--space-m);
+
+  @media (--max-column) {
+    padding-top: var(--space-2xl);
+  }
 
   &::after {
     content: "";

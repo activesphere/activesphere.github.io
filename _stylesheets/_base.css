@@ -2,7 +2,7 @@
   font-size: 1.1875rem; /* 19px */
   font-family: "Source Serif Pro", serif;
   line-height: 1.315789474; /* 19px / 25px - 28px */
-  font-feature-settings: "onum";
+  font-variant-numeric: oldstyle-nums;
   color: var(--color-text);
 
   @media (--min-column) {
@@ -30,7 +30,7 @@ code, tag, byte, term, escape {
   color: var(--color-text-light);
   font-family: var(--font-family-mono);
   font-size: var(--font-size-s);
-  font-feature-settings: "tnum";
+  font-variant-numeric: lining-nums;
 }
 
 pre code {
@@ -69,4 +69,8 @@ h2 {
 
 h3 {
   font-size: var(--font-size-m);
+}
+
+li + li {
+  margin-top: var(--space-s);
 }

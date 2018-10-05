@@ -17,6 +17,7 @@ https://www.modularscale.com/?19,16&px&1.414
   --font-family: "Source Serif Pro", serif;
   --font-family-mono: "Source Code Pro", serif;
 
+  --font-weight-regular: 400;
   --font-weight-bold: 700;
 
   --font-size-xs: 0.707em;
@@ -29,6 +30,8 @@ https://www.modularscale.com/?19,16&px&1.414
   --font-size-4xl: 2.381em;
 
   --line-height-tight: 1.1em;
+  --line-height-small: 1.375em;
+  --line-height-solid: 1;
 
   --space-2xs: 2px;
   --space-xs: 4px;
@@ -68,10 +71,10 @@ https://www.modularscale.com/?19,16&px&1.414
     --color-green-light: #A0D298;
     --color-yellow-light: #F9E376;
 
-    --color-red-washed: #FCE7E5;
-    --color-blue-washed: #DBE7F2;
-    --color-green-washed: #D1EDCD;
-    --color-yellow-washed: #FBF4D3;
+    --color-red-washed: #FDF5F5;
+    --color-blue-washed: #F1F5F9;
+    --color-green-washed: #EFF7ED;
+    --color-yellow-washed: #FBF9F1;
 
     --color-text: var(--color-gray-80);
     --color-text-dark: var(--color-gray-90);
@@ -83,6 +86,8 @@ https://www.modularscale.com/?19,16&px&1.414
     --color-border: var(--color-gray-20);
 
     --border-radius: 3px;
+    --border-width: 1px;
+    --border: var(--border-width) solid var(--color-border);
 
     --delay-very-fast: .1s;
     --delay-fast: .2s;
@@ -91,4 +96,7 @@ https://www.modularscale.com/?19,16&px&1.414
     --delay-very-slow: .5s;
 
     --easing: ease-out;
+
+    --text-shadow-dark: 0 1px 0 rgba(27, 31, 35, 0.15);
+    --text-shadow-light: 0 1px 0 rgba(255, 255, 255, 0.5);
 }

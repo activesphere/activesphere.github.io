@@ -1,7 +1,11 @@
 @import './_variables.css';
 
+/* Base */
 @import './_base.css';
-@import './_layout.css';
-@import './_post.css';
-@import './_list.css';
+
+/* Components */
 @import './_highlight.css';
+@import './_layout.css';
+@import './_list.css';
+@import './_pagination.css';
+@import './_post.css';
