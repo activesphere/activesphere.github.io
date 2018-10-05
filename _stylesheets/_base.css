@@ -3,7 +3,7 @@
   font-family: "Source Serif Pro", serif;
   line-height: 1.315789474; /* 19px / 25px - 28px */
   font-feature-settings: "onum";
-  color: var(--color-gray-90);
+  color: var(--color-text);
 
   @media (--min-column) {
     line-height: calc(1.315789474em + ((0.157894737 / 15.4375) * (100vw - 23em)));

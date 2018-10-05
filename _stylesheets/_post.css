@@ -26,14 +26,14 @@
 }
 
 .post__title-link {
-  color: var(--color-text);
+  color: var(--color-text-dark);
   text-decoration: none;
 
   &:hover,
   &:focus,
   &:active {
     text-decoration: underline;
-    color: var(--color-text);
+    color: var(--color-text-dark);
   }
 }
 
