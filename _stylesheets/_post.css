@@ -6,6 +6,25 @@
   }
 }
 
+.post__header {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-m);
+
+  &::after {
+    content: "";
+    display: block;
+    height: var(--space-2xs);
+    width: var(--space-m);
+    background-color: var(--color-border);
+  }
+}
+
+.post__title {
+  @media (--max-column) {
+    font-size: var(--font-size-3xl);
+  }
+}
+
 .post__title-link {
   color: var(--color-text);
   text-decoration: none;
@@ -22,4 +41,5 @@
   margin-top: var(--space-xs);
   color: var(--color-text-light);
   font-size: var(--font-size-s);
+  padding-bottom: var(--space-m);
 }

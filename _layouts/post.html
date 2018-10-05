@@ -2,9 +2,11 @@
 layout: default
 ---
 
-<h1 class="post__title"><a class="post__title-link" href="{{ page.url }}">{{ page.title }}</a></h1>
-<ul class="list list--inline list--middot-seperated post__meta">
-  <li>By {{ page.author }}</li>
-  <li>{{ page.date | date: "%-d %b %Y"}}</li>
-</ul>
+<header class="post__header">
+  <h1 class="post__title"><a class="post__title-link" href="{{ page.url }}">{{ page.title }}</a></h1>
+  <ul class="list list--inline list--middot-seperated post__meta">
+    <li>By {{ page.author }}</li>
+    <li>{{ page.date | date: "%-d %b %Y"}}</li>
+  </ul>
+</header>
 {{content}}

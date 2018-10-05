@@ -38,7 +38,7 @@ https://www.modularscale.com/?19,16&px&1.414
   --space-xl: 64px;
   --space-2xl: 128px;
 
-  --max-width-content-column: 36rem;
+  --max-width-content-column: 34rem; /* (36rem - 2rem margin) */
 
     --color-white: #ffffff;
     --color-gray-00: #f8f9fa;
@@ -73,11 +73,13 @@ https://www.modularscale.com/?19,16&px&1.414
     --color-green-washed: #D1EDCD;
     --color-yellow-washed: #FBF4D3;
 
-    --color-text: var(--color-gray-100);
-    --color-text-light: var(--color-gray-70);
+    --color-text: var(--color-gray-90);
+    --color-text-light: var(--color-gray-60);
 
     --color-link: var(--color-blue);
     --color-link-hover: var(--color-blue-dark);
+
+    --color-border: var(--color-gray-20);
 
     --border-radius: 3px;
 
