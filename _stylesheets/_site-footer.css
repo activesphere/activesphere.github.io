@@ -1,0 +1,14 @@
+.site-footer {
+  max-width: var(--max-width-canvas);
+  margin: 0 auto;
+  line-height: var(--line-height-tight);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: var(--space-xl) var(--space-m) var(--space-m);
+}
+
+.site-footer__license {
+  font-size: var(--font-size-s);
+  color: var(--color-text-light);
+}
