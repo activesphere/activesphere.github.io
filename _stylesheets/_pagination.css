@@ -9,7 +9,7 @@
   position: relative;
   margin-top: 0;
   display: block;
-  padding: var(--space-l) var(--space-s) var(--space-s);
+  padding: calc(var(--space-m) * 1.5) var(--space-s) var(--space-s);
   width: 50%;
   text-decoration: none;
   font-weight: var(--font-weight-bold);
@@ -27,7 +27,7 @@
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-solid);
     position: absolute;
-    top: var(--space-m);
+    top: var(--space-s);
     left: var(--space-s);
     right: var(--space-s);
     color: var(--color-text-light);
