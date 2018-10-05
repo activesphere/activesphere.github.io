@@ -67,15 +67,15 @@ https://www.modularscale.com/?19,16&px&1.414
     --color-green-dark: #4B8C41;
     --color-yellow-dark: #B69C17;
 
-    --color-red-light: #F5B1AC;
-    --color-blue-light: #A8C7E6;
-    --color-green-light: #A0D298;
-    --color-yellow-light: #F9E376;
+    --color-red-light: #F8AEA9;
+    --color-blue-light: #A0C7EE;
+    --color-green-light: #96DA8A;
+    --color-yellow-light: #F7E078;
 
-    --color-red-washed: #FDF5F5;
-    --color-blue-washed: #F1F5F9;
-    --color-green-washed: #EFF7ED;
-    --color-yellow-washed: #FBF9F1;
+    --color-red-washed: #FEEEEE;
+    --color-blue-washed: #ECF4FA;
+    --color-green-washed: #E8F6E5;
+    --color-yellow-washed: #FCF7DE;
 
     --color-text: var(--color-gray-80);
     --color-text-dark: var(--color-gray-90);
