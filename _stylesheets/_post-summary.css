@@ -9,10 +9,19 @@
 }
 
 .post-summary__title {
-  font-weight: var(--font-weight-regular);
+  /* font-weight: var(--font-weight-regular); */
+  font-size: var(--font-size-l);
 }
 
 .post-summary__link {
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+
   &::after {
     content: "";
     position: absolute;
