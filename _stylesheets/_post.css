@@ -20,10 +20,12 @@
 }
 
 .post__header {
-  padding-bottom: var(--space-m);
+  padding-bottom: calc(var(--space-m) * 2 + var(--space-2xs)); /* Height of the line */
 
   &::after {
     content: "";
+    position: relative;
+    top: var(--space-m);
     display: block;
     height: var(--space-2xs);
     width: var(--space-m);
@@ -53,5 +55,4 @@
   margin-top: var(--space-xs);
   color: var(--color-text-light);
   font-size: var(--font-size-s);
-  padding-bottom: var(--space-m);
 }

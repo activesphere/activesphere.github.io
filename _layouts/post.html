@@ -4,10 +4,15 @@ layout: default
 
 <header class="post__header">
   <h1 class="post__title"><a class="post__title-link" href="{{ page.url }}">{{ page.title }}</a></h1>
+  {% if page.author or page.date %}
   <ul class="list list--inline list--middot-seperated post__meta">
+    {%- if page.author -%}
     <li>By {{ page.author }}</li>
+    {%- endif -%}{%- if page.date -%}
     <li>{{ page.date | date: "%-d %b %Y"}}</li>
+    {%- endif -%}
   </ul>
+  {% endif %}
 </header>
 {{content}}
 
