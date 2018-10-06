@@ -15,10 +15,11 @@
         {% endif %}
 
         <div class="avenir f5 lh-copy {{ page.container }}">
-        {{content}}
+          {{content}}
         </div>
       </div>
 
+      {% if page.next or page.previous %}
       <section>
         {% if page.next %}
         <a class="link dim as-blue" href="{{ page.next.url }}">&lArr;  {{ page.next.title }} </a>
@@ -28,6 +29,7 @@
         <a class="link dim as-blue" href="{{page.previous.url}}">{{page.previous.title}} &rArr;</a>
         {% endif %}
       </section>
+      {% endif %}
 
       {% if page.comments %}
       <div id="disqus_thread"></div>
