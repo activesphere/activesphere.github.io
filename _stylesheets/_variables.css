@@ -28,9 +28,12 @@ https://www.modularscale.com/?19,16&px&1.414
   --font-size-2xl: 1.684em;
   --font-size-3xl: 1.999em;
   --font-size-4xl: 2.381em;
+  --font-size-5xl: 2.827em;
+  --font-size-6xl: 3.366em;
 
   --line-height-tight: 1.1em;
   --line-height-s: 1.375em;
+  --line-height-l: 1.237113584em;
   --line-height-solid: 1;
 
   --space-2xs: 2px;

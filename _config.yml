@@ -40,4 +40,4 @@ defaults:
       type: "posts"
     values:
       layout: post
-      content_container: post
+      content_containers: article

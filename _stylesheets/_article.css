@@ -1,4 +1,4 @@
-.post {
+.article {
   padding-top: var(--space-xl);
 
   @media (--max-column) {
@@ -30,7 +30,7 @@
   }
 }
 
-.post__header {
+.article__header {
   padding-bottom: calc(var(--space-m) * 2 + var(--space-2xs)); /* Height of the line */
 
   &::after {
@@ -44,13 +44,13 @@
   }
 }
 
-.post__title {
+.article__title {
   @media (--max-column) {
     font-size: var(--font-size-3xl);
   }
 }
 
-.post__title-link {
+.article__title-link {
   color: var(--color-text-dark);
   text-decoration: none;
 
@@ -62,13 +62,21 @@
   }
 }
 
-.post__meta {
+.article__meta {
   margin-top: var(--space-xs);
   color: var(--color-text-light);
   font-size: var(--font-size-s);
 }
 
-.post__comments {
+.article__comments {
   margin-top: 0;
   border-top: var(--border);
+}
+
+.article__hero {
+  margin-bottom: var(--space-xl);
+}
+
+.article--hero {
+  padding-top: 0;
 }

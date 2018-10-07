@@ -1,0 +1,32 @@
+.hero {
+  grid-column: 1 / -1;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-l);
+}
+
+.hero__wrapper {
+  min-height: 50vh;
+  padding: var(--space-xl) 0;
+
+  @media (--min-column) {
+    min-height: 66vh;
+  }
+}
+
+.hero__title {
+  font-size: var(--font-size-xl);
+
+  @media (--min-column) {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+.hero__sub-title {
+  font-size: var(--font-size-m);
+
+  @media (--min-column) {
+    font-size: var(--font-size-l);
+  }
+}

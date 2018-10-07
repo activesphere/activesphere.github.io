@@ -9,7 +9,7 @@
 @import './_list.css';
 @import './_logo.css';
 @import './_pagination.css';
-@import './_post.css';
+@import './_article.css';
 @import './_site-header.css';
 @import './_site-footer.css';
 @import './_index.css';
@@ -17,3 +17,4 @@
 @import './_person.css';
 @import './_project.css';
 @import './_client-logos.css';
+@import './_hero.css';
