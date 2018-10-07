@@ -1,5 +1,5 @@
 .article {
-  padding-top: var(--space-xl);
+  padding: var(--space-xl) 0;
 
   @media (--max-column) {
     padding-top: var(--space-2xl);

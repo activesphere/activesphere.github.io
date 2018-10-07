@@ -1,7 +1,7 @@
 .site-footer {
   background-color: var(--color-gray-90);
   color: var(--color-gray-40);
-  margin-top: var(--space-xl);
+  margin-top: 0;
 }
 
 .site-footer__wrapper {

@@ -1,6 +1,6 @@
 .client-logos {
   border-top: var(--border);
-  padding-top: var(--space-xl);
+  padding: var(--space-xl) 0;
 }
 
 .client-logos__title {
