@@ -40,7 +40,7 @@
   line-height: var(--line-height-s);
   color: var(--color-text-light);
   font-variant: all-small-caps;
-  margin-top: 0;
+  margin-top: var(--space-xs);
 }
 
 .person__social-network-link {
