@@ -1,10 +1,24 @@
-{% if page.previous or page.next %}
+{% assign visible = site.posts | where_exp: "post", "post.hidden != true" %}
+{% for post in visible %}
+{% if post.url == page.url %}
+{% if forloop.length > forloop.index %}
+{% assign previous_idx = forloop.index0 | plus: 1 %}
+{% assign previous_page = visible[previous_idx] %}
+{% endif %}
+{% if forloop.index0 > 0 %}
+{% assign next_idx = forloop.index0 | minus: 1 %}
+{% assign next_page = visible[next_idx] %}
+{% endif %}
+{% endif %}
+{% endfor %}
+
+{% if previous_page or next_page %}
 <nav aria-label="pagination" class="pagination">
-  {% if page.previous %}
-  <a class="pagination__link pagination__link--previous" href="{{page.previous.url}}">{{page.previous.title}}</a>
+  {% if previous_page %}
+  <a class="pagination__link pagination__link--previous" href="{{previous_page.url}}">{{previous_page.title}}</a>
   {% endif %}
-  {% if page.next %}
-  <a class="pagination__link pagination__link--next" href="{{page.next.url}}">{{ page.next.title }}</a>
+  {% if next_page %}
+  <a class="pagination__link pagination__link--next" href="{{next_page.url}}">{{ next_page.title }}</a>
   {% endif %}
 </nav>
 {% endif %}
