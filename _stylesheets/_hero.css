@@ -9,6 +9,10 @@
   @media (min-width: 36rem) {
     min-height: 66vh;
   }
+
+  @media (min-height: 50rem) {
+    min-height: 0;
+  }
 }
 
 .hero__wrapper {
