@@ -3,10 +3,6 @@
   position: relative;
   padding-bottom: var(--space-xl);
 
-  @media(min-width: 44em) {
-    padding-left: calc(var(--space-2xl) + var(--space-xl));
-  }
-
   & p {
     display: block;
   }
@@ -42,11 +38,22 @@
 }
 
 .project__title {
+  font-size: var(--font-size-l);
   text-align: center;
 
   @media(min-width: 44em) {
     margin-top: 0;
     text-align: left;
+  }
+}
+
+.project__link {
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
   }
 }
 
@@ -58,4 +65,15 @@
 
 .project__stack {
   color: var(--color-text-light);
+}
+
+
+.project--client {
+  @media(min-width: 44em) {
+    padding-left: calc(var(--space-2xl) + var(--space-xl));
+  }
+
+  & .project__title {
+    font-size: var(--font-size-m);
+  }
 }

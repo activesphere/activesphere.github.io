@@ -7,7 +7,7 @@ client_logos: true
 ---
 <ul class="index">
   {% for p in site.data.projects %}
-  <li class="index__item project">
+  <li class="index__item project project--client">
     <a class="project__client-logo-link" href="{{p.client.url}}" title="{{p.client.title}}" target="_blank">
       <img class="project__client-logo-img" src="{{p.client.logo_path}}" alt="Logo of {{p.client.title}}">
     </a>

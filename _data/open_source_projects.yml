@@ -1,0 +1,110 @@
+-
+  title: Exq Scheduler
+  url: https://github.com/activesphere/exq-scheduler
+  stack:
+    - name: Scheduler
+    - name: Elixir
+  description: >
+    <p>A cron like job scheduler for <a href="https://github.com/akira/exq">Exq</a> that's also compatible with Sidekiq and Resque. It is designed to run on more than one machine for redundancy without causing duplicate jobs to be scheduled.</p>
+-
+  title: xml_stream
+  url: https://github.com/activesphere/xml_stream
+  stack:
+    - name: Stream
+    - name: Elixir
+  description: >
+    <p>An Elixir library for building XML documents in a streaming fashion. We built this library for a reporting system that could generate Excel Spreadsheets with millions of rows while maintaining a constant memory overhead.</p>
+-
+  title: httpolice-devtool
+  url: https://github.com/activesphere/httpolice-devtool
+  stack:
+    - name: Linter
+    - name: Chrome
+  description: >
+    <p>A lint-tool for the HTTP, integrated with Chrome devtools.</p>
+    <p>It intercepts and sends the HTTP headers from your browser to a server running <a href="https://github.com/vfaronov/httpolice">httpolice</a>, where they are analysed, and a detailed report is sent back to the browser where it's displayed.</p>
+
+-
+  title: µ
+  url: https://github.com/ananthakumaran/u
+  stack:
+    - name: Encoder
+    - name: JavaScript
+  description: >
+    <p>µ is a JavaScript library for encoding/decoding state (JavaScript object) in URL. Define a spec for the state, based on which the encoding is done. Manage the state with versioning.</p>
+
+-
+  title: FakeDynamo
+  url: https://github.com/ananthakumaran/fake_dynamo
+  stack:
+    - name: DynamoDB
+    - name: Ruby
+  description: >
+    <p>In-memory dynamodb emulator for <a href="http://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> written in ruby. We built it to help us develop applications on dynamodb in development and test environments without incurring the costs and the latencies. This also allows us to host the non production versions of the application outside of EC2.</p>
+-
+  title: gotunnel
+  url: https://github.com/ciju/gotunnel
+  stack:
+    - name: HTTP tunnel
+    - name: Go
+  description: >
+    <p>Gotunnel allows you to share server running on localhost, over the net. localtunnel allows you to do the same, but at the time of this writing, didn’t support WebSocket. And well, we wanted to do a project in Golang.</p>
+    <p>Read <a href="http://blog.activesphere.com/blog/2013/03/26/gotunnel-make-localhost-server-accessible-over-internet/">blog post</a> about the implementation.</p>
+
+-
+  title: Tide
+  url: https://github.com/ananthakumaran/tide
+  stack:
+    - name: Emacs
+    - name: TypeScript
+  description: >
+    <p>TypeScript Interactive Development Environment for Emacs - written in the early days of typescript when emacs support for it was spotty. Since then, it has grown into a mature package and featured in the front page of <a href="https://www.typescriptlang.org/">www.typescriptlang.org</a>.</p>
+
+-
+  title: memcachex
+  url: https://github.com/ananthakumaran/memcachex
+  stack:
+    - name: Memcached
+    - name: Elixir
+  description: >
+    <p>A <a href="https://memcached.org/">memcached</a> client written in pure Elixir which aims to provide good performance and solid error recovery from network connection failures.</p>
+
+-
+  title: pdf slide splitter
+  url: https://github.com/ciju/split-pdf-slides
+  stack:
+    - name: webpack
+    - name: JavaScript
+  description: >
+    <p>A web app to split pdf's with multiple slides per page, to single slide per page. An exploration in webpack, pdf, Google App Engine and more.</p>
+
+-
+  title: Mini-Mocha
+  url: https://github.com/ciju/mini-mocha
+  stack:
+    - name: JavaScript
+  decscription: >
+     <p>Mini-Mocha is a small experiment at understanding DSL of <a href="http://mochajs.org/">mochajs.org</a>. About 100 lines of code is enough, to implement the synchronous DSL that mocha supports. Supporting asynchronous DSL isn't much tougher. If you do hack it, please look at our <a href="/careers.html">careers</a> page.</p>
+     <p>Read <a href="http://www.activesphere.com/blog/2015/06/14/mini-mocha">blog post</a> about the implementation.</p>
+
+-
+  title: Devmirror
+  url: https://github.com/ciju/devmirror
+  stack:
+    - name: Debugger
+    - name: JavaScript
+  description: >
+    <p>Devmirror is an experiment at remote debugging. May be, an experiment gone wild. The idea is to render a remote user's browser screen, to a developer. With devtools open at developers end, which is connected to the users browser session.</p>
+
+    <p>In other words, developer see user's interaction. And can change the page live, for the user. It's like local development, but actual browser session is probably happening on the other side of the world.</p>
+
+    <p>Watch a <a href="https://hasgeek.tv/bangalorejs/6/563-devsync-demo-by-ciju-cherian">talk</a>about it.</p>
+
+-
+  title: devsync
+  url: https://github.com/ciju/devsync
+  stack:
+    - name: Editor
+    - name: JavaScript
+  description: >
+    <p>chrome devtools (WebInspector) hack, which allows your css/javascript edits from WebInspector to be saved directly to the localhost files. It was a winner at <a href="https://web.archive.org/web/20121029070152/http://developer.yahoo.com/blogs/ydn/posts/2011/08/open-hack-india-they-hacked-we-won-them-over/"> Yahoo! Hacknight</a>.</p>
