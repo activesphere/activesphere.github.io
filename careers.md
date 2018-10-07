@@ -6,7 +6,7 @@ content_containers:
   - article
   - article--hero
 ---
-<div class="hero article__hero">
+<div class="hero hero--green article__hero">
   <div class="layout hero__wrapper">
     <h1 class="hero__title">We are looking for colleagues, with interests and explorations in technology.</h1>
   </div>

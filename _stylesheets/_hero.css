@@ -1,6 +1,6 @@
 .hero {
   grid-column: 1 / -1;
-  background-color: var(--color-green);
+  background-color: var(--color-blue);
   color: var(--color-white);
   font-size: var(--font-size-xl);
   line-height: var(--line-height-l);
@@ -29,4 +29,17 @@
   @media (--min-column) {
     font-size: var(--font-size-l);
   }
+}
+
+.hero--green {
+  background-color: var(--color-green);
+}
+
+.hero--red {
+  background-color: var(--color-red);
+}
+
+.hero--yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
 }
