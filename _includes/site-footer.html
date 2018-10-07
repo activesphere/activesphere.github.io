@@ -1,3 +1,27 @@
-<footer class="site-footer">
-  <p class="site-footer__license">© 2010–{{ site.time | date: '%Y' }} ActiveSphere Technologies <span class="nowrap">Private Ltd.</span></p>
+<footer class="layout site-footer">
+  <div class="site-footer__wrapper">
+    <div class="site-footer__card">
+      <nav class="site-footer__nav">
+        {% for link in site.data.site_footer_links %}
+          <a class="link link--light site-footer__nav-link" href="{{link.path}}">{{link.title}}</a>
+        {% endfor %}
+      </nav>
+    </div>
+
+    <div class="site-footer__card site-footer__card--contact">
+      <a class="link link--light" href="tel:+919980955066">+91 8095221530</a><br>
+      <a class="link link--light" href="mailto:contact@activesphere.com">contact@activesphere.com</a>
+    </div>
+
+    <div class="site-footer__card site-footer__card--contact">
+      1st Floor, 1216/17, 11th Cross<br>
+      24th Main, HSR Sector 1<br>
+      Bangalore. 560017<br>
+      <a class="link link--light" href="https://goo.gl/maps/KEytEg7VH8k" target="_blank">Google Maps</a>
+    </div>
+
+    <div class="site-footer__card site-footer__card--license">
+      <p>© 2010–{{ site.time | date: '%Y' }} ActiveSphere Technologies <span class="nowrap">Private Ltd.</span></p>
+    </div>
+  </div>
 </footer>

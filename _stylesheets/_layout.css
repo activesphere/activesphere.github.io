@@ -5,7 +5,7 @@
   justify-content: center;
   grid-template-columns: minmax(var(--space-m), 1fr) minmax(auto, var(--max-width-content-column)) minmax(var(--space-m), 2.827fr);
 
-  & * {
+  & > * {
     grid-column: 2;
   }
 }

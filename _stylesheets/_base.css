@@ -4,6 +4,7 @@
   line-height: 1.315789474; /* 19px / 25px - 28px */
   font-variant-numeric: oldstyle-nums;
   color: var(--color-text);
+  box-sizing: border-box;
 
   @media (--min-column) {
     line-height: calc(1.315789474em + ((0.157894737 / 15.4375) * (100vw - 23em)));
@@ -16,6 +17,12 @@
 
 * {
   margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
 * + * {
@@ -35,17 +42,6 @@ code, tag, byte, term, escape {
 
 pre code {
   background-color: transparent;
-}
-
-a {
-  color: var(--color-link);
-  transition: color var(--delay-fast) var(--easing);
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: var(--color-link-hover);
-  }
 }
 
 h1,
@@ -90,4 +86,26 @@ li + li {
 img,
 svg {
   max-width: 100%;
+}
+
+.link,
+a {
+  color: var(--color-link);
+  transition: color var(--delay-fast) var(--easing);
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-link-hover);
+  }
+}
+
+.link--light {
+  color: inherit;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-link);
+  }
 }
