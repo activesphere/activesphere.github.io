@@ -10,7 +10,7 @@ permalink: /hacks.html
     <h3 class="project__title"><a class="project__link" href="{{p.url}}">{{p.title}}</a></h3>
     <div class="project__blurb">{{p.description | markdownify}}</div>
     <div class="project__stack">Built using {% for tool in p.stack %}
-      <a href="{{ tool.url }}">{{ tool.name }}</a>{%- unless forloop.last -%}
+      {{ tool.name }}{%- unless forloop.last -%}
         {%- if forloop.rindex == 2 -%}
         {{" and"}}
         {%- else -%}
