@@ -57,22 +57,18 @@ https://www.modularscale.com/?19,16&px&1.414
   --color-gray-80: #343a40;
   --color-gray-90: #212529;
   --color-black: #000000;
-
   --color-red: #F46359;
   --color-blue: #67A7E3;
   --color-green: #62C056;
   --color-yellow: #EACD3C;
-
   --color-red-dark: #B83127;
   --color-blue-dark: #3071B2;
   --color-green-dark: #4B8C41;
   --color-yellow-dark: #B69C17;
-
   --color-red-light: #F8AEA9;
   --color-blue-light: #A0C7EE;
   --color-green-light: #96DA8A;
   --color-yellow-light: #F7E078;
-
   --color-red-washed: #FEEEEE;
   --color-blue-washed: #ECF4FA;
   --color-green-washed: #E8F6E5;
@@ -81,11 +77,19 @@ https://www.modularscale.com/?19,16&px&1.414
   --color-text: var(--color-gray-80);
   --color-text-dark: var(--color-gray-90);
   --color-text-light: var(--color-gray-60);
-
   --color-link: var(--color-blue);
   --color-link-hover: var(--color-blue-dark);
-
   --color-border: var(--color-gray-20);
+
+  --opacity-100: 1;
+  --opacity-80: 0.8;
+  --opacity-60: 0.6;
+  --opacity-50: 0.5;
+  --opacity-25: 0.25;
+  --opacity-10: 0.1;
+  --opacity-05: 0.05;
+  --opacity-025: 0.025;
+  --opacity-0: 0;
 
   --border-radius: 0.157894737rem; /* 3 / 19px */
   --border-radius-l: 0.368421053rem; /* 7 / 19px */

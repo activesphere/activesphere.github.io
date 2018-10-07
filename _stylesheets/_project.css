@@ -1,6 +1,7 @@
 .project {
   display: block;
   position: relative;
+  padding-bottom: var(--space-xl);
 
   @media(min-width: 44em) {
     padding-left: calc(var(--space-2xl) + var(--space-xl));
@@ -17,7 +18,6 @@
 }
 
 .project + .project {
-  margin-top: var(--space-xl);
   padding-top: var(--space-xl);
   border-top: var(--border);
 }

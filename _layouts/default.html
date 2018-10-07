@@ -8,6 +8,9 @@
     <article class="layout {% if page.content_container %}{{ page.content_container }}{% endif %} {{ page.container }}">
       {{content}}
     </article>
+    {% if page.client_logos %}
+    {% include client_logos.html %}
+    {% endif %}
     {% include site_footer.html %}
     {% include analytics.html %}
     <script src='/public/main.js'></script>
