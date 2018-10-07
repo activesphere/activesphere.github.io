@@ -1,4 +1,10 @@
 .post {
+  padding-top: var(--space-xl);
+
+  @media (--max-column) {
+    padding-top: var(--space-2xl);
+  }
+
   & p + p {
     margin-top: 0;
 

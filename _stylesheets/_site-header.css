@@ -6,10 +6,9 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: var(--space-m) var(--space-m) var(--space-xl);
+  padding: var(--space-m);
 
   @media (--max-column) {
-    padding-bottom: var(--space-2xl);
     padding-left: var(--space-l);
     padding-right: var(--space-l);
   }
