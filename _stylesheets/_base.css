@@ -88,6 +88,11 @@ svg {
   max-width: 100%;
 }
 
+br {
+  /* On FF, it takes in margin from "* + *" */
+  margin-top: 0;
+}
+
 .link,
 a {
   color: var(--color-link);
