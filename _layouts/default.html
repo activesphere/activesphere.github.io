@@ -4,11 +4,11 @@
     {% include head.html %}
   </head>
   <body>
-    {% include site-header.html%}
+    {% include site_header.html%}
     <article class="layout {% if page.content_container %}{{ page.content_container }}{% endif %} {{ page.container }}">
       {{content}}
     </article>
-    {% include site-footer.html %}
+    {% include site_footer.html %}
     {% include analytics.html %}
     <script src='/public/main.js'></script>
   </body>
