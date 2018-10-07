@@ -10,7 +10,7 @@
 
 .person__img {
   display: block;
-  border-radius: var(--border-radius-l);
+  border-radius: 2000px;
   max-width: var(--max-width-person-img);
   margin-left: auto;
   margin-right: auto;
@@ -19,7 +19,7 @@
   @media (--min-column) {
     margin-left: 0;
     margin-right: var(--space-m);
-    margin-top: var(--space-xs);
+    margin-top: var(--space-2xs);
     position: absolute;
     top: 0;
     left: 0;
