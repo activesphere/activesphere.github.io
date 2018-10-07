@@ -1,6 +1,7 @@
 ---
 title: From the begining programmer's bookshelf
 published: true
+hidden: true
 author: Sreekanth
 categories: []
 ---

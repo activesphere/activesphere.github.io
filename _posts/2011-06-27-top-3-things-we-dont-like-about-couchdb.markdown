@@ -1,6 +1,7 @@
 ---
 title: Things we don't like about Couchdb
 published: true
+hidden: true
 author: Sreekanth
 categories:
 - couchdb

@@ -1,6 +1,7 @@
 ---
 title: Restful design, Open formats and an Outlook Add-In
 published: true
+hidden: true
 author:  Suresh Harikrishnan
 categories:
 - outlook

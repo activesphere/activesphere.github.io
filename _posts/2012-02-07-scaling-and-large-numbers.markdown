@@ -1,6 +1,7 @@
 ---
 title: Scaling and Large numbers
 published: true
+hidden: true
 author: Sreekanth
 categories:
 - couchdb

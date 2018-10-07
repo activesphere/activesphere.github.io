@@ -1,6 +1,7 @@
 ---
 title: Node toolbox
 published: true
+hidden: true
 author:  Nilakanta
 categories:
 - node-toolbox
