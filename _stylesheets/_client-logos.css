@@ -23,13 +23,13 @@
 }
 
 .client-logos__link {
-  display: flex;
-  justify-content: center;
+  display: block;
   padding: var(--space-m);
   text-decoration: none;
+  text-align: center;
 }
 
 .logo-list__logo {
-  display: block;
+  display: inline-block;
   max-height: var(--space-xl);
 }
