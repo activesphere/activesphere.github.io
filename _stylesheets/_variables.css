@@ -40,65 +40,68 @@ https://www.modularscale.com/?19,16&px&1.414
   --space-l: 32px;
   --space-xl: 64px;
   --space-2xl: 128px;
+  --space-3xl: 256px;
 
   --max-width-content-column: 36rem;
   --max-width-canvas: 90rem; /* ~19px * 1.414^13 */
 
-    --color-white: #ffffff;
-    --color-gray-00: #f8f9fa;
-    --color-gray-10: #f1f3f5;
-    --color-gray-20: #e9ecef;
-    --color-gray-30: #dee2e6;
-    --color-gray-40: #ced4da;
-    --color-gray-50: #adb5bd;
-    --color-gray-60: #868e96;
-    --color-gray-70: #495057;
-    --color-gray-80: #343a40;
-    --color-gray-90: #212529;
-    --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-00: #f8f9fa;
+  --color-gray-10: #f1f3f5;
+  --color-gray-20: #e9ecef;
+  --color-gray-30: #dee2e6;
+  --color-gray-40: #ced4da;
+  --color-gray-50: #adb5bd;
+  --color-gray-60: #868e96;
+  --color-gray-70: #495057;
+  --color-gray-80: #343a40;
+  --color-gray-90: #212529;
+  --color-black: #000000;
 
-    --color-red: #F46359;
-    --color-blue: #67A7E3;
-    --color-green: #62C056;
-    --color-yellow: #EACD3C;
+  --color-red: #F46359;
+  --color-blue: #67A7E3;
+  --color-green: #62C056;
+  --color-yellow: #EACD3C;
 
-    --color-red-dark: #B83127;
-    --color-blue-dark: #3071B2;
-    --color-green-dark: #4B8C41;
-    --color-yellow-dark: #B69C17;
+  --color-red-dark: #B83127;
+  --color-blue-dark: #3071B2;
+  --color-green-dark: #4B8C41;
+  --color-yellow-dark: #B69C17;
 
-    --color-red-light: #F8AEA9;
-    --color-blue-light: #A0C7EE;
-    --color-green-light: #96DA8A;
-    --color-yellow-light: #F7E078;
+  --color-red-light: #F8AEA9;
+  --color-blue-light: #A0C7EE;
+  --color-green-light: #96DA8A;
+  --color-yellow-light: #F7E078;
 
-    --color-red-washed: #FEEEEE;
-    --color-blue-washed: #ECF4FA;
-    --color-green-washed: #E8F6E5;
-    --color-yellow-washed: #FCF7DE;
+  --color-red-washed: #FEEEEE;
+  --color-blue-washed: #ECF4FA;
+  --color-green-washed: #E8F6E5;
+  --color-yellow-washed: #FCF7DE;
 
-    --color-text: var(--color-gray-80);
-    --color-text-dark: var(--color-gray-90);
-    --color-text-light: var(--color-gray-60);
+  --color-text: var(--color-gray-80);
+  --color-text-dark: var(--color-gray-90);
+  --color-text-light: var(--color-gray-60);
 
-    --color-link: var(--color-blue);
-    --color-link-hover: var(--color-blue-dark);
+  --color-link: var(--color-blue);
+  --color-link-hover: var(--color-blue-dark);
 
-    --color-border: var(--color-gray-20);
+  --color-border: var(--color-gray-20);
 
-    --border-radius: 0.157894737rem; /* 3 / 19px */
-    --border-radius-l: 0.368421053rem; /* 7 / 19px */
-    --border-width: 1px;
-    --border: var(--border-width) solid var(--color-border);
+  --border-radius: 0.157894737rem; /* 3 / 19px */
+  --border-radius-l: 0.368421053rem; /* 7 / 19px */
+  --border-width: 1px;
+  --border: var(--border-width) solid var(--color-border);
 
-    --delay-very-fast: .1s;
-    --delay-fast: .2s;
-    --delay-medium: .3s;
-    --delay-slow: .4s;
-    --delay-very-slow: .5s;
+  --delay-very-fast: .1s;
+  --delay-fast: .2s;
+  --delay-medium: .3s;
+  --delay-slow: .4s;
+  --delay-very-slow: .5s;
 
-    --easing: ease-out;
+  --easing: ease-out;
 
-    --text-shadow-dark: 0 1px 0 rgba(27, 31, 35, 0.15);
-    --text-shadow-light: 0 1px 0 rgba(255, 255, 255, 0.5);
+  --text-shadow-dark: 0 1px 0 rgba(27, 31, 35, 0.15);
+  --text-shadow-light: 0 1px 0 rgba(255, 255, 255, 0.5);
+
+  --text-indent: var(--space-l);
 }
