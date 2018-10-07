@@ -86,7 +86,8 @@ https://www.modularscale.com/?19,16&px&1.414
 
     --color-border: var(--color-gray-20);
 
-    --border-radius: 3px;
+    --border-radius: 0.157894737rem; /* 3 / 19px */
+    --border-radius-l: 0.368421053rem; /* 7 / 19px */
     --border-width: 1px;
     --border: var(--border-width) solid var(--color-border);
 

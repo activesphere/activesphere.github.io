@@ -1,0 +1,60 @@
+.person {
+  position: relative;
+  --max-width-person-img: calc(5 * var(--space-m));
+  margin-bottom: var(--space-xl);
+
+  @media (--min-column) {
+    padding-left: calc(var(--max-width-person-img) + var(--space-m));
+  }
+}
+
+.person__img {
+  display: block;
+  border-radius: var(--border-radius-l);
+  max-width: var(--max-width-person-img);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-s);
+
+  @media (--min-column) {
+    margin-left: 0;
+    margin-right: var(--space-m);
+    margin-top: var(--space-xs);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.person__name {
+  margin-top: 0;
+  text-align: center;
+
+  @media (--min-column) {
+    text-align: left;
+  }
+}
+
+.person__social-networks {
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  color: var(--color-text-light);
+  font-variant: all-small-caps;
+  margin-top: 0;
+}
+
+.person__social-network-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+    color: var(--color-link);
+  }
+}
+
+.person__blurb {
+  margin-top: 0;
+}
