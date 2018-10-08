@@ -9,7 +9,7 @@
 
   @supports(display: grid) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(209px, 1fr)); /* 19px * 11 */
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* 19px * 11 */
     margin-left: calc(-1 * var(--space-m));
     margin-right: calc(-1 * var(--space-m));
   }
