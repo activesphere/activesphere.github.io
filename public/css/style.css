@@ -122,3 +122,25 @@ a[rev="footnote"] {
     position: -webkit-sticky;
     position: sticky;
 }
+
+code.highlighter-rouge {
+  padding: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+
+code.highlighter-rouge::before {
+  letter-spacing: -0.2em;
+  content: "\A0";
+}
+
+code.highlighter-rouge::after {
+  letter-spacing: -0.2em;
+  content: "\A0";
+}
