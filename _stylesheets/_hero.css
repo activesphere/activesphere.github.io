@@ -1,11 +1,15 @@
 .hero {
-  grid-column: 1 / -1;
   background-color: var(--color-blue);
   color: var(--color-white);
   font-size: var(--font-size-xl);
   line-height: var(--line-height-xl);
   min-height: 50vh;
   margin-top: 0;
+  max-width: 100%;
+
+  @supports(display: grid) {
+    grid-column: 1 / -1;
+  }
 
   @media (min-width: 36rem) {
     min-height: 66vh;

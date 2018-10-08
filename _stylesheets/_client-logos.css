@@ -5,16 +5,27 @@
 
 .client-logos__title {
   color: var(--color-text-light);
+  text-align: center;
+
+  @supports(display: grid) {
+    text-align: left;
+  }
 }
 
 .client-logos__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(152px, 1fr)); /* 19 * 8 = 152 */
-
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  margin-left: calc(-1 * var(--space-m));
-  margin-right: calc(-1 * var(--space-m));
+
+  @supports(display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(152px, 1fr)); /* 19 * 8 = 152 */
+    align-items: center;
+    margin-left: calc(-1 * var(--space-m));
+    margin-right: calc(-1 * var(--space-m));
+  }
 }
 
 .client-logos__list-i {
@@ -31,5 +42,10 @@
 
 .logo-list__logo {
   display: inline-block;
+  max-width: var(--space-2xl);
   max-height: var(--space-xl);
+
+  @supports(display: grid) {
+    max-width: 100%;
+  }
 }

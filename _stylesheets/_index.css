@@ -8,16 +8,3 @@
     padding-top: var(--space-2xl);
   }
 }
-
-.index--grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* 19px * 11 */
-  margin-left: calc(-1 * var(--space-m));
-  margin-right: calc(-1 * -var(--space-m));
-
-  & .index__item {
-    margin-top: 0;
-    padding-left: var(--space-m);
-    padding-right: var(--space-m);
-  }
-}
