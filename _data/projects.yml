@@ -59,7 +59,7 @@
 
     <p>With the success of the first implementation (The business saw a considerable increase in the conversion rate), ABOF asked us again, to redo their checkout process. Which, again, we delivered in 2 months, within time.</p>
 
-    <p>Below is the loading times of the listing page of various e-commerce sites, when we delivered ABOF's listing page.</p>
+    <p>Below is the loading times of the listing page of various e-commerce sites, when we delivered ABOF’s listing page.</p>
 
     <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
 
@@ -79,4 +79,4 @@
   description: >
     <p>Sleekr hired us to help improve the performance and stability of their app.</p>
 
-    <p>Apart from code contributions, we helped provide high level technical guidance, laid a 6 month roadmap (to further stability) for their tech team to follow & gave regular feedback with code reviews. Some specific tasks we were involved with included introducing webpack to an alpha version of Angular2 for performance (when it wasn't officially supported), de-tangling an over-architected micro-services setup, experimenting with GraphQL for some components & building a mapper which extracted GraphQL types from Doctrine (an ORM).</p>
+    <p>Apart from code contributions, we helped provide high level technical guidance, laid a 6 month roadmap (to further stability) for their tech team to follow & gave regular feedback with code reviews. Some specific tasks we were involved with included introducing webpack to an alpha version of Angular2 for performance (when it wasn’t officially supported), de-tangling an over-architected micro-services setup, experimenting with GraphQL for some components & building a mapper which extracted GraphQL types from Doctrine (an ORM).</p>

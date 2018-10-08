@@ -5,7 +5,7 @@
     - name: Scheduler
     - name: Elixir
   description: >
-    <p>A cron like job scheduler for <a href="https://github.com/akira/exq">Exq</a> that's also compatible with Sidekiq and Resque. It is designed to run on more than one machine for redundancy without causing duplicate jobs to be scheduled.</p>
+    <p>A cron like job scheduler for <a href="https://github.com/akira/exq">Exq</a> that’s also compatible with Sidekiq and Resque. It is designed to run on more than one machine for redundancy without causing duplicate jobs to be scheduled.</p>
 -
   title: xml_stream
   url: https://github.com/activesphere/xml_stream
@@ -22,7 +22,7 @@
     - name: Chrome
   description: >
     <p>A lint-tool for the HTTP, integrated with Chrome devtools.</p>
-    <p>It intercepts and sends the HTTP headers from your browser to a server running <a href="https://github.com/vfaronov/httpolice">httpolice</a>, where they are analysed, and a detailed report is sent back to the browser where it's displayed.</p>
+    <p>It intercepts and sends the HTTP headers from your browser to a server running <a href="https://github.com/vfaronov/httpolice">httpolice</a>, where they are analysed, and a detailed report is sent back to the browser where it’s displayed.</p>
 
 -
   title: µ
@@ -84,7 +84,7 @@
   stack:
     - name: JavaScript
   decscription: >
-     <p>Mini-Mocha is a small experiment at understanding DSL of <a href="http://mochajs.org/">mochajs.org</a>. About 100 lines of code is enough, to implement the synchronous DSL that mocha supports. Supporting asynchronous DSL isn't much tougher. If you do hack it, please look at our <a href="/careers.html">careers</a> page.</p>
+     <p>Mini-Mocha is a small experiment at understanding DSL of <a href="http://mochajs.org/">mochajs.org</a>. About 100 lines of code is enough, to implement the synchronous DSL that mocha supports. Supporting asynchronous DSL isn’t much tougher. If you do hack it, please look at our <a href="/careers.html">careers</a> page.</p>
      <p>Read <a href="http://www.activesphere.com/blog/2015/06/14/mini-mocha">blog post</a> about the implementation.</p>
 
 -
@@ -94,9 +94,9 @@
     - name: Debugger
     - name: JavaScript
   description: >
-    <p>Devmirror is an experiment at remote debugging. May be, an experiment gone wild. The idea is to render a remote user's browser screen, to a developer. With devtools open at developers end, which is connected to the users browser session.</p>
+    <p>Devmirror is an experiment at remote debugging. May be, an experiment gone wild. The idea is to render a remote user’s browser screen, to a developer. With devtools open at developers end, which is connected to the users browser session.</p>
 
-    <p>In other words, developer see user's interaction. And can change the page live, for the user. It's like local development, but actual browser session is probably happening on the other side of the world.</p>
+    <p>In other words, developer see user’s interaction. And can change the page live, for the user. It’s like local development, but actual browser session is probably happening on the other side of the world.</p>
 
     <p>Watch a <a href="https://hasgeek.tv/bangalorejs/6/563-devsync-demo-by-ciju-cherian">talk</a>about it.</p>
 
