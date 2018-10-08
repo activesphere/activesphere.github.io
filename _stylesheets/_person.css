@@ -1,38 +1,26 @@
 .person {
+  --max-width-person-img: calc(1.5 * var(--space-xl));
   position: relative;
-  --max-width-person-img: calc(5 * var(--space-m));
-  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
 
-  @media (--min-column) {
-    padding-left: calc(var(--max-width-person-img) + var(--space-m));
-  }
+.person + .person {
+  padding-top: var(--space-xl);
+  border-top: var(--border);
 }
 
 .person__img {
+  max-width: var(--max-width-person-img);
   display: block;
   border-radius: 2000px;
-  max-width: var(--max-width-person-img);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: var(--space-s);
-
-  @media (--min-column) {
-    margin-left: 0;
-    margin-right: var(--space-m);
-    margin-top: var(--space-2xs);
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
 }
 
 .person__name {
   margin-top: 0;
   text-align: center;
-
-  @media (--min-column) {
-    text-align: left;
-  }
 }
 
 .person__social-networks {
@@ -40,7 +28,8 @@
   line-height: var(--line-height-s);
   color: var(--color-text-light);
   font-variant: all-small-caps;
-  margin-top: var(--space-xs);
+  margin-top: 0;
+  text-align: center;
 }
 
 .person__social-network-link {
@@ -53,8 +42,4 @@
     text-decoration: underline;
     color: var(--color-link);
   }
-}
-
-.person__blurb {
-  margin-top: 0;
 }
