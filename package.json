@@ -9,7 +9,7 @@
   "scripts": {
     "build:dev:js": "webpack --entry ./_scripts/index.js -o ./_site/public/main.js --mode development --watch",
     "build:jekyll": "bundle exec jekyll serve",
-    "start": "concurrently -r \"npm:build:dev:*\" \"npm:build:jekyll\""
+    "start": "concurrently -r \"npm:build:jekyll\" \"npm:build:dev:*\""
   },
   "dependencies": {
     "@babel/core": "^7.1.2",

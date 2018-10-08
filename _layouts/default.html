@@ -7,6 +7,10 @@
     {% include site_header.html%}
     <article class="layout{% for container in page.content_containers %} {{ container }}{% endfor %} {{ page.container }}">
       {{content}}
+
+      {% if page.plug %}
+      {% include plug.html %}
+      {% endif %}
     </article>
     {% if page.client_logos %}
     {% include client_logos.html %}
