@@ -5,6 +5,7 @@
   font-size: var(--font-size-xl);
   line-height: var(--line-height-xl);
   min-height: 50vh;
+  margin-top: 0;
 
   @media (min-width: 36rem) {
     min-height: 66vh;
@@ -12,6 +13,12 @@
 
   @media (min-height: 50rem) {
     min-height: 0;
+  }
+
+  & a:hover,
+  & a:focus,
+  & a:active {
+    color: var(--color-link-hover);
   }
 }
 
@@ -41,6 +48,18 @@
 
   @media (min-width: 36rem) {
     font-size: var(--font-size-l);
+  }
+}
+
+.hero--s {
+  min-height: 0;
+
+  & .hero__title {
+    font-size: var(--font-size-l);
+
+    @media (min-width: 36rem) {
+      font-size: var(--font-size-xl);
+    }
   }
 }
 
