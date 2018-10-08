@@ -9,7 +9,7 @@ content_containers:
 
 <div class="hero article__hero">
   <div class="layout hero__wrapper">
-    <h1 class="hero__title">Helping businesses build software for complex problems.</h1>
+    <h1 class="hero__title">Helping businesses build software for hard problems.</h1>
     <p>We are a boutique software consulting company. We have built and scaled complex web-apps, visualizations and high-throughput messaging systems.</p>
   </div>
 </div>
@@ -28,5 +28,3 @@ content_containers:
     <p>As a company, we are trying to build a place for individuals. We care about each one of us having their own explorations, growing in skills and perspectives. We list some of these explorations in the <a class="link link--light" href="/hacks.html">hacks page</a>.</p>
   </div>
 </div>
-
-
