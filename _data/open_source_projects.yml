@@ -70,13 +70,13 @@
     <p>A <a href="https://memcached.org/">memcached</a> client written in pure Elixir which aims to provide good performance and solid error recovery from network connection failures.</p>
 
 -
-  title: pdf slide splitter
+  title: PDF slide splitter
   url: https://github.com/ciju/split-pdf-slides
   stack:
     - name: webpack
     - name: JavaScript
   description: >
-    <p>A web app to split pdf's with multiple slides per page, to single slide per page. An exploration in webpack, pdf, Google App Engine and more.</p>
+    <p>A web app to split PDF’s with multiple slides per page, to single slide per page. An exploration in webpack, PDF, Google App Engine and more.</p>
 
 -
   title: Mini-Mocha
