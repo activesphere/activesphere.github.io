@@ -77,6 +77,18 @@
   margin-bottom: var(--space-xl);
 }
 
+.article__hero + .article__hero {
+  margin-top: calc(-1 * var(--space-xl));
+}
+
+.article__hero--last {
+  margin-bottom: 0;
+}
+
+.article--padding-bottom-0 {
+  padding-bottom: 0;
+}
+
 .article--hero {
   padding-top: 0;
 }
