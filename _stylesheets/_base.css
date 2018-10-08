@@ -44,6 +44,11 @@ pre code {
   background-color: transparent;
 }
 
+strong code,
+strong pre {
+  font-weight: var(--font-weight-medium);
+}
+
 h1,
 h2,
 h3 {
