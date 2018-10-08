@@ -1,5 +1,4 @@
 .client-logos {
-  border-top: var(--border);
   padding: var(--space-xl) 0;
 }
 
@@ -18,6 +17,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: var(--space-l);
 
   @supports(display: grid) {
     display: grid;
@@ -35,7 +35,7 @@
 
 .client-logos__link {
   display: block;
-  padding: var(--space-m);
+  padding: var(--space-s) var(--space-m);
   text-decoration: none;
   text-align: center;
 }
@@ -48,4 +48,8 @@
   @supports(display: grid) {
     max-width: 100%;
   }
+}
+
+.client-logos--border-top {
+  border-top: var(--border);
 }
