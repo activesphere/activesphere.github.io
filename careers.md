@@ -12,7 +12,7 @@ content_containers:
   </div>
 </div>
 
-## How we spend our time.
+## How we spend our time
 
 We are a group with varied interests. Much of our time is spent thinking and writing code for our clients. Some of our time is spent in individual curiosities, like programming, mathematics, machine learning, finance etc.
 
@@ -24,7 +24,7 @@ Among us, you will find people who are interested in programming, math, machine 
 In other words, **we create stuff, not because we have to, but because we like to.**
 
 
-## Consulting.
+## Consulting
 
 We are consultants. In the end, that comes down to working on problems that our clients have. These problems are varied. We might be involved in anything from brainstorming ideas, to making technical decisions and implementing them. Creating a codebase, to cleaning up existing one.
 
