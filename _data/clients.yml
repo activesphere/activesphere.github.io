@@ -19,14 +19,6 @@
   url: http://www.razorfish.com/
   logo_path: /public/images/clients/razorfish.png
 -
-  name: abof
-  url: https://www.abof.com/
-  logo_path: /public/images/clients/abof.svg
--
-  name: Zeta
-  url: https://zetaglobal.com/
-  logo_path: /public/images/clients/zeta-global.png
--
   name: Enernoc
   url: http://www.enernoc.com
   logo_path: /public/images/clients/enernoc.png
@@ -34,3 +26,7 @@
   name: Sleekr
   url: https://sleekr.co/
   logo_path: /public/images/clients/sleekr.svg
+-
+  name: Zeta
+  url: https://zetaglobal.com/
+  logo_path: /public/images/clients/zeta-global.png
