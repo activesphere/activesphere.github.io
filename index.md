@@ -17,7 +17,7 @@ content_containers:
 <div class="hero hero--grey article__hero">
   <div class="layout hero__wrapper">
     <h2 class="hero__title">More challenging the work, more interested we are.</h2>
-    <p>We have worked on energy management software, parts of payment gateway, e-commerce front-end, software measuring carbon footprint, HR management software, video encoding pipeline and more.</p>
+    <p>We have worked on energy management software, payment gateway, e-commerce front-end, software measuring carbon footprint, HR management software, video encoding pipeline and more.</p>
     <p>For client projects, we have used React, Webpack, Ruby, node.js, AngularJS, TypeScript, D3.js, Elixir, GStreamer. For our own projects, we have played with Golang, Erlang, Haskell, Python and more.</p>
   </div>
 </div>
