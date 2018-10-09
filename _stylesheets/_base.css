@@ -46,7 +46,7 @@ pre code {
 
 strong code,
 strong pre {
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
 }
 
 h1,
@@ -96,6 +96,10 @@ svg {
 br {
   /* On FF, it takes in margin from "* + *" */
   margin-top: 0;
+}
+
+abbr {
+  font-variant: all-small-caps;
 }
 
 .link,

@@ -113,11 +113,11 @@ def transform(<<sign::big-integer-size(8), rest::binary>> = full) do
 end
 ```
 
-The value is first encoded in IEEE 754 binary format. For positive
+The value is first encoded in <abbr>IEEE</abbr> 754 binary format. For positive
 numbers just the sign bit should be flipped and for negative numbers
 all the bits should be flipped. This should provide [total
 order](https://stackoverflow.com/questions/43299299/sorting-floating-point-values-using-their-byte-representation)
-as per the IEEE specification.
+as per the <abbr>IEEE</abbr> specification.
 
 ### Tuple
 
