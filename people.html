@@ -1,18 +1,156 @@
 ---
-title: People
+title: Team
 layout: default
 permalink: /people.html
+
+people:
+- name: Ciju Cherian
+  id: ciju
+  above: true
+  pic: /public/images/people/ciju.jpg
+  github: //github.com/ciju
+  linkedin: //linkedin.com/in/ciju-cherian
+  blurb: >
+   Did his masters at IIT Kanpur. Got a taste for startups at
+   SlideShare. Since then he has been involved with a few
+   startups, and has been attending various technical/startup
+   events. He has won two Yahoo! India Hackday events.
+   He is interested in education and analytics.
+
+- name: Anantha Kumaran
+  id: anantha
+  pic: /public/images/people/anantha.jpg
+  above: true
+  github: https://github.com/ananthakumaran
+  blurb: >
+    After working with few startups he joined us. Within a month
+    he contributed with his DynamoDB emulator. He is an
+    active Lisper and Emacs user. He contributed to Emacs community
+    with few development tools. He lives only with his books,
+    kindle and computers.
+
+- name: Rahul Jayaraman
+  id: rahul
+  above: true
+  pic: /public/images/people/rahul.jpg
+  github: //github.com/rahuljayaraman
+  linkedin: //www.linkedin.com/in/rahuljayaraman/
+  blurb: >
+    He led a team of developers building mobility applications
+    for Banks and NBFCs at Forbes Technosys. He worked on large javascript codebases
+    while consulting for an energy management company. He enjoys playing a board
+    game called Go (also known as Igo, Weichi or Baduk) at which he represented
+    India at the 4th Korean Prime Minister's Cup. Has been known to
+    occasionally do cyling brevets. Enjoys running & swimming as well.
+
+- name: Saneef Ansari
+  id: saneef
+  above: true
+  pic: //s.gravatar.com/avatar/7bb036b5a416f619fe23e4b6b983d4c7?s=400
+  github: //github.com/saneef
+  linkedin: //www.linkedin.com/in/saneef/
+  blurb: >
+    Sa­neef is an in­for­ma­tion and prod­uct de­signer. He has helped many startups as well as large companies to de­sign their prod­ucts and ser­vices. To name a few, Zoho, Aditya Birla, Pratham Books, Adya, Razorfish, and Compile. He is a grad­u­ate of the Na­tional In­sti­tute of De­sign <abbr>(NID)</abbr>, Ban­ga­lore. He has pre­vi­ously worked with the renowned de­sign agency <a href="http://ia.net">iA Zurich</a>.
+
+- name: Dinesh Gowtham Prathap
+  id: dinesh
+  pic: /public/images/people/dinesh.jpg
+  github: //github.com/dgp
+  blurb: >
+    He joined us as a campus recruit from IIIT Bangalore. Since then
+    has worked on Android and iOS. Now works on Rails apps. His latest
+    craving has become the gym, which he tries to frequent all 5 days
+    of the week. Makes a point to catch the latest Tamil movies and is
+    working on a movie database app as a hobby. Doesn't mind spending
+    some time to teach a noob or two. Is seen with his headset on,
+    grooving to his favourite jam at times.
+
+- name: Naman Jha
+  id: naman
+  pic: /public/images/people/naman.jpg
+  github: //github.com/jha-naman
+  blurb: >
+    A all round curious guy with no actual hurry to satisfy said curiosities.
+    Got pulled into the world of programming by its easy accessibility and
+    widely available quality documentation. Likes to swim whenever he can and
+    is a Formula 1 enthusiast.
+
+- name: Rohit Shinde
+  id: rohit
+  pic: /public/images/people/rohit.jpg
+  github: //github.com/shinderohitt
+  blurb: >
+    He enjoys reading about Biology, History, Spirituality, etc,
+    and fiction sometimes. Recently he has started exploring functional
+    programming and is learning Lisp. He claims to be on a life-long mission
+    of fitness and working out on a regular basis, and oftentimes even says "No"
+    to a Vada Pav. He also enjoys drawing, says, it teaches a thing
+    or two.
+
+- name: Omkar Petkar
+  id: omkar
+  pic: /public/images/people/omkar.jpg
+  github: //github.com/omkar-as
+  blurb: >
+    Omkar has worked at multiple startups, building software from scratch and
+    fine tuning it to work at scale. He is an avid learner and loves getting
+    to the bottom of things that rouse his curiosity. A foodie at heart, he
+    takes pride in exploring new places to eat. Loves being outdoors and is
+    an active swimmer and cyclist.
+
+- name: Akash Hiremath
+  id: akash
+  pic: /public/images/people/akash.jpg
+  github: //github.com/akash-akya
+  blurb: >
+    After working for Huawei and Hike he joined us. Stepped into
+    programming by hacking Android firmware. A Free Software advocate
+    and have contributed to few projects as well. Part of his spare time will
+    be spent on his hobby projects, other part reading old Kannada literature,
+    fiction, technical books and sometimes manga. Curious about multiple
+    things. His latest interests being digital art and linguistics.
+
+- name: Sreenuvas K
+  id: sreenu
+  pic: /public/images/people/seenu.jpg
+  blurb: >
+    He's always up and ready to help any of us, be it a squeaky chair or a WiFi problem. Sreenu will fix it up
+    in a jiffy. While we're hacking away, he reminds us to fuel up and orders some grub. He's an avid YouTube watcher and is sometimes seen giggling away at some comedy scene he just watched. He makes sure to catch the latest Telugu flick and is a hardcore Cricket fan!
+
+
 ---
-<ul class="index">
-  {% for p in site.data.people %}
-  <li class="index__item person">
-    <img class="person__img" src="{{p.pic}}" alt="Photo of {{p.name}}">
-    <h3 class="person__name">{{p.name}}</h3>
-    <ul class="list list--inline list--middot-seperated person__social-networks">{%- if p.github -%}
-      <li><a class=" person__social-network-link" href="{{p.github}}" target="_blank">Github</a></li>{% endif -%}{%- if p.linkedin -%}<li><a class=" person__social-network-link" href="{{p.linkedin}}" target="_blank">LinkedIn</a></li>{% endif -%}{%- if p.twitter -%}<li><a class=" person__social-network-link" href="{{p.twitter}}" target="_blank">Twitter</a></li>
-      {% endif -%}
-    </ul>
-    <div class="person__blurb">{{p.blurb | markdownify}}</div>
-  </li>
+
+<div class="pb3 pt2 ph3 mw7 center">
+  {% for p in page.people %}
+  <div class="cf ph3 pt3 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
+    <div class="fl-ns w-100 w-25-ns">
+      <img class="br-100 h4 w4" alt="{{p.name}}" src="{{p.pic}}"/>
+    </div>
+    <div class="avenir measure f5 fl-ns w-100 w-75-ns lh-copy">
+      <div class="avenir">
+        <h1 class="dib f3 ma0">{{p.name}}</h1>
+        <span class="black-60">
+          {% if p.github %}
+          <a class="dib w1 mh1 as-github" href="{{p.github}}" target="_blank">
+            <svg aria-labelledby="title" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          {% endif %}
+          {% if p.twitter %}
+          <a class="dib w1 mh1 as-twitter" href="{{p.twitter}}" target="_blank">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg>
+          </a>
+          {% endif %}
+          {% if p.linkedin %}
+          <a class="dib w1 mh1 as-linkedin" href="{{p.linkedin}}" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+            </svg>
+          </a>
+          {% endif %}
+        </span>
+      </div>
+      <p class="f5 avenir measure-wide lh-copy mv1"> {{p.blurb}} </p>
+    </div>
+  </div>
   {% endfor %}
-</ul>
+</div>

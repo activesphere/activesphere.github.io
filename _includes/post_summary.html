@@ -1,5 +1,0 @@
-<li class="index__item post-summary">
-  <h3 class="post-summary__title"><a class="post-summary__link" href="{{ include.url }}">{{ include.title }}</a></h3>
-  <div class="post-summary__excerpt">{{ include.excerpt | markdownify | strip_html | truncatewords: 26 }}</div>
-  <ul class="list list--inline list--middot-seperated post-summary__meta"><li>By {{ include.author }}</li><li>{{ include.date | date: "%-d %b %Y"}}</li></ul>
-</li>

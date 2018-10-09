@@ -1,8 +1,8 @@
 ---
+container: hca-layout
 layout: post
 title: Random String Generator
 permalink: /problems/regex-gen.html
-container: hca-layout
 ---
 
 Write a string generator that takes a regular expression as argument and returns strings that match the given regular expression.
@@ -66,5 +66,3 @@ generate(/(1[0-2]|0[1-9])(:[0-5][0-9]){2} (A|P)M/, 10)
 "09:39:03 AM"
 "11:23:46 PM"
 ```
-<br>
-<br>

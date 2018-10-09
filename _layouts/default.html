@@ -3,24 +3,14 @@
   <head>
     {% include head.html %}
   </head>
-  <body>
-    {% include site_header.html%}
-    <article class="layout{% for container in page.content_containers %} {{ container }}{% endfor %} {{ page.container }}">
+  <body class="flex flex-column" style="min-height: 100vh;">
+    <div>
+      {% include header.html %}
       {{content}}
-    </article>
-
-    {% if page.plug %}
-    {% include plug.html %}
-    {% endif %}
-
-    {% if page.client_logos %}
-    {% include client_logos.html border_top=page.client_logos_border_top %}
-    {% endif %}
-
-    {% include site_footer.html %}
+    </div>
+    <div style="flex: 1;"></div>
+    {% include footer.html %}
     {% include analytics.html %}
-    {% comment %}
-    <script src='/public/main.js'></script>
-    {% endcomment %}
+    <script src='/public/js/application.js'></script>
   </body>
 </html>

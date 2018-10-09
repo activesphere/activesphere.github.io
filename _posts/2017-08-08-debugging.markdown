@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Debugging cryptic errors
 author: ananthakumaran
 published: true

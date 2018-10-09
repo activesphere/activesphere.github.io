@@ -1,28 +1,172 @@
 ---
-title: Selected projects
+title: Some of our customer projects
 layout: default
 permalink: /portfolio.html
 video: true
-client_logos: true
-client_logos_border_top: true
+
+projects:
+
+ - title: Notification system
+   stacks:
+     - name: Elixir
+       link: http://elixir-lang.org
+     - name: Redis
+       link: https://redis.io
+     - name: Exq
+       link: https://github.com/akira/exq
+   client: >
+     <a href="https://midtrans.com" target="_blank">
+       <img class="pv3" src="/public/images/clients/midtrans.svg" style="width: 273px" />
+     </a>
+   description: >
+     <p>
+        Midtrans sends out a few hundred thousand messages per day using a
+        notification system. We re-wrote this system in Elixir to improve
+        performance and decrease resource consumption. The average latency of a
+        particular set of notifications decreased from <b>2.9s</b> to
+        <b>198ms</b>. The memory consumption went down from
+        <b>5.3GB</b> to <b>300MB</b> per node, which brought down the
+        hardware cost to 1/3.
+     </p>
+     <p>
+        This is an example of how choosing a technology that fits the problem
+        domain well, could improve a system considerably. More details can be found in
+        the <a href="https://engineering.midtrans.com/optimizing-the-notification-system/"
+        target="_blank">blog post</a> by Midtrans.
+     </p>
+ - title: Energy manager for utilities
+   stacks:
+     - name: AngularJS
+       link: https://angularjs.org/
+     - name: d3.js
+       link: http://d3js.org/
+     - name: webpack
+       link: https://webpack.github.io/
+     - name: node.js
+       link: https://nodejs.org/en/
+   client: >
+      <a href="http://www.enernoc.com" target="_blank">
+        <img src="/public/images/clients/enernoc.png"/>
+      </a>
+   demo: >
+      <iframe  src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=hd720" allowfullscreen></iframe>
+
+
+   description: >
+      <p>
+        This tool was built to help monitoring energy consumption
+        across multiple properties & locations (eg: universities,
+        chain of restaurants etc.)
+      </p>
+
+      <p>
+        We worked remotely with the a team of Engineers at
+        PulseEnergy, for over 2 years. Most of the product was written
+        by us.
+      </p>
+
+      <p>
+        The video below, show some features of the app, allowing
+        slicing & dicing of multiple types of data, across multiple
+        dimensions.
+      </p>
+
+ - title: Optimize an e-commerce product listing page
+   stacks:
+     - name: React
+       link: https://facebook.github.io/react/
+     - name: webpack
+       link: https://webpack.github.io/
+   client: >
+      <a href="http://www.abof.com/men/clothing/jeans" target="_blank">
+        <img class="h3 pb3" src="/public/images/clients/abof.svg" />
+      </a>
+   demo: >
+      <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
+
+   description: >
+      <p>
+        ABOF, wanted a head start in their front-end dev
+        stack. We worked on a few important pages of the incoming
+        traffic, and replicated the same functionality that the
+        existing IBM WebSphere based front-end offered, over the span
+        of 3 months.
+
+      </p>
+
+      <p>
+
+        And when we shipped it, it was among the fastest loading sites.
+
+      </p>
+
+      <p>
+        Our aim, was to give ABOF a head start with the technology, so
+        their internal team could pick up and continue the work. We
+        worked with their engineers, tech team and product team, to
+        figure out what was needed, which parts could be compromised
+        for shipping the product faster, and how to achieve the
+        desired speeds with existing infrastructure.
+
+      </p>
+
+      <p>
+        With the success of the first implementation (The business saw
+        a considerable increase in the conversion rate), ABOF asked us
+        again, to redo their checkout process. Which, again, we
+        delivered in 2 months, within time.
+
+      </p>
+
+      <p>
+        Below is the loading times of the listing page of various
+        e-commerce sites, when we delivered ABOF's listing page.
+      </p>
+
+ - title: HR Software
+   stacks:
+     - name: Angular 2
+       link: https://angular.io/
+     - name: webpack
+       link: https://webpack.github.io/
+     - name: Laravel
+       link: https://laravel.com/
+   client: >
+     <a href="https://sleekr.co/" target="_blank">
+       <img class="pv3" src="/public/images/clients/sleekr.svg" style="width: 200px;"/>
+     </a>
+   description: >
+     <p>
+     Sleekr hired us to help improve the performance and stability of their app.
+     Apart from code contributions, we helped provide high level
+     technical guidance, laid a 6 month roadmap (to further stability) for
+     their tech team to follow & gave regular feedback with code reviews. Some
+     specific tasks we were involved with included introducing webpack to an
+     alpha version of Angular2 for performance (when it wasn't officially
+     supported), de-tangling an over-architected micro-services setup,
+     experimenting with GraphQL for some components & building a mapper which
+     extracted GraphQL types from Doctrine (an ORM).
+     </p>
+
 ---
-<ul class="index">
-  {% for p in site.data.projects %}
-  <li class="index__item project project--client">
-    <a class="project__client-logo-link" href="{{p.client.url}}" title="{{p.client.title}}" target="_blank">
-      <img class="project__client-logo-img" src="{{p.client.logo_path}}" alt="Logo of {{p.client.title}}">
-    </a>
-    <h3 class="project__title">{{p.title}}</h3>
-    <div class="project__blurb">{{p.description | markdownify}}</div>
-    <div class="project__stack">Built using {% for tool in p.stack %}
-      <a href="{{ tool.url }}">{{ tool.name }}</a>{%- unless forloop.last -%}
-        {%- if forloop.rindex == 2 -%}
-        {{" and"}}
-        {%- else -%}
-        ,
-        {%- endif -%}
-      {% endunless %}
-    {%- endfor -%}.</div>
-  </li>
-  {% endfor %}
-</ul>
+<div class="pb3 ph3 mw7 center">
+{% for proj in page.projects %}
+     <div class="cf ph3 pt4 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}" id="{{proj.title | slugify }}">
+       <div class="fl-ns w-100 w-30-ns">
+         <div class="pr3">{{proj.client}}</div>
+         <div>
+           <span class="light-silver">Tech: </span>
+           {% for stack in proj.stacks %}
+           <a class="link as-blue dim" href="{{stack.link}}">{{stack.name}}</a>
+           {% unless forloop.last == true %} <span class="light-silver">-</span> {% endunless %}
+           {% endfor %}
+         </div>
+       </div>
+       <div class="avenir measure f5 fl-ns w-100 w-70-ns lh-copy">
+         <h1 class="f3 ma0">{{proj.title}}</h1>
+         {{proj.description}}
+         {{proj.demo}}
+       </div>
+     </div>
+{% endfor %}
+</div>

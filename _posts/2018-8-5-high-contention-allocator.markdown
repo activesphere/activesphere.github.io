@@ -1,5 +1,6 @@
 ---
 container: hca-layout
+layout: post
 title: High contention allocator
 author: ananthakumaran
 published: true
@@ -153,30 +154,30 @@ How the keys and values should be encoded is defined using the `hca_coder`. The
 actual work is delegated to the `search` function.
 
 ```elixir
-defp search(t) do
-  candidate_range = range(t, current_start(t), false)
-  search_candidate(t, candidate_range)
-end
+  defp search(t) do
+    candidate_range = range(t, current_start(t), false)
+    search_candidate(t, candidate_range)
+  end
 ```
 
 The search function calculates the current window and calls
 `search_candidate` to find a candidate within the window.
 
 ```elixir
-defp current_start(t) do
-  result =
-    Transaction.get_range(t, KeySelectorRange.starts_with({@counter}), %{
-      limit: 1,
-      reverse: true,
-      snapshot: true
-    })
-    |> Enum.to_list()
+  defp current_start(t) do
+    result =
+      Transaction.get_range(t, KeySelectorRange.starts_with({@counter}), %{
+        limit: 1,
+        reverse: true,
+        snapshot: true
+      })
+      |> Enum.to_list()
 
-  case result do
-    [] -> 0
-    [{{@counter, start}, _}] -> start
+    case result do
+      [] -> 0
+      [{{@counter, start}, _}] -> start
+    end
   end
-end
 ```
 
 The current window's start and the number of values so far allocated
@@ -187,29 +188,29 @@ within that window are stored in the following format.
 This function returns the latest window start value
 
 ```elixir
-defp range(t, start, window_advanced) do
-  if window_advanced do
-    clear_previous_window(t, start)
+  defp range(t, start, window_advanced) do
+    if window_advanced do
+      clear_previous_window(t, start)
+    end
+
+    Transaction.atomic_op(t, {@counter, start}, Option.mutation_type_add(), 1)
+    count = Transaction.get(t, {@counter, start}, %{snapshot: true}) || 0
+    window = window_size(start)
+
+    if count * 2 < window do
+      start..(start + window - 1)
+    else
+      range(t, start + window, true)
+    end
   end
 
-  Transaction.atomic_op(t, {@counter, start}, Option.mutation_type_add(), 1)
-  count = Transaction.get(t, {@counter, start}, %{snapshot: true}) || 0
-  window = window_size(start)
-
-  if count * 2 < window do
-    start..(start + window - 1)
-  else
-    range(t, start + window, true)
+  defp window_size(start) do
+    cond do
+      start < 255 -> 64
+      start < 65535 -> 1024
+      true -> 8192
+    end
   end
-end
-
-defp window_size(start) do
-  cond do
-    start < 255 -> 64
-    start < 65535 -> 1024
-    true -> 8192
-  end
-end
 ```
 
 `range` is responsible for calculating the current window range. The
@@ -237,24 +238,24 @@ are used to avoid the creation of unnecessary conflict ranges. More on
 conflicts will be explained later.
 
 ```elixir
-defp search_candidate(t, search_range) do
-  candidate = Enum.random(search_range)
-  candidate_value = Transaction.get(t, {@reserve, candidate})
-  Transaction.set_option(t, Option.transaction_option_next_write_no_write_conflict_range())
-  Transaction.set(t, {@reserve, candidate}, 1)
+  defp search_candidate(t, search_range) do
+    candidate = Enum.random(search_range)
+    candidate_value = Transaction.get(t, {@reserve, candidate})
+    Transaction.set_option(t, Option.transaction_option_next_write_no_write_conflict_range())
+    Transaction.set(t, {@reserve, candidate}, 1)
 
-  if is_nil(candidate_value) do
-    Transaction.add_conflict_key(
-      t,
-      {@reserve, candidate},
-      Option.conflict_range_type_write()
-    )
+    if is_nil(candidate_value) do
+      Transaction.add_conflict_key(
+        t,
+        {@reserve, candidate},
+        Option.conflict_range_type_write()
+      )
 
-    candidate
-  else
-    search_candidate(t, search_range)
+      candidate
+    else
+      search_candidate(t, search_range)
+    end
   end
-end
 ```
 
 `search_candidate` repeatedly tries to reserve a random value within
@@ -263,18 +264,19 @@ not already reserved by some other process.
 
 
 ```elixir
-defp clear_previous_window(t, start) do
-  Transaction.clear_range(
-    t,
-    KeyRange.range({@counter}, {@counter, start}, %{begin_key_prefix: :first})
-  )
+  defp clear_previous_window(t, start) do
+    Transaction.clear_range(
+      t,
+      KeyRange.range({@counter}, {@counter, start}, %{begin_key_prefix: :first})
+    )
 
-  Transaction.set_option(t, Option.transaction_option_next_write_no_write_conflict_range())
+    Transaction.set_option(t, Option.transaction_option_next_write_no_write_conflict_range())
 
-  Transaction.clear_range(
-    t,
-    KeyRange.range({@reserve}, {@reserve, start}, %{begin_key_prefix: :first})
-  )
+    Transaction.clear_range(
+      t,
+      KeyRange.range({@reserve}, {@reserve, start}, %{begin_key_prefix: :first})
+    )
+  end
 end
 ```
 
@@ -415,6 +417,8 @@ across all commits, ie commit won't happen concurrently.
 
 From the graphs it's clear that the high contention allocator
 algorithm scales linearly without any problem.
+
+
 
 <link rel="stylesheet" href="/public/css/hca.css" />
 <script src="/public/js/d3.v4.min.js"></script>

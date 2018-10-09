@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Gotunnel: make localhost server accessible over internet"
 description: Gotunnel allows you to share server running on localhost, over the net. Supports http, https and websocket.
 published: true

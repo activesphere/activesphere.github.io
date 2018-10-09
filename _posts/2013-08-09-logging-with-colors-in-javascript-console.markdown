@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Logging with Colors in JavaScript Console (Chrome/FF)"
 categories: [logging, javascript, tech]
 description: Help with managing the information overload in JavaScript Console logs.

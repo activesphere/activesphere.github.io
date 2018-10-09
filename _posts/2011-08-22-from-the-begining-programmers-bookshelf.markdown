@@ -1,9 +1,10 @@
 ---
+layout: post
 title: From the begining programmer's bookshelf
 published: true
-hidden: true
 author: Sreekanth
 categories: []
+
 ---
 We were looking for some book recommendations for some of the new people we hired recently. And here is an opinionated list of books and some of my thoughts around it.
 

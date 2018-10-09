@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Visualization of backoff functions
 viz: true
 author: ananthakumaran

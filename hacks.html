@@ -2,22 +2,195 @@
 title: Things we built
 layout: default
 permalink: /hacks.html
+
+hacks:
+ - title: Exq Scheduler
+   link: https://github.com/activesphere/exq-scheduler
+   stacks:
+     - name: Scheduler
+     - name: Elixir
+   description: >
+      <p class="mt0">
+        A cron like job scheduler
+        for <a href="https://github.com/akira/exq">Exq</a> that's also
+        compatible with Sidekiq and Resque. It is designed to run on
+        more than one machine for redundancy without causing duplicate
+        jobs to be scheduled.
+      </p>
+ - title: xml_stream
+   link: https://github.com/activesphere/xml_stream
+   stacks:
+     - name: Stream
+     - name: Elixir
+   description: >
+      <p class="mt0">
+        An Elixir library for building XML documents in a streaming fashion. We built this library for a reporting system that could generate Excel Spreadsheets with millions of rows while maintaining a constant memory overhead.
+      </p>
+ - title: httpolice-devtool
+   link: https://github.com/activesphere/httpolice-devtool
+   stacks:
+     - name: Linter
+     - name: Chrome
+   description: >
+      <p class="mt0">
+        A lint-tool for the HTTP, integrated with Chrome devtools.
+      </p>
+      <p>
+        It intercepts and sends the HTTP headers from your
+        browser to a server running <a href="https://github.com/vfaronov/httpolice">httpolice</a>, where they are analysed, and
+        a detailed report is sent back to the browser
+        where it's displayed.
+      </p>
+
+ - title: µ
+   link: https://github.com/ananthakumaran/u
+   stacks:
+     - name: Encoder
+     - name: JavaScript
+   description: >
+      <p class="mt0">
+      μ is a JavaScript library for encoding/decoding state (JavaScript object) in URL. Define a spec for the state, based on which the encoding is done. Manage the state with versioning.
+      </p>
+
+ - title: FakeDynamo
+   link: https://github.com/ananthakumaran/fake_dynamo
+   stacks:
+     - name: DynamoDB
+     - name: Ruby
+   description: >
+      <p class="mt0">
+      An In-memory dynamodb emulator for
+      <a href="http://aws.amazon.com/dynamodb/">Amazon DynamoDB</a>
+      written in ruby. We built it to help us develop applications on
+      dynamodb in development and test environments without incurring
+      the costs and the latencies. This also allows us to host the non
+      production versions of the application outside of EC2.
+      </p>
+ - title: gotunnel
+   link: https://github.com/ciju/gotunnel
+   stacks:
+     - name: HTTP tunnel
+     - name: Go
+   description: >
+      <p class="mt0">
+          Gotunnel allows you to share server running on localhost,
+          over the net. localtunnel allows you to do the same, but at
+          the time of this writing, didn’t support WebSocket. And
+          well, we wanted to do a project in Golang.
+      </p>
+      <p>
+          Read <a href="http://blog.activesphere.com/blog/2013/03/26/gotunnel-make-localhost-server-accessible-over-internet/">blog
+          post</a> about the implementation.
+      </p>
+
+ - title: Tide
+   link: https://github.com/ananthakumaran/tide
+   stacks:
+     - name: Emacs
+     - name: TypeScript
+   description: >
+      <p class="mt0">
+      TypeScript Interactive Development Environment for Emacs - written in the early days of typescript when emacs support for it was spotty. Since then, it has grown into a mature package and featured in the front page of <a href="https://www.typescriptlang.org/">www.typescriptlang.org</a>.
+      </p>
+
+ - title: memcachex
+   link: https://github.com/ananthakumaran/memcachex
+   stacks:
+     - name: Memcached
+     - name: Elixir
+   description: >
+      <p class="mt0">
+      A <a href="https://memcached.org/">memcached</a> client written in pure Elixir which aims to provide good performance and solid error recovery from network connection failures.
+      </p>
+
+ - title: pdf slide splitter
+   link: https://github.com/ciju/split-pdf-slides
+   stacks:
+     - name: webpack
+     - name: JavaScript
+   description: >
+      <p class="mt0">
+      A web app to split pdf's with multiple slides per page, to single slide per page. An exploration in webpack, pdf, Google App Engine and more.
+      </p>
+
+ - title: Mini-Mocha
+   link: https://github.com/ciju/mini-mocha
+   stacks:
+     - name: JavaScript
+   description: >
+      <p class="mt0">
+          Mini-Mocha is a small experiment at understanding DSL
+          of <a href="http://mochajs.org/">mochajs.org</a>. About 100
+          lines of code is enough, to implement the synchronous DSL that
+          mocha supports. Supporting asynchronous DSL isn't much
+          tougher. If you do hack it, please look at
+          our <a href="/careers.html">careers</a> page.
+      </p>
+      <p>
+          Read <a href="http://www.activesphere.com/blog/2015/06/14/mini-mocha">
+          blog post</a> about the implementation.
+      </p>
+
+ - title: Devmirror
+   link: https://github.com/ciju/devmirror
+   stacks:
+     - name: Debugger
+     - name: JavaScript
+   description: >
+      <p class="mt0">
+          Devmirror is an experiment at remote debugging. May be, an
+          experiment gone wild. The idea is to render a remote user's
+          browser screen, to a developer. With devtools open at
+          developers end, which is connected to the users browser session.
+      </p>
+
+      <p>
+          In other words, developer see user's interaction. And can
+          change the page live, for the user. It's like local
+          development, but actual browser session is probably happening
+          on the other side of the world.
+      </p>
+
+      <p>
+          Watch
+          a <a href="https://hasgeek.tv/bangalorejs/6/563-devsync-demo-by-ciju-cherian">talk</a>
+          about it.
+      </p>
+
+ - title: devsync
+   link: https://github.com/ciju/devsync
+   stacks:
+     - name: Editor
+     - name: JavaScript
+   description: >
+      <p class="mt0">
+      A chrome devtools (WebInspector) hack, which allows your
+      css/javascript edits from WebInspector to be saved directly to
+      the localhost files. It was a winner at
+      <a href="https://web.archive.org/web/20121029070152/http://developer.yahoo.com/blogs/ydn/posts/2011/08/open-hack-india-they-hacked-we-won-them-over/"> Yahoo! Hacknight</a>.
+      </p>
 ---
 
-<ul class="index">
-  {% for p in site.data.open_source_projects %}
-  <li class="index__item project">
-    <h3 class="project__title"><a class="project__link" href="{{p.url}}">{{p.title}}</a></h3>
-    <div class="project__blurb">{{p.description | markdownify}}</div>
-    <div class="project__stack">Uses {% for tool in p.stack %}
-      {{ tool.name }}{%- unless forloop.last -%}
-        {%- if forloop.rindex == 2 -%}
-        {{" and"}}
-        {%- else -%}
-        ,
-        {%- endif -%}
-      {% endunless %}
-    {%- endfor -%}.</div>
-  </li>
+<div class="pb3 ph3 mw7 center">
+  {% for proj in page.hacks %}
+  <div class="cf ph3 pt4 pb2 {% unless forloop.first == true %}bt b--light-gray{% endunless %}">
+    <div class="fl-ns w-100 w-30-ns">
+      <div class="pr3">
+        <a href="{{proj.link}}">
+          <h1 class="f3 ma0">{{proj.title}}</h1>
+        </a>
+      </div>
+      <div>
+        <span class="light-silver">Tech: </span>
+        {% for stack in proj.stacks %}
+        <span class="as-gray i">{{stack.name}}</span>
+        {% unless forloop.last == true %} <span class="light-silver">-</span> {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="avenir measure f5 fl-ns w-100 w-70-ns lh-copy">
+      {{proj.description}}
+    </div>
+  </div>
   {% endfor %}
-</ul>
+</div>

@@ -1,7 +1,7 @@
 ---
+layout: post
 title: Rise of Symmetric Systems
 published: true
-hidden: true
 author: Sreekanth
 categories:
 - architecture

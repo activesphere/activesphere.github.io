@@ -37,7 +37,7 @@
 }
 
 .hca-layout pre.highlight {
-    /* font-size: .75rem; */
+    font-size: .75rem;
 }
 
 
@@ -63,8 +63,8 @@
 }
 
 .hca-layout .language-ruby.highlighter-rouge pre.highlight {
-    /* font-size: .55rem;
-    padding: 0; */
+    font-size: .55rem;
+    padding: 0;
 }
 
 .hca-layout table {

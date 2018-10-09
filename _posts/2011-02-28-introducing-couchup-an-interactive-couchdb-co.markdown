@@ -1,7 +1,7 @@
 ---
+layout: post
 title: Introducing Couchup. An interactive Couchdb Console
 published: true
-hidden: true
 author: Sreekanth
 categories:
 - console

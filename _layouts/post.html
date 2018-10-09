@@ -1,20 +1,62 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include header.html %}
+    <div class="mw7 center pa4">
+      <div>
+        <a class="link f4 dim" href="{{ page.url }}"> {{ page.title }} </a>
+        {% if page.author %}
+        <div class="gray i">
+          by {{ page.author }}
+        </div>
+        {% endif %}
 
-<header class="article__header">
-  <h1 class="article__title"><a class="article__title-link" href="{{ page.url }}">{{ page.title }}</a></h1>
-  {% if page.author or page.date %}
-  <ul class="list list--inline list--middot-seperated article__meta">
-    {%- if page.author -%}
-    <li>By {{ page.author }}</li>
-    {%- endif -%}{%- if page.date -%}
-    <li>{{ page.date | date: "%-d %b %Y"}}</li>
-    {%- endif -%}
-  </ul>
-  {% endif %}
-</header>
+        <div class="avenir f5 lh-copy {{ page.container }}">
+          {{content}}
+        </div>
+      </div>
 
-{{content}}
+      {% if page.next or page.previous %}
+      <section>
+        {% if page.next %}
+        <a class="link dim as-blue" href="{{ page.next.url }}">&lArr;  {{ page.next.title }} </a>
+        {% endif %}
+        &nbsp; | &nbsp;
+        {% if page.previous %}
+        <a class="link dim as-blue" href="{{page.previous.url}}">{{page.previous.title}} &rArr;</a>
+        {% endif %}
+      </section>
+      {% endif %}
 
-{% include posts_pagination.html %}
+      {% if page.comments %}
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'activesphere';
+
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      {% endif %}
+
+    </div>
+
+    <div class="mw7 center pa4 avenir">
+        <h2 class="f4">About ActiveSphere</h2>
+        <p>
+        We help businesses build and scale complex web-apps, visualizations and high-throughput messaging systems.
+        Check out some of our other <a
+            href="https://www.activesphere.com/hacks.html">open source
+            projects</a> or our <a href="https://www.activesphere.com/portfolio.html">work portfolio</a>.
+        </p>
+    </div>
+
+    {% include footer.html %}
+    {% include analytics.html %}
+  </body>
+</html>

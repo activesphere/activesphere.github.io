@@ -1,5 +1,6 @@
 ---
 container: stream-layout
+layout: post
 title: A primer on Elixir Stream
 viz: true
 author: ananthakumaran
@@ -45,9 +46,9 @@ Though most of the functions that deal with streams look exactly like the list c
 
 1. Stream is lazy in nature. When you apply a transformation to a stream, instead of the result of the transformation, you get a new stream. The stream has to be explicitly forced by either using [Stream.run](https://hexdocs.pm/elixir/Stream.html#run/1) or using any other function in [Enum](https://hexdocs.pm/elixir/Enum.html) module.
 
-2. Stream abstraction is lot more restrictive in nature. Stream only allows linear transformations. When you force a stream, all the streams associated with it are also forced.
+2. Stream abstraction is lot more restrictive in nature. Stream only allows linear transformations. When you force a stream, all the streams associated with it are also forced. 
 
-When you force a stream (E.g. [run](https://hexdocs.pm/elixir/Stream.html#run/1)), the bottommost stream will pull elements from the above stream, which in turn will pull from the stream above it and apply the transformation on it. Effectively each element travels from the top to bottom without being buffered anywhere.
+When you force a stream (E.g. [run](https://hexdocs.pm/elixir/Stream.html#run/1)), the bottommost stream will pull elements from the above stream, which in turn will pull from the stream above it and apply the transformation on it. Effectively each element travels from the top to bottom without being buffered anywhere. 
 
 For example, the following transformation is easy to perform using stream abstraction
 
@@ -171,7 +172,7 @@ There are two main points that could be inferred from the above table
 
 
 1. Once you map from source to sink, there is no way you can map back to source.
-2. If you need to fork the stream at any point, you need to choose at least one of the resultant stream as sink.
+2. If you need to fork the stream at any point, you need to choose at least one of the resultant stream as sink. 
 
 There can be only one main loop in any series of connected streams. If all the streams are sink, then the main loop would be controlled by the first sink. In case of mixed streams, only one of the end streams can be a source, which will control the main loop. Rest of the end streams (if there are any) would be sink. Each sink would receive elements based on how source streams are getting elements. Source pulls elements. Sinks get pushed the elements.
 

@@ -1,8 +1,7 @@
 ---
-
+layout: post
 title: Node.js Patterns Presentation
 published: true
-hidden: true
 author: Sreekanth
 categories: []
 ---
