@@ -11,11 +11,11 @@
 
 @font-face{
   font-family: 'Source Serif Pro';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-stretch: normal;
-  src: url('/public/fonts/WOFF/OTF/SourceSerifPro-Semibold.otf.woff') format('woff'),
-       url('/public/fonts/WOFF2/OTF/SourceSerifPro-Semibold.otf.woff2') format('woff2'),
-       url('/public/fonts/OTF/SourceSerifPro-Semibold.otf') format('opentype'),
-       url('/public/fonts/TTF/SourceSerifPro-Semibold.ttf') format('truetype');
+  src: url('/public/fonts/WOFF/OTF/SourceSerifPro-Bold.otf.woff') format('woff'),
+       url('/public/fonts/WOFF2/OTF/SourceSerifPro-Bold.otf.woff2') format('woff2'),
+       url('/public/fonts/OTF/SourceSerifPro-Bold.otf') format('opentype'),
+       url('/public/fonts/TTF/SourceSerifPro-Bold.ttf') format('truetype');
 }

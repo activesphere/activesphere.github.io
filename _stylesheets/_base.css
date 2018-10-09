@@ -46,7 +46,7 @@ pre code {
 
 strong code,
 strong pre {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 h1,
