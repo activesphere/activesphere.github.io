@@ -83,9 +83,9 @@
   url: https://github.com/ciju/mini-mocha
   stack:
     - name: JavaScript
-  decscription: >
+  description: >
      <p>Mini-Mocha is a small experiment at understanding <abbr>DSL</abbr> of <a href="http://mochajs.org/">mochajs.org</a>. About 100 lines of code is enough, to implement the synchronous <abbr>DSL</abbr> that mocha supports. Supporting asynchronous <abbr>DSL</abbr> isn’t much tougher. If you do hack it, please look at our <a href="/careers.html">careers</a> page.</p>
-     <p>Read <a href="http://www.activesphere.com/blog/2015/06/14/mini-mocha">blog post</a> about the implementation.</p>
+     <p>Read <a href="/blog/2015/06/14/mini-mocha">blog post</a> about the implementation.</p>
 
 -
   title: Devmirror
