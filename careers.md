@@ -35,6 +35,6 @@ We are consultants. In the end, that comes down to working on problems that our 
 
 ## Join us
 
-If you are would like to part of the team, please try solving [string generation based on regex](/problems/regex-gen.html) or [implement minimal mocha](/problems/mini-mocha.html) and send us an email with your solution at [career@activesphere.com](mailto:career@activesphere.com). Do feel free to email us if you need clarifications, or have any other question.
+If you would like to be part of the team, please try solving [string generation based on regex](/problems/regex-gen.html) or [implement minimal mocha](/problems/mini-mocha.html), and email your solution to [career@activesphere.com](mailto:career@activesphere.com). Feel free to email us if you need clarifications, or have any questions.
 <br>
 <br>
