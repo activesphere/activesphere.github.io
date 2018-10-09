@@ -33,3 +33,9 @@ defaults:
       layout: post
       content_containers: article
       plug: true
+  -
+    scope:
+      path: "problems"
+    values:
+      layout: post
+      content_containers: article
