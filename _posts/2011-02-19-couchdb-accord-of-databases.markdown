@@ -1,7 +1,7 @@
 ---
-layout: post
 title: "CouchDb: The Honda Accord of databases"
 published: true
+hidden: true
 author: Sreekanth
 categories:
 - couchdb

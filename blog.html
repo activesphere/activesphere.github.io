@@ -2,23 +2,13 @@
 layout: default
 title: Blog
 ---
-<div class="mw7 center pa3">
-  {% for post in site.posts %}
-  <div class="avenir lh-copy black-70 pa4 {% unless forloop.first %}bt b--light-gray{% endunless %}">
-    <a class="link as-blue dim f4" href="{{ post.url }}">{{ post.title }}</a>
-    <div>
-      <div class="f5">{{ post.excerpt | markdownify }}</div>
-      <abbr class="gray f5">by {{ post.author }} - {{ post.date | date_to_string }}</abbr>
-    </div>
-  </div>
+
+<ul class="index">
+  {% assign visible = site.posts | where_exp: "post", "post.hidden != true" %}
+  {% for post in visible %}
+  {% include post_summary.html url=post.url title=post.title excerpt=post.excerpt author=post.author date=post.date%}
   {% if post.url == "/blog/2018/07/17/introducing-exq-scheduler" %}
-  <div class="avenir lh-copy black-70 pa4 {% unless forloop.first %}bt b--light-gray{% endunless %}">
-    <a class="link as-blue dim f4" href="/compound-interest/">On compound interest</a>
-    <div>
-      <div class="f5"><p>How interest rates and time period of investment, effects return.</p></div>
-      <abbr class="gray f5">by ciju</abbr>
-    </div>
-  </div>
+  {% include post_summary.html url="/compound-interest/" title="On compound interest" excerpt="How interest rates and time period of investment, effects return." author="ciju" date="2018-07-01"%}
   {% endif %}
-  {% endfor %}
-</div>
+{% endfor %}
+</ul>

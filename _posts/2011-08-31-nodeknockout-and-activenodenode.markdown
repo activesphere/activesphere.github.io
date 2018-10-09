@@ -1,7 +1,7 @@
 ---
-layout: post
 title: NodeKnockout and Activenode.no.de
 published: true
+hidden: true
 author: Sreekanth
 categories:
 - activenode

@@ -1,0 +1,12 @@
+<section class="layout client-logos{% if include.border_top %} client-logos--border-top{% endif %}">
+  <h2 class="client-logos__title">Some of our customers</h2>
+  <ul class="client-logos__list">
+    {% for c in site.data.clients %}
+    <li class="client-logos__list-i">
+      <a class="client-logos__link" href="{{c.url}}" title="{{c.name}}">
+        <img class="logo-list__logo" src="{{c.logo_path}}" alt="Logo of {{c.name}}">
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

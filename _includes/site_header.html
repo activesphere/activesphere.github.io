@@ -1,0 +1,9 @@
+<header class="site-header">
+  <a class="site-header__logo" href="/" title="Home">{% include logo.html %} <span class="site-header__logo-title">activesphere</span></a>
+  <nav class="site-header__nav">
+    {% for link in site.data.site_header_links %}
+      {% assign link_path_base =  link.path | remove: '.html' %}
+      <a class="site-header__link{% if page.url contains link_path_base %} site-header__link--active{% endif %}" href="{{link.path}}">{{link.title}}</a>
+    {% endfor %}
+  </nav>
+</header>

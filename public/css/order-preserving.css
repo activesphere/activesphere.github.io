@@ -1,10 +1,6 @@
 .order-layout tag, .order-layout term, .order-layout byte, .order-layout escape {
-    font-family: Menlo, Monaco, "Courier New", monospace;
-    padding: 1px 2px;
     margin: 0;
     display: inline;
-    opacity: 0.7;
-    color: #000;
 }
 
 .order-layout .left {

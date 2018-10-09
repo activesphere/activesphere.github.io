@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Mocha TDD like DSL in less than 100 lines"
 tags:
 - programming
@@ -7,7 +6,6 @@ status: publish
 type: post
 author: ciju
 published: true
-
 ---
 
 **TL;DR**

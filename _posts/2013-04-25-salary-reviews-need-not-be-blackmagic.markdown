@@ -1,8 +1,8 @@
 ---
-layout: post
 title: "Salary Reviews need not be black magic"
 description: Where we talk about experiments we have done with Salary Reviews
 published: true
+hidden: true
 author: Sreekanth
 categories: [startup, nontech, random]
 ---
