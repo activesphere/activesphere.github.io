@@ -14,8 +14,8 @@ https://www.modularscale.com/?19,16&px&1.414
 @custom-media --max-column (min-width: 42.75em); /* 36em @ 19px */
 
 :root {
-  --font-family: "Source Serif Pro", serif;
-  --font-family-mono: "Source Code Pro", monospace;
+  --font-family: "Source Serif Pro", Charter, Georgia, serif, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --font-family-mono: "Source Code Pro", "PT Mono", Menlo, monospace;
 
   --font-weight-regular: 400;
   --font-weight-medium: 600; /* Only for mono */
