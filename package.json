@@ -11,7 +11,7 @@
     "build:prod:js": "webpack --entry ./_scripts/index.js -o ./_site/public/main.js --mode production",
     "build:jekyll": "bundle exec jekyll serve",
     "start": "concurrently -r \"npm:build:jekyll\" \"npm:build:dev:*\"",
-    "git:add-assets": "git add -f _site/public/main.css _site/public/main.css"
+    "git:add-assets": "git add -f _site/public/main.css _site/public/main.js"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
