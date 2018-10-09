@@ -9,9 +9,10 @@
   "scripts": {
     "build:dev:js": "webpack --entry ./_scripts/index.js -o ./public/main.js --mode development",
     "build:prod:js": "webpack --entry ./_scripts/index.js -o ./public/main.js --mode production",
+    "build:watch:js": "npm run build:dev:js -- --watch",
     "build:jekyll": "bundle exec jekyll serve",
     "prestart": "concurrently -r \"npm:build:dev:*\"",
-    "start": "concurrently -r \"npm:build:jekyll\" \"npm:build:dev:* --watch\"",
+    "start": "concurrently -r \"npm:build:jekyll\" \"npm:build:watch:*\"",
     "git:add-assets": "git add -f public/main.css public/main.js"
   },
   "dependencies": {
