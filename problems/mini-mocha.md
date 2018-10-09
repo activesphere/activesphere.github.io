@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Random String Generator
+title: Mini Mocha
 permalink: /problems/mini-mocha.html
 ---
 
