@@ -7,7 +7,7 @@
   border-radius: var(--border-radius);
 }
 
-.layout .highlighter-rouge {
+.highlighter-rouge {
   @media (--max-column) {
     margin-left: calc(-1 * var(--space-m));
     margin-right: calc(-1 * var(--space-m));

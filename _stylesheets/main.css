@@ -4,7 +4,6 @@
 @import './_base.css';
 
 /* Components */
-@import './_highlight.css';
 @import './_layout.css';
 @import './_list.css';
 @import './_logo.css';
@@ -18,3 +17,4 @@
 @import './_project.css';
 @import './_client-logos.css';
 @import './_hero.css';
+@import './_highlight.css';
