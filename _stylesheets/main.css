@@ -1,6 +1,7 @@
 @import './_variables.css';
 
 /* Base */
+@import './_webfonts.css';
 @import './_base.css';
 
 /* Components */
