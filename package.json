@@ -9,7 +9,8 @@
   "scripts": {
     "build:dev:js": "webpack --entry ./_scripts/index.js -o ./_site/public/main.js --mode development --watch",
     "build:jekyll": "bundle exec jekyll serve",
-    "start": "concurrently -r \"npm:build:jekyll\" \"npm:build:dev:*\""
+    "start": "concurrently -r \"npm:build:jekyll\" \"npm:build:dev:*\"",
+    "git:add-assets": "git add -f _site/public/main.css _site/public/main.css"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
@@ -24,5 +25,11 @@
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
-  }
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "git:add-assets"
+  ]
 }
