@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Y combinator in small steps"
 tags:
 - programming
@@ -8,7 +7,6 @@ type: post
 author: ciju
 published: true
 comments: true
-
 ---
 
 The Y combinator is an interesting construct, allowing recursion

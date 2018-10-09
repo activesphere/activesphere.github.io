@@ -1,9 +1,7 @@
 ---
-layout: post
+hidden: true
 title: "Activesphere: Long time coming"
-published: true
 author: Sreekanth
-categories: []
 ---
 
 It took us a long time to post this first blog, but we are

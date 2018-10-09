@@ -1,0 +1,86 @@
+.hero {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-xl);
+  min-height: 50vh;
+  margin-top: 0;
+  max-width: 100%;
+
+  @supports(display: grid) {
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: 36rem) {
+    min-height: 66vh;
+  }
+
+  @media (min-height: 50rem) {
+    min-height: 0;
+  }
+
+  & a:hover,
+  & a:focus,
+  & a:active {
+    color: var(--color-link-hover);
+  }
+}
+
+.hero__wrapper {
+  padding: var(--space-xl) 0;
+
+  @media (min-width: 36rem) {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  & > * + * {
+    margin-top: var(--space-l);
+  }
+}
+
+.hero__title {
+  font-size: var(--font-size-xl);
+
+  @media (min-width: 36rem) {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+.hero__sub-title {
+  font-size: var(--font-size-m);
+
+  @media (min-width: 36rem) {
+    font-size: var(--font-size-l);
+  }
+}
+
+.hero--s {
+  min-height: 0;
+
+  & .hero__title {
+    font-size: var(--font-size-l);
+
+    @media (min-width: 36rem) {
+      font-size: var(--font-size-xl);
+    }
+  }
+}
+
+.hero--green {
+  background-color: var(--color-green);
+}
+
+.hero--red {
+  background-color: var(--color-red);
+}
+
+.hero--yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.hero--grey {
+  background-color: var(--color-gray-10);
+  color: var(--color-black);
+}

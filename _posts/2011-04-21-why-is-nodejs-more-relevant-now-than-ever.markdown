@@ -1,7 +1,7 @@
 ---
-layout: post
 title: Goodbye Rails, Hello Node.js
 published: true
+hidden: true
 author: Sreekanth
 categories:
 - architecture
