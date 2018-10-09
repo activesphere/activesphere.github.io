@@ -16,7 +16,7 @@ https://www.modularscale.com/?19,16&px&1.414
 
 :root {
   --font-family: "Source Serif Pro", serif;
-  --font-family-mono: "Source Code Pro", serif;
+  --font-family-mono: "Source Code Pro", monospace;
 
   --font-weight-regular: 400;
   --font-weight-medium: 600; /* Only for mono */
@@ -168,7 +168,7 @@ body {
 code, tag, byte, term, escape {
   color: #868e96;
   color: var(--color-text-light);
-  font-family: "Source Code Pro", serif;
+  font-family: "Source Code Pro", monospace;
   font-family: var(--font-family-mono);
   font-size: 0.842em;
   font-size: var(--font-size-s);
