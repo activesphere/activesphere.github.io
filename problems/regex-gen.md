@@ -24,30 +24,31 @@ should return results like
 "13981103761187.90"
 "4100273498885.614"
 ```
-The generator should be able to support the following features.
 
-`.` Match any character except newline<br/>
-`[` Start character class definition<br/>
-`]` End character class definition<br/>
-`?` 0 or 1 quantifier<br/>
-`*` 0 or more quantifiers<br/>
-`+` 1 or more quantifier<br/>
-`{` Start min/max quantifier<br/>
-`}` End min/max quantifier<br/>
+The generator should be able to support following features:
 
-Within a character class, the following meta characters should be supported
+* `.` Match any character except newline
+* `[` Start character class definition
+* `]` End character class definition
+* `?` 0 or 1 quantifier
+* `*` 0 or more quantifiers
+* `+` 1 or more quantifier
+* `{` Start min/max quantifier
+* `}` End min/max quantifier
 
-`^` Negate the class, but only if the first character<br/>
-`-` Indicates character range<br/>
+Within a character class, the following meta characters should be supported:
+
+* `^` Negate the class, but only if the first character
+* `-` Indicates character range
 
 ## Bonus
 
 The following features are optional.
 
-`|` Start of alternative branch<br/>
-`(` Start subpattern<br/>
-`)` End subpattern<br/>
-`\1`  back reference<br/>
+* `|` Start of alternative branch
+* `(` Start subpattern
+* `)` End subpattern
+* `\1`  back reference
 
 Adding support for these features would make the generator able to handle complex patterns like
 
