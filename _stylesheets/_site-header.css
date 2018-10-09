@@ -57,7 +57,8 @@
   &:hover,
   &:active,
   &:focus {
-    color: var(--color-link);
+    color: var(--color-red);
+    text-decoration: underline;
   }
 }
 
