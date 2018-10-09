@@ -285,12 +285,12 @@ a {
   padding: 16px;
   padding: var(--space-m);
   border-radius: 0.157894737rem;
-  border-radius: var(--border-radius)
+  border-radius: var(--border-radius);
 }
 
 @media (min-width: 42.75em) {
 
-.highlighter-rouge {
+.layout .highlighter-rouge {
     margin-left: calc(-1 * 16px);
     margin-left: calc(-1 * var(--space-m));
     margin-right: calc(-1 * 16px);
