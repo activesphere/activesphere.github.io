@@ -19,10 +19,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
-keep_files:
-  - public/main.js
-  - public/main.css
-
 defaults:
   -
     scope:
