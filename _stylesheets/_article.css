@@ -22,19 +22,11 @@
     margin-left: calc(-1 * var(--space-l));
   }
 
-  & ul {
-    list-style-type: none;
-
-    & li {
-      position: relative;
-      padding-left: var(--space-m);
-
-      &::before {
-        position: absolute;
-        content: "\2014"; /* "em dash" */
-        left: 0;
-      }
-    }
+  & .footnotes {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+    padding-top: var(--space-m);
+    border-top: var(--border);
   }
 
   & hr {
@@ -61,13 +53,6 @@
       padding: 0 var(--space-m);
       background-color: var(--color-white);
     }
-  }
-
-  & .footnotes {
-    font-size: var(--font-size-s);
-    line-height: var(--line-height-s);
-    padding-top: var(--space-m);
-    border-top: var(--border);
   }
 }
 

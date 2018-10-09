@@ -78,6 +78,10 @@ ul {
   list-style-position: inside;
 }
 
+ul {
+  list-style-type: "\2014\a0"; /* "<em dash><non breaking space>" */
+}
+
 li {
   & p {
     display: inline;
