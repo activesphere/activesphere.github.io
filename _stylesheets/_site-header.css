@@ -35,6 +35,8 @@
   margin-top: 0;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-l);
+  position: relative;
+  bottom: 0.044191082em;
 
   display: none;
 
