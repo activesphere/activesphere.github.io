@@ -30,6 +30,7 @@
     position: absolute;
     left: 0;
     right: 0;
+    padding-top: var(--space-xs);
   }
 }
 
@@ -71,9 +72,5 @@
 .project--client {
   @media(min-width: 44em) {
     padding-left: calc(var(--space-2xl) + var(--space-xl));
-  }
-
-  & .project__title {
-    font-size: var(--font-size-m);
   }
 }
