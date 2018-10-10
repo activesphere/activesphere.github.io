@@ -1,13 +1,10 @@
 .highlighter-rouge {
   background-color: var(--color-gray-00);
   text-shadow: var(--text-shadow-light);
-  overflow-y: auto;
-  max-width: 100%;
+  max-width: calc(100vw - 2 * var(--space-m)); /* Fix to fit inside the grid colum on Safari */
   padding: var(--space-m);
   border-radius: var(--border-radius);
-}
 
-.highlighter-rouge {
   @media (--max-column) {
     margin-left: calc(-1 * var(--space-m));
     margin-right: calc(-1 * var(--space-m));
@@ -24,9 +21,10 @@ code.highlighter-rouge {
 }
 
 pre.highlight {
-  white-space: pre-wrap;
   font-size: var(--font-size-codeblock);
   line-height: var(--line-height-codeblock);
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .highlight .c { color: #999988; font-style: italic } /* Comment */
