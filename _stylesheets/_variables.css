@@ -51,7 +51,7 @@ https://www.modularscale.com/?19,16&px&1.414
   --space-3xl: 256px;
 
   --max-width-content-column: 36rem;
-  --max-width-canvas: 90rem; /* ~19px * 1.414^13 */
+  --max-width-canvas: 1920px; /* 19px */
 
   --color-white: #ffffff;
   --color-gray-00: #f8f9fa;
