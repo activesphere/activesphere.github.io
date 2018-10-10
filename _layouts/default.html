@@ -5,7 +5,7 @@
   </head>
   <body>
     {% include site_header.html%}
-    <main id="main">
+    <main class="main" id="main">
       <article class="layout{% for container in page.content_containers %} {{ container }}{% endfor %} {{ page.container }}">
         {{content}}
       </article>
