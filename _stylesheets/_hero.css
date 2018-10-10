@@ -79,10 +79,10 @@
 
 .hero--yellow {
   background-color: var(--color-yellow);
-  color: var(--color-black);
+  color: var(--color-gray-80);
 }
 
 .hero--grey {
-  background-color: var(--color-gray-10);
-  color: var(--color-black);
+  background-color: var(--color-gray-00);
+  color: var(--color-gray-70);
 }
