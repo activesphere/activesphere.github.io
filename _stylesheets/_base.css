@@ -5,6 +5,7 @@
   font-variant-numeric: oldstyle-nums;
   color: var(--color-text);
   box-sizing: border-box;
+  background-color: var(--color-gray-20);
 
   @media (--min-column) {
     line-height: calc(1.315789474em + ((0.157894737 / 15.4375) * (100vw - 23em)));
@@ -30,7 +31,9 @@
 }
 
 body {
-  margin-top: 0;
+  margin: 0 auto;
+  max-width: var(--max-width-canvas);
+  background-color: var(--color-white);
 }
 
 code, tag, byte, term, escape {

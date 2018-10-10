@@ -1,7 +1,6 @@
 .layout {
-  max-width: var(--max-width-canvas);
-  margin: 0 auto;
   width: 100%;
+  margin-top: 0;
 
   @supports (display: grid) {
     display: grid;
