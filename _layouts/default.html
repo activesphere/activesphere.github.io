@@ -5,10 +5,11 @@
   </head>
   <body>
     {% include site_header.html%}
-    <article class="layout{% for container in page.content_containers %} {{ container }}{% endfor %} {{ page.container }}">
-      {{content}}
-    </article>
-
+    <main id="main">
+      <article class="layout{% for container in page.content_containers %} {{ container }}{% endfor %} {{ page.container }}">
+        {{content}}
+      </article>
+    </main>
     {% if page.plug %}
     {% include plug.html %}
     {% endif %}
@@ -16,7 +17,6 @@
     {% if page.client_logos %}
     {% include client_logos.html border_top=page.client_logos_border_top %}
     {% endif %}
-
     {% include site_footer.html %}
     {% include analytics.html %}
     {% comment %}
