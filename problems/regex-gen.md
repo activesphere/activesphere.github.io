@@ -8,7 +8,7 @@ container: hca-layout
 Write a string generator that takes a regular expression as argument and returns strings that match the given regular expression.
 
 ```javascript
-generate(/[-+]?[0-9]{1,16}[.][0-9]{1,6}?/, 10)
+generate(/[-+]?[0-9]{1,16}[.][0-9]{1,6}/, 10)
 ```
 
 should return results like
