@@ -64,6 +64,21 @@
     <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
 
 -
+  title: Pasarpolis.com
+  stack:
+   - name: Go
+     url: https://golang.org/
+   - name: Kubernetes
+     url: https://kubernetes.io/
+  client:
+    title: Pasarpolis
+    logo_path: /public/images/clients/pasarpolis.svg
+    url: https://pasarpolis.com/
+  description: >
+    <p>Pasarpolis.com partners with insurance companies and exposes policy creation APIs to businesses like Gojek, Traveloka, JD etc.</p>
+    <p>We rewrote their core system (which creates policies) in Go and setup infrastructure using Kubernetes for reliably handling a sudden growth in incoming traffic. The system also handled adding new product & partner specific workflows</p>
+
+-
   title: HR Software
   stack:
    - name: Angular 2
@@ -80,3 +95,4 @@
     <p>Sleekr hired us to help improve the performance and stability of their app.</p>
 
     <p>Apart from code contributions, we helped provide high level technical guidance, laid a 6 month roadmap (to further stability) for their tech team to follow & gave regular feedback with code reviews. Some specific tasks we were involved with included introducing webpack to an alpha version of Angular2 for performance (when it wasn’t officially supported), de-tangling an over-architected micro-services setup, experimenting with GraphQL for some components & building a mapper which extracted GraphQL types from Doctrine (an <abbr>ORM</abbr>).</p>
+
