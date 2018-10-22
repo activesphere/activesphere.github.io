@@ -64,6 +64,22 @@
     <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
 
 -
+  title: Scripbox
+  stack:
+   - name: Elixir
+     url: http://elixir-lang.org
+   - name: Snowplow
+     url: https://snowplowanalytics.com/
+   - name: Redash
+     url: https://redash.io
+  client:
+    title: Scripbox
+    logo_path: /public/images/clients/scripbox.svg
+    url: https://scripbox.com
+  description: >
+    <p>Scripbox provides a mutual funds investment platform. We were part team which setup inhouse analytics (with `Snowplow` and accessible over `redash`), integrated it with various inhouse web and mobile applications.</p>
+
+-
   title: Pasarpolis.com
   stack:
    - name: Go
@@ -75,8 +91,8 @@
     logo_path: /public/images/clients/pasarpolis.svg
     url: https://pasarpolis.com/
   description: >
-    <p>Pasarpolis.com partners with insurance companies and exposes policy creation APIs to businesses like Gojek, Traveloka, JD etc.</p>
-    <p>We rewrote their core system (which creates policies) in Go and setup infrastructure using Kubernetes for reliably handling a sudden growth in incoming traffic. The system also handled adding new product & partner specific workflows</p>
+    <p>Pasarpolis partners with insurance companies and offers policy APIs to businesses like Gojek, Tokopedia, JD etc. They approached us to help prepare their setup to deal with rapid increase in incoming traffic.</p>
+    <p>We rewrote their core system and setup their infrastructure for reliably handling the growth in traffic. The system also handled adding new product & partner specific workflows.</p>
 
 -
   title: HR Software
