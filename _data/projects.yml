@@ -11,10 +11,10 @@
     title: Midtrans
     logo_path: /public/images/clients/midtrans.svg
     url: https://midtrans.com
-  description: >
-    <p>Midtrans sends out a few hundred thousand messages per day using a notification system. We re-wrote this system in Elixir to improve performance and decrease resource consumption. The average latency of a particular set of notifications decreased from <strong>2.9s</strong> to <strong>198ms</strong>. The memory consumption went down from <strong>5.3<abbr>GB</abbr></strong> to <strong>300<abbr>MB</abbr></strong> per node, which brought down the hardware cost to 1/3.</p>
+  description: |
+    Midtrans sends out a few hundred thousand messages per day using a notification system. We re-wrote this system in Elixir to improve performance and decrease resource consumption. The average latency of a particular set of notifications decreased from <strong>2.9s</strong> to <strong>198ms</strong>. The memory consumption went down from <strong>5.3<abbr>GB</abbr></strong> to <strong>300<abbr>MB</abbr></strong> per node, which brought down the hardware cost to 1/3.
 
-    <p>This is an example of how choosing a technology that fits the problem domain well, could improve a system considerably. More details can be found in the <a href="https://engineering.midtrans.com/optimizing-the-notification-system/" target="_blank">blog post</a> by Midtrans.</p>
+    This is an example of how choosing a technology that fits the problem domain well, could improve a system considerably. More details can be found in the <a href="https://engineering.midtrans.com/optimizing-the-notification-system/" target="_blank">blog post</a> by Midtrans.
 -
   title: Energy manager for utilities
   stack:
@@ -31,12 +31,12 @@
      logo_path: /public/images/clients/enernoc.png
      url: http://www.enernoc.com
 
-  description: >
-    <p>This tool was built to help monitoring energy consumption across multiple properties & locations (eg: universities, chain of restaurants etc.)</p>
+  description: |
+    This tool was built to help monitoring energy consumption across multiple properties & locations (eg: universities, chain of restaurants etc.)
 
-    <p>We worked remotely with the a team of Engineers at PulseEnergy, for over 2 years. Most of the product was written by us.</p>
+    We worked remotely with the a team of Engineers at PulseEnergy, for over 2 years. Most of the product was written by us.
 
-    <p>The video below, show some features of the app, allowing slicing & dicing of multiple types of data, across multiple dimensions.</p>
+    The video below, show some features of the app, allowing slicing & dicing of multiple types of data, across multiple dimensions.
 
     <iframe  src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=hd720" allowfullscreen></iframe>
 -
@@ -50,14 +50,14 @@
     title: abof
     logo_path: /public/images/clients/abof.svg
     url: http://www.abof.com
-  description: >
-    <p>ABOF wanted to optimize some of their user facing pages for performance and revamp their front-end stack. In a staged manner, we rewrote their landing and product listing pages using react & server side rendering.</p>
+  description: |
+    ABOF wanted to optimize some of their user facing pages for performance and revamp their front-end stack. In a staged manner, we rewrote their landing and product listing pages using react & server side rendering.
 
-    <p>It was one of the fastest loading product listing pages when we shipped.</p>
+    It was one of the fastest loading product listing pages when we shipped.
 
-    <p>After the first implementation, the business saw a considerable increase in the conversion rate. They asked us to redo their checkout process as well, which we delivered in time.</p>
+    After the first implementation, the business saw a considerable increase in the conversion rate. They asked us to redo their checkout process as well, which we delivered in time.
 
-    <p>Below is a comparison of loading times of the listing pages of various e-commerce sites, when we delivered ABOF’s listing page.</p>
+    Below is a comparison of loading times of the listing pages of various e-commerce sites, when we delivered ABOF’s listing page.
 
     <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
 
@@ -74,8 +74,8 @@
     title: Scripbox
     logo_path: /public/images/clients/scripbox.svg
     url: https://scripbox.com
-  description: >
-    <p>We were part of a team which setup inhouse analytics (with `Snowplow` and accessible over `redash`), integrated it with various inhouse web and mobile applications. We have also been helping Scripbox with their internal tools, for communication with customers.</p>
+  description: |
+    We were part of a team which setup inhouse analytics (with `Snowplow` and accessible over `redash`), integrated it with various inhouse web and mobile applications. We have also been helping Scripbox with their internal tools, for communication with customers.
 
 -
   title: Pasarpolis.com
@@ -88,9 +88,10 @@
     title: Pasarpolis
     logo_path: /public/images/clients/pasarpolis.svg
     url: https://pasarpolis.com/
-  description: >
-    <p>Pasarpolis partners with insurance companies and offers policy APIs to businesses like Gojek, Tokopedia, JD etc. They approached us to help prepare their software & infrastructure to deal with rapid increase in incoming traffic.</p>
-    <p>We re-architected their core system and setup their infrastructure on Google Kubernetes Engine for reliably handling growth.</p>
+  description: |
+    Pasarpolis partners with insurance companies and offers policy APIs to businesses like Gojek, Tokopedia, <abbr>JD</abbr> etc. They approached us to help prepare their software & infrastructure to deal with rapid increase in incoming traffic.
+
+    We re-architected their core system and setup their infrastructure on Google Kubernetes Engine for reliably handling growth.
 
 -
   title: HR Software
@@ -105,8 +106,8 @@
     title: Sleekr
     logo_path: /public/images/clients/sleekr.svg
     url: https://sleekr.co/
-  description: >
-    <p>Sleekr hired us to help improve the performance and stability of their app.</p>
+  description: |
+    Sleekr hired us to help improve the performance and stability of their app.
 
-    <p>Apart from code contributions, we helped provide high level technical guidance & gave regular feedback with code reviews. Some specific tasks we were involved with included introducing webpack to an alpha version of Angular2 when it wasn’t officially supported, de-tangling a micro-services setup, experimenting with GraphQL for some components.</p>
+    Apart from code contributions, we helped provide high level technical guidance & gave regular feedback with code reviews. Some specific tasks we were involved with included introducing webpack to an alpha version of Angular2 when it wasn’t officially supported, de-tangling a micro-services setup, experimenting with GraphQL for some components.
 
