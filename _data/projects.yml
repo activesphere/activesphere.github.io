@@ -51,17 +51,31 @@
     logo_path: /public/images/clients/abof.svg
     url: http://www.abof.com
   description: >
-    <p>ABOF, wanted a head start in their front-end dev stack. We worked on a few important pages of the incoming traffic, and replicated the same functionality that the existing IBM WebSphere based front-end offered, over the span of 3 months.</p>
+    <p>ABOF, wanted a head start in their front-end dev stack. In a staged manner, we rewrote a few important pages (Landing and product listing page) for performance. Replicated existing functionality with React and server side rendering.</p>
 
-    <p>And when we shipped it, it was among the fastest loading sites.</p>
+    <p>When we shipped it, it was among the fastest loading sites.</p>
 
-    <p>Our aim, was to give ABOF a head start with the technology, so their internal team could pick up and continue the work. We worked with their engineers, tech team and product team, to figure out what was needed, which parts could be compromised for shipping the product faster, and how to achieve the desired speeds with existing infrastructure.</p>
+    <p>After the first implementation, the business saw a considerable increase in the conversion rate. They asked us to redo their checkout process as well, which we delivered in time.</p>
 
-    <p>With the success of the first implementation (The business saw a considerable increase in the conversion rate), ABOF asked us again, to redo their checkout process. Which, again, we delivered in 2 months, within time.</p>
-
-    <p>Below is the loading times of the listing page of various e-commerce sites, when we delivered ABOF’s listing page.</p>
+    <p>Below is a comparison of loading times of the listing pages of various e-commerce sites, when we delivered ABOF’s listing page.</p>
 
     <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
+
+-
+  title: Scripbox
+  stack:
+   - name: Elixir
+     url: http://elixir-lang.org
+   - name: Snowplow
+     url: https://snowplowanalytics.com/
+   - name: Redash
+     url: https://redash.io
+  client:
+    title: Scripbox
+    logo_path: /public/images/clients/scripbox.svg
+    url: https://scripbox.com
+  description: >
+    <p>We were part team which setup inhouse analytics (with `Snowplow` and accessible over `redash`), integrated it with various inhouse web and mobile applications. We have also been helping Scripbox with their internal tools, for communication with customers.</p>
 
 -
   title: Pasarpolis.com
@@ -75,8 +89,8 @@
     logo_path: /public/images/clients/pasarpolis.svg
     url: https://pasarpolis.com/
   description: >
-    <p>Pasarpolis.com partners with insurance companies and exposes policy creation APIs to businesses like Gojek, Traveloka, JD etc.</p>
-    <p>We rewrote their core system (which creates policies) in Go and setup infrastructure using Kubernetes for reliably handling a sudden growth in incoming traffic. The system also handled adding new product & partner specific workflows</p>
+    <p>Pasarpolis partners with insurance companies and offers policy APIs to businesses like Gojek, Tokopedia, JD etc. They approached us to help prepare their setup to deal with rapid increase in incoming traffic.</p>
+    <p>We rewrote their core system and setup their infrastructure for reliably handling the growth in traffic. The system also handled adding new product & partner specific workflows.</p>
 
 -
   title: HR Software
@@ -94,5 +108,5 @@
   description: >
     <p>Sleekr hired us to help improve the performance and stability of their app.</p>
 
-    <p>Apart from code contributions, we helped provide high level technical guidance, laid a 6 month roadmap (to further stability) for their tech team to follow & gave regular feedback with code reviews. Some specific tasks we were involved with included introducing webpack to an alpha version of Angular2 for performance (when it wasn’t officially supported), de-tangling an over-architected micro-services setup, experimenting with GraphQL for some components & building a mapper which extracted GraphQL types from Doctrine (an <abbr>ORM</abbr>).</p>
+    <p>Apart from code contributions, we helped provide high level technical guidance & gave regular feedback with code reviews. Some specific tasks we were involved with included introducing webpack to an alpha version of Angular2 when it wasn’t officially supported, de-tangling a micro-services setup, experimenting with GraphQL for some components.</p>
 
