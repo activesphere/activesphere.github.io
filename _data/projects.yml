@@ -51,9 +51,9 @@
     logo_path: /public/images/clients/abof.svg
     url: http://www.abof.com
   description: >
-    <p>ABOF, wanted a head start in their front-end dev stack. In a staged manner, we rewrote a few important pages (Landing and product listing page) for performance. Replicated existing functionality with React and server side rendering.</p>
+    <p>ABOF wanted to optimize some of their user facing pages for performance and revamp their front-end stack. In a staged manner, we rewrote their landing and product listing pages using react & server side rendering.</p>
 
-    <p>When we shipped it, it was among the fastest loading sites.</p>
+    <p>It was one of the fastest loading product listing pages when we shipped.</p>
 
     <p>After the first implementation, the business saw a considerable increase in the conversion rate. They asked us to redo their checkout process as well, which we delivered in time.</p>
 
@@ -89,8 +89,8 @@
     logo_path: /public/images/clients/pasarpolis.svg
     url: https://pasarpolis.com/
   description: >
-    <p>Pasarpolis partners with insurance companies and offers policy APIs to businesses like Gojek, Tokopedia, JD etc. They approached us to help prepare their setup to deal with rapid increase in incoming traffic.</p>
-    <p>We rewrote their core system and setup their infrastructure for reliably handling the growth in traffic. The system also handled adding new product & partner specific workflows.</p>
+    <p>Pasarpolis partners with insurance companies and offers policy APIs to businesses like Gojek, Tokopedia, JD etc. They approached us to help prepare their software & infrastructure to deal with rapid increase in incoming traffic.</p>
+    <p>We re-architected their core system and setup their infrastructure on Google Kubernetes Engine for reliably handling growth.</p>
 
 -
   title: HR Software
