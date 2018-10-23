@@ -51,7 +51,7 @@
     logo_path: /public/images/clients/abof.svg
     url: http://www.abof.com
   description: >
-    <p>ABOF, wanted a head start in their front-end dev stack. We worked on a few important pages where there was considerable incoming traffic. The work involved replicated existing functionality that their IBM WebSphere based front-end offered.</p>
+    <p>ABOF, wanted a head start in their front-end dev stack. In a staged manner, we rewrote a few important pages (Landing and product listing page) for performance. Replicated existing functionality with React and server side rendering.</p>
 
     <p>When we shipped it, it was among the fastest loading sites.</p>
 
