@@ -75,7 +75,7 @@
     logo_path: /public/images/clients/scripbox.svg
     url: https://scripbox.com
   description: >
-    <p>We were part team which setup inhouse analytics (with `Snowplow` and accessible over `redash`), integrated it with various inhouse web and mobile applications. We have also been helping Scripbox with their internal tools, for communication with customers.</p>
+    <p>We were part of a team which setup inhouse analytics (with `Snowplow` and accessible over `redash`), integrated it with various inhouse web and mobile applications. We have also been helping Scripbox with their internal tools, for communication with customers.</p>
 
 -
   title: Pasarpolis.com
