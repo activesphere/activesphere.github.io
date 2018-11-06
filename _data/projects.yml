@@ -89,9 +89,9 @@
     logo_path: /public/images/clients/pasarpolis.svg
     url: https://pasarpolis.com/
   description: |
-    Pasarpolis partners with insurance companies and offers policy APIs to businesses like Gojek, Tokopedia, <abbr>JD</abbr> etc. They approached us to help prepare their software & infrastructure to deal with rapid increase in incoming traffic.
+    Pasarpolis offers insurance policy APIs to businesses like Gojek, <abbr>JD</abbr> etc.
 
-    We re-architected their core system and setup their infrastructure on Google Kubernetes Engine for reliably handling growth.
+    We re-architected their core system and setup their infrastructure to reliably handle growth.
 
 -
   title: HR Software
