@@ -77,7 +77,7 @@ Another journal mode which SQLite supports is [WAL](https://www.sqlite.org/wal.h
 
 This is similar to [serializable snapshot isolation(SSI)](https://wiki.postgresql.org/wiki/SSI) as implemented in PostgreSQL.
 
-Instead of acquiring a lot of locks like 2PL, a transaction continues hoping that everything will turn out all right. When it commits, SQLite checks if isolation has been violated. If yes, the transaction fails with a [BUSY_SNAPSHOT](https://www.sqlite.org/rescode.html#busy_snapshot) error and has to be re-tried.
+Instead of acquiring a lot of locks like 2PL, a transaction continues hoping that everything will turn out all right. When a transaction performs a read eventually followed by a write and tries to commit, SQLite checks if database was changed after the transaction finished reading. If yes, the transaction fails with a [BUSY_SNAPSHOT](https://www.sqlite.org/rescode.html#busy_snapshot) error and has to be re-tried.
 
 It's important to note that `BUSY_SNAPSHOT` is an [extended error code](https://www.sqlite.org/rescode.html#pve). It is disabled by default and will show up as a `SQLITE_BUSY` error instead.
 
@@ -131,7 +131,7 @@ Let's look at another case below.
 
 The 2PL algorithm is susceptible to deadlocks, where concurrent transactions block each other & can't make progress. Consider the scenario in the figure.
 
-Transaction1 acquires a `SHARED` lock and tries to upgrade it to an `EXCLUSIVE` lock. Transaction2 acquires a `SHARED` lock and tries to upgrade to an `EXCLUSIVE` lock. For Transaction1 to acquire `EXCLUSIVE` lock, there can be no other `SHARED` locks so it can't proceed. Transaction2 can't acquire `EXCLUSIVE` lock for the same reason. Remember that in 2PL, transactions need to hold the lock till the end. Simply waiting and retrying doesn't help. To make progress, one of them has to give up.
+Both transactions acquire a `SHARED` lock. First `Transaction1` starts the process to acquire an `EXCLUSIVE` lock. But, it can't commit till there are other `SHARED` locks. `Transaction2` can't acquire `EXCLUSIVE` lock since `Transaction1` is trying to acquire it. Both Transactions can't make progress. Remember that in 2PL, transactions need to hold the lock till they either commit or abort. Simply waiting and retrying the query doesn't help. To make progress, one of them has to give up and abort.
 
 SQLite provides a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) for automatically re-trying individual queries. It's capable of detecting deadlocks and immediately failing with `SQLITE_BUSY`. From its documentation
 
@@ -160,4 +160,4 @@ To solve the problem, I could have disabled ORM's retry, configured `busy_handle
 
 [^4]: Source: https://www.sqlite.org/wal.html
 
-[^5]: Broadly, SQLite supports 2 journaling modes. Rollback mode can be further subdivided into 3 other modes (ignoring OFF). From an isolation perspective, we don't care if rollback journal runs in DELETE, TRUNCATE or PERSIST modes. These modes simply instruct SQLite on how to get rid of rollback journal on completion of transaction. The WAL journaling mode on the other hand, uses a write-ahead log instead of a rollback journal to implement transactions.
+[^5]: Rollback mode can be further subdivided into 3 other types (ignoring OFF). DELETE, TRUNCATE & PERSIST. These modes simply instruct SQLite on how to get rid of rollback journal on completion of transaction.
