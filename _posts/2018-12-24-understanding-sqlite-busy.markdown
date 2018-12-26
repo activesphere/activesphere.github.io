@@ -24,7 +24,7 @@ Let's look at algorithms used to implement this isolation.
 
 One way to achieve serializable isolation is to allow only one transaction at a time while blocking others.
 
-Transactions can be one of three [types](https://www.sqlite.org/lang_transaction.html). `DEFERRED` (default) or `IMMEDIATE` or `EXCLUSIVE`
+Transactions can exhibit one of three [behaviours](https://www.sqlite.org/lang_transaction.html). `DEFERRED` (default) or `IMMEDIATE` or `EXCLUSIVE`
 
 ```sql
 BEGIN DEFERRED; /* or IMMEDIATE or EXCLUSIVE */
@@ -131,7 +131,7 @@ Let's look at another case below.
 
 The 2PL algorithm is susceptible to deadlocks, where concurrent transactions block each other & can't make progress. Consider the scenario in the figure.
 
-Both transactions acquire a `SHARED` lock. First `Transaction1` starts the process to acquire an `EXCLUSIVE` lock. But, it can't commit till there are other `SHARED` locks. `Transaction2` can't acquire `EXCLUSIVE` lock since `Transaction1` is trying to acquire it. Both Transactions can't make progress. Remember that in 2PL, transactions need to hold the lock till they either commit or abort. Simply waiting and retrying the query doesn't help. To make progress, one of them has to give up and abort.
+Both transactions acquire a `SHARED` lock while reading. First `Transaction1` starts the process to acquire an `EXCLUSIVE` lock with a write query. But, it can't commit till there are other `SHARED` locks. `Transaction2` can't acquire `EXCLUSIVE` lock since `Transaction1` is trying to acquire it. Both Transactions can't make progress. Remember that in 2PL, transactions need to hold the lock till they either commit or abort. Simply waiting and retrying the query doesn't help. To make progress, one of them has to give up and abort.
 
 SQLite provides a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) for automatically re-trying individual queries. It's capable of detecting deadlocks and immediately failing with `SQLITE_BUSY`. From its documentation
 
@@ -160,4 +160,4 @@ To solve the problem, I could have disabled ORM's retry, configured `busy_handle
 
 [^4]: Source: https://www.sqlite.org/wal.html
 
-[^5]: Rollback mode can be further subdivided into 3 other types (ignoring OFF). DELETE, TRUNCATE & PERSIST. These modes simply instruct SQLite on how to get rid of rollback journal on completion of transaction.
+[^5]: Rollback mode may be further subdivided into more types, which instruct SQLite on how to get rid of rollback journal on completion of transaction. Source: https://www.sqlite.org/pragma.html#pragma_journal_mode
