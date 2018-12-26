@@ -20,3 +20,23 @@
     }
   }
 }
+
+.layout__aside {
+  @supports (display: grid) {
+    @media (--max-column-with-aside) {
+      position: relative;
+      grid-column: -2;
+      justify-self: start;
+    }
+  }
+}
+
+.layout__aside-content {
+  @supports (display: grid) {
+    @media (--max-column-with-aside) {
+      position: absolute;
+      max-width: var(--width-aside);
+      padding-left: var(--space-l);
+    }
+  }
+}
