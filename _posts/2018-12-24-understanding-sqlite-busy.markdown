@@ -16,9 +16,11 @@ Let's look at algorithms used to implement this isolation.
 
 ## Serial execution
 
-<div id="serial" style="padding: 2em; grid-column: 3; grid-row-start: 7; grid-row-end: 15">
-  <img src="/public/images/serial_execution.svg">
-</div>
+<figure class="layout__aside" id="serial">
+  <div class="layout__aside-content">
+    <img src="/public/images/serial_execution.svg">
+  </div>
+</figure>
 
 One way to achieve serializable isolation is to allow only one transaction at a time while blocking others.
 
@@ -42,9 +44,11 @@ To implement isolation, there needs to be some way to undo changes done by a tra
 
 ## Rollback journal and 2PL
 
-<div id="rollback" style="padding: 2em; grid-column: 3; grid-row-start: 16; grid-row-end: 20">
-  <img src="/public/images/rollback.svg">
-</div>
+<figure class="layout__aside" id="rollback">
+  <div class="layout__aside-content">
+    <img src="/public/images/rollback.svg">
+  </div>
+</figure>
 
 In this mode, locks are used to implement isolation. Transaction wanting to read acquires a `SHARED` lock. Multiple transactions can hold this lock simultaneously. If another transaction is writing, readers fail with `SQLITE_BUSY`. Transaction wanting to write acquires an `EXCLUSIVE` lock. Only one transaction can hold this lock at a time, others fail with `SQLITE_BUSY`. A transaction may upgrade it's `SHARED` lock to an `EXCLUSIVE` lock to write after a read, but not vice versa. Once a transaction acquires a lock, it must hold it until the end of the transaction. There are some more intermediate locks, which I have skipped for simplicity. More details can be found [here](https://www.sqlite.org/lockingv3.html)
 
@@ -61,9 +65,11 @@ This locking algorithm is commonly called [Two-phase locking (2PL)](https://en.w
 
 Another journal mode which SQLite supports is [WAL](https://www.sqlite.org/wal.html). It's considered to be significantly faster than rollback in most scenarios[^4].
 
-<div id="snapshot" style="padding: 2em; grid-column: 3; grid-row-start: 21; grid-row-end: 27">
-  <img src="/public/images/snapshot.svg">
-</div>
+<figure class="layout__aside" id="snapshot">
+  <div class="layout__aside-content">
+    <img src="/public/images/snapshot.svg">
+  </div>
+</figure>
 
 > WAL mode permits simultaneous readers and writers. It can do this because changes do not overwrite the original database file, but rather go into the separate write-ahead log file. That means that readers can continue to read the old, original, unaltered content from the original database file at the same time that the writer is appending to the write-ahead log. In WAL mode, SQLite exhibits "snapshot isolation". When a read transaction starts, that reader continues to see an unchanging "snapshot" of the database file as it existed at the moment in time when the read transaction started. Any write transactions that commit while the read transaction is active are still invisible to the read transaction because the reader is seeing a snapshot of database file from a prior moment in time.
 
@@ -117,9 +123,11 @@ Let's look at another case below.
 
 ## Deadlocks
 
-<div id="deadlock" style="padding: 2em; grid-column: 3; grid-row-start: 40; grid-row-end: 46">
-  <img src="/public/images/deadlock.svg">
-</div>
+<figure class="layout__aside" id="deadlock">
+  <div class="layout__aside-content">
+    <img src="/public/images/deadlock.svg">
+  </div>
+</figure>
 
 The 2PL algorithm is susceptible to deadlocks, where concurrent transactions block each other & can't make progress. Consider the scenario in the figure.
 

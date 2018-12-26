@@ -12,6 +12,7 @@ https://www.modularscale.com/?19,16&px&1.414
 
 @custom-media --min-column (min-width: 27.3125em); /* 23em @ 19px */
 @custom-media --max-column (min-width: 42.75em); /* 36em @ 19px */
+@custom-media --max-column-with-aside (min-width: 80em); /* 1280px */
 
 :root {
   --font-family: "Source Serif Pro", Charter, Georgia, serif, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -52,6 +53,8 @@ https://www.modularscale.com/?19,16&px&1.414
 
   --max-width-content-column: 36rem;
   --max-width-canvas: 101.052631579rem; /* 1920px / 19px */
+
+  --width-aside: 20.210526316rem // 384px;
 
   --color-white: #ffffff;
   --color-gray-00: #f8f9fa;
