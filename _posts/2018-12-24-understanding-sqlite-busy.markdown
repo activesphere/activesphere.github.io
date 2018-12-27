@@ -8,7 +8,7 @@ I recently stumbled upon a [strange occurrence](https://github.com/sequelize/seq
 
 ## When does it happen
 
-SQLite allows concurrent transactions[^6] by letting clients open multiple connections[^2] to the database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are completely isolated[^3] ([serializable isolation](https://en.wikipedia.org/wiki/Serializability)), meaning the outcome of concurrent transactions will be as if they were executed in serial order.
+SQLite allows concurrent[^6] transactions by letting clients open multiple connections[^2] to a database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are completely isolated[^3] ([serializable isolation](https://en.wikipedia.org/wiki/Serializability)), meaning the outcome of concurrent transactions will be as if they were executed in serial order.
 
 To prevent violation of this isolation guarantee, and to preserve the integrity of the database, SQLite rejects some queries with `SQLITE_BUSY` errors. It's left to the user to decide how to retry failed queries (discussed further towards the end).
 
@@ -60,7 +60,7 @@ In this mode, locks are used to implement isolation. Locks are coarse-grained an
 
 <details><summary>Algorithm description</summary>
   <p markdown="1">
-  Transaction wanting to read acquires a `SHARED` lock. Multiple transactions can hold this lock simultaneously. Transaction wanting to write acquires a `RESERVED` lock. Only one transaction can hold this lock at a time, others fail with `SQLITE_BUSY`. A transaction may upgrade it's `SHARED` lock to a `RESERVED` lock to write after a read, but not vice versa. SQLite upgrades `RESERVED` lock to a `PENDING` lock, while preparing to write, which waits for readers to finish reading and blocks new readers from acquiring `SHARED` with `SQLITE_BUSY`. `PENDING` lock is upgraded to `EXCLUSIVE` lock after all `SHARED` locks are released and transaction may write. If a transaction tries to commit with a `PENDING` lock, it fails with a `SQLITE_BUSY` error. More details can be found [here](https://www.sqlite.org/lockingv3.html)
+  Transaction wanting to read acquires a `SHARED` lock. Multiple transactions can hold this lock simultaneously. Transaction wanting to write acquires a `RESERVED` lock. Only one transaction can hold this lock at a time, others fail with `SQLITE_BUSY`. A transaction may upgrade it's `SHARED` lock to a `RESERVED` lock to write after a read, but not vice versa. When comitting, SQLite upgrades `RESERVED` lock to a `PENDING` lock, which waits for readers to finish reading and blocks new readers from acquiring `SHARED` with `SQLITE_BUSY`. `PENDING` lock is upgraded to `EXCLUSIVE` lock after all `SHARED` locks are released. If a transaction tries to commit with a `PENDING` lock, it fails with a `SQLITE_BUSY` error. More details can be found [here](https://www.sqlite.org/lockingv3.html)
   </p>
 </details>
 
@@ -76,7 +76,7 @@ It's important to note that in 2PL, a transaction's lock is released only after 
 
 ### Shared cache mode
 
-SQLite offers an alternative concurrency model in [Shared-Cache](https://www.sqlite.org/sharedcache.html) mode for embedded servers. In this mode, SQLite allows connections from the same process to share a single data & schema cache.
+SQLite offers an alternate concurrency model in [shared-cache](https://www.sqlite.org/sharedcache.html) mode, meant for embedded servers. In this mode, SQLite allows connections from the same process to share a single data & schema cache.
 
 > Externally, from the point of view of another process or thread, two or more database connections using a shared-cache appear as a single connection
 
@@ -150,9 +150,9 @@ Let's look at another case for 2PL, where waiting for locks doesn't help.
   </div>
 </figure>
 
-The 2PL algorithm is susceptible to deadlocks, where concurrent transactions block each other. They can't make progress by re-trying individual queries. Consider the scenario in the figure on the right.
+The 2PL algorithm is susceptible to deadlocks, where concurrent transactions block each other and can't make progress by re-trying individual queries. Consider the scenario in the figure on the right.
 
-Both transactions acquire a `SHARED` lock while reading. Then, `Transaction1` acquires a `RESERVED` lock with a write query and gets upgraded to a `PENDING` lock on commit.
+Transactions `Transaction1` and `Transaction2` acquire a `SHARED` lock while reading. Then, `Transaction1` acquires a `RESERVED` lock with a write query. When it tries to commit, the `RESERVED` lock gets upgraded to a `PENDING` lock.
 
 <div style="display: grid">
   <div style="padding: 1em; grid-column: 1"><img src="/public/images/wait-deadlock.svg"></div>
@@ -166,7 +166,7 @@ SQLite provides a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html)
 
 > The presence of a busy handler does not guarantee that it will be invoked when there is lock contention. If SQLite determines that invoking the busy handler could result in a deadlock, it will go ahead and return SQLITE_BUSY to the application instead of invoking the busy handler
 
-With `busy_handler` configured, Transaction2 yields it's `SHARED` lock & fails with `SQLITE_BUSY`. Transaction1 succeeds.
+With `busy_handler` configured, `Transaction2` yields it's `SHARED` lock & fails with `SQLITE_BUSY`. `Transaction1` succeeds.
 
 If a query fails with busy_handler configured, one might assume that either transaction can't make progress due to deadlock, is trying to commit with stale snapshot or has timed out. The transaction will have to be rolled back & re-tried at the application level.
 
