@@ -40,7 +40,7 @@ SQLite needs to make sure that even in `DEFERRED` mode, outcome of concurrent tr
 
 ## Atomic commit
 
-SQLite uses a journal for implementing [atomic commit & rollback](https://www.sqlite.org/atomiccommit.html), which ensures that if the application crashes in between a transaction, the database can get back to its previous state. For the purposes of this post, we'll look at the two[^5] journaling modes it supports. [Rollback](https://www.sqlite.org/lockingv3.html#rollback) & [WAL](https://www.sqlite.org/wal.html). The algorithm to implement isolation differs for both of these journal modes.
+SQLite uses a journal for implementing [atomic commit & rollback](https://www.sqlite.org/atomiccommit.html), which ensures that if the application crashes in between a transaction, the database can get back to its previous state. We'll look at the two[^5] journaling modes it supports, [Rollback](https://www.sqlite.org/lockingv3.html#rollback) and [WAL](https://www.sqlite.org/wal.html). The algorithm to implement isolation differs for both of these journal modes.
 
 ## Rollback journal and 2PL
 
@@ -182,6 +182,6 @@ To solve the problem, I could have disabled ORM's retry, configured `busy_handle
 
 [^3]: Except in the case of shared cache database connections with PRAGMA read_uncommitted turned on
 
-[^4]: Source: https://www.sqlite.org/wal.html
+[^4]: [Source](https://www.sqlite.org/wal.html)
 
-[^5]: Rollback mode may be further subdivided into more types, which instruct SQLite on how to get rid of rollback journal on completion of transaction. Source: https://www.sqlite.org/pragma.html#pragma_journal_mode
+[^5]: Rollback mode may be further subdivided into more types, which instruct SQLite on how to get rid of rollback journal on completion of transaction. [Source](https://www.sqlite.org/pragma.html#pragma_journal_mode)
