@@ -36,7 +36,11 @@ COMMIT;
 
 `DEFERRED` behaviour, on the other hand, allows multiple transactions to run concurrently. This means that queries from multiple transactions can get interleaved leading to race conditions.
 
-SQLite needs to make sure that even in `DEFERRED` mode, outcome of concurrent transactions seem as if they're executed in serial order, to clients. Let's look at how isolation is implemented for concurrent ops in `DEFERRED` transaction.
+SQLite needs to make sure that even in `DEFERRED` mode, outcome of concurrent transactions seem as if they're executed in serial order, to clients.
+
+Here's a [talk](https://youtu.be/5ZjhNTM8XU8?t=825) by [Martin Kleppmann](https://martin.kleppmann.com/) which covers issues that can come up with concurrent transactions in the absence of serialized isolation.
+
+Let's look at how isolation is implemented for concurrent ops in `DEFERRED` transaction.
 
 ## Atomic commit
 
@@ -68,7 +72,7 @@ In this mode, locks are used to implement isolation. Locks are coarse-grained an
 </details>
 
 This locking algorithm is commonly called [Two-phase locking (2PL)](https://en.wikipedia.org/wiki/Two-phase_locking).
-It's important to note that in 2PL, only once a transaction concludes, it's associated lock is released.
+It's important to note that in 2PL, a transaction's lock is released only after it concludes.
 
 ### Shared cache mode
 
