@@ -55,7 +55,9 @@ In this mode, locks are used to implement isolation. Locks are coarse-grained an
 </figure>
 
 <details><summary>Algorithm description</summary>
-Transaction wanting to read acquires a `SHARED` lock. Multiple transactions can hold this lock simultaneously. Transaction wanting to write acquires a `RESERVED` lock. Only one transaction can hold this lock at a time, others fail with `SQLITE_BUSY`. A transaction may upgrade it's `SHARED` lock to a `RESERVED` lock to write after a read, but not vice versa. SQLite upgrades `RESERVED` lock to a `PENDING` lock, while preparing to write, which waits for readers to finish reading and blocks new readers from acquiring `SHARED` with `SQLITE_BUSY`. `PENDING` lock is upgraded to `EXCLUSIVE` lock after all `SHARED` locks are released and transaction may write. If a transaction tries to commit with a `PENDING` lock, it fails with a `SQLITE_BUSY` error. More details can be found [here](https://www.sqlite.org/lockingv3.html)
+  <p markdown="1">
+  Transaction wanting to read acquires a `SHARED` lock. Multiple transactions can hold this lock simultaneously. Transaction wanting to write acquires a `RESERVED` lock. Only one transaction can hold this lock at a time, others fail with `SQLITE_BUSY`. A transaction may upgrade it's `SHARED` lock to a `RESERVED` lock to write after a read, but not vice versa. SQLite upgrades `RESERVED` lock to a `PENDING` lock, while preparing to write, which waits for readers to finish reading and blocks new readers from acquiring `SHARED` with `SQLITE_BUSY`. `PENDING` lock is upgraded to `EXCLUSIVE` lock after all `SHARED` locks are released and transaction may write. If a transaction tries to commit with a `PENDING` lock, it fails with a `SQLITE_BUSY` error. More details can be found [here](https://www.sqlite.org/lockingv3.html)
+  </p>
 </details>
 
 <details><summary>Implementation details</summary>
@@ -151,7 +153,7 @@ Both transactions acquire a `SHARED` lock while reading. Then, `Transaction1` ac
 <div style="display: grid">
   <div style="padding: 1em; grid-column: 1"><img src="/public/images/wait-deadlock.svg"></div>
 
-  <p style="grid-column: 2">
+  <p markdown="1" style="grid-column: 2">
   `Transaction1's` `PENDING` lock waits for other `SHARED` locks to be released. `Transaction2` can't upgrade from a `SHARED` lock to a `RESERVED` lock since `Transaction1` has a `PENDING` lock and is looking to commit.
   Both Transactions can't make progress. Remember that in 2PL, transactions need to hold the lock till they either commit or abort. Simply waiting and re-trying the query doesn't help. To make progress, one of them has to give up and abort.
   </p>
