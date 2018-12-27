@@ -8,7 +8,7 @@ I recently stumbled upon a [strange occurrence](https://github.com/sequelize/seq
 
 ## When does it happen
 
-SQLite allows concurrent transactions by letting clients open multiple connections[^2] to the database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are completely isolated[^3] ([serializable isolation](https://en.wikipedia.org/wiki/Serializability)), meaning the outcome of concurrent transactions will be as if they were executed in serial order.
+SQLite allows concurrent transactions[^6] by letting clients open multiple connections[^2] to the database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are completely isolated[^3] ([serializable isolation](https://en.wikipedia.org/wiki/Serializability)), meaning the outcome of concurrent transactions will be as if they were executed in serial order.
 
 To prevent violation of this isolation guarantee, and to preserve the integrity of the database, SQLite rejects some queries with `SQLITE_BUSY` errors. It's left to the user to decide how to retry failed queries (discussed further towards the end).
 
@@ -136,7 +136,7 @@ Use of [exclusive locking mode](https://www.sqlite.org/pragma.html#pragma_lockin
 
 Re-trying individual queries would be faster, but will not always succeed. One example is in `WAL` mode's `BUSY_SNAPSHOT` error scenario. The isolation guarantee will not allow the transaction to commit with a stale read and just re-trying the query after some time will not help. The entire transaction needs to be re-tried with a fresh snapshot by re-doing the select queries.
 
-Let's look at another case for 2PL, where waiting for locks don't help.
+Let's look at another case for 2PL, where waiting for locks doesn't help.
 
 ## Deadlocks
 
@@ -187,3 +187,5 @@ To solve the problem, I could have disabled ORM's retry, configured `busy_handle
 [^4]: [Source](https://www.sqlite.org/wal.html)
 
 [^5]: Rollback mode may be further subdivided into more types, which instruct SQLite on how to get rid of rollback journal on completion of transaction. [Source](https://www.sqlite.org/pragma.html#pragma_journal_mode)
+
+[^6]: Client/server database engines (such as PostgreSQL, MySQL, or Oracle) usually support a higher level of concurrency and allow multiple processes to be writing to the same database at the same time. This is possible in a client/server database because there is always a single well-controlled server process available to coordinate access. If your application has a need for a lot of concurrency, then you should consider using a client/server database. SQLite allows only one writer at a time. [Source](https://www.sqlite.org/faq.html#q5)
