@@ -131,3 +131,25 @@
 .article--hero {
   padding-top: 0;
 }
+
+@media (--max-column) {
+  .article__content-with-image {
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr);
+
+    & .image {
+      grid-column: 1;
+    }
+
+    & .content {
+      grid-column: 2;
+    }
+  }
+}
+
+.article__content-with-image {
+  & img {
+    display: block;
+    margin: auto;
+  }
+}

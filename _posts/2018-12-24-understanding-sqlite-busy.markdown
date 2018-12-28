@@ -34,11 +34,13 @@ COMMIT;
 
 `IMMEDIATE` and `EXCLUSIVE` behaviours acquire locks at the beginning of a transaction. In these modes, once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, would fail with a `SQLITE_BUSY` error. This enforces serial (one transaction at a time) execution. But running only one transaction at a time, might not be performant.
 
+### DEFERRED behaviour
+
 `DEFERRED` behaviour, on the other hand, allows multiple transactions to run concurrently. This means that queries from multiple transactions can get interleaved leading to race conditions.
 
-SQLite needs to make sure that even in `DEFERRED` mode, outcome of concurrent transactions seem as if they're executed in serial order, to clients.
+Even in this mode, SQLite needs to make sure that, outcome of concurrent transactions seem as if they're executed in serial order, to clients.
 
-Here's a [talk](https://youtu.be/5ZjhNTM8XU8?t=825) by [Martin Kleppmann](https://martin.kleppmann.com/) which covers issues that can come up with concurrent transactions in the absence of serialized isolation.
+Here's a [talk](https://youtu.be/5ZjhNTM8XU8?t=825) by [Martin Kleppmann](https://martin.kleppmann.com/) which covers issues that can come up with concurrent transactions in the absence of serializable isolation.
 
 Let's look at how isolation is implemented for concurrent ops in `DEFERRED` transaction.
 
@@ -80,7 +82,13 @@ SQLite offers an alternate concurrency model in [shared-cache](https://www.sqlit
 
 > Externally, from the point of view of another process or thread, two or more database connections using a shared-cache appear as a single connection
 
-Locks are used to implement isolation here as well. Shared cache offers more fine-grained table level locks though. Transaction wanting to read from a table acquires a read lock on it. This blocks other writers from writing to the table with a `SQLITE_LOCKED` error. Multiple readers can co-exist. Transaction wanting to write to a table acquires a write lock on it. This blocks other readers and writers on that table with a `SQLITE_LOCKED` error.
+Locks are used to implement isolation here as well. Shared cache offers more fine-grained table level locks though. Tables support two types of locks, "read-locks" and "write-locks".  On failing to acquire lock, queries fail with a `SQLITE_LOCKED` error.
+
+<details><summary>Algorithm description</summary>
+  <blockquote>
+    <p>At any one time, a single table may have any number of active read-locks or a single active write lock. To read data a table, a connection must first obtain a read-lock. To write to a table, a connection must obtain a write-lock on that table. If a required table lock cannot be obtained, the query fails and SQLITE_LOCKED is returned to the caller.  Once a connection obtains a table lock, it is not released until the current transaction (read or write) is concluded.</p>
+  </blockquote>
+</details>
 
 ## WAL and SSI
 
@@ -136,9 +144,9 @@ Use of [exclusive locking mode](https://www.sqlite.org/pragma.html#pragma_lockin
 
 ## Wait and Retry
 
-`SQLITE_BUSY` errors can pop up in between a transaction (apart from `IMMEDIATE`/`EXCLUSIVE` modes where transaction fails at the beginning itself). In such cases, there are 2 ways to handle the failure. Wait a bit & retry just the problematic query, or `ROLLBACK` and retry the entire transaction.
+`SQLITE_BUSY` errors can pop up in between a transaction (apart from `IMMEDIATE`/`EXCLUSIVE` modes where transaction fails at the beginning itself). One way to handle such cases is to wait a bit, for locks to be released, and retry either the problematic query or the entire transaction.
 
-Re-trying individual queries would be faster, but will not always succeed. One example is in `WAL` mode's `BUSY_SNAPSHOT` error scenario. The isolation guarantee will not allow the transaction to commit with a stale read and just re-trying the query after some time will not help. The entire transaction needs to be re-tried with a fresh snapshot by re-doing the select queries.
+Re-trying just the problematic query would be faster, but will not always succeed. One example is in `WAL` mode's `BUSY_SNAPSHOT` error scenario. The isolation guarantee will not allow the transaction to commit with a stale read and just re-trying the query after some time will not help. The entire transaction needs to be re-tried with a fresh snapshot by re-doing the select queries.
 
 Let's look at another case for 2PL, where waiting for locks doesn't help.
 
@@ -154,10 +162,10 @@ The 2PL algorithm is susceptible to deadlocks, where concurrent transactions blo
 
 Transactions `Transaction1` and `Transaction2` acquire a `SHARED` lock while reading. Then, `Transaction1` acquires a `RESERVED` lock with a write query. When it tries to commit, the `RESERVED` lock gets upgraded to a `PENDING` lock.
 
-<div style="display: grid">
-  <div style="padding: 1em; grid-column: 1"><img src="/public/images/wait-deadlock.svg"></div>
+<div class="article__content-with-image">
+  <div class="image"><img src="/public/images/wait-deadlock.svg"></div>
 
-  <p markdown="1" style="grid-column: 2">
+  <p markdown="1" class="content">
   `Transaction1's` `PENDING` lock waits for other `SHARED` locks to be released. `Transaction2` can't upgrade from a `SHARED` lock to a `RESERVED` lock since `Transaction1` has a `PENDING` lock and is looking to commit.
   Both Transactions can't make progress. Remember that in 2PL, transactions need to hold the lock till they either commit or abort. Simply waiting and re-trying the query doesn't help. To make progress, one of them has to give up and abort.
   </p>
