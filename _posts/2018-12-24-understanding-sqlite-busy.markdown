@@ -168,13 +168,13 @@ Transactions `Transaction1` and `Transaction2` acquire a `SHARED` lock while rea
   Both Transactions can't make progress. Remember that in 2PL, transactions need to hold the lock till they either commit or abort. Simply waiting and re-trying the query doesn't help. To make progress, one of them has to give up and abort.
   </p>
 </div>
-SQLite provides a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) for automatically waiting and re-trying individual queries. It's capable of detecting deadlocks and immediately failing with `SQLITE_BUSY`. From its documentation
+SQLite allows setting a [busy_timeout](https://www.sqlite.org/c3ref/busy_timeout.html) for waiting and re-trying individual queries. `busy_timeout` sets a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) which is capable of detecting deadlocks and immediately failing with `SQLITE_BUSY`. From its documentation
 
 > The presence of a busy handler does not guarantee that it will be invoked when there is lock contention. If SQLite determines that invoking the busy handler could result in a deadlock, it will go ahead and return SQLITE_BUSY to the application instead of invoking the busy handler
 
 With `busy_handler` configured, `Transaction2` yields it's `SHARED` lock & fails with `SQLITE_BUSY`. `Transaction1` succeeds.
 
-If a query fails with `busy_handler` configured, one might assume that either 1. transaction can't make progress due to a deadlock, or 2. transaction is trying to commit with stale snapshot or 3. transaction has timed out. The transaction will have to be rolled back & re-tried at the application level.
+If a query fails with `busy_timeout` configured, one might assume that either 1. transaction can't make progress due to a deadlock, or 2. transaction is trying to commit with stale snapshot or 3. transaction has timed out. The transaction will have to be rolled back & re-tried at the application level.
 
 ## Conclusion
 
