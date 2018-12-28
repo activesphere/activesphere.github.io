@@ -40,17 +40,17 @@ COMMIT;
 
 Even in this mode, SQLite needs to make sure that, outcome of concurrent transactions seem as if they're executed in serial order, to clients.
 
-Here's a [talk](https://youtu.be/5ZjhNTM8XU8?t=825) by [Martin Kleppmann](https://martin.kleppmann.com/) which covers issues that can come up with concurrent transactions in the absence of serializable isolation.
+To know more about issues that can come up with concurrent transactions in the absence of serializable isolation, please have a look at this [talk](https://youtu.be/5ZjhNTM8XU8?t=825) by [Martin Kleppmann](https://martin.kleppmann.com/).
 
 Let's look at how isolation is implemented for concurrent ops in `DEFERRED` transaction.
 
 ## Atomic commit
 
-SQLite uses a journal for implementing [atomic commit & rollback](https://www.sqlite.org/atomiccommit.html), which ensures that if the application crashes in between a transaction, the database can get back to its previous state. We'll look at the two[^5] journaling modes it supports, [Rollback](https://www.sqlite.org/lockingv3.html#rollback) and [WAL](https://www.sqlite.org/wal.html). The algorithm to implement isolation differs for both of these journal modes.
+SQLite uses a journal or log for implementing [atomic commit & rollback](https://www.sqlite.org/atomiccommit.html), which ensures that if a transaction is interrupted due to crash or power failure, the database can get back to its previous state. We'll look at the two[^5] [journaling modes](https://www.sqlite.org/pragma.html#pragma_journal_mode) SQLite supports, [Rollback journal](https://www.sqlite.org/lockingv3.html#rollback) and [WAL](https://www.sqlite.org/wal.html). Both modes implement isolation differently.
 
 ## Rollback journal and 2PL
 
-In this mode, locks are used to implement isolation. Locks are coarse-grained and apply to the entire database.
+In this mode, locks are used to implement isolation. Locks are coarse-grained and apply to the entire database. Locks permit simultaneous readers to co-exist, but writers block readers and other writers.
 
 <div><img src="/public/images/locks.svg"></div>
 
@@ -73,8 +73,7 @@ In this mode, locks are used to implement isolation. Locks are coarse-grained an
   </blockquote>
 </details>
 
-This locking algorithm is commonly called [Two-phase locking (2PL)](https://en.wikipedia.org/wiki/Two-phase_locking).
-It's important to note that in 2PL, a transaction's lock is released only after it concludes.
+This locking algorithm is commonly called [Two-phase locking (2PL)](https://en.wikipedia.org/wiki/Two-phase_locking). It's important to note that in 2PL, a transaction's lock is released only after it concludes.
 
 ### Shared cache mode
 
@@ -92,7 +91,7 @@ Locks are used to implement isolation here as well. Shared cache offers more fin
 
 ## WAL and SSI
 
-Another journal mode which SQLite supports is [WAL](https://www.sqlite.org/wal.html). It's considered to be significantly faster than rollback in most scenarios[^4].
+[WAL](https://www.sqlite.org/wal.html) is considered to be significantly faster than rollback journal in most scenarios[^4]. It permits simultaneous readers and writers. A writer while writing to disk, blocks other writers though.
 
 <figure class="layout__aside" id="snapshot">
   <div class="layout__aside-content">
@@ -176,7 +175,7 @@ SQLite provides a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html)
 
 With `busy_handler` configured, `Transaction2` yields it's `SHARED` lock & fails with `SQLITE_BUSY`. `Transaction1` succeeds.
 
-If a query fails with busy_handler configured, one might assume that either transaction can't make progress due to deadlock, is trying to commit with stale snapshot or has timed out. The transaction will have to be rolled back & re-tried at the application level.
+If a query fails with `busy_handler` configured, one might assume that either 1. transaction can't make progress due to a deadlock, or 2. transaction is trying to commit with stale snapshot or 3. transaction has timed out. The transaction will have to be rolled back & re-tried at the application level.
 
 ## Conclusion
 
@@ -196,7 +195,7 @@ To solve the problem, I could have disabled ORM's retry, configured `busy_handle
 
 [^3]: Except in the case of shared cache database connections with PRAGMA read_uncommitted turned on
 
-[^4]: [Source](https://www.sqlite.org/wal.html)
+[^4]: Although WAL is faster in most scenarios, it might be very slightly slower (perhaps 1% or 2% slower) than the traditional rollback-journal approach in applications that do mostly reads and seldom write. [Source](https://www.sqlite.org/wal.html).
 
 [^5]: Rollback mode may be further subdivided into more types, which instruct SQLite on how to get rid of rollback journal on completion of transaction. [Source](https://www.sqlite.org/pragma.html#pragma_journal_mode)
 
