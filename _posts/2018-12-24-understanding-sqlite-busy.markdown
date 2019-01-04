@@ -39,9 +39,9 @@ COMMIT;
 
 Even in this mode, SQLite needs to make sure that, outcome of concurrent transactions seem as if they're executed in serial order, to clients.
 
-To know more about issues that can come up with concurrent transactions in the absence of serializable isolation, please have a look at this [talk](https://youtu.be/5ZjhNTM8XU8?t=825) by [Martin Kleppmann](https://martin.kleppmann.com/).
+Here's a nice [talk](https://youtu.be/5ZjhNTM8XU8?t=825), to know more about issues that can come up with concurrent transactions in the absence of serializable isolation.
 
-Let's look at how isolation is implemented for concurrent ops in `DEFERRED` transaction.
+Let's look at how isolation is implemented for concurrent ops in `DEFERRED` transactions.
 
 ## Atomic commit
 
