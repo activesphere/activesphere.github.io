@@ -39,7 +39,7 @@ COMMIT;
 
 Even in this mode, SQLite needs to make sure that, outcome of concurrent transactions seem as if they're executed in serial order, to clients.
 
-Here's a nice [talk](https://youtu.be/5ZjhNTM8XU8?t=825), to know more about issues that can come up with concurrent transactions in the absence of serializable isolation.
+Here's a nice [talk](https://youtu.be/5ZjhNTM8XU8?t=825), which covers issues that can come up with concurrent transactions in the absence of serializable isolation.
 
 Let's look at how isolation is implemented for concurrent ops in `DEFERRED` transactions.
 
