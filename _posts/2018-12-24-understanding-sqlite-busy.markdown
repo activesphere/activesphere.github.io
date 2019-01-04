@@ -142,11 +142,11 @@ Use of [exclusive locking mode](https://www.sqlite.org/pragma.html#pragma_lockin
 
 ## Wait and Retry
 
-`SQLITE_BUSY` errors can pop up in between a transaction (apart from `IMMEDIATE`/`EXCLUSIVE` modes where transaction fails at the beginning itself). One way to handle such cases is to wait a bit, for locks to be released, and retry either the problematic query or the entire transaction.
+`SQLITE_BUSY` errors can pop up in between a transaction (apart from `IMMEDIATE`/`EXCLUSIVE` modes where transaction fails at the beginning itself). One way to handle such cases is to wait a bit, hoping that the problem resolves itself, and retry either the problematic query or the entire transaction.
 
 Re-trying just the problematic query would be faster, but will not always succeed. One example is in `WAL` mode's `BUSY_SNAPSHOT` error scenario. The isolation guarantee will not allow the transaction to commit with a stale read and just re-trying the query after some time will not help. The entire transaction needs to be re-tried with a fresh snapshot by re-doing the select queries.
 
-Let's look at another case for 2PL, where waiting for locks doesn't help.
+Even in `Rollback journal` mode, in the 2PL algorithm, there are cases where waiting for locks to be released and re-trying just the problematic query doesn't help.
 
 ## Deadlocks
 
