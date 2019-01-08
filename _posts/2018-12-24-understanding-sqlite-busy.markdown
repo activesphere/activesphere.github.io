@@ -7,11 +7,11 @@ I recently stumbled upon a [strange occurrence](https://github.com/sequelize/seq
 
 ## When does it happen
 
-SQLite allows concurrent[^6] transactions by letting clients open multiple connections[^2] to a database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are completely isolated[^3] ([serializable isolation](https://en.wikipedia.org/wiki/Serializability)). This means that even though transactions may be processed concurrently, from a user's perspective SQLite behaves as if it has processed transactions in a serial order with no concurrency.
+SQLite allows concurrent[^6] transactions by letting clients open multiple connections[^2] to a database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are [completely isolated](https://en.wikipedia.org/wiki/Serializability)[^3]. This means that even though transactions may be processed concurrently, from a user's perspective SQLite behaves as if it has processed transactions in a serial order with no concurrency.
 
 To prevent violation of this isolation guarantee, and to preserve the integrity of the database, SQLite rejects some queries with `SQLITE_BUSY` errors. It's left to the user to decide how to retry failed queries (discussed further towards the end).
 
-SQLite may be setup in different ways, and each of these setups has its own algorithm to make sure that concurrent transactions remain isolated. Because of this, the scenarios causing `SQLITE_BUSY` errors may change depending on the setup. We try and look at some of these setups, to understand scenarios under which the error may show up.
+SQLite may be setup in different ways, and each setup uses a different algorithm to make sure that concurrent transactions remain isolated. Because of this, the scenarios causing `SQLITE_BUSY` errors may change depending on the setup. We try and look at some of these setups, to understand scenarios under which the error may show up.
 
 ## Actual serial execution using transaction behaviours
 
@@ -146,7 +146,7 @@ Use of [exclusive locking mode](https://www.sqlite.org/pragma.html#pragma_lockin
 
 Re-trying just the problematic query would be faster, but will not always succeed. One example is in `WAL` mode's `BUSY_SNAPSHOT` error scenario. The isolation guarantee will not allow the transaction to commit with a stale read and just re-trying the query after some time will not help. The entire transaction needs to be re-tried with a fresh snapshot by re-doing the select queries.
 
-Even in `Rollback journal` mode, in the 2PL algorithm, there are cases where waiting for locks to be released and re-trying just the problematic query doesn't help.
+Even in `Rollback journal` mode, there are cases where waiting for locks to be released and re-trying just the problematic query doesn't help. Let's try and understand these cases.
 
 ## Deadlocks
 
@@ -176,6 +176,8 @@ With `busy_handler` configured, `Transaction2` yields it's `SHARED` lock & fails
 
 If a query fails with `busy_timeout` configured, one might assume that either 1. transaction can't make progress due to a deadlock, or 2. transaction is trying to commit with stale snapshot or 3. transaction has timed out. The transaction will have to be rolled back & re-tried at the application level.
 
+In shared cache mode, instead of using `busy_timeout`, the [unlock notify](https://www.sqlite.org/c3ref/unlock_notify.html) API may be [used](https://www.sqlite.org/unlock_notify.html) to retry queries. It fails with a `SQLITE_LOCKED` error on detecting a deadlock. From a user's perspective, the error handling may be setup the same way as with `busy_timeout`.
+
 ## Conclusion
 
 Let's go back to the problem with the ORM's query retry module, that I described at the start. In that situation, transactions used `DEFERRED` behaviour by default and ended up in deadlock and `BUSY_SNAPSHOT` error scenarios (I experimented with both rollback & WAL modes). The ORM implemented it's own query level retry mechanism, which couldn't detect these cases. It ended up re-trying the deadlocked query a bunch of times before eventually failing.
@@ -190,7 +192,7 @@ To solve the problem, I could have disabled ORM's retry, configured `busy_handle
 
 [^1]: Algorithms like Two-Phase locking and guarantees like Serializable Snapshot Isolation have well-researched properties and side effects. Drawing parallels helped me identify SQLite side effects like deadlocks & stale snapshots faster.
 
-[^2]: Since there's no [isolation](https://www.sqlite.org/isolation.html) between ops on the same connection.
+[^2]: Since there's no [isolation](https://www.sqlite.org/isolation.html) between queries on the same connection.
 
 [^3]: Except in the case of shared cache database connections with PRAGMA read_uncommitted turned on
 
@@ -198,4 +200,4 @@ To solve the problem, I could have disabled ORM's retry, configured `busy_handle
 
 [^5]: Rollback mode may be further subdivided into more types, which instruct SQLite on how to get rid of rollback journal on completion of transaction. [Source](https://www.sqlite.org/pragma.html#pragma_journal_mode)
 
-[^6]: Client/server database engines (such as PostgreSQL, MySQL, or Oracle) usually support a higher level of concurrency and allow multiple processes to be writing to the same database at the same time. This is possible in a client/server database because there is always a single well-controlled server process available to coordinate access. If your application has a need for a lot of concurrency, then you should consider using a client/server database. SQLite allows only one writer at a time. [Source](https://www.sqlite.org/faq.html#q5)
+[^6]: Client/server database engines (such as PostgreSQL, MySQL, or Oracle) usually support a higher level of concurrency and allow multiple processes to be writing to the same database at the same time. This is possible in a client/server database because there is always a single well-controlled server process available to coordinate access. If your application has a need for a lot of concurrency, then you should consider using a client/server database. SQLite allows only one writer at a time. [Source](https://www.sqlite.org/faq.html#q5). Also read [when to use](https://www.sqlite.org/whentouse.html)
