@@ -7,13 +7,13 @@ I recently stumbled upon a [strange occurrence](https://github.com/sequelize/seq
 
 ## When does it happen
 
-SQLite allows concurrent[^6] transactions by letting clients open multiple connections[^2] to a database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are completely isolated[^3] ([serializable isolation](https://en.wikipedia.org/wiki/Serializability)), meaning the outcome of concurrent transactions will be as if they were executed in serial order.
+SQLite allows concurrent[^6] transactions by letting clients open multiple connections[^2] to a database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are completely isolated[^3] ([serializable isolation](https://en.wikipedia.org/wiki/Serializability)). This means that even though transactions may be processed concurrently, from a user's perspective SQLite behaves as if it has processed transactions in a serial order with no concurrency.
 
 To prevent violation of this isolation guarantee, and to preserve the integrity of the database, SQLite rejects some queries with `SQLITE_BUSY` errors. It's left to the user to decide how to retry failed queries (discussed further towards the end).
 
-Let's look at algorithms used to implement this isolation.
+SQLite may be setup in different ways, and each of these setups has its own algorithm to make sure that concurrent transactions remain isolated. Because of this, the scenarios causing `SQLITE_BUSY` errors may change depending on the setup. We try and look at some of these setups, to understand scenarios under which the error may show up.
 
-## Serial execution
+## Actual serial execution using transaction behaviours
 
 <figure class="layout__aside" id="serial">
   <div class="layout__aside-content">
@@ -21,9 +21,7 @@ Let's look at algorithms used to implement this isolation.
   </div>
 </figure>
 
-One way to achieve serializable isolation is to allow only one transaction at a time while blocking others.
-
-Transactions can exhibit one of three [behaviours](https://www.sqlite.org/lang_transaction.html). `DEFERRED` (default) or `IMMEDIATE` or `EXCLUSIVE`
+In SQLite, transactions may exhibit one of three [behaviours](https://www.sqlite.org/lang_transaction.html). `DEFERRED` (default) or `IMMEDIATE` or `EXCLUSIVE`
 
 ```sql
 BEGIN DEFERRED; /* or IMMEDIATE or EXCLUSIVE */
@@ -31,17 +29,19 @@ BEGIN DEFERRED; /* or IMMEDIATE or EXCLUSIVE */
 COMMIT;
 ```
 
-`IMMEDIATE` and `EXCLUSIVE` behaviours acquire locks at the beginning of a transaction. In these modes, once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, would fail with a `SQLITE_BUSY` error. This enforces serial (one transaction at a time) execution. But running only one transaction at a time, might not be performant.
+One way to achieve isolation is to enforce serial execution ie. allow only one transaction at a time.
+
+`IMMEDIATE` and `EXCLUSIVE` behaviours enforce serial execution by acquiring locks at the beginning of a transaction. In these modes, once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, fail with a `SQLITE_BUSY` error. Locks are retained till a transaction either commits or aborts.
+
+But running only one transaction at a time, might not be performant.
 
 ### DEFERRED behaviour
 
-`DEFERRED` behaviour, on the other hand, allows multiple transactions to run concurrently. This means that queries from multiple transactions can get interleaved leading to race conditions.
+`DEFERRED` behaviour, on the other hand, allows multiple transactions to run concurrently, which allows queries from multiple transactions to get interleaved. SQLite makes sure that transactions remain completely isolated & prevents race conditions even in this mode.
 
-Even in this mode, SQLite needs to make sure that, outcome of concurrent transactions seem as if they're executed in serial order, to clients.
+In case you're interested, here's a nice [talk](https://youtu.be/5ZjhNTM8XU8?t=825), which covers issues that can come up with concurrent transactions in the absence of isolation.
 
-Here's a nice [talk](https://youtu.be/5ZjhNTM8XU8?t=825), which covers issues that can come up with concurrent transactions in the absence of serializable isolation.
-
-Let's look at how isolation is implemented for concurrent ops in `DEFERRED` transactions.
+Let's look at how isolation is implemented for concurrent transactions using `DEFERRED` behaviour.
 
 ## Atomic commit
 
@@ -49,7 +49,7 @@ SQLite uses a journal or log for implementing [atomic commit & rollback](https:/
 
 ## Rollback journal and 2PL
 
-In this mode, locks are used to implement isolation. Locks are coarse-grained and apply to the entire database. Locks permit simultaneous readers to co-exist, but writers block readers and other writers.
+In this mode, locks are used to implement isolation. The locks acquired are coarse-grained and apply to the entire database. The locks permit simultaneous readers from concurrent transactions to co-exist, but writers from one transaction block readers and other writers from other concurrent transactions.
 
 <div><img src="/public/images/locks.svg"></div>
 
@@ -76,7 +76,7 @@ This locking algorithm is commonly called [Two-phase locking (2PL)](https://en.w
 
 ### Shared cache mode
 
-SQLite offers an alternate concurrency model in [shared-cache](https://www.sqlite.org/sharedcache.html) mode, meant for embedded servers. In this mode, SQLite allows connections from the same process to share a single data & schema cache.
+Going slightly off topic, SQLite offers an alternate concurrency model in [shared-cache](https://www.sqlite.org/sharedcache.html) mode, meant for embedded servers. In this mode, SQLite allows connections from the same process to share a single data & schema cache.
 
 > Externally, from the point of view of another process or thread, two or more database connections using a shared-cache appear as a single connection
 
@@ -90,7 +90,7 @@ Locks are used to implement isolation here as well. Shared cache offers more fin
 
 ## WAL and SSI
 
-[WAL](https://www.sqlite.org/wal.html) is considered to be significantly faster than rollback journal in most scenarios[^4]. It permits simultaneous readers and writers. A writer while writing to disk, blocks other writers though.
+[WAL](https://www.sqlite.org/wal.html) is considered to be significantly faster than rollback journal in most scenarios[^4]. It permits simultaneous readers and writers from concurrent transactions. A writer while writing to disk, blocks writers from other concurrent transactions though.
 
 <figure class="layout__aside" id="snapshot">
   <div class="layout__aside-content">
@@ -102,11 +102,11 @@ Locks are used to implement isolation here as well. Shared cache offers more fin
 
 > Source: https://www.sqlite.org/isolation.html
 
-This is similar to [serializable snapshot isolation(SSI)](https://wiki.postgresql.org/wiki/SSI) as implemented in PostgreSQL.
-
-Instead of acquiring a lot of locks like 2PL, a transaction continues hoping that everything will turn out all right. When a transaction performs a read eventually followed by a write and tries to commit, SQLite checks if database was changed after the transaction finished reading. If yes, the transaction fails with a [BUSY_SNAPSHOT](https://www.sqlite.org/rescode.html#busy_snapshot) error and has to be re-tried.
+Instead of acquiring a lot of locks like 2PL, a transaction continues hoping that everything will turn out all right. When a transaction performs a read eventually followed by a write and tries to commit, SQLite checks if database was changed after the read, by some other concurrent transaction. If yes, the transaction fails with a [BUSY_SNAPSHOT](https://www.sqlite.org/rescode.html#busy_snapshot) error and has to be re-tried.
 
 It's important to note that `BUSY_SNAPSHOT` is an [extended error code](https://www.sqlite.org/rescode.html#pve). It is disabled by default and will show up as a `SQLITE_BUSY` error instead.
+
+This is similar to [serializable snapshot isolation(SSI)](https://wiki.postgresql.org/wiki/SSI) as implemented in PostgreSQL.
 
 ## Locks used in WAL
 
@@ -168,7 +168,7 @@ Transactions `Transaction1` and `Transaction2` acquire a `SHARED` lock while rea
   Both Transactions can't make progress. Remember that in 2PL, transactions need to hold the lock till they either commit or abort. Simply waiting and re-trying the query doesn't help. To make progress, one of them has to give up and abort.
   </p>
 </div>
-SQLite allows setting a [busy_timeout](https://www.sqlite.org/c3ref/busy_timeout.html) for waiting and re-trying individual queries. `busy_timeout` sets a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) which is capable of detecting deadlocks and immediately failing with `SQLITE_BUSY`. From its documentation
+SQLite allows setting a [busy_timeout](https://www.sqlite.org/c3ref/busy_timeout.html) for waiting and re-trying individual queries. `busy_timeout` sets a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) which is capable of detecting deadlocks and stale snapshots. It immediately fails with a `SQLITE_BUSY` error on detecting such cases. From its documentation
 
 > The presence of a busy handler does not guarantee that it will be invoked when there is lock contention. If SQLite determines that invoking the busy handler could result in a deadlock, it will go ahead and return SQLITE_BUSY to the application instead of invoking the busy handler
 
