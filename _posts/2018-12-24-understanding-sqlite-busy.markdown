@@ -49,7 +49,7 @@ SQLite uses a journal or log for implementing [atomic commit & rollback](https:/
 
 ## Rollback journal and 2PL
 
-In this mode, locks are used to implement isolation. The locks acquired are coarse-grained and apply to the entire database. The locks permit simultaneous readers from concurrent transactions to co-exist, but writers from one transaction block readers and other writers from other concurrent transactions.
+In this mode, locks are used to implement isolation. The locks acquired are coarse-grained and apply to the entire database. The locks permit simultaneous readers from concurrent transactions to co-exist, but writers from one transaction block readers and writers from other concurrent transactions.
 
 <div><img src="/public/images/locks.svg"></div>
 
