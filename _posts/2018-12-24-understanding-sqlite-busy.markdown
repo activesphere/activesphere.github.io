@@ -5,6 +5,8 @@ author: rahul
 
 I recently stumbled upon a [strange occurrence](https://github.com/sequelize/sequelize/issues/10262) in an ORM's query retry implementation for [SQLite](https://www.sqlite.org/index.html). Some of my queries were getting stuck in a retry loop and eventually failing with [SQLITE_BUSY](https://www.sqlite.org/rescode.html#busy) errors, on hitting max retry limits. While debugging the problem, it helped to understand `SQLITE_BUSY` better, by going through different parts of the official documentation and drawing parallels to some well-understood concepts[^1]. I'm writing this post hoping that my high-level understanding, and refs/pointers to SQLite docs, might help others debugging similar issues.
 
+NOTE: If you're just looking for a way to handle `SQLITE_BUSY` errors, suggest [skipping to this section](#handling-errors-with-busy_timeout).
+
 ## When does it happen
 
 SQLite allows concurrent[^6] transactions by letting clients open multiple connections[^2] to a database. Concurrent writes may cause race conditions though, leading to inconsistent data. To prevent this, databases usually provide [some guarantees](<https://en.wikipedia.org/wiki/Isolation_(database_systems)#Isolation_levels>) to protect against race conditions. SQLite guarantees that concurrent transactions are [completely isolated](https://en.wikipedia.org/wiki/Serializability)[^3]. This means that even though transactions may be processed concurrently, from a user's perspective SQLite behaves as if it has processed transactions in a serial order with no concurrency.
@@ -66,6 +68,7 @@ In this mode, locks are used to implement isolation. The locks acquired are coar
 </details>
 
 <details><summary>Implementation details</summary>
+  <blockquote> From SQLite's documentation: </blockquote>
   <blockquote>
     <p>In rollback mode, SQLite implements isolation by locking the database file and preventing any reads by other database connections while each write transaction is underway. Readers can be be active at the beginning of a write, before any content is flushed to disk and while all changes are still held in the writer's private memory space. But before any changes are made to the database file on disk, all readers must be (temporally) expelled in order to give the writer exclusive access to the database file. Hence, readers are prohibited from seeing incomplete transactions by virtue of being locked out of the database while the transaction is being written to disk. Only after the transaction is completely written and synced to disk and commits are the readers allowed back into the database. Hence readers never get a chance to see partially written changes.</p>
     <p>Source: https://www.sqlite.org/isolation.html</p>
@@ -78,19 +81,22 @@ This locking algorithm is commonly called [Two-phase locking (2PL)](https://en.w
 
 Going slightly off topic, SQLite offers an alternate concurrency model in [shared-cache](https://www.sqlite.org/sharedcache.html) mode, meant for embedded servers. In this mode, SQLite allows connections from the same process to share a single data & schema cache.
 
+> From SQLite's documentation:
+
 > Externally, from the point of view of another process or thread, two or more database connections using a shared-cache appear as a single connection
 
 Locks are used to implement isolation here as well. Shared cache offers more fine-grained table level locks though. Tables support two types of locks, "read-locks" and "write-locks".  On failing to acquire lock, queries fail with a `SQLITE_LOCKED` error.
 
 <details><summary>Algorithm description</summary>
+  <blockquote> From SQLite's documentation: </blockquote>
   <blockquote>
     <p>At any one time, a single table may have any number of active read-locks or a single active write lock. To read data a table, a connection must first obtain a read-lock. To write to a table, a connection must obtain a write-lock on that table. If a required table lock cannot be obtained, the query fails and SQLITE_LOCKED is returned to the caller.  Once a connection obtains a table lock, it is not released until the current transaction (read or write) is concluded.</p>
   </blockquote>
 </details>
 
-## WAL and SSI
+## WAL mode and SSI
 
-[WAL](https://www.sqlite.org/wal.html) is considered to be significantly faster than rollback journal in most scenarios[^4]. It permits simultaneous readers and writers from concurrent transactions. A writer while writing to disk, blocks writers from other concurrent transactions though.
+[WAL mode](https://www.sqlite.org/wal.html) is considered to be significantly faster than rollback journal in most scenarios[^4]. It permits simultaneous readers and writers from concurrent transactions. A writer while writing to disk, blocks writers from other concurrent transactions though.
 
 <figure class="layout__aside" id="snapshot">
   <div class="layout__aside-content">
@@ -98,9 +104,9 @@ Locks are used to implement isolation here as well. Shared cache offers more fin
   </div>
 </figure>
 
-> WAL mode permits simultaneous readers and writers. It can do this because changes do not overwrite the original database file, but rather go into the separate write-ahead log file. That means that readers can continue to read the old, original, unaltered content from the original database file at the same time that the writer is appending to the write-ahead log. In WAL mode, SQLite exhibits "snapshot isolation". When a read transaction starts, that reader continues to see an unchanging "snapshot" of the database file as it existed at the moment in time when the read transaction started. Any write transactions that commit while the read transaction is active are still invisible to the read transaction because the reader is seeing a snapshot of database file from a prior moment in time.
+> From SQLite's documentation:
 
-> Source: https://www.sqlite.org/isolation.html
+> WAL mode permits simultaneous readers and writers. It can do this because changes do not overwrite the original database file, but rather go into the separate write-ahead log file. That means that readers can continue to read the old, original, unaltered content from the original database file at the same time that the writer is appending to the write-ahead log. In WAL mode, SQLite exhibits "snapshot isolation". When a read transaction starts, that reader continues to see an unchanging "snapshot" of the database file as it existed at the moment in time when the read transaction started. Any write transactions that commit while the read transaction is active are still invisible to the read transaction because the reader is seeing a snapshot of database file from a prior moment in time.
 
 Instead of acquiring a lot of locks like 2PL, a transaction continues hoping that everything will turn out all right. When a transaction performs a read eventually followed by a write and tries to commit, SQLite checks if database was changed after the read, by some other concurrent transaction. If yes, the transaction fails with a [BUSY_SNAPSHOT](https://www.sqlite.org/rescode.html#busy_snapshot) error and has to be re-tried.
 
@@ -108,13 +114,15 @@ It's important to note that `BUSY_SNAPSHOT` is an [extended error code](https://
 
 This is similar to [serializable snapshot isolation(SSI)](https://wiki.postgresql.org/wiki/SSI) as implemented in PostgreSQL.
 
-## Locks used in WAL
+## Locks used in WAL mode
 
-In `WAL`, there are some cases where locks are used and one might see `SQLITE_BUSY` errors.
+In `WAL` mode, there are some cases where locks are used and one might see `SQLITE_BUSY` errors.
 
 ### Single writer
 
 SQLite supports only one writer at a time.
+
+> From SQLite's documentation:
 
 > When any process wants to write, it must lock the entire database file for the duration of its update. But that normally only takes a few milliseconds.
 
@@ -126,6 +134,7 @@ Use of [exclusive locking mode](https://www.sqlite.org/pragma.html#pragma_lockin
 
 <h3>Checkpointing</h3>
 
+<blockquote> From SQLite's documentation: </blockquote>
 <blockquote>
 <p>When the last connection to a particular database is closing, that connection will acquire an exclusive lock for a short time while it cleans up the WAL and shared-memory files. If a second database tries to open and query the database while the first connection is still in the middle of its cleanup process, the second connection might get an SQLITE_BUSY error.</p>
 </blockquote>
@@ -134,6 +143,7 @@ Use of [exclusive locking mode](https://www.sqlite.org/pragma.html#pragma_lockin
 
 <h3>Recovery</h3>
 
+<blockquote> From SQLite's documentation: </blockquote>
 <blockquote>
 > If the last connection to a database crashed, then the first new connection to open the database will start a recovery process. An exclusive lock is held during recovery. So if a third database connection tries to jump in and query while the second connection is running recovery, the third connection will get an SQLITE_BUSY error.
 </blockquote>
@@ -168,21 +178,22 @@ Transactions `Transaction1` and `Transaction2` acquire a `SHARED` lock while rea
   Both Transactions can't make progress. Remember that in 2PL, transactions need to hold the lock till they either commit or abort. Simply waiting and re-trying the query doesn't help. To make progress, one of them has to give up and abort.
   </p>
 </div>
-SQLite allows setting a [busy_timeout](https://www.sqlite.org/c3ref/busy_timeout.html) for waiting and re-trying individual queries. `busy_timeout` sets a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) which is capable of detecting deadlocks and stale snapshots. It immediately fails with a `SQLITE_BUSY` error on detecting such cases. From its documentation
 
-> The presence of a busy handler does not guarantee that it will be invoked when there is lock contention. If SQLite determines that invoking the busy handler could result in a deadlock, it will go ahead and return SQLITE_BUSY to the application instead of invoking the busy handler
+## Handling errors with busy_timeout
 
-With `busy_handler` configured, `Transaction2` yields it's `SHARED` lock & fails with `SQLITE_BUSY`. `Transaction1` succeeds.
+A user may set a [busy_timeout](https://www.sqlite.org/c3ref/busy_timeout.html), which makes SQLite retry individual queries, on intercepting `SQLITE_BUSY` errors. Here's the [PRAGMA](https://www.sqlite.org/pragma.html#pragma_busy_timeout) to set `busy_timeout`.
 
-If a query fails with `busy_timeout` configured, one might assume that either 1. transaction can't make progress due to a deadlock, or 2. transaction is trying to commit with stale snapshot or 3. transaction has timed out. The transaction will have to be rolled back & re-tried at the application level.
+With `busy_timeout` configured, SQLite uses a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) for the retry. `busy_handler` is capable of detecting cases like deadlocks & stale snapshots where transactions can't make progress by re-trying indivdual queries. In these cases, `busy_handler` immediately fails the query with a `SQLITE_BUSY` error, allowing the application's error handling to take over. An application may then rollback and retry the entire transaction.
 
-In shared cache mode, instead of using `busy_timeout`, the [unlock notify](https://www.sqlite.org/c3ref/unlock_notify.html) API may be [used](https://www.sqlite.org/unlock_notify.html) to retry queries. It fails with a `SQLITE_LOCKED` error on detecting a deadlock. From a user's perspective, the error handling may be setup the same way as with `busy_timeout`.
+In the deadlock scenario discussed in the previous section, with `busy_timeout` configured, `Transaction2` yields it's `SHARED` lock & fails with `SQLITE_BUSY`. `Transaction1` succeeds.
+
+NOTE: In shared cache mode, instead of using `busy_timeout`, the [unlock notify](https://www.sqlite.org/c3ref/unlock_notify.html) API may be [used](https://www.sqlite.org/unlock_notify.html) to retry queries. It fails with a `SQLITE_LOCKED` error on detecting a deadlock. From a user's perspective, the error handling may be setup the same way as with `busy_timeout`.
 
 ## Conclusion
 
 Let's go back to the problem with the ORM's query retry module, that I described at the start. In that situation, transactions used `DEFERRED` behaviour by default and ended up in deadlock and `BUSY_SNAPSHOT` error scenarios (I experimented with both rollback & WAL modes). The ORM implemented it's own query level retry mechanism, which couldn't detect these cases. It ended up re-trying the deadlocked query a bunch of times before eventually failing.
 
-To solve the problem, I could have disabled ORM's retry, configured `busy_handler` for query re-tries and implemented my own transaction level retry. But instead, as a quick fix, I started transactions in `IMMEDIATE` behaviour, using a global configuration option the ORM provided. This moved `SQLITE_BUSY` errors to the beginning of transactions, allowing me to re-use the ORM's query retry module to retry transactions (possibly at the expense of performance, but I was ok with that tradeoff).
+To solve the problem, I could have disabled ORM's retry, configured `busy_timeout` for query re-tries and implemented my own transaction level retry. But instead, as a quick fix, I started transactions in `IMMEDIATE` behaviour, using a global configuration option the ORM provided. This moved `SQLITE_BUSY` errors to the beginning of transactions, allowing me to re-use the ORM's query retry module to retry transactions (possibly at the expense of performance, but I was ok with that tradeoff).
 
 ### References:
 
@@ -196,7 +207,7 @@ To solve the problem, I could have disabled ORM's retry, configured `busy_handle
 
 [^3]: Except in the case of shared cache database connections with PRAGMA read_uncommitted turned on
 
-[^4]: Although WAL is faster in most scenarios, it might be very slightly slower (perhaps 1% or 2% slower) than the traditional rollback-journal approach in applications that do mostly reads and seldom write. [Source](https://www.sqlite.org/wal.html).
+[^4]: Although WAL mode is faster in most scenarios, it might be very slightly slower (perhaps 1% or 2% slower) than the traditional rollback-journal approach in applications that do mostly reads and seldom write. [Source](https://www.sqlite.org/wal.html).
 
 [^5]: Rollback mode may be further subdivided into more types, which instruct SQLite on how to get rid of rollback journal on completion of transaction. [Source](https://www.sqlite.org/pragma.html#pragma_journal_mode)
 
