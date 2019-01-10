@@ -5,7 +5,7 @@ author: rahul
 
 I recently stumbled upon a [strange occurrence](https://github.com/sequelize/sequelize/issues/10262) in an ORM's query retry implementation for [SQLite](https://www.sqlite.org/index.html). Some of my queries were getting stuck in a retry loop and eventually failing with [SQLITE_BUSY](https://www.sqlite.org/rescode.html#busy) errors, on hitting max retry limits. While debugging the problem, it helped to understand `SQLITE_BUSY` better, by going through different parts of the official documentation and drawing parallels to some well-understood concepts[^1]. I'm writing this post hoping that my high-level understanding, and refs/pointers to SQLite docs, might help others debugging similar issues.
 
-NOTE: If you're just looking for a way to handle `SQLITE_BUSY` errors, suggest [skipping to this section](#handling-errors-with-busy_timeout).
+NOTE: If you're just looking for a way to handle `SQLITE_BUSY` errors, skip to [this section](#handling-errors-with-busy_timeout).
 
 ## When does it happen
 
@@ -181,9 +181,9 @@ Transactions `Transaction1` and `Transaction2` acquire a `SHARED` lock while rea
 
 ## Handling errors with busy_timeout
 
-A user may set a [busy_timeout](https://www.sqlite.org/c3ref/busy_timeout.html)([pragma](https://www.sqlite.org/pragma.html#pragma_busy_timeout)), which makes SQLite retry individual queries, on intercepting `SQLITE_BUSY` errors.
+A user may set a [busy_timeout](https://www.sqlite.org/c3ref/busy_timeout.html)([pragma](https://www.sqlite.org/pragma.html#pragma_busy_timeout)) to make SQLite retry individual queries, on intercepting `SQLITE_BUSY` errors.
 
-With `busy_timeout` configured, SQLite uses a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) for the retry. `busy_handler` is capable of detecting cases like deadlocks & stale snapshots where transactions can't make progress by re-trying indivdual queries. In these cases, `busy_handler` immediately fails the query with a `SQLITE_BUSY` error, allowing the application's error handling to take over. An application may then rollback and retry the entire transaction.
+`busy_timeout` sets a [busy_handler](https://www.sqlite.org/c3ref/busy_handler.html) routine for the retry. `busy_handler` is capable of detecting cases like deadlocks & stale snapshots where transactions can't make progress by re-trying indivdual queries. In these cases, `busy_handler` immediately fails the query with a `SQLITE_BUSY` error, allowing the application's error handling to take over. An application may then rollback and retry the entire transaction.
 
 In the deadlock scenario discussed in the previous section, with `busy_timeout` configured, `Transaction2` yields it's `SHARED` lock & fails with `SQLITE_BUSY`. `Transaction1` succeeds.
 
