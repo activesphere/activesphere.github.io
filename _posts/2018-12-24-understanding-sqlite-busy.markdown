@@ -1,6 +1,7 @@
 ---
 title: Understanding SQLITE_BUSY
 author: rahul
+description: Handle SQLITE_BUSY errors correctly. Understand scenarios under which they occur.
 ---
 
 I recently stumbled upon a [strange occurrence](https://github.com/sequelize/sequelize/issues/10262) in an ORM's query retry implementation for [SQLite](https://www.sqlite.org/index.html). Some of my queries were getting stuck in a retry loop and eventually failing with [SQLITE_BUSY](https://www.sqlite.org/rescode.html#busy) errors, on hitting max retry limits. While debugging the problem, it helped to understand `SQLITE_BUSY` better, by going through different parts of the official documentation and drawing parallels to some well-understood concepts[^1]. I'm writing this post hoping that my high-level understanding, and refs/pointers to SQLite docs, might help others debugging similar issues.
