@@ -38,7 +38,7 @@
 
     The video below, show some features of the app, allowing slicing & dicing of multiple types of data, across multiple dimensions.
 
-    <iframe  src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=hd720" allowfullscreen></iframe>
+    <iframe frameborder="0" src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=hd720" allowfullscreen></iframe>
 -
   title: Optimize an e-commerce product listing page
   stack:
@@ -59,7 +59,7 @@
 
     Below is a comparison of loading times of the listing pages of various e-commerce sites, when we delivered ABOF’s listing page.
 
-    <iframe src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
+    <iframe frameborder="0" src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
 
 -
   title: Scripbox
