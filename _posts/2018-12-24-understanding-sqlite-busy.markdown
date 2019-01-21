@@ -34,7 +34,9 @@ COMMIT;
 
 One way to achieve isolation is to enforce serial execution ie. allow only one transaction at a time.
 
-`IMMEDIATE` and `EXCLUSIVE` behaviours enforce serial execution by acquiring locks at the beginning of a transaction. In these modes, once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, fail with a `SQLITE_BUSY` error. Locks are retained till a transaction either commits or aborts.
+`EXCLUSIVE` behaviour enforce serial execution by acquiring locks at the beginning of a transaction. In these modes, once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, fail with a `SQLITE_BUSY` error. Locks are retained till a transaction either commits or aborts.
+
+NOTE: `IMMEDIATE` behaviour enforces serial execution of `writing transactions` (transactions with writes), while allowing readers from concurrent transactions to co-exist. It waits for concurrent readers to wrap up, before writing it's changes (explained further in the next section).
 
 But running only one transaction at a time, might not be performant.
 
@@ -52,7 +54,7 @@ SQLite uses a journal or log for implementing [atomic commit & rollback](https:/
 
 ## Rollback journal and 2PL
 
-In this mode, locks are used to implement isolation. The locks acquired are coarse-grained and apply to the entire database. The locks permit simultaneous readers from concurrent transactions to co-exist, but writers from one transaction block readers and writers from other concurrent transactions.
+In this mode, locks are used to implement isolation. The locks acquired are coarse-grained and apply to the entire database. The locks permit simultaneous readers from concurrent transactions to co-exist. Writers holding a `RESERVED` lock blocks writers from other concurrent transactions. Writers holding a `PENDING` lock block readers and writers from other concurrent transactions.
 
 <div><img src="/public/images/locks.svg"></div>
 
@@ -64,7 +66,7 @@ In this mode, locks are used to implement isolation. The locks acquired are coar
 
 <details><summary>Algorithm description</summary>
   <p markdown="1">
-  Transaction wanting to read acquires a `SHARED` lock. Multiple transactions can hold this lock simultaneously. Transaction wanting to write acquires a `RESERVED` lock. Only one transaction can hold this lock at a time, others fail with `SQLITE_BUSY`. A transaction may upgrade it's `SHARED` lock to a `RESERVED` lock to write after a read, but not vice versa. When comitting, SQLite upgrades `RESERVED` lock to a `PENDING` lock, which waits for readers to finish reading and blocks new readers from acquiring `SHARED` with `SQLITE_BUSY`. `PENDING` lock is upgraded to `EXCLUSIVE` lock after all `SHARED` locks are released. If a transaction tries to commit with a `PENDING` lock, it fails with a `SQLITE_BUSY` error. More details can be found [here](https://www.sqlite.org/lockingv3.html)
+  Transaction wanting to read acquires a `SHARED` lock. Multiple transactions can hold this lock simultaneously. Transaction wanting to write acquires a `RESERVED` lock. Only one transaction can hold this lock at a time, others wanting to write fail with `SQLITE_BUSY`. A transaction may upgrade it's `SHARED` lock to a `RESERVED` lock to write after a read, but not vice versa. When comitting, SQLite upgrades `RESERVED` lock to a `PENDING` lock, which waits for readers to finish reading and blocks new readers from acquiring `SHARED` with `SQLITE_BUSY`. `PENDING` lock is upgraded to `EXCLUSIVE` lock after all `SHARED` locks are released. If a transaction tries to commit with a `PENDING` lock, it fails with a `SQLITE_BUSY` error. More details can be found [here](https://www.sqlite.org/lockingv3.html)
   </p>
 </details>
 
