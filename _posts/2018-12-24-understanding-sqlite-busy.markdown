@@ -34,9 +34,9 @@ COMMIT;
 
 One way to achieve isolation is to enforce serial execution ie. allow only one transaction at a time.
 
-`EXCLUSIVE` behaviour enforce serial execution by acquiring locks at the beginning of a transaction. In these modes, once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, fail with a `SQLITE_BUSY` error. Locks are retained till a transaction either commits or aborts.
+Starting all transactions with `EXCLUSIVE` or `IMMEDIATE` behaviours enforce serial execution by acquiring locks at the beginning of a transaction. In these modes, once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, fail with a `SQLITE_BUSY` error. Locks are retained till a transaction either commits or aborts.
 
-NOTE: `IMMEDIATE` behaviour enforces serial execution of `writing transactions` (transactions with writes), while allowing readers from concurrent transactions to co-exist. It waits for concurrent readers to wrap up, before writing it's changes (explained further in the Rollback journal section).
+NOTE: `IMMEDIATE` behaviour acquires a write lock which allows concurrent readers, but blocks other concurrent writers (discussed further in Rollback journal section).  In the above case, since all transactions are started with `IMMEDIATE`, they behave as writers, and concurrent transactions are blocked thus enforcing serial execution. `EXCLUSIVE` behaviour acquires a lock which blocks concurrent readers and writers.
 
 But running only one transaction at a time, might not be performant.
 
@@ -54,7 +54,7 @@ SQLite uses a journal or log for implementing [atomic commit & rollback](https:/
 
 ## Rollback journal and 2PL
 
-In this mode, locks are used to implement isolation. The locks acquired are coarse-grained and apply to the entire database. The locks permit single writer and simultaneous readers from concurrent transactions to co-exist. Writers holding a `RESERVED` lock block writers from other concurrent transactions. Writers holding a `PENDING` lock block readers and writers from other concurrent transactions.
+In this mode, locks are used to implement isolation. The locks acquired are coarse-grained and apply to the entire database. The locks permit a single writer and simultaneous readers from concurrent transactions to co-exist. Writers holding a `RESERVED` lock block writers from other concurrent transactions. Writers holding a `PENDING` lock block readers and writers from other concurrent transactions.
 
 <div><img src="/public/images/locks.svg"></div>
 
