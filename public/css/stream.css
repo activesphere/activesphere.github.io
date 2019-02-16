@@ -78,6 +78,10 @@ span.source, span.sink {
     }
 }
 
+.diagram *+*, .source, .sink {
+    margin-top: 0px;
+}
+
 .arrow {
     left: 50%;
     margin-left: 40px;
