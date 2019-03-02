@@ -34,9 +34,9 @@ COMMIT;
 
 One way to achieve isolation is to enforce serial execution ie. allow only one transaction at a time.
 
-Starting all transactions with `EXCLUSIVE` or `IMMEDIATE` behaviours enforce serial execution by acquiring locks at the beginning of a transaction. In these modes, once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, fail with a `SQLITE_BUSY` error. Locks are retained till a transaction either commits or aborts.
+Starting transactions with `EXCLUSIVE` behaviour enforces serial execution by acquiring a exclusive lock at the beginning of a transaction. Once a transaction acquires a lock, other concurrent transactions trying to acquire a lock, fail with a `SQLITE_BUSY` error. The lock is retained till a transaction either commits or aborts.
 
-NOTE: `IMMEDIATE` behaviour acquires a write lock which allows concurrent readers, but blocks other concurrent writers (discussed further in Rollback journal section).  In the above case, since all transactions are started with `IMMEDIATE`, they behave as writers, and concurrent transactions are blocked thus enforcing serial execution. `EXCLUSIVE` behaviour acquires a lock which blocks concurrent readers and writers.
+NOTE: `IMMEDIATE` behaviour uses a different kind of lock which allows concurrent readers, but blocks other concurrent writers (discussed further in Rollback journal section).
 
 But running only one transaction at a time, might not be performant.
 
