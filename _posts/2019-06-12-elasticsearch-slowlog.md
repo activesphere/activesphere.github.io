@@ -87,7 +87,8 @@ href="https://github.com/ananthakumaran/logstash-filter-elasticsearchslowlog">lo
 plugin</a> which does exactly this. All you need to do is install the plugin and
 add the filter configuration for slow log files.
 </p>
-<pre style="float: left; width: calc(100% - 250px); min-width: 380px;">
+<pre class="highlight" style="float: left; width: calc(100% - 250px); min-width: 380px;">
+  <code>
 filter {
   elasticsearchslowlog {
   }
@@ -97,5 +98,6 @@ filter {
     timezone => "Asia/Kolkata"
   }
 }
+  </code>
 </pre>
 </div>
