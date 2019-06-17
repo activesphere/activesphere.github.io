@@ -83,8 +83,8 @@ of <i>md5(source_normalized)</i>.
 <br />
 <br />
 We have written a <a
-href="https://github.com/ananthakumaran/logstash-filter-elasticsearchslowlog">logstash</a>
-which does exactly this. All you need to do is install the plugin and
+href="https://github.com/ananthakumaran/logstash-filter-elasticsearchslowlog">logstash
+plugin</a> which does exactly this. All you need to do is install the plugin and
 add the filter configuration for slow log files.
 </p>
 <pre style="float: left; width: calc(100% - 250px); min-width: 380px;">
