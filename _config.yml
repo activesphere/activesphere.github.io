@@ -6,6 +6,7 @@ markdown: kramdown
 production: true
 title: ActiveSphere - Software consulting
 category_dir: /blog/category
+url: https://www.activesphere.com
 exclude:
   - README.md
   - Rakefile
