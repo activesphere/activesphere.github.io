@@ -3,7 +3,6 @@ container: hca-layout
 title: High contention allocator
 author: ananthakumaran
 published: true
-canonical: https://ananthakumaran.in/2018/08/05/high-contention-allocator.html
 ---
 
 [FoundationDB](https://www.foundationdb.org/) is a distributed

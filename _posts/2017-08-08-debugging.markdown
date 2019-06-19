@@ -2,7 +2,6 @@
 title: Debugging cryptic errors
 author: ananthakumaran
 published: true
-canonical: http://ananthakumaran.in/2017/01/26/debugging.html
 ---
 
 At a project I am working on, our backend system makes http requests

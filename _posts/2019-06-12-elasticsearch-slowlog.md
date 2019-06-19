@@ -2,7 +2,6 @@
 title: Grouping Elasticsearch slow log queries
 published: true
 author: ananthakumaran
-canonical: https://ananthakumaran.in/2019/06/12/elasticsearch-slowlog.html
 ---
 
 <p>

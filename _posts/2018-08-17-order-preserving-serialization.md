@@ -3,7 +3,6 @@ container: order-layout
 title: Sort order preserving serialization
 author: ananthakumaran
 published: true
-canonical: https://ananthakumaran.in/2018/08/17/order-preserving-serialization.html
 ---
 
 [FoundationDB](https://www.foundationdb.org/) is a distributed
