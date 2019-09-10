@@ -1,0 +1,80 @@
+---
+title: Rewrites
+layout: default
+permalink: /rewrites.html
+
+projects:
+
+ - title: midtrans
+   portfolio_url: /portfolio#notification-system
+   client: >
+     <a class="ph4-ns w5-ns tc" href="https://midtrans.com" target="_blank">
+       <img class="dib h2 h3-ns" src="/public/images/clients/midtrans.svg" />
+     </a>
+   description: >
+        We rewrote their notification system serving a few hundered thousand
+        messages per day which brought down the hardware cost to a 1/3.
+
+ - title: abof
+   portfolio_url: /portfolio#optimize-an-e-commerce-product-listing-page
+   client: >
+      <a class="ph4-ns w5-ns tc" href="http://www.abof.com/" target="_blank">
+        <img class="dib h2 h3-ns" src="/public/images/clients/abof.svg" />
+      </a>
+   description: >
+      We made 3G page load speed on a few ecommerce product listing pages
+      comparable to Jabong, Koovs, Flipkart & Amazon.
+
+
+ - title: Sleekr
+   portfolio_url: /portfolio#hr-software
+   client: >
+     <a class="ph4-ns w5-ns tc" href="https://sleekr.co/" target="_blank">
+       <img class="dib h2 h3-ns" src="/public/images/clients/sleekr.svg" style="width: 200px;"/>
+     </a>
+   description: >
+     We helped detangle an over-architected micro-services setup and provided
+     technical guidance.
+---
+
+<div class="center pa2 pa4-ns light-blue-gradient">
+  <h2 class="white f2 center mw7 tc">
+    When future of your business depends on a rewrite, we might be of help.
+  </h2>
+</div>
+<article class="mw7 center measure-wide avenir f4 lh-copy pa3 pt4">
+  <section>
+    <p>
+      The success of a rewrite comes down to understanding the problem domain
+      and business priorities along with complexity and risk involved in
+      the execution. Like most things in life, its a play of tradeoffs.
+    </p>
+    <p>
+      Our experience helps us make informed tradeoffs.
+    </p>
+  </section>
+  <section class="mb4 mb5-ns flex flex-column items-center">
+    <h3 class="f3 nb3 ph3 bg-white relative z-1">Our approach to rewrites</h3>
+    <ul class="pt5 mt0 bt b--light-gray">
+      <li>Understand, accommodate and communicate risks & uncertainties, early in the project.</li>
+      <li>Break down the rewrite into smaller chunks, prioritizing components which help improve the system most while keeping risk at a minimum.</li>
+      <li>Choose the right technologies and tools. In the past we've picked up Elixir, React, Go, Kubernetes, Kafka, Webpack and more to solve specific problems.</li>
+    </ul>
+  </section>
+  <section class="sticky z-2 bg-white" style="top: -1px">
+    {% include email_form.html %}
+  </section>
+  <section class="mt3 mt4-ns flex flex-column items-center">
+      <h3 class="f3 nb3 ph3 bg-white relative z-1">Case studies</h3>
+      {% for proj in page.projects %}
+      <div class="cf pv5 pb0 flex flex-column flex-row-ns items-center-ns bt b--light-gray">
+          {{proj.client}}
+          <div class="avenir measure f4 fl-ns w-100 w-70-ns lh-copy">
+              <p class="mb0 mt0-ns">
+                {{proj.description}} <a class="link" href="{{proj.portfolio_url}}">Read more</a>
+              </p>
+          </div>
+      </div>
+      {% endfor %}
+  </section>
+</article>

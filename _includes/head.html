@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+    {% if page.title == nil %}
+    {{ site.title }}
+    {% else %}
+    {{ page.title }} • {{ site.title }}
+    {% endif %}
+</title>
+<meta content='Elixir Erlang Golang React scale web services Bangalore India' name='title'>
+
+<meta content='index, follow' name='robots'>
+<meta name='google' content='notranslate'>
+
+{% feed_meta %}
+
+{% if page.description %}
+<meta name="description" content="{{ page.description }}">
+{% else %}
+<meta content="ReactJS Elixir Erlang Golang D3 scalable web services developers" name='description'>
+{% endif %}
+
+{% if page.canonical %}
+<link rel="canonical" href="{{page.canonical}}">
+{% else %}
+<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+{% endif %}
+
+<link rel="stylesheet" href="/public/main.css">
+<link rel="stylesheet" href="/public/css/icons.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600" rel="stylesheet">
+{% if page.math %}
+  <script src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+{% endif %}
+
+{% if page.viz %}
+  <script src='//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+{% endif %}
+
+<script>
+  function domReady(fn) {
+    if (
+      document.attachEvent
+        ? document.readyState === 'complete'
+        : document.readyState !== 'loading'
+    ) {
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
+  }
+</script>
+
+{% if page.video %}
+  <script src="/public/js/vendor/reframe.min.js"></script>
+  <script>
+    domReady(function () {
+    reframe('iframe');
+    });
+  </script>
+{% endif %}
+
+
+{% if page.categories %}
+<meta name="keywords" content="{{ page.categories | join: ',' }}"/>
+{% else %}
+<meta content="Scalable Web Development Elixir Erlang Golang JavaScript ES6 React d3 Bangalore India remote application development scaling" name="keywords">
+{% endif %}

@@ -1,0 +1,32 @@
+-
+  name: Midtrans
+  url: https://midtrans.com/
+  logo_path: /public/images/clients/midtrans.svg
+-
+  name: scripbox
+  url: https://www.scripbox.com
+  logo_path: /public/images/clients/scripbox.svg
+-
+  name: Instawork
+  url: https://www.instawork.com/
+  logo_path: /public/images/clients/instawork.jpg
+-
+  name: Paycraft
+  url: https://www.paycraftsol.com/
+  logo_path: /public/images/clients/paycraft.png
+-
+  name: Razorfish
+  url: http://www.razorfish.com/
+  logo_path: /public/images/clients/razorfish.png
+-
+  name: Enernoc
+  url: http://www.enernoc.com
+  logo_path: /public/images/clients/enernoc.png
+-
+  name: Sleekr
+  url: https://sleekr.co/
+  logo_path: /public/images/clients/sleekr.svg
+-
+  name: Zeta
+  url: https://zetaglobal.com/
+  logo_path: /public/images/clients/zeta-global.png

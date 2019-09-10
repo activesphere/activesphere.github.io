@@ -1,0 +1,14 @@
+---
+layout: default
+title: Blog
+---
+
+<ul class="index">
+  {% assign visible = site.posts | where_exp: "post", "post.hidden != true" %}
+  {% for post in visible %}
+  {% include post_summary.html url=post.url title=post.title excerpt=post.excerpt author=post.author date=post.date%}
+  {% if post.url == "/blog/2018/07/17/introducing-exq-scheduler" %}
+  {% include post_summary.html url="/compound-interest/" title="On compound interest" excerpt="How interest rates and time period of investment, effects return." author="ciju" date="2018-07-01"%}
+  {% endif %}
+{% endfor %}
+</ul>

@@ -1,0 +1,132 @@
+:root {
+  font-size: 1.1875rem; /* 19px */
+  font-family: var(--font-family);
+  line-height: 1.315789474; /* 19px / 25px - 28px */
+  font-variant-numeric: oldstyle-nums;
+  color: var(--color-text);
+  box-sizing: border-box;
+  background-color: var(--color-gray-20);
+
+  @media (--min-column) {
+    line-height: calc(1.315789474em + ((0.157894737 / 15.4375) * (100vw - 23em)));
+  }
+
+  @media (--max-column) {
+    line-height: 1.473684211;
+  }
+}
+
+* {
+  margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+* + * {
+  margin-top: 1em;
+}
+
+body {
+  margin: 0 auto;
+  max-width: var(--max-width-canvas);
+  background-color: var(--color-white);
+}
+
+code, tag, byte, term, escape {
+  color: var(--color-text-light);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-s);
+  font-variant-numeric: lining-nums;
+}
+
+pre code {
+  background-color: transparent;
+}
+
+strong code,
+strong pre {
+  font-weight: var(--font-weight-semibold);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--font-weight-bold);
+}
+
+h1,
+h2 {
+  line-height: var(--line-height-tight);
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+}
+
+h2 {
+  font-size: var(--font-size-l);
+}
+
+h3 {
+  font-size: var(--font-size-m);
+}
+
+ol,
+ul {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+li {
+  & p {
+    display: inline;
+  }
+}
+
+li + li {
+  margin-top: var(--space-s);
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+br {
+  /* On FF, it takes in margin from "* + *" */
+  margin-top: 0;
+}
+
+abbr {
+  font-variant: all-small-caps;
+}
+
+.link,
+a {
+  color: var(--color-link);
+  transition: color var(--delay-fast) var(--easing);
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-link-hover);
+  }
+}
+
+.link--light {
+  color: inherit;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-link);
+  }
+}
+
+.main {
+  margin-top: 0;
+}

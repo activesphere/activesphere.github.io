@@ -1,0 +1,11 @@
+node_modules
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
+.DS_Store
+*/.DS_Store
+_site/
+_site2/
+

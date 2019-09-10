@@ -1,0 +1,6 @@
+[submodule "_site2"]
+	path = _site2
+	url = https://github.com/activesphere/activesphere.github.com.git
+[submodule "_site1"]
+	path = _site1
+	url = https://github.com/activesphere/activesphere.github.com.git

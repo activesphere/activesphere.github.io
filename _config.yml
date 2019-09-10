@@ -1,0 +1,42 @@
+# host: www.activesphere.com
+excerpt_separator: "\n\n\n"
+permalink: /blog/:year/:month/:day/:title
+highlighter: rouge
+markdown: kramdown
+production: true
+title: ActiveSphere - Software consulting
+category_dir: /blog/category
+url: https://www.activesphere.com
+exclude:
+  - README.md
+  - Rakefile
+  - .gitignore
+  - webpack.config.js
+  - .editorconfig
+  - .babelrc
+  - node_modules
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      content_containers: article
+      plug: true
+  -
+    scope:
+      path: "problems"
+    values:
+      layout: post
+      content_containers: article

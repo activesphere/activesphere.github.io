@@ -1,0 +1,28 @@
+---
+title: Selected projects
+layout: default
+permalink: /portfolio.html
+video: true
+client_logos: true
+client_logos_border_top: true
+---
+<ul class="index">
+  {% for p in site.data.projects %}
+  <li class="index__item project project--client">
+    <a class="project__client-logo-link" href="{{p.client.url}}" title="{{p.client.title}}" target="_blank">
+      <img class="project__client-logo-img" src="{{p.client.logo_path}}" alt="Logo of {{p.client.title}}">
+    </a>
+    <h3 class="project__title">{{p.title}}</h3>
+    <div class="project__blurb">{{p.description | markdownify}}</div>
+    <div class="project__stack">Built using {% for tool in p.stack %}
+      <a href="{{ tool.url }}">{{ tool.name }}</a>{%- unless forloop.last -%}
+        {%- if forloop.rindex == 2 -%}
+        {{" and"}}
+        {%- else -%}
+        ,
+        {%- endif -%}
+      {% endunless %}
+    {%- endfor -%}.</div>
+  </li>
+  {% endfor %}
+</ul>

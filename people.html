@@ -1,0 +1,18 @@
+---
+title: People
+layout: default
+permalink: /people.html
+---
+<ul class="index">
+  {% for p in site.data.people %}
+  <li class="index__item person">
+    <img class="person__img" src="{{p.pic}}" alt="Photo of {{p.name}}">
+    <h3 class="person__name">{{p.name}}</h3>
+    <ul class="list list--inline list--middot-seperated person__social-networks">{%- if p.github -%}
+      <li><a class=" person__social-network-link" href="{{p.github}}" target="_blank">Github</a></li>{% endif -%}{%- if p.linkedin -%}<li><a class=" person__social-network-link" href="{{p.linkedin}}" target="_blank">LinkedIn</a></li>{% endif -%}{%- if p.twitter -%}<li><a class=" person__social-network-link" href="{{p.twitter}}" target="_blank">Twitter</a></li>
+      {% endif -%}
+    </ul>
+    <div class="person__blurb">{{p.blurb | markdownify}}</div>
+  </li>
+  {% endfor %}
+</ul>

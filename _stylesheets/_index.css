@@ -1,0 +1,10 @@
+.index {
+  display: block;
+  list-style: none;
+  padding-left: 0;
+  padding-top: var(--space-xl);
+
+  @media (--max-column) {
+    padding-top: var(--space-2xl);
+  }
+}

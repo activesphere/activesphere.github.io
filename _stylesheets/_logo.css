@@ -1,0 +1,12 @@
+.logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--space-m) * 2);
+  height: calc(var(--space-m) * 2);
+
+  & svg {
+    fill: currentColor;
+    width: 100%;
+  }
+}

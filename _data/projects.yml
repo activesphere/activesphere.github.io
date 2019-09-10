@@ -1,0 +1,113 @@
+-
+  title: Notification system
+  stack:
+   - name: Elixir
+     url: http://elixir-lang.org
+   - name: Redis
+     url: https://redis.io
+   - name: Exq
+     url: https://github.com/akira/exq
+  client:
+    title: Midtrans
+    logo_path: /public/images/clients/midtrans.svg
+    url: https://midtrans.com
+  description: |
+    Midtrans sends out a few hundred thousand messages per day using a notification system. We re-wrote this system in Elixir to improve performance and decrease resource consumption. The average latency of a particular set of notifications decreased from <strong>2.9s</strong> to <strong>198ms</strong>. The memory consumption went down from <strong>5.3<abbr>GB</abbr></strong> to <strong>300<abbr>MB</abbr></strong> per node, which brought down the hardware cost to 1/3.
+
+    This is an example of how choosing a technology that fits the problem domain well, could improve a system considerably. More details can be found in the <a href="https://engineering.midtrans.com/optimizing-the-notification-system/" target="_blank">blog post</a> by Midtrans.
+-
+  title: Energy manager for utilities
+  stack:
+   - name: AngularJS
+     url: https://angularjs.org/
+   - name: d3.js
+     url: http://d3js.org/
+   - name: Webpack
+     url: https://webpack.github.io/
+   - name: Node.js
+     url: https://nodejs.org/en/
+  client:
+     title: Enernoc
+     logo_path: /public/images/clients/enernoc.png
+     url: http://www.enernoc.com
+
+  description: |
+    This tool was built to help monitoring energy consumption across multiple properties & locations (eg: universities, chain of restaurants etc.)
+
+    We worked remotely with the a team of Engineers at PulseEnergy, for over 2 years. Most of the product was written by us.
+
+    The video below, show some features of the app, allowing slicing & dicing of multiple types of data, across multiple dimensions.
+
+    <iframe frameborder="0" src="https://drive.google.com/file/d/0B9pPfuZHkt_qTzg1X1lFZWpsMlE/preview?vq=hd720" allowfullscreen></iframe>
+-
+  title: Optimize an e-commerce product listing page
+  stack:
+   - name: React
+     url: https://facebook.github.io/react/
+   - name: Webpack
+     url: https://webpack.github.io/
+  client:
+    title: abof
+    logo_path: /public/images/clients/abof.svg
+    url: http://www.abof.com
+  description: |
+    ABOF wanted to optimize some of their user facing pages for performance and revamp their front-end stack. In a staged manner, we rewrote their landing and product listing pages using react & server side rendering.
+
+    It was one of the fastest loading product listing pages when we shipped.
+
+    After the first implementation, the business saw a considerable increase in the conversion rate. They asked us to redo their checkout process as well, which we delivered in time.
+
+    Below is a comparison of loading times of the listing pages of various e-commerce sites, when we delivered ABOF’s listing page.
+
+    <iframe frameborder="0" src="https://www.youtube.com/embed/kwaVtMW0soo" allowfullscreen></iframe>
+
+-
+  title: Scripbox
+  stack:
+   - name: Elixir
+     url: http://elixir-lang.org
+   - name: Snowplow
+     url: https://snowplowanalytics.com/
+   - name: Redash
+     url: https://redash.io
+  client:
+    title: Scripbox
+    logo_path: /public/images/clients/scripbox.svg
+    url: https://scripbox.com
+  description: |
+    We were part of a team which setup inhouse analytics (with `Snowplow` and accessible over `redash`), integrated it with various inhouse web and mobile applications. We have also been helping Scripbox with their internal tools, for communication with customers.
+
+-
+  title: Pasarpolis.com
+  stack:
+   - name: Go
+     url: https://golang.org/
+   - name: Kubernetes
+     url: https://kubernetes.io/
+  client:
+    title: Pasarpolis
+    logo_path: /public/images/clients/pasarpolis.svg
+    url: https://pasarpolis.com/
+  description: |
+    Pasarpolis offers insurance policy APIs to businesses like Gojek, <abbr>JD</abbr> etc.
+
+    We re-architected their core system and setup their infrastructure to reliably handle growth.
+
+-
+  title: HR Software
+  stack:
+   - name: Angular 2
+     url: https://angular.io/
+   - name: Webpack
+     url: https://webpack.github.io/
+   - name: Laravel
+     url: https://laravel.com/
+  client:
+    title: Sleekr
+    logo_path: /public/images/clients/sleekr.svg
+    url: https://sleekr.co/
+  description: |
+    Sleekr hired us to help improve the performance and stability of their app.
+
+    Apart from code contributions, we helped provide high level technical guidance & gave regular feedback with code reviews. Some specific tasks we were involved with included introducing webpack to an alpha version of Angular2 when it wasn’t officially supported, de-tangling a micro-services setup, experimenting with GraphQL for some components.
+
